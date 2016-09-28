@@ -17,6 +17,7 @@
 </head>
 
 <body>
+<div class="globalBg"></div>
 <div class="rFloatDiv">
     <a class="collapseBtn" style="display:;"><i class="zmdi zmdi-format-list-bulleted"></i></a>
 </div>
@@ -149,19 +150,98 @@
                 <div class="popupContent">
                     <div class="contentHeader">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title">Modal Dialog</h4>
+                        <h4>扩展卷－DiaNAS</h4>
+                    </div>
+                    <div class="alert alert-info">
+                    	您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容量。
                     </div>
                     <div class="contentBody">
-                        
-                        
+                    	<table class="table-input">
+                            <tbody >
+                                <tr>
+                                    <td style="width:22%;"><label>当前大小:</label></td>
+                                    <td><input type="text" class="form-control" placeholder="100"><em>GiB</em></td>                                  
+                                </tr>
+                                <tr>
+                                    <td><label>扩展量:</label></td>
+                                    <td><input type="text" class="form-control" placeholder="100"><select class="form-control"><option>GiB</option><option>MiB</option><option>TiB</option></select></td>                                  
+                                </tr>
+                                <tr>
+                                    <td><label>最大最终大小:</label></td>
+                                    <td>1552.00 GiB</td>                                  
+                                </tr>
+                            </tbody>
+                         </table>
                     </div>
-                    <div class="contentFooter">
-                        <a href="javascript:;" id="closeAction" class="btn btn-default m-r-10" data-dismiss="modal">Close</a>
-                        <a href="javascript:;" class="btn btn-primary">Submit</a>
+                    <div class="contentFooter">                       
+                        <a href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消</a>
+                        <a href="javascript:;" class="btn btn-color disabled  m-r-10">扩展</a>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!--<div class="popup fade" style="display: none;">
+            <div class="popupDiv" style="display:none" id="createVolumePopup">
+                <div class="popupContent">
+                    <div class="contentHeader">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4>迁移卷拷贝</h4>
+                    </div>
+                    <div class="alert alert-info">
+                    	您已选择迁移池Pool 2 中的卷DiaNAS。 请选择该卷将迁移到的新池。源池和目标池的扩展数据块大小必需一致。
+                    </div>
+                    <div class="contentBody">
+                    	<table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td width="15%">名称</td>
+                                    <td width="25%">状态</td>
+                                    <td width="25%">可用容量</td>
+                                    <td width="30%">容量</td>
+                                </tr>
+                             </thead>
+                             <tbody>   
+                                <tr>
+                                    <td><input type="radio"></td>
+                                    <td>Pool 2</td>
+                                    <td>联机</td>
+                                    <td>4.77 TiB</td>
+                                    <td>4.88 TiB</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio"></td>
+                                    <td>Pool 2</td>
+                                    <td>联机</td>
+                                    <td>4.77 TiB</td>
+                                    <td>4.88 TiB</td>
+                                </tr>
+                                <tr class="selected">
+                                    <td><input type="radio"></td>
+                                    <td>Pool 2</td>
+                                    <td>联机</td>
+                                    <td>4.77 TiB</td>
+                                    <td>4.88 TiB</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio"></td>
+                                    <td>Pool 2</td>
+                                    <td>联机</td>
+                                    <td>4.77 TiB</td>
+                                    <td>4.88 TiB</td>
+                                </tr>
+                             </tbody>   
+                         </table>
+                    </div>
+                    <div class="contentFooter">
+                        
+                        <a href="javascript:;" id="closeAction" class="btn btn-light  m-r-10" data-dismiss="modal">取消</a>
+                        <a href="javascript:;" class="btn btn-color">迁移</a>
+                    </div>
+                </div>
+            </div>
+        </div>-->
             
         <div class="blockArea">
             <div class="tableBody">
