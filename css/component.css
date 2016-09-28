@@ -1,0 +1,326 @@
+/* ===========
+   Checkbox and Radio
+ =============*/
+.checkbox {
+  padding-left: 20px;
+}
+.checkbox label {
+  display: inline-block;
+  padding-left: 5px;
+  position: relative;
+}
+.checkbox label::before {
+  -o-transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  background-color: #484F5C;
+  border-radius: 1px;
+  border: 1px solid #666A76;
+  content: "";
+  display: inline-block;
+  height: 12px;
+  left: 0;
+  margin-left: -30px;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  width: 12px;
+  outline: none !important;
+}
+.checkbox label::after {
+  color: #555555;
+  display: inline-block;
+  font-size: 11px;
+  height: 12px;
+  left: 0;
+  margin-left: -30px;
+  padding-left: 3px;
+  padding-top: 1px;
+  position: absolute;
+  top: 0;
+  width: 12px;
+}
+.checkbox input[type="checkbox"] {
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+  outline: none !important;
+}
+.checkbox input[type="checkbox"]:disabled + label {
+  opacity: 0.65;
+}
+.checkbox input[type="checkbox"]:focus + label::before {
+  outline-offset: -2px;
+  outline: none;
+}
+.checkbox input[type="checkbox"]:checked + label::after {
+  content: "\f00c";
+  font-family: 'FontAwesome';
+}
+.checkbox input[type="checkbox"]:disabled + label::before {
+  background-color: #eeeeee;
+  cursor: not-allowed;
+}
+.checkbox.checkbox-circle label::before {
+  border-radius: 50%;
+}
+.checkbox.checkbox-inline {
+  margin-top: 0;
+}
+.checkbox.checkbox-single label {
+  height: 17px;
+}
+.checkbox-primary input[type="checkbox"]:checked + label::before {
+  background-color: #3bafda;
+  border-color: #3bafda;
+}
+.checkbox-primary input[type="checkbox"]:checked + label::after {
+  color: #ffffff;
+}
+.checkbox-danger input[type="checkbox"]:checked + label::before {
+  background-color: #ef5350;
+  border-color: #ef5350;
+}
+.checkbox-danger input[type="checkbox"]:checked + label::after {
+  color: #ffffff;
+}
+.checkbox-info input[type="checkbox"]:checked + label::before {
+  background-color: #3ddcf7;
+  border-color: #3ddcf7;
+}
+.checkbox-info input[type="checkbox"]:checked + label::after {
+  color: #ffffff;
+}
+.checkbox-warning input[type="checkbox"]:checked + label::before {
+  background-color: #ffaa00;
+  border-color: #ffaa00;
+}
+.checkbox-warning input[type="checkbox"]:checked + label::after {
+  color: #ffffff;
+}
+.checkbox-success input[type="checkbox"]:checked + label::before {
+  background-color: #00b19d;
+  border-color: #00b19d;
+}
+.checkbox-success input[type="checkbox"]:checked + label::after {
+  color: #ffffff;
+}
+.checkbox-purple input[type="checkbox"]:checked + label::before {
+  background-color: #7266ba;
+  border-color: #7266ba;
+}
+.checkbox-purple input[type="checkbox"]:checked + label::after {
+  color: #ffffff;
+}
+.checkbox-pink input[type="checkbox"]:checked + label::before {
+  background-color: #f76397;
+  border-color: #f76397;
+}
+.checkbox-pink input[type="checkbox"]:checked + label::after {
+  color: #ffffff;
+}
+.checkbox-inverse input[type="checkbox"]:checked + label::before {
+  background-color: #4c5667;
+  border-color: #4c5667;
+}
+.checkbox-inverse input[type="checkbox"]:checked + label::after {
+  color: #ffffff;
+}
+.radio {
+  padding-left: 20px;
+}
+.radio label {
+  display: inline-block;
+  padding-left: 5px;
+  position: relative;
+}
+.radio label::before {
+  -o-transition: border 0.5s ease-in-out;
+  -webkit-transition: border 0.5s ease-in-out;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+  content: "";
+  display: inline-block;
+  height: 17px;
+  left: 0;
+  margin-left: -20px;
+  outline: none !important;
+  position: absolute;
+  transition: border 0.5s ease-in-out;
+  width: 17px;
+}
+.radio label::after {
+  -moz-transition: -moz-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+  -ms-transform: scale(0, 0);
+  -o-transform: scale(0, 0);
+  -o-transition: -o-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+  -webkit-transform: scale(0, 0);
+  -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+  background-color: #555555;
+  border-radius: 50%;
+  content: " ";
+  display: inline-block;
+  height: 11px;
+  left: 3px;
+  margin-left: -20px;
+  position: absolute;
+  top: 3px;
+  transform: scale(0, 0);
+  transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+  width: 11px;
+}
+.radio input[type="radio"] {
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+  outline: none !important;
+}
+.radio input[type="radio"]:disabled + label {
+  opacity: 0.65;
+}
+.radio input[type="radio"]:focus + label::before {
+  outline-offset: -2px;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline: thin dotted;
+}
+.radio input[type="radio"]:checked + label::after {
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+.radio input[type="radio"]:disabled + label::before {
+  cursor: not-allowed;
+}
+.radio.radio-inline {
+  margin-top: 0;
+}
+.radio.radio-single label {
+  height: 17px;
+}
+.radio-primary input[type="radio"] + label::after {
+  background-color: #3bafda;
+}
+.radio-primary input[type="radio"]:checked + label::before {
+  border-color: #3bafda;
+}
+.radio-primary input[type="radio"]:checked + label::after {
+  background-color: #3bafda;
+}
+.radio-danger input[type="radio"] + label::after {
+  background-color: #ef5350;
+}
+.radio-danger input[type="radio"]:checked + label::before {
+  border-color: #ef5350;
+}
+.radio-danger input[type="radio"]:checked + label::after {
+  background-color: #ef5350;
+}
+.radio-info input[type="radio"] + label::after {
+  background-color: #3ddcf7;
+}
+.radio-info input[type="radio"]:checked + label::before {
+  border-color: #3ddcf7;
+}
+.radio-info input[type="radio"]:checked + label::after {
+  background-color: #3ddcf7;
+}
+.radio-warning input[type="radio"] + label::after {
+  background-color: #ffaa00;
+}
+.radio-warning input[type="radio"]:checked + label::before {
+  border-color: #ffaa00;
+}
+.radio-warning input[type="radio"]:checked + label::after {
+  background-color: #ffaa00;
+}
+.radio-success input[type="radio"] + label::after {
+  background-color: #00b19d;
+}
+.radio-success input[type="radio"]:checked + label::before {
+  border-color: #00b19d;
+}
+.radio-success input[type="radio"]:checked + label::after {
+  background-color: #00b19d;
+}
+
+
+/* ===========
+   Tables
+ =============*/
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  font-size:14px;
+}
+
+
+table > tbody > tr > td:first-child,table > thead > tr > th:first-child {
+    padding-left:25px;
+}
+table > tbody > tr > td:last-child,table > thead > tr > th:last-child {
+    padding-right:25px;
+}
+table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-bottom: 1px solid #374551;
+  padding: 8px 10px;
+  text-align:left;
+}
+.tableHeader table > thead > tr > th {
+    font-weight: normal;
+	vertical-align: bottom;
+	border-bottom-color:#0B50A2;
+}
+.table-hover > tbody > tr:hover > td,.table-hover > tbody > tr:hover > th{
+    background:rgba(11,80,162,0.2);}
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+    background:rgba(25,39,53,0.2);
+}
+table > tbody > tr.selected{background:rgba(11,80,162,0.5);}
+
+.tableHeader{
+  background: rgba(25,39,53,0.9);  padding:0 15px; margin-top:15px;
+}
+.tableHeader:after{clear: both;content: "."; display: block;font-size: 1px; height: 0;visibility: hidden;}
+.tableBody{margin:0 15px;}
+
+
+table thead .sorting,
+table thead .sorting_asc,
+table thead .sorting_desc,
+table thead .sorting_asc_disabled,
+table thead .sorting_desc_disabled {
+	cursor: pointer;
+	position: relative;
+}
+
+table thead .sorting:after,
+table thead .sorting_asc:after,
+table thead .sorting_desc:after {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	display: block;
+	font-family: 'Material-Design-Iconic-Font';
+	opacity: 0.6;
+}
+
+table thead .sorting:after {
+	opacity: 0.3;
+	content: '\f30c'; /* sort */
+}
+table thead .sorting_asc:after {
+	content: '\f2fe'; 
+}
+table thead .sorting_desc:after {
+	content: '\f303'; 
+}
+
+table thead .sorting_asc_disabled:after,
+table thead .sorting_desc_disabled:after {
+	color: #eee;
+}

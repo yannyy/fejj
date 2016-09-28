@@ -1,0 +1,346 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Netstor</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"> 
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link rel="stylesheet" href="../css/blue.css">
+    <link rel="stylesheet" href="../css/component.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link rel="stylesheet" href="../css/material-design-iconic-font.css">
+    <!-- ================== END BASE CSS STYLE ================== -->
+    <!-- ================== BEGIN BASE JS ================== -->
+
+    <!-- ================== END BASE JS ================== -->
+</head>
+
+<body>
+<div class="rFloatDiv">
+    <a class="collapseBtn" style="display:;"><i class="zmdi zmdi-format-list-bulleted"></i></a>
+</div>
+<!--左侧内容区-->
+<div id="sideDiv">
+    <div class="left_top">
+        <div class="nameTop">
+            <div class="name">
+            <em class="statusIcon bgGreen"><i class="zmdi zmdi-check"></i></em>
+            <big>Cluster-one</big></div>
+            <span class="globalAction fr"><a href="#"><i class="zmdi zmdi-download"></i></a><a href="#"><i class="zmdi zmdi-sun"></i></a></span>
+        </div>
+        <div class="ipJdt">
+            <div class="jdt"><span style="width:35%;"></span></div><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div>
+            <p><small>IP Address:</small> 192.168.0.21</p>
+        </div>
+    </div>
+    <div class="tabRaw"><a class="current" href="#.html"><i class="fa fa-navicon"></i><i>&nbsp;</i></sup></a><a href="#.html" class="bgGradul" ><i class="zmdi zmdi-tv-list"></i><sup class="bgGreen"><i>6</i></sup></a><a href="#.html" class="bgGradul" ><i class="zmdi zmdi-notifications-none"></i><sup class="bgRed"><i>8</i></sup></a>
+    </div>
+    <!--左侧菜单-->
+    <div class="sidebarContainer">
+        <div style="left: 0%; visibility: visible;" class="sidebar">
+            <div class="sidebaTitle">主菜单</div>
+            <div class="menu">
+                <ul>        
+                    <li class="" style=""><a href="#"><i class="zmdi zmdi-view-dashboard"><!--fa fa-dashboard--></i><span>监视</span></a>
+                        <ul class="sidebarNav" style="display:none;">
+                            <li class="select"><a href="#"><i class="fa fa-laptop"></i><span>系统</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-notifications-none"></i><span>事件</span></a></li>
+                            <li><a href="#"><i class="fa fa-bar-chart"></i><span>性能</span></a></li>
+                        </ul>
+                    </li>                
+                    <li><a href="#"><i class="fa fa-cube"></i><span>池</span></a></li>
+                    <li class="open select"><a href="#"><i class="fa fa-database"></i><span>卷</span></a></li>
+                    <li><a href="#"><i class="fa fa-building-o"></i><span>主机</span></a></li>
+                    <li><a href="#"><i class="zmdi zmdi-copy"></i><span>拷贝</span></a></li>
+                    <li><a href="#"><i class="fa fa fa-key"></i><span>访问</span></a></li>
+                    <li><a href="#"><i class="zmdi zmdi-wrench"></i><span>设置</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="left: 100%; visibility: visible;" class="sidebar">
+            <div class="sidebaTitle">正在运行的任务</div>
+            <div class="taskList">
+                <label>2个卷格式，1个阵列初始化</label>
+                <ul>
+                    <li>
+                        <span class="taskName">Volume0</span>
+                        <div class="progress">
+                            <div class="progressBar progressTask progress-animated" style="width: 36%;"><em>36%</em> </div>
+                        </div>
+                        <span class="taskTime"><small>剩余时间：12:27:00</small></span></li>
+                    <li>
+                        <span class="taskName">Volume0</span>
+                        <div class="progress">
+                            <div class="progressBar progressTask progress-animated" style="width: 36%;"><em>36%</em> </div>
+                        </div>
+                        <span class="taskTime"><small>剩余时间：12:27:00</small></span></li>
+                    <li>
+                        <span class="taskName">Volume0</span>
+                        <div class="progress">
+                            <div class="progressBar progressTask progress-animated" style="width: 36%;"><em>36%</em> </div>
+                        </div>
+                        <span class="taskTime"><small>剩余时间：12:27:00</small></span></li>
+                </ul>
+            </div>
+        </div>    
+    </div>    
+</div>
+<!--右侧top-->
+<div id="topDiv">
+    <div class="headerBar">
+        <div class="fr glysetting"><a href="#">Superuser（安全管理员）<span class="caret"></span></a><a href="#"><i class="zmdi zmdi-help-outline"></i></a></div>
+        <div class="sysName">NetStor<span>Control Center</span></div>
+    </div>
+</div>
+<!--右侧-->
+<div id="content">  
+    <!--右侧内容区-->
+    <div class="contentDiv">    
+        <!--面包屑导航-->
+        <ol class="breadcrumb">
+            <li><a href="javascript:;">Home</a></li>
+            <li><a href="javascript:;">卷</a></li>
+            <li class="active">Tables</li>
+        </ol>
+        <div class="fixedArea" style="">
+            <div class=""> 
+            <div  class="actionTopbar">
+                <div class="btn-group-lg">
+                    <div><a id="createVolume" data-target="#createVolumePopup" class="btn btn-primary m-r-10">创建卷</a></div>
+                    <div><a class="btn btn-default">重命名</a></div>
+                    <div><a class="btn btn-default">映射到主机</a></div>
+                    <div class="dropdown open">
+                        <a class="btn btn-default">更多操作<span class="caret m-l-5"></span></a>
+                        <ul class="dropdown-menu" style="display:none">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li class="disable"><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                  </div>    
+                  <div><form class="filter-group">
+                        <input type="text" class="form-control" placeholder="过滤...">
+                        <a class="btn btn-primary"><i class="fa fa-search"></i></a>
+                    </form>
+                  </div>
+            </div>
+            
+            <div class="tableHeader">
+                <table class="">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" name="all"></th> 
+                            <th width="15%" class="sorting_asc">#</th>
+                            <th width="35%" class="sorting">Username</th>
+                            <th width="50%" class="sorting_desc">Email Address</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        </div>
+        
+        <div class="popup fade" style="display: none;">
+            <div class="popupDiv" style="display:none" id="createVolumePopup">
+                <div class="popupContent">
+                    <div class="contentHeader">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Modal Dialog</h4>
+                    </div>
+                    <div class="contentBody">
+                        
+                        
+                    </div>
+                    <div class="contentFooter">
+                        <a href="javascript:;" id="closeAction" class="btn btn-default m-r-10" data-dismiss="modal">Close</a>
+                        <a href="javascript:;" class="btn btn-primary">Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="blockArea">
+            <div class="tableBody">
+                <table class="table table-hover">
+                    <tbody >
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td width="15%">1</td>
+                            <td width="35%">Nicky Almera</td>
+                            <td width="50%">nicky@hotmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>2</td>
+                            <td>Edmund Wong</td>
+                            <td>edmund@yahoo.com</td>
+                        </tr>
+                        <tr class="selected">
+                            <td><input type="checkbox"></td>
+                            <td>3</td>
+                            <td>Harvinder Singh</td>
+                            <td>harvinder@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>3</td>
+                            <td>Harvinder Singh</td>
+                            <td>harvinder@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>4</td>
+                            <td>Terry Khoo</td>
+                            <td>terry@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+              <!--  <div class="slimScrollBar" style="display: block; top: 32px; height: 116.379310344828px; z-index:1099;"></div>
+                <div class="slimScrollRail" style="display: block; height: 100%; z-index:1095;"></div>-->
+            </div>
+        </div>
+    </div>   
+</div>
+<script src="../js/jquery-1.9.1.js"></script>
+<script src="../js/table.js"></script>
+<script src="../js/dropdown.js"></script>
+<script src="../js/popup.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#createVolume').disableOnRowSelected();
+        $('#createVolume').popup();
+        $('#closeAction').hidePopup();
+    });
+</script>
+</body>
+</html>
