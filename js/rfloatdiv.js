@@ -44,6 +44,13 @@
 		},
 		toggleCollapseBtn: function(){
 			$(this).parent().toggleClass('active');	
+			$btns = $('a.collapseBtn');
+			$.each($btns, function(i, btn){
+				if($(btn).css('display') == 'block')
+					$(btn).css('display', 'none');
+				else
+					$(btn).css('display', 'block');
+			});
 		}
 	};
 
