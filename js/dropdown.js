@@ -23,6 +23,21 @@
 		}
 	}
 	
+	$.fn.dropdownBtn = function(){
+		var copoment = this;
+		var btnClicked = function(e){
+			e.stopPropagation();
+			var content = $(copoment).find('ul.dropdown-menu');
+			content.toggle();
+		}
+		var closeDropdown = function(e){
+			var content = $(copoment).find('ul.dropdown-menu');
+			content.hide();
+		}
+		$('body').bind('click', closeDropdown);
+		$(this).children('a').bind('click', btnClicked);
+	}
+
 	$(document).ready(function(){
 		dropdown.init();
 	});

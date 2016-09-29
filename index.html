@@ -285,9 +285,9 @@
 <!--右侧top-->
 <div id="topDiv">
     <div class="headerBar">
-        <div class="fr glysetting"><a href="#" class="dropdown-toggle">Superuser（安全管理员）<span class="caret"></span></a><a href="#"><i class="zmdi zmdi-help-outline"></i></a>
+        <div class="fr glysetting" id="userBtn"><a href="#" class="dropdown-toggle">Superuser（安全管理员）<span class="caret"></span></a><a href="#"><i class="zmdi zmdi-help-outline"></i></a>
             <div class="openDown">                       
-                <ul class="dropdown-menu" style="display:">
+                <ul class="dropdown-menu" style="display: none">
                     <li><a href="#">用户属性</a></li>
                     <li><a href="#">退出系统</a></li>
                 </ul>
@@ -379,5 +379,9 @@
 <script src="js/screen.js"></script>
 <script src="js/rfloatdiv.js"></script>
 <script src="js/sidediv.js"></script>
+<script src="js/dropdown.js"></script>
+<script type="text/javascript">
+	$('#userBtn').dropdownBtn();
+</script>
 </body>
 </html>
