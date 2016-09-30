@@ -22,6 +22,7 @@
 			if($('div.fixedArea')){
 				areaFix.actionBarTopFixed();	
 			}
+
 			areaFix.initFloatStatus();
 		},
 		actionBarTopFixed: function(){
@@ -29,6 +30,7 @@
 		},
 		initFloatStatus: function(){
 			areaFix.onWindowScroll();
+			areaFix.actionBarTop = $('div.fixedArea').outerHeight();
 		},
 		onWindowScroll:function(e){
 			/**
@@ -40,9 +42,8 @@
 			var scrollTop = $(window).scrollTop();
 
 
-			var actionBarTop = $('div.fixedArea').outerHeight();
 
-			if((scrollTop + 23) > actionBarTop) {
+			if((scrollTop + 23) > areaFix.actionBarTop) {
 				// top fixed
 				if (false == $('div.fixedArea').hasClass('floatArea')) 
 					$('div.fixedArea').addClass('floatArea');
