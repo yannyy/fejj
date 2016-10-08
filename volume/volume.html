@@ -44,7 +44,7 @@
             <div class="sidebaTitle">主菜单</div>
             <div class="menu">
                 <ul>        
-                    <li class="" style=""><a href=""><i class="zmdi zmdi-view-dashboard"><!--fa fa-dashboard--></i><span>监视</span></a>
+                    <li class="" style=""><a href="#"><i class="zmdi zmdi-view-dashboard"><!--fa fa-dashboard--></i><span>监视</span></a>
                         <ul class="sidebarNav" style="display:none;">
                             <li class=""><a href="../index.html"><i class="fa fa-laptop"></i><span>系统</span></a></li>
                             <li><a href="event.html"><i class="zmdi zmdi-notifications-none"></i><span>事件</span></a></li>
@@ -96,21 +96,30 @@
     </div>
 </div>
 <!--右侧-->
-<div id="content">  
+<div id="content"> 
+	 
     <!--右侧内容区-->
-    <div class="contentDiv">    
+    <div class="contentDiv">
+
+        <div class="alertDiv">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+               网络管理协议设置成功. <!--<a href="#" class="alert-link">查看详细</a>-->
+            </div> 
+        </div>
+              
         <!--面包屑导航-->
         <ol class="breadcrumb">
             <li><a href="javascript:;">Home</a></li>
             <li><a href="javascript:;">卷</a></li>
             <li class="active">Tables</li>
-        </ol>
+        </ol>        
         <div class="fixedArea" style="">
             <div class=""> 
             <div  class="actionTopbar">
                 <div class="btn-group-lg">
                     <div><a id="createVolume" data-target="#createVolumePopup" class="btn btn-primary m-r-10">创建卷</a></div>
-                    <div><a class="btn btn-default">重命名</a></div>
+                    <div><a id="renameVolume" class="btn btn-default" data-target="#renameVolumePopup">重命名</a></div>
                     <div><a class="btn btn-default">映射到主机</a></div>
                     <div class="dropdown open">
                         <a class="btn btn-default">更多操作<span class="caret m-l-5"></span></a>
@@ -146,11 +155,27 @@
         </div>
         </div>
         
+        <!--全局模态框 加载中-->
+        <div id="globalLoading" class="popup popLoading fade" style="display: block;">
+        	<div class="popupDiv">
+            	<div class="popupContent">
+            		<div class="loadingDiv"><i class="fa fa-spin fa-spinner  m-r-10"></i><span>全局数据加载，请稍等......</span></div></div></div>
+            <div class="popupBackdrop"></div>
+        </div>
+        
+        <!--半全局模态框 加载中-->
+        <div id="loading" class="popup popLoading LoadingPosition fade" style="display: ;">
+        	<div class="popupDiv">
+            	<div class="popupContent">
+            		<div class="loadingDiv"><i class="fa fa-spin fa-spinner  m-r-10"></i><span>半全局数据加载，请稍等......</span></div></div></div>
+            <div class="popupBackdrop"></div>
+        </div>
+        
         <div class="popup fade" style="display: none;">
             <div class="popupDiv" style="display:none" id="createVolumePopup">
                 <div class="popupContent">
                     <div class="contentHeader">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <button type="button" class="close" data-dismiss="#createVolumePopup" aria-hidden="true">×</button>
                         <h4>扩展卷－DiaNAS</h4>
                     </div>
                     <div class="alert alert-info">
@@ -174,9 +199,11 @@
                             </tbody>
                          </table>
                     </div>
-                    <div class="contentFooter">                       
-                        <a href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消</a>
-                        <a href="javascript:;" class="btn btn-color disabled  m-r-10">扩展</a>
+                    <div class="contentFooter"> 
+                        <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消</button>
+                        <button class="btn btn-color  m-r-10" type="submit">扩展</button>                 
+                        <!--<a href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消</a>
+                        <a href="javascript:;" class="btn btn-color disabled  m-r-10">扩展</a>-->
                     </div>
                 </div>
             </div>
@@ -186,7 +213,7 @@
             <div class="popupDiv" style="display:none" id="createVolumePopup">
                 <div class="popupContent">
                     <div class="contentHeader">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <button type="button" class="close" data-dismiss="#createVolumePopup" aria-hidden="true">×</button>
                         <h4>迁移卷拷贝</h4>
                     </div>
                     <div class="alert alert-info">
@@ -237,7 +264,68 @@
                     </div>
                     <div class="contentFooter">
                         
-                        <a href="javascript:;" id="closeAction" class="btn btn-light  m-r-10" data-dismiss="modal">取消</a>
+                        <a href="javascript:;" id="closeAction" class="btn btn-light  m-r-10" data-dismiss="#createVolumePopup">取消</a>
+                        <a href="javascript:;" class="btn btn-color">迁移</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup fade" style="display: none;">
+            <div class="popupDiv" style="display:none" id="renameVolumePopup">
+                <div class="popupContent">
+                    <div class="contentHeader">
+                        <button type="button" class="close" data-dismiss="#renameVolumePopup" aria-hidden="true">×</button>
+                        <h4>卷-重命名</h4>
+                    </div>
+                    <div class="alert alert-info">
+                        您已选择迁移池Pool 2 中的卷DiaNAS。 请选择该卷将迁移到的新池。源池和目标池的扩展数据块大小必需一致。
+                    </div>
+                    <div class="contentBody">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td width="15%">名称</td>
+                                    <td width="25%">状态</td>
+                                    <td width="25%">可用容量</td>
+                                    <td width="30%">容量</td>
+                                </tr>
+                             </thead>
+                             <tbody>   
+                                <tr>
+                                    <td><input type="radio"></td>
+                                    <td>Pool 2</td>
+                                    <td>联机</td>
+                                    <td>4.77 TiB</td>
+                                    <td>4.88 TiB</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio"></td>
+                                    <td>Pool 2</td>
+                                    <td>联机</td>
+                                    <td>4.77 TiB</td>
+                                    <td>4.88 TiB</td>
+                                </tr>
+                                <tr class="selected">
+                                    <td><input type="radio"></td>
+                                    <td>Pool 2</td>
+                                    <td>联机</td>
+                                    <td>4.77 TiB</td>
+                                    <td>4.88 TiB</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio"></td>
+                                    <td>Pool 2</td>
+                                    <td>联机</td>
+                                    <td>4.77 TiB</td>
+                                    <td>4.88 TiB</td>
+                                </tr>
+                             </tbody>   
+                         </table>
+                    </div>
+                    <div class="contentFooter">
+                        
+                        <a href="javascript:;" id="closeRenameAction" class="btn btn-light  m-r-10" data-dismiss="#renameVolumePopup">取消</a>
                         <a href="javascript:;" class="btn btn-color">迁移</a>
                     </div>
                 </div>
@@ -442,11 +530,14 @@
 <script src="../js/dropdown.js"></script>
 <script src="../js/popup.js"></script>
 <script src="../js/sidediv.js"></script>
+<script src="../js/common.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         $('#createVolume').disableOnRowSelected();
         $('#createVolume').popup();
         $('#closeAction').hidePopup();
+        $('#renameVolume').popup();
+        $('#closeRenameAction').hidePopup();
     });
 </script>
 </body>
