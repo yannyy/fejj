@@ -9,3 +9,12 @@
 
 	hideLoading();
 
+##全局Loading
+显示
+
+	showGlobalLoading();
+
+隐藏
+
+	hideGlobalLoading();
+
