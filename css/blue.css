@@ -55,6 +55,7 @@ em.statusIcon i{transform: scale(1.5);}
 .m-r-10, a.m-r-10{margin-right:10px;}
 .m-l-5{margin-left:5px;}
 .m-l-35{margin-left:36px;}
+.blockArea.m-b-header{margin-bottom: 84px}
 
 .progress {background-color: #6C767E; height: 16px;overflow: hidden;}
 .progressBar {font-size: 12px;line-height: 16px;color:#fff;} 

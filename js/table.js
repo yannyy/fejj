@@ -30,7 +30,7 @@
 		},
 		initFloatStatus: function(){
 			areaFix.onWindowScroll();
-			areaFix.actionBarTop = $('div.fixedArea').outerHeight();
+			areaFix.actionBarTop = $('div.fixedArea').offset().top;
 		},
 		onWindowScroll:function(e){
 			/**
@@ -48,12 +48,18 @@
 				if (false == $('div.fixedArea').hasClass('floatArea')) 
 					$('div.fixedArea').addClass('floatArea');
 
+				if (false == $('div.fixedArea').hasClass('m-b-header')) 
+					$('div.fixedArea').addClass('m-b-header');
+
 				if(false == $('div.fixedArea').children('div').hasClass('fixedContent'))
 					$('div.fixedArea').children('div').addClass('fixedContent');
 			} else {
 				// dismiss top fixed
 				if (true == $('div.fixedArea').hasClass('floatArea'))
 					$('div.fixedArea').removeClass('floatArea');
+
+				if (true == $('div.fixedArea').hasClass('m-b-header'))
+					$('div.fixedArea').removeClass('m-b-header');
 
 				if (true == $('div.fixedArea').children('div').hasClass('fixedContent'))
 					$('div.fixedArea').children('div').removeClass('fixedContent');
