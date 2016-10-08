@@ -2,20 +2,27 @@
 	var popup = {
 		target: null,
 		init: function(target){
-			popup.target = target;
-			popup.hide();
+			popup.hide(target);
 
-			$(target).find('button.close').bind('click', popup.hide);
+			$(target).find('button.close').bind('click', popup.onHide);
 		},
-		hide:function(){
-			$(popup.target).hide();
-			$(popup.target).parent().hide();
-			$(popup.target).parent().next('div.popupBackdrop').remove();
+		hide:function(target){
+			$(target).hide();
+			$(target).parent().hide();
+			$(target).parent().next('div.popupBackdrop').remove();
 		},
-		show:function(){
-			$(popup.target).show();
-			$(popup.target).parent().show();
-			$(popup.target).parent().after('<div class="popupBackdrop"></div>');
+		show:function(target){
+			$(target).show();
+			$(target).parent().show();
+			$(target).parent().after('<div class="popupBackdrop"></div>');
+		},
+		onHide: function(e){
+			var $node = $(e.target);
+			popup.hide($node.attr('data-dismiss'));
+		},
+		onShow: function(e){
+			var $node = $(e.target);
+			popup.show($node.attr('data-target'));
 		}
 	}
 	
@@ -23,10 +30,10 @@
 		var popupDiv = $(this).attr('data-target');
 		popup.init(popupDiv);
 
-		$(this).bind('click', popup.show);
+		$(this).bind('click', popup.onShow);
 	}
 
 	$.fn.hidePopup = function(){
-		$(this).bind('click', popup.hide);
+		$(this).bind('click', popup.onHide);
 	}
 })(jQuery);
