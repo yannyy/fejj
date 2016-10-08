@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<table id="dataList">
+			<th>
+				<td>name</td>
+				<td>age</td>
+			</th>
+		</table>	
+	</div>	
+<script src="../js/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			url: 'data.php',
+			success: function(result){
+				$.each(result, function(index, item){
+					
+				});
+			}
+		});	
+	});	
+</script>
+</body>
+</html>
