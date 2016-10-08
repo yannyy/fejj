@@ -28,3 +28,9 @@ function showMessage(msg){
 	var alertDiv = $('<div class="alertDiv"></div>');
 	alertDiv.appendTo($('div.contentDiv'));
 }
+
+function hidePopup(target){
+	$(target).hide();
+	$(target).parent().hide();
+	$(target).parent().next('div.popupBackdrop').remove();
+}
