@@ -74,8 +74,88 @@
 <div id="content">  
     <!--右侧内容区-->
     <div class="contentDiv">
+    
+   	 <div class="popup fade" style="display: block;">
+            <div class="popupDiv" style="display:">
+                <div class="popupContent" id="wizard">
+                    <div class="contentHeader">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4>配置远程</h4>
+                    </div>
+                   
+                    <div class="alertDesc alertDesc-info">
+                    	您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容量。
+                    </div>
+                    <div class="contentBody">
+                        <div class="wizardStep">
+                            <table class="table-input">
+                                <tbody >
+                                    <tr>
+                                        <td><label>名称:</label></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="wizardStep">
+                            <table class="table-input">
+                                <tbody >
+                                    <tr>
+                                        <td><label>容量:</label></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                        <div class="wizardStep">
+                            <table class="table-input">
+                                <tbody >
+                                    <tr>
+                                        <td><label>扩展:</label></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                        <div class="wizardStep">
+                            <table class="table-input">
+                                <tbody >
+                                    <tr>
+                                        <td><label>成功</label></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+                    <div class="progress-striped stepDiv">
+                        <div class="progress-bar wizardProgress"></div>
+                    </div>
+                    
+                    <!--<div class="contentBody">
+                    	<div class="infoContent">
+                            <div class="resultDiv fontGreen"><i class="zmdi zmdi-check "></i>任务完成<em>100%</em></div>
+                            <div class="actionBar"><a href="#" class="textlink"><i class="zmdi zmdi-chevron-down m-r-5"></i><i class="zmdi zmdi-chevron-right m-r-5"></i><span>查看更多详细状态</span></a></div>
+                            <div class="detailSummary scrollBar">
+                                <ul>
+                                    <li>您已选择扩展卷－DiaNAS的容量，<em> 下午2：10</em></li>
+                                    <li>该操作会增加卷中的可用容量。<em> 下午2：10</em></li>
+                                    <li class="fontBlue">et of 777 icons in Material Design Iconic Font<em> 下午2：10</em></li>
+                                </ul>
+                            </div>
+                            
+                        </div>    
+                    </div>-->
+                    
+                    <div class="contentFooter"> 
+                        <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消</button>                     
+                        <button class="btn btn-color  m-r-10 wizardNext" type="button">下一步</button>
+                        <button class="btn btn-color  m-r-10 wizardPrev" type="button">上一步</button> 
+                    </div>
+                </div>
+            </div>   
+       </div>           
       
-        <div class="popup fade" style="display: block;">
+        <div class="popup fade" style="display: ;">
             <div class="popupDiv" style="display:" id="createVolumePopup">
                 <div class="popupContent">
                     <div class="contentHeader">
@@ -94,14 +174,7 @@
                                 </tr>
                                 <tr>
                                     <td><label>iSCSI端口:</label></td>
-                                    <td>
-                                        <div class="inDescrement">
-                                            <input type="text" class="form-control">
-                                            <span class="actionInnerTd">
-                                                <a><i class="zmdi zmdi-plus-circle"></i></a>
-                                                <a><i class="zmdi zmdi-minus-circle"></i></a>
-                                            </span></td>                                  
-                                        </div>
+                                    <td><input type="text" class="form-control"><span class="actionInnerTd"><a><i class="zmdi zmdi-plus-circle"></i></a><a><i class="zmdi zmdi-minus-circle"></i></a></span></td>                                  
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -135,63 +208,12 @@
                                 </tr>-->
                                 <tr>
                                     <td><label>后台拷贝速率:</label></td>
-                                    <td><input type="text" class="form-control" disabled id="default_rangeSlider" name="default_rangeSlider" value="20" style="display: ;"></td>                                  
+                                    <td><input type="text" class="form-control" disabled id="speed" name="default_rangeSlider" value="20" style="display: ;"></td>                                  
                                 </tr>
                                 <tr>
                                     <td colspan="2">
                                     <div class="m-l-35 m-t-10">
-                                        <span class="irs irs-with-grid" id="irs-3">
-
-                                            <span class="irs">
-                                            	<span class="irs-line">
-                                                    <span class="irs-line-left"></span>
-                                                    <span class="irs-line-mid"></span>
-                                                    <span class="irs-line-right"></span>
-                                           		</span>
-                                                <span class="irs-min" style="display: block;">更慢 0</span>
-                                                <span class="irs-max" style="display: block;">更快 100</span>
-                                                <span class="irs-from" style="display: none;">0</span>
-                                                <span class="irs-to" style="display: none;">0</span>
-                                                <span class="irs-single" style="left: 72px;">20</span>
-                                                <span class="irs-diapason" style="left: 80; width:300px;"></span>
-                                                <span class="irs-slider" style="left: 73px;"></span>                
-                                            </span>
-                                            
-                                            <span class="irs-grid">
-                                            	<span class="irs-grid-pol small" style="left: 0px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 20px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 40px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 60px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 80px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 100px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 120px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 140px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 160px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 180px;"></span>
-                                                
-                                                <span class="irs-grid-pol small" style="left: 200px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 220px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 240px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 260px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 280px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 300px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 320px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 340px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 360px;"></span>
-                                                <span class="irs-grid-pol small" style="left: 380px;"></span>
-                                                
-                                                <!--
-                                                <span class="irs-grid-pol" style="left: 0px;"></span>
-                                                <span class="irs-grid-text" style="left: 0px; text-align: left;"></span>
-                                                <span class="irs-grid-pol" style="left: 73px;"></span>
-                                                <span class="irs-grid-text" style="left: 23px;"></span>
-                                                <span class="irs-grid-pol" style="left: 147px;"></span>
-                                                <span class="irs-grid-text" style="left: 97px;"></span>
-                                                <span class="irs-grid-pol" style="left: 220px;"></span>
-                                                <span class="irs-grid-text" style="left: 170px;"></span>
-                                                <span class="irs-grid-pol" style="left: 293px;"></span><span class="irs-grid-text" style="left: 193px; text-align: right;"></span>-->
-                                            </span>
-                                        </span>
+                                        <input type="text" id="sliderT"></td>
                                     </div>
                                     </td>                                  
                                 </tr>
@@ -280,11 +302,26 @@
         </div>
     </div>   
 </div>
-<script src="../js/ion.rangeSlider.min.js"></script>
-<script src="../js/jquery-1.9.1.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/slider.js"></script>
+<script src="../js/wizard.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
+        var slider = $('#sliderT').ionRangeSlider({
+            min:0,
+            max:100,
+            step:10,
+            grid: true
+        });
+        $('#sliderT').bind('change', function(e){
+            $('#speed').val(this.value); 
+        });
+
+        $('#wizard').wizard();
+        $('#wizard').bind('finish', function(e){
+            debugger; 
+        })
     });
 </script>
 </body>

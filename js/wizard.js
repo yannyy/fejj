@@ -1,5 +1,4 @@
 (function($){
-	
 	$.fn.wizard = function(){
 		var wizard = this;
 		var steps= $(wizard).find('div.wizardStep');
@@ -23,9 +22,18 @@
 				wizard.$prev.attr('disabled', false);
 
 			if(wizard.$current == (wizard.$steps.length - 1))
-				wizard.$next.attr('disabled', true);
-			else
+				wizard.$next.text('完成');
+			else{
+				wizard.$next.text('下一步');
 				wizard.$next.attr('disabled', false);
+			}
+
+			var progress = Math.round((wizard.$current + 1)*100/wizard.$steps.length) + '%';
+			$(wizard).find('div.wizardProgress').css('width', progress);
+		}
+
+		wizard.finish = function(){
+			wizard.trigger('finish', null, this);	
 		}
 
 		var onPrev = function(e){
@@ -36,10 +44,13 @@
 		}
 
 		var onNext = function(e){
-			if(wizard.$current < (wizard.$steps.length - 1))
+			if(wizard.$current < (wizard.$steps.length - 1)){
 				wizard.$current ++;
+				init();
+			}else if(wizard.$current == (wizard.$steps.length - 1)){
+				wizard.finish();
+			}
 
-			init();
 		}
 
 		wizard.$prev.bind('click', onPrev);
