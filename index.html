@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/component.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/material-design-iconic-font.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/scroll.css">
     <!-- ================== END BASE CSS STYLE ================== -->
 
 </head>
@@ -28,7 +30,7 @@
         </div>
         
         <div class="slimScrollDiv" id="slim1" style="position: relative; overflow: hidden; width: auto; height: 380px;">
-        	<div style="overflow: hidden; width: auto; height: 380px;">
+        	<div class="mCustomScrollbar" style="overflow: hidden; width: auto; height: 380px;">
               
               <ul class="clusterList">
 				<li class="select"><a>
@@ -97,12 +99,12 @@
             </div>
 
 
-            <div class="slimScrollBar" style="display: block; top: 32px; height: 116.379310344828px; z-index:1099;"></div>
-            <div class="slimScrollRail" style="display: block; height: 100%; z-index:1095;"></div>
+            <!--div class="slimScrollBar" style="display: block; top: 32px; height: 116.379310344828px; z-index:1099;"></div>
+            <div class="slimScrollRail" style="display: block; height: 100%; z-index:1095;"></div-->
        </div>
 
        <div class="slimScrollDiv" id="slim2" style="display:none;position: relative; overflow: hidden; width: auto; height: 380px;">
-        	<div style="overflow: hidden; width: auto; height: 380px;">
+        	<div class="mCustomScrollbar" style="overflow: hidden; width: auto; height: 380px;">
               
               <ul class="clusterList">
 				<li class="select"><a>
@@ -171,8 +173,8 @@
             </div>
             
 
-            <div class="slimScrollBar" style="display: block; top: 32px; height: 116.379310344828px; z-index:1099;"></div>
-            <div class="slimScrollRail" style="display: block; height: 100%; z-index:1095;"></div>
+            <!-- div class="slimScrollBar" style="display: block; top: 32px; height: 116.379310344828px; z-index:1099;"></div>
+            <div class="slimScrollRail" style="display: block; height: 100%; z-index:1095;"></div-->
        </div>
 	
 		<div class="actionBar"><a href="#" class="textlinkb"><i class="zmdi zmdi-plus"></i><span>添加设备</span></a> <a href="#" class="textlink">删除设备</a><a href="#" class="textlink">删除本机柜</a></div>
@@ -380,8 +382,14 @@
 <script src="js/rfloatdiv.js"></script>
 <script src="js/sidediv.js"></script>
 <script src="js/dropdown.js"></script>
+<script src="js/scroll.js"></script>
 <script type="text/javascript">
-	$('#userBtn').dropdownBtn();
+	$(function(){
+		$('#userBtn').dropdownBtn();
+		$("#content-1").mCustomScrollbar({
+			theme:"minimal"
+		});
+	});
 </script>
 </body>
 </html>

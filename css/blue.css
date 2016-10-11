@@ -257,13 +257,23 @@ a.collapseBtn i{padding-top:8px;padding-left:11px;}
 .rFloatDiv .nr{ padding:10px 0; display:block; position:relative;}
 .rFloatDiv .tittle{line-height: 36px; padding: 2px 15px 5px 15px; color: #FFFFFF; font-size:16px; opacity:.8;}
 .rFloatDiv .tittle a{}
-.rFloatDiv .tabDiv{width:100%;height: 30px;}
-.rFloatDiv .tabDiv div{border-bottom: 1px solid #0B50A2; margin: 0 15px;}
-.rFloatDiv .tabDiv div:after{clear: both;content: "."; display: block;font-size: 1px; height: 0;visibility: hidden;}
-.rFloatDiv .tabDiv a{float:left; font-size:14px; color:#8a9396; display:block; padding:0 10px;line-height: 30px; margin:0 1px;}
-.rFloatDiv .tabDiv a:hover{background:rgba(25,39,53,1.0)}
-.rFloatDiv .tabDiv .select{background:#192735; line-height: 29px;border-top: 1px solid #293847;color:#fff; }
-.rFloatDiv .actionBar{ margin:20px 10px 10px;}
+.tabDiv{width:100%;height: 35px;border-bottom: 1px solid #293847; border-top:1px solid #111;}
+.tabDiv div{/*border-bottom: 1px solid #0B50A2;*/ margin: 0 15px;}
+.tabDiv div:after{clear: both;content: "."; display: block;font-size: 1px; height: 0;visibility: hidden; }
+.tabDiv li a{float:left;  display:block; padding:0 10px;line-height: 33px; margin:0 1px 0 0;}
+.tabDiv li a{font-size:14px; color:#8a9396; border-left:1px solid #192735;}
+.tabDiv li a:hover{background:rgba(25,39,53,1.0);}
+.tabDiv li.select a{background:rgba(11,80,162,0.85);border-top: 1px solid #0B50A2;color:#fff;line-height: 34px; margin-top:-1px;}
+.tabDiv li.select a:hover{background:rgba(11,80,162,0.85); }
+
+.mainTabDiv{margin-top:10px;margin-bottom:3px;}
+.mainTabDiv .tabDiv{padding:px;height: 38px;}
+.mainTabDiv .tabDiv li{ }
+.mainTabDiv .tabDiv li a {line-height: 36px;padding:0px 40px 0 35px;}
+.mainTabDiv .tabDiv li a i{padding-right:6px;}
+
+.rFloatDiv .tabDiv{border-bottom:;}
+.rFloatDiv .actionBar{ margin:20px 10px 10px;height: 38px;}
 
 .rFloatDiv .clusterList{ display: block; width:100%;}
 .rFloatDiv .clusterList li.select{ background: rgba(255,255,255,0.05)}
@@ -317,11 +327,13 @@ ul.dropdown-menu{margin: 2px 0 0;text-align: left; color:#8a9396;font-size: 12px
 .blockArea .slimScrollDiv{position:relative;}
 .blockArea .slimScrollBar,.blockArea .slimScrollRail{ right:-15px; width:14px;}
 .contentDiv:after, .blockArea:after, .floatArea:after{clear: both;content: "."; display: block;font-size: 1px; height: 0;visibility: hidden;}
-.fixedContent { background:rgba(25,39,53,0.9); margin-left:230px;padding-top:3px;}
+.fixedContent { margin-left:230px;padding-top:3px;}
 .fixedContent :after{clear: both;content: "."; display: block;font-size: 1px; height: 0;visibility: hidden;}
 .fixedContent .tableHeader{margin-top:8px;margin-right:20px;}
+.blockArea .tableHeader{margin-top:0;}
+.actionTopbar+.blockArea{margin-top:10px;}
 .fixedContent .actionTopbar{margin:4px 0 0px 15px; }
-.floatArea{width:100%;position: fixed;z-index: 1020;left: 0;top: 45px;}
+.floatArea{width:100%;position: fixed;z-index: 1020;left: 0;top: 45px; background:rgba(25,39,53,0.9);box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);}
 
 .tableSelectInfo{ width: 40%;color: #8a9396;font-size: 12px;  padding-top: 10px;white-space: nowrap; overflow:hidden;float: left;margin-right: 10px;}
 .tablePaganation{}
@@ -348,9 +360,9 @@ button.close:hover{opacity:1;}
 .contentFooter a, .contentFooter button{ float:right;}
 .contentHeader:after, .contentBody:after, .contentFooter:after{clear: both;content: "."; display: block;font-size: 1px; height: 0;visibility: hidden;}
 
-.alertDesc { padding: 15px;margin-bottom: 20px;border:none; background:none; padding:10px 20px 5px; margin:0 20px; width:auto;}
+.alertDesc { padding: 15px 0;border:none; background:none;  width:auto; opacity:.8;}
 .alertDesc-info {color: #8a9396; font-size:12px;}
-.contentHeader+.alertDesc {}
+.popupContent .alertDesc { padding:10px 20px 5px; margin:0 20px;opacity:1;}
 
 .actionInnerTd{margin:2px 10px;}
 .actionInnerTd a{font-size:20px;color:rgba(255,255,255,0.4); margin:0 2px; cursor:pointer;width:22px;display: inline-block;vertical-align: text-top;}
@@ -379,3 +391,8 @@ ul.pagination {display: inline-block;padding-left: 0;  border-radius: 0px;margin
 .detailSummary{background: rgba(0,0,0,.05);}
 .detailSummary em{float:right; color:#97aaaf !important;}
 .detailSummary li{ font-size:12px; line-height:18px; padding:3px 0;}
+
+
+.contentBody fieldset{ border:1px solid #374551; margin:0;}
+.contentBody fieldset + fieldset{ margin-top:5px;}
+.contentBody legend{ padding:5px; font-size:14px; background-color:transparent;letter-spacing:2px; color:#8a9396;}
