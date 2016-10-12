@@ -1,5 +1,7 @@
 (function($){
 	var areaFix = {
+		blockAreaOffset: {},
+		actionBarTop: 0,
 		init: function(){
 			areaFix.fixedInit();
 			areaFix.tableSelectInit();
@@ -23,14 +25,19 @@
 				areaFix.actionBarTopFixed();	
 			}
 
+			areaFix.blockAreaOffset = $('div.blockArea').offset();
+
 			areaFix.initFloatStatus();
 		},
 		actionBarTopFixed: function(){
 			$(window).bind('scroll', areaFix.onWindowScroll);
 		},
-		initFloatStatus: function(){
-			areaFix.onWindowScroll();
+		resize: function(e){
 			areaFix.actionBarTop = $('div.fixedArea').offset().top;
+		},
+		initFloatStatus: function(){
+			areaFix.actionBarTop = $('div.fixedArea').offset().top;
+			areaFix.onWindowScroll();
 		},
 		onWindowScroll:function(e){
 			/**
@@ -42,24 +49,20 @@
 			var scrollTop = $(window).scrollTop();
 
 
-
-			if((scrollTop + 23) > areaFix.actionBarTop) {
+			if((scrollTop) > areaFix.actionBarTop) {
 				// top fixed
+				$('div.blockArea').addClass('m-b-fix');
 				if (false == $('div.fixedArea').hasClass('floatArea')) 
 					$('div.fixedArea').addClass('floatArea');
-
-				if (false == $('div.fixedArea').hasClass('m-b-header')) 
-					$('div.fixedArea').addClass('m-b-header');
 
 				if(false == $('div.fixedArea').children('div').hasClass('fixedContent'))
 					$('div.fixedArea').children('div').addClass('fixedContent');
 			} else {
 				// dismiss top fixed
+				$('div.blockArea').removeClass('m-b-fix');
+
 				if (true == $('div.fixedArea').hasClass('floatArea'))
 					$('div.fixedArea').removeClass('floatArea');
-
-				if (true == $('div.fixedArea').hasClass('m-b-header'))
-					$('div.fixedArea').removeClass('m-b-header');
 
 				if (true == $('div.fixedArea').children('div').hasClass('fixedContent'))
 					$('div.fixedArea').children('div').removeClass('fixedContent');
@@ -112,6 +115,8 @@
 		}
 	}
 
+	window.areaFix = areaFix;
+
 	$.fn.disableOnRowSelected = function(){
 		var target = $(this);
 		
@@ -142,5 +147,8 @@
 	}
 	$(document).ready(function(){
 		areaFix.init();
+		$(window).bind('fixedResize', function(e){
+			window.areaFix.resize();
+		});
 	});
 })(jQuery);

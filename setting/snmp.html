@@ -113,13 +113,13 @@
             	<div class="tabDiv bgGradul">
             		<ul class="mainTab">
                         <li class="">
-                            <a href="">
+                            <a href="javascript:;" data-toggler="#emailPane">
                                 <i class="fa fa-envelope-o"></i>
                                 <span>电子邮件</span>
                             </a>
                         </li>
                         <li class="select">
-                            <a href="" data-toggle="tab" aria-expanded="false">
+                            <a href="javascript:;" data-toggle="#snmpPane" aria-expanded="false">
                                 <i class="zmdi zmdi-share"></i>
                                 <span>SNMP</span>
                             </a>
@@ -167,7 +167,6 @@
         
         
         <div class="blockArea">    
-           
            <div class="tableBody">     
                 <table class="table table-hover">
                     <tbody >
@@ -285,25 +284,13 @@
                 </table>
               <!--  <div class="slimScrollBar" style="display: block; top: 32px; height: 116.379310344828px; z-index:1099;"></div>
                 <div class="slimScrollRail" style="display: block; height: 100%; z-index:1095;"></div>-->
-            </div>
+        </div>
         </div>
     </div>   
 </div>
 <script src="../js/jquery.js"></script>
 <script src="../js/table.js"></script>
-<script src="../js/dropdown.js"></script>
-<script src="../js/popup.js"></script>
-<script src="../js/sidediv.js"></script>
-<script src="../js/alert.js"></script>
-<script src="../js/common.js"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('#createVolume').disableOnRowSelected();
-        $('#createVolume').popup();
-        $('#closeAction').hidePopup();
-        $('#renameVolume').popup();
-        $('#closeRenameAction').hidePopup();
-    });
 </script>
 </body>
 </html>
