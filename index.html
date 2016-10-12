@@ -26,7 +26,14 @@
 	<div class="nr">
 		<div class="tittle">设备列表<a href="#" class="fr textlink">添加机柜</a></div>
 		<div class="tabDiv bgGradul">
-        	<div><a href="#" class="select" data-target="#slim1">机柜1</a><a href="#" data-target="#slim2">机柜2</a></div>
+        	<div>
+        		<ul>
+        			<li class="select">
+        				<a href="javascript:;" data-target="#slim1">机柜1</a >
+        			</li>
+        			<li><a href="javascript:;" data-target="#slim2">机柜2</a ></li>
+        		</ul>
+        	</div>
         </div>
         
         <div class="slimScrollDiv" id="slim1" style="position: relative; overflow: hidden; width: auto; height: 380px;">
@@ -36,8 +43,8 @@
 				<li class="select"><a>
 					<div class="fl leftPic">
                     	<span><input type="checkbox"></span>
-						<!---<span class="checkbox"><input type="checkbox"><label></label></span>--->
-						<em>01</em>
+						<!--<span class="checkbox"><input type="checkbox"><label></label></span>-->
+						<em>机柜1</em>
 						<span class="clusterIcon"><i class="fa fa-hdd-o"></i></span>
 					</div>
 					<div class="fl rightInfo">
@@ -97,10 +104,6 @@
 			</ul>       
                                 
             </div>
-
-
-            <!--div class="slimScrollBar" style="display: block; top: 32px; height: 116.379310344828px; z-index:1099;"></div>
-            <div class="slimScrollRail" style="display: block; height: 100%; z-index:1095;"></div-->
        </div>
 
        <div class="slimScrollDiv" id="slim2" style="display:none;position: relative; overflow: hidden; width: auto; height: 380px;">
@@ -311,7 +314,7 @@
     </ol>
 	
 	<div class="centerRaw">
-		<div class="leftCol">
+		<div class="leftCol" id="imgscrollview">
 			<div class="dDiv">
 				<ul>
 					<li class="current"><a href="#">●</a></li>
@@ -383,12 +386,15 @@
 <script src="js/sidediv.js"></script>
 <script src="js/dropdown.js"></script>
 <script src="js/scroll.js"></script>
+<script src="js/imgscrollview.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$('#userBtn').dropdownBtn();
 		$("#content-1").mCustomScrollbar({
 			theme:"minimal"
 		});
+
+		$('#imgscrollview').imgscrollimg();
 	});
 </script>
 </body>

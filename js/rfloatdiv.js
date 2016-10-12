@@ -22,23 +22,19 @@
 			if(tabId == rFloatDiv.defaultSlim)
 				return false; 
 
-		    var tab = $('.rFloatDiv').find('div.tabDiv').children('div');
+		    var tabs = $('.rFloatDiv').find('div.tabDiv').find('a');
 		    
-			$.each(tab.children(), function(i, item){
-				if($(item).hasClass('select'))
-					$(item).removeClass('select');
+			$.each(tabs, function(i, item){
+				if($(item).parent().hasClass('select'))
+					$(item).parent().removeClass('select');
 
 				var idTmp = $(item).attr('data-target');
 				$(idTmp).hide();
 			});		
 
-			$(ele.target).addClass('select');
+			$(ele.target).parent().addClass('select');
 
 			$(tabId).css("left","200px").animate({"left":"0px"},500).show();	
-			//if(link.dataset.target < screen.defaultSlim)
-			//	$(link.dataset.target).css("left","200px").animate({"left":"0px"},500).show();	
-			//else
-			//	$(link.dataset.target).css("left","-200px").animate({"left":"0px"},500).show();
 
 			rFloatDiv.defaultSlim = tabId;
 		},
