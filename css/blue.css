@@ -278,7 +278,7 @@ a.collapseBtn i{padding-top:8px;padding-left:11px;}
 
 .rFloatDiv .clusterList{ display: block; width:100%;}
 .rFloatDiv .clusterList li.select{ background: rgba(255,255,255,0.05)}
-.rFloatDiv .clusterList li a{ margin: 0px 15px 0; padding-top:15px; padding-bottom:10px; overflow:hidden; display:block; border-bottom: 1px solid #364955;}
+.rFloatDiv .clusterList li a{ margin: 0px 10px 0; padding-top:15px; padding-bottom:10px; overflow:hidden; display:block; border-bottom: 1px solid #364955;}
 .leftPic{ width: 60px; padding-right: 5px; text-align: center; font-size: 12px; color: #9DA5A8; vertical-align:text-bottom;}
 .leftPic span{ text-align:left; width:100%; display:inline-block;padding-top: 2px}
 .leftPic em{ font-style:normal;width:100%; display:inline-block; line-height:20px; padding-top: 5px;}
