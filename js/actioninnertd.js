@@ -15,13 +15,21 @@
 			$('span.actionInnerTd').find('i.zmdi-minus-circle').bind('click', actionInnerTd.minus);
 		},
 		plus: function(e){
-			var plusIcon = e.target; 
+			var plusIcon = e.target;
 			var actionInnerTdOjb = $(plusIcon).parent().parent().parent();
 			var tr = $(actionInnerTdOjb).parent();
 
-			var newTr = $('<tr></tr>');	
+			var inputNum = $(tr).find("input.form-control").length;
+
+			var newTr = $('<tr></tr>');
 			newTr.append('<td><label></label></td>');
-			newTr.append('<td><input type="text" class="form-control"><span class="actionInnerTd"><a><i class="zmdi zmdi-plus-circle"></i></a><a><i class="zmdi zmdi-minus-circle"></i></a></span></td>');
+
+			var actionTd = $('<td></td>');
+			for(var i = 0; i < inputNum; i ++){
+				actionTd.append('<input type="text" class="form-control">');
+			}
+			actionTd.append('<span class="actionInnerTd"><a><i class="zmdi zmdi-plus-circle"></i></a><a><i class="zmdi zmdi-minus-circle"></i></a></span>');
+			newTr.append(actionTd);
 
 			tr.after(newTr);
 
