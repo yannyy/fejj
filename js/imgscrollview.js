@@ -47,7 +47,7 @@
 	    	$.each(wizard.imgs, function(index, imgLi){
 	    		var identifier = $(imgLi).attr('id');
 	    		if($.inArray(index, points))
-	    			$('#' + ).show();
+	    			$(imgLi).show();
 	    		else
 	    			$(imgLi).hide();
 
