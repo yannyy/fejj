@@ -21,23 +21,28 @@
 			$('table.table').find('tr.selected').removeClass('selected');
 		},
 		fixedInit: function(){
-			if($('div.fixedArea')){
-				areaFix.actionBarTopFixed();	
+			if($('div.fixedArea').length != 0){
+				areaFix.actionBarTopFixed();
+				areaFix.blockAreaOffset = $('div.blockArea').offset();
+				areaFix.initFloatStatus();	
 			}
 
-			areaFix.blockAreaOffset = $('div.blockArea').offset();
-
-			areaFix.initFloatStatus();
+			
 		},
 		actionBarTopFixed: function(){
 			$(window).bind('scroll', areaFix.onWindowScroll);
 		},
 		resize: function(e){
-			areaFix.actionBarTop = $('div.fixedArea').offset().top;
+			if($('div.fixedArea').length != 0){
+				areaFix.actionBarTop = $('div.fixedArea').offset().top;
+			}
 		},
 		initFloatStatus: function(){
-			areaFix.actionBarTop = $('div.fixedArea').offset().top;
-			areaFix.onWindowScroll();
+			if($('div.fixedArea').length != 0){
+				console.log($('div.fixedArea'));
+				areaFix.actionBarTop = $('div.fixedArea').offset().top;
+				areaFix.onWindowScroll();
+			}
 		},
 		onWindowScroll:function(e){
 			/**
