@@ -258,20 +258,24 @@ a.collapseBtn i{padding-top:8px;padding-left:11px;}
 .rFloatDiv .nr{ padding:10px 0; display:block; position:relative;}
 .rFloatDiv .tittle{line-height: 36px; padding: 2px 15px 5px 15px; color: #FFFFFF; font-size:16px; opacity:.8;}
 .rFloatDiv .tittle a{}
-.tabDiv{width:100%;height: 35px;border-bottom: 1px solid #293847; border-top:1px solid #111;}
+.tabDiv{width:100%;height: 35px;border-bottom: 1px solid #293847; border-top:1px solid #0e161e;}
 .tabDiv div{/*border-bottom: 1px solid #0B50A2;*/ margin: 0 15px;}
 .tabDiv div:after{clear: both;content: "."; display: block;font-size: 1px; height: 0;visibility: hidden; }
 .tabDiv li a{float:left;  display:block; padding:0 10px;line-height: 33px; margin:0 1px 0 0;}
-.tabDiv li a{font-size:14px; color:#8a9396; border-left:1px solid #192735;}
+.tabDiv li a{font-size:14px; color:#8a9396; border-left:1px solid #0e161e;}
 .tabDiv li a:hover{background:rgba(25,39,53,1.0);}
-.tabDiv li.select a{background:rgba(11,80,162,0.85);border-top: 1px solid #0B50A2;color:#fff;line-height: 34px; margin-top:-1px;}
-.tabDiv li.select a:hover{background:rgba(11,80,162,0.85); }
+.tabDiv li.select a, .tabDiv li a.select{background:rgba(11,80,162,0.85);border-top: 1px solid #0B50A2;color:#fff;line-height: 34px; margin-top:-1px;}
+.tabDiv li.select a:hover, .tabDiv li a.select:hover{background:rgba(11,80,162,0.85); }
 
 .mainTabDiv{margin-top:10px;margin-bottom:3px;}
 .mainTabDiv .tabDiv{padding:px;height: 38px;}
 .mainTabDiv .tabDiv li{ }
-.mainTabDiv .tabDiv li a {line-height: 36px;padding:0px 40px 0 35px;}
+.mainTabDiv .tabDiv li a {line-height: 36px;padding:0px 40px 0 35px; }
 .mainTabDiv .tabDiv li a i{padding-right:6px;}
+
+.contentBody .tabDiv{border-top:none;margin-top:5px;}
+.contentBody .tabDiv li a {margin:0 2px; padding:0px 20px;border:1px solid #0e161e; border-bottom:none;}
+.contentBody .tabDiv li.select a,.contentBody  .tabDiv li a.select{border:none;border-top: 1px solid #0B50A2;margin-top:-1px;}
 
 .rFloatDiv .tabDiv{border-bottom:;}
 .rFloatDiv .actionBar{ margin:20px 10px 10px;height: 38px;}

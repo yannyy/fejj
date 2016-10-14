@@ -6,6 +6,7 @@
 			
 			var trfirst = $('tr.actionInnerTr')[0];
 			actionInnerTd.label = $(trfirst).find('label').text();
+			actionInnerTd.max = $(trfirst).attr('data-max');
 		},
 		initLayout: function(){
 			if ($('span.actionInnerTd').length <= 1)
@@ -25,14 +26,16 @@
 			var actionInnerTdOjb = $(plusIcon).parent().parent().parent();
 			var tr = $(actionInnerTdOjb).parent();
 
-			var newTr = $(tr).clone(true);
-			newTr.find('label').text('');
-			$(newTr).find('input').val('');		
-			tr.after(newTr);
+			if ($('span.actionInnerTd').length < actionInnerTd.max){
+				var newTr = $(tr).clone(true);
+				newTr.find('label').text('');
+				$(newTr).find('input').val('');		
+				tr.after(newTr);
 
-			actionInnerTd.makeLabel();
+				actionInnerTd.makeLabel();
 
-			actionInnerTd.initLayout();
+				actionInnerTd.initLayout();
+			}
 		},
 		makeLabel: function(){
 			var trfirst = $('tr.actionInnerTr')[0];

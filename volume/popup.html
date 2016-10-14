@@ -75,7 +75,8 @@
     <!--右侧内容区-->
     <div class="contentDiv">
     
-   	 <div class="popup fade" style="display: ;">
+    <!--wizard-->
+   	 <div class="popup fade" style="display:none ;">
             <div class="popupDiv" style="display:">
                 <div class="popupContent" id="wizard">
                     <div class="contentHeader">
@@ -126,8 +127,9 @@
                             </table>
                             
                         </div>
+                         
                     </div>
-                    <div class="progress-striped stepDiv">
+                  	<div class="progress-striped stepDiv">
                         <div class="progress-bar wizardProgress"></div>
                     </div>
                     
@@ -153,8 +155,50 @@
                     </div>
                 </div>
             </div>   
-       </div>           
-      
+       </div> 
+                 
+      <!--详细信息-->
+      <div class="popup fade" style="display: ;">
+            <div class="popupDiv" style="display:" id="createVolumePopup">
+                <div class="popupContent">
+                    <div class="contentHeader">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4>主机详细信息</h4>
+                    </div>
+                    
+                    <div class="contentBody">
+                        <div class="tabDiv">
+                            <div><ul>
+                                <li class="select" ><a href="#"data-target="#slim1">概述</a></li>
+                                <li><a href="#" data-target="#slim2">映射卷</a></li>
+                                <li><a href="#" data-target="#slim2">端口自定义</a></li></ul></div>
+                        </div>
+                    	<table class="table-detail">
+                            <tbody >
+                                <tr>
+                                    <td style="width:22%;"><label>主机名称:</label></td>
+                                    <td>host22</td>                                  
+                                </tr>
+                                <tr>
+                                    <td><label>主机表识:</label></td>
+                                    <td>1</td>                                  
+                                </tr>
+                                <tr>
+                                    <td><label>状态:</label></td>
+                                    <td>脱机</td>                                  
+                                </tr>
+                            </tbody>
+                         </table>
+                    </div>
+                    <div class="contentFooter"> 
+                        <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">关闭</button>
+                                       
+                    </div>
+                </div>
+            </div>
+        </div>
+      	
+        <!--特殊input-->
         <div class="popup fade" style="display: block;">
             <div class="popupDiv" style="display:" id="createVolumePopup">
                 <div class="popupContent">
@@ -172,15 +216,15 @@
                                     <td style="width:22%;"><label>名称:</label></td>
                                     <td><input type="text" class="form-control"></td>                                  
                                 </tr>
-                                <tr class="actionInnerTr">
+                                <tr class="actionInnerTr" data-max="6">
                                     <td><label>iSCSI端口:</label></td>
                                     <td><input type="text" name="iscsi" class="form-control"><input type="text" class="form-control"><span class="actionInnerTd"><a><i class="zmdi zmdi-plus-circle"></i></a><a><i class="zmdi zmdi-minus-circle"></i></a></span></td>                                  
                                 </tr>
-                                <tr class="actionInnerTr">
+                                <tr class="actionInnerTr" data-max="6">
                                     <td><label></label></td>
                                     <td><select name="select" id=""><option value="1">1</option><option value="2">2</option></select><input type="text" class="form-control"><span class="actionInnerTd"><a><i class="zmdi zmdi-plus-circle"></i></a><a><i class="zmdi zmdi-minus-circle"></i></a></span></td>                                  
                                 </tr>
-                                <!--<tr>
+                                <!-- tr>
                                     <td><label>选择主机:</label></td>
                                     <td>
                                    
@@ -205,7 +249,7 @@
                                         </span>
 									
                                     </td>                                  
-                                </tr>-->
+                                </tr-->
                                 <tr>
                                     <td><label>后台拷贝速率:</label></td>
                                     <td><input type="text" class="form-control" disabled id="speed" name="default_rangeSlider" value="20" style="display: ;"></td>                                  
@@ -235,7 +279,6 @@
                 </div>
             </div>
         </div>
-        
         <div class="popup fade" style="display: none;">
             <div class="popupDiv" style="display:none" id="createVolumePopup">
                 <div class="popupContent">

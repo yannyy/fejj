@@ -365,9 +365,11 @@ table thead .sorting_desc_disabled:after {
 
 label{display: inline-block;max-width: 100%;}
 .table-input td{padding:4px; line-height:22px;}
+
+
 .contentBody table{background: rgba(0,0,0,.05); font-size:12px;}
 .contentBody table thead{background: rgba(0,0,0,.05);}
-.contentBody table > tbody > tr >  td,.contentBody table > thead > tr >  td{padding:; border-bottom-color:#2b3243;}
+.contentBody td{padding:;}
 table > tbody > tr > td:first-child > label {
   padding-top:;
   margin-bottom: 0;
@@ -383,6 +385,9 @@ table > tbody > tr > td:first-child > label {
 table > tbody > tr > td > .form-control{
 	margin-left:0;}
 .table-input em{ font-size:12px; font-style:normal; opacity:.7;}	
+
+.table-detail td{padding:5px; line-height:20px;}
+.table-detail td{border-bottom:dotted 1px #2b3243;}
 
 /**** alert **/
 .alertDiv{position:fixed; bottom:-20px; z-index:1080; right:0; left:210px;}
