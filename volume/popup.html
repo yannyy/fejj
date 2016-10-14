@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/component.css">
     <link rel="stylesheet" href="../css/font-awesome.css">
     <link rel="stylesheet" href="../css/material-design-iconic-font.css">
+    <link rel="stylesheet" href="../css/jquery-ui/jquery-ui.css">
     <!-- ================== END BASE CSS STYLE ================== -->
     <!-- ================== BEGIN BASE JS ================== -->
 
@@ -76,7 +77,7 @@
     <div class="contentDiv">
     
     <!--wizard-->
-   	 <div class="popup fade" style="display:none ;">
+   	 <div class="popup fade" style="display: ;">
             <div class="popupDiv" style="display:">
                 <div class="popupContent" id="wizard">
                     <div class="contentHeader">
@@ -133,8 +134,8 @@
                         <div class="progress-bar wizardProgress"></div>
                     </div>
                     
-                    <!--<div class="contentBody">
-                    	<div class="infoContent">
+                    <div class="contentBody">
+                    	<div class="infoContent" id="infoPane">
                             <div class="resultDiv fontGreen"><i class="zmdi zmdi-check "></i>任务完成<em>100%</em></div>
                             <div class="actionBar"><a href="#" class="textlink"><i class="zmdi zmdi-chevron-down m-r-5"></i><i class="zmdi zmdi-chevron-right m-r-5"></i><span>查看更多详细状态</span></a></div>
                             <div class="detailSummary scrollBar">
@@ -146,7 +147,7 @@
                             </div>
                             
                         </div>    
-                    </div>-->
+                    </div>
                     
                     <div class="contentFooter"> 
                         <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消</button>                     
@@ -167,28 +168,71 @@
                     </div>
                     
                     <div class="contentBody">
-                        <div class="tabDiv">
-                            <div><ul>
-                                <li class="select" ><a href="#"data-target="#slim1">概述</a></li>
-                                <li><a href="#" data-target="#slim2">映射卷</a></li>
-                                <li><a href="#" data-target="#slim2">端口自定义</a></li></ul></div>
+                        <div class="tabdiv" id="tabInPopup">
+                            <div class="tabHeader">
+                                <ul>
+                                    <li><a href="javascript:;"data-target="#tab1">概述</a></li>
+                                    <li><a href="javascript:;" data-target="#tab2">映射卷</a></li>
+                                    <li><a href="javascript:;" data-target="#tab3">端口自定义</a></li>
+                                </ul>
+                            </div>
+                            <div class="tabContent">
+                                <div id="tab1">
+                                    <table class="table-detail">
+                                        <tbody >
+                                            <tr>
+                                                <td style="width:22%;"><label>主机名称:</label></td>
+                                                <td>host21</td>                                  
+                                            </tr>
+                                            <tr>
+                                                <td><label>主机表识:</label></td>
+                                                <td>1</td>                                  
+                                            </tr>
+                                            <tr>
+                                                <td><label>状态:</label></td>
+                                                <td>脱机</td>                                  
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="tab2">
+                                    <table class="table-detail">
+                                        <tbody >
+                                            <tr>
+                                                <td style="width:22%;"><label>主机名称:</label></td>
+                                                <td>host22</td>                                  
+                                            </tr>
+                                            <tr>
+                                                <td><label>主机表识:</label></td>
+                                                <td>1</td>                                  
+                                            </tr>
+                                            <tr>
+                                                <td><label>状态:</label></td>
+                                                <td>脱机</td>                                  
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="tab3">
+                                    <table class="table-detail">
+                                        <tbody >
+                                            <tr>
+                                                <td style="width:22%;"><label>主机名称:</label></td>
+                                                <td>host23</td>                                  
+                                            </tr>
+                                            <tr>
+                                                <td><label>主机表识:</label></td>
+                                                <td>1</td>                                  
+                                            </tr>
+                                            <tr>
+                                                <td><label>状态:</label></td>
+                                                <td>脱机</td>                                  
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                    	<table class="table-detail">
-                            <tbody >
-                                <tr>
-                                    <td style="width:22%;"><label>主机名称:</label></td>
-                                    <td>host22</td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>主机表识:</label></td>
-                                    <td>1</td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>状态:</label></td>
-                                    <td>脱机</td>                                  
-                                </tr>
-                            </tbody>
-                         </table>
                     </div>
                     <div class="contentFooter"> 
                         <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">关闭</button>
@@ -269,6 +313,10 @@
                                     <td><label>CHAP密码:</label></td>
                                     <td><input type="password" class="form-control"></td>                                  
                                 </tr>
+                                <tr>
+                                    <td><label>日期:</label></td>
+                                    <td><input type="text" class="form-controller" id="datepicker"></td>                                  
+                                </tr>
                             </tbody>
                          </table>
                     </div>
@@ -348,7 +396,10 @@
 <script src="../js/jquery.js"></script>
 <script src="../js/slider.js"></script>
 <script src="../js/wizard.js"></script>
+<script src="../js/info.js"></script>
 <script src="../js/actioninnertd.js"></script>
+<script src="../js/tabinpopup.js"></script>
+<script src="../js/jquery-ui/jquery-ui.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -364,8 +415,10 @@
 
         $('#wizard').wizard();
         $('#wizard').bind('finish', function(e){
-            debugger; 
         })
+        $('#infoPane').info();
+        $('#tabInPopup').tabInPopup();
+        $('#datepicker').datepicker();
     });
 </script>
 </body>
