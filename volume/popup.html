@@ -400,6 +400,7 @@
 <script src="../js/actioninnertd.js"></script>
 <script src="../js/tabinpopup.js"></script>
 <script src="../js/jquery-ui/jquery-ui.js"></script>
+<script src="../js/jquery-ui-timepicker-addon.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -418,7 +419,12 @@
         })
         $('#infoPane').info();
         $('#tabInPopup').tabInPopup();
-        $('#datepicker').datepicker();
+        $('#datepicker').datetimepicker({
+            changeMonth: true,        
+            changeYear: true,        
+            timeFormat: 'hh:mm tt',        
+            controlType:'select'
+        });
     });
 </script>
 </body>
