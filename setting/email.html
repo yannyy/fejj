@@ -118,7 +118,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="../volume/volume.html" aria-expanded="false">
+                    <a href="javascript:;" data-toggle="#snmpPane" aria-expanded="false">
                         <i class="zmdi zmdi-share"></i>
                         <span>SNMP</span>
                     </a>
@@ -168,7 +168,7 @@
             </div>
         </div>
         <div class="tabContainer" id="snmpPane">
-            <div class="contentBody">
+            <div class="contentBody" id="fix">
                 <div class="fixedArea" style="">
                     <div class=""> 
                         <div  class="actionTopbar">
@@ -616,6 +616,7 @@
 <script src="../js/table.js"></script>
 <script type="text/javascript">
     $(function(){
+        $('#fix').areaFix();
         $(window).bind('tabChanged', function(e){
             if(e.toggle == '#snmpPane')
                 $(window).trigger('fixedResize');

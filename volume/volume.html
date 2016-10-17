@@ -114,46 +114,7 @@
             <li><a href="javascript:;">卷</a></li>
             <li class="active">Tables</li>
         </ol>        
-        <div class="fixedArea" style="">
-            <div class=""> 
-            <div  class="actionTopbar">
-                <div class="btn-group-lg">
-                    <div><a id="createVolume" data-target="#createVolumePopup" class="btn btn-primary m-r-10">创建卷</a></div>
-                    <div><a id="renameVolume" class="btn btn-default" data-target="#renameVolumePopup">重命名</a></div>
-                    <div><a class="btn btn-default">映射到主机</a></div>
-                    <div class="dropdown open">
-                        <a class="btn btn-default">更多操作<span class="caret m-l-5"></span></a>
-                        <ul class="dropdown-menu" style="display:none">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li class="disable"><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </div>
-                  </div>    
-                  <div><form class="filter-group">
-                        <input type="text" class="form-control" placeholder="过滤...">
-                        <a class="btn btn-primary"><i class="fa fa-search"></i></a>
-                    </form>
-                  </div>
-            </div>
-            
-            <div class="tableHeader">
-                <table class="">
-                    <thead>
-                        <tr>
-                            <th><input type="checkbox" name="all"></th> 
-                            <th width="15%" class="sorting_asc">#</th>
-                            <th width="35%" class="sorting">Username</th>
-                            <th width="50%" class="sorting_desc">Email Address</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </div>
-        </div>
+        
         
         <!--全局模态框 加载中-->
         <div id="globalLoading" class="popup popLoading fade" style="display: ;">
@@ -334,7 +295,47 @@
                 </div>
             </div>
         </div>
+        <div id="fixedArea">
+        <div class="fixedArea" style="">
+            <div class=""> 
+            <div  class="actionTopbar">
+                <div class="btn-group-lg">
+                    <div><a id="createVolume" data-target="#createVolumePopup" class="btn btn-primary m-r-10">创建卷</a></div>
+                    <div><a id="renameVolume" class="btn btn-default" data-target="#renameVolumePopup">重命名</a></div>
+                    <div><a class="btn btn-default">映射到主机</a></div>
+                    <div class="dropdown open">
+                        <a class="btn btn-default">更多操作<span class="caret m-l-5"></span></a>
+                        <ul class="dropdown-menu" style="display:none">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li class="disable"><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                  </div>    
+                  <div><form class="filter-group">
+                        <input type="text" class="form-control" placeholder="过滤...">
+                        <a class="btn btn-primary"><i class="fa fa-search"></i></a>
+                    </form>
+                  </div>
+            </div>
             
+            <div class="tableHeader">
+                <table class="">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" name="all"></th> 
+                            <th width="15%" class="sorting_asc">#</th>
+                            <th width="35%" class="sorting">Username</th>
+                            <th width="50%" class="sorting_desc">Email Address</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        </div>    
         <div class="blockArea">
             <div class="tableBody">
                 <table class="table table-hover">
@@ -524,6 +525,7 @@
                 </table>
             </div>
         </div>
+    </div>
     </div>   
 </div>
 <script src="../js/jquery.js"></script>
@@ -535,6 +537,7 @@
 <script src="../js/common.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
+        $('#fixedArea').areaFix();
         $('#createVolume').disableOnRowSelected();
         $('#createVolume').popup();
         $('#closeAction').hidePopup();

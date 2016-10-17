@@ -1,127 +1,127 @@
 (function($){
-	var areaFix = {
-		blockAreaOffset: {},
-		actionBarTop: 0,
-		init: function(){
-			areaFix.fixedInit();
-			areaFix.tableSelectInit();
-			areaFix.clearCheckStatus();
-		},
-		clearCheckStatus: function(){
-			$.each($('table').find('input[type="checkbox"]'), function(i, cb){
-				cb.checked = false;
+	$.fn.areaFix = function(){
 
-				if($(cb).parent()[0].tagName == 'TR'){
-					var row = $(cb).parent().parent();
-					if(row.hasClass('selected'))
-						row.removeClass('selected');
+		var widget = this;
+		//定义滚动模块
+		var areaFix = {
+			blockAreaOffset: 0,
+			init: function(){
+				areaFix.fixedInit();
+				areaFix.tableSelectInit();
+				areaFix.clearCheckStatus();
+			},
+			resize: function(e){
+				if($('div.fixedArea').length != 0){
+					areaFix.actionBarTop = $('div.fixedArea').offset().top;
 				}
-			});
+			},
+			fixedInit: function(){
+				if($(widget).find('div.fixedArea').length != 0){
+					areaFix.actionBarTopFixed();
+					areaFix.blockAreaOffset = $(widget).find('div.blockArea').offset();
+					areaFix.initFloatStatus();	
+				}
+			},
+			initFloatStatus: function(){
+				if($(widget).find('div.fixedArea').length != 0){
+					areaFix.actionBarTop = $(widget).find('div.fixedArea').offset().top;
+					areaFix.onWindowScroll();
+				}
+			},
+			actionBarTopFixed: function(){
+				$(window).bind('scroll', areaFix.onWindowScroll);	
+			},
+			onWindowScroll: function(){
 
-			$('table.table').find('tr.selected').removeClass('selected');
-		},
-		fixedInit: function(){
-			if($('div.fixedArea').length != 0){
-				areaFix.actionBarTopFixed();
-				areaFix.blockAreaOffset = $('div.blockArea').offset();
-				areaFix.initFloatStatus();	
-			}
-
-			
-		},
-		actionBarTopFixed: function(){
-			$(window).bind('scroll', areaFix.onWindowScroll);
-		},
-		resize: function(e){
-			if($('div.fixedArea').length != 0){
-				areaFix.actionBarTop = $('div.fixedArea').offset().top;
-			}
-		},
-		initFloatStatus: function(){
-			if($('div.fixedArea').length != 0){
-				console.log($('div.fixedArea'));
-				areaFix.actionBarTop = $('div.fixedArea').offset().top;
-				areaFix.onWindowScroll();
-			}
-		},
-		onWindowScroll:function(e){
-			/**
-			*if it's not working in IE8, try the following code.
-			*/
-			var theScrollTop = document.documentElement.scrollTop 
-				|| window.pageYOffset 
-				|| document.body.scrollTop;
-			var scrollTop = $(window).scrollTop();
+				var theScrollTop = document.documentElement.scrollTop 
+			     	|| window.pageYOffset 
+				    || document.body.scrollTop;
+				var scrollTop = $(window).scrollTop();
 
 
-			if((scrollTop) > areaFix.actionBarTop) {
-				// top fixed
+				if((scrollTop) > areaFix.actionBarTop) {
+				// 固顶 
 				$('div.blockArea').addClass('m-b-fix');
 				if (false == $('div.fixedArea').hasClass('floatArea')) 
 					$('div.fixedArea').addClass('floatArea');
 
 				if(false == $('div.fixedArea').children('div').hasClass('fixedContent'))
 					$('div.fixedArea').children('div').addClass('fixedContent');
-			} else {
-				// dismiss top fixed
-				$('div.blockArea').removeClass('m-b-fix');
+			    } else {
+			    	// 取消固顶 
+			    	$('div.blockArea').removeClass('m-b-fix');
 
-				if (true == $('div.fixedArea').hasClass('floatArea'))
-					$('div.fixedArea').removeClass('floatArea');
+			    	if (true == $('div.fixedArea').hasClass('floatArea'))
+			    		$('div.fixedArea').removeClass('floatArea');
 
-				if (true == $('div.fixedArea').children('div').hasClass('fixedContent'))
-					$('div.fixedArea').children('div').removeClass('fixedContent');
-			}
-		},
-		tableSelectInit: function(){
-			$('table.table').find('td').children('input[type="checkbox"]').on('click', areaFix.rowSelected);
-			$('table.table').find('td').children('input[type="checkbox"]').on('change', areaFix.rowSelected);
-			$('table').find('th').children('input[type="checkbox"]').on('click', areaFix.rowAllSelected);
+			    	if (true == $('div.fixedArea').children('div').hasClass('fixedContent'))
+			    		$('div.fixedArea').children('div').removeClass('fixedContent');
+			    }
+			},
+			tableSelectInit: function(){
+				$(widget).find('table.table').find('td').children('input[type="checkbox"]').on('click', areaFix.rowSelected);
+				$(widget).find('table.table').find('td').children('input[type="checkbox"]').on('change', areaFix.rowSelected);
+				$(widget).find('table').find('th').children('input[type="checkbox"]').on('click', areaFix.rowAllSelected);
 
-			var all = $('table').find('th').children('input[type="checkbox"]')[0];
-			$.each($('table.table').find('td').children('input[type="checkbox"]'), function(i, checkbox){
-				var tr = $(checkbox).parent().parent();
-				if(all.checked){
-					checkbox.checked = true;
-					tr.addClass('selected');
-				}else{
-					if(checkbox.checked)
+				var all = $('table').find('th').children('input[type="checkbox"]')[0];
+				$.each($('table.table').find('td').children('input[type="checkbox"]'), function(i, checkbox){
+					var tr = $(checkbox).parent().parent();
+					if(all.checked){
+						checkbox.checked = true;
 						tr.addClass('selected');
-					else
-						tr.removeClass('selected');
-				}
+					}else{
+						if(checkbox.checked)
+							tr.addClass('selected');
+						else
+							tr.removeClass('selected');
+					}
 
-			});
-		},
-		rowSelected: function(e){
-			if(e.target.tagName != 'INPUT' && $(e.target).attr(type) != 'checkbox')
-				return false;
+				});
+			},
+			rowSelected: function(e){
+				if(e.target.tagName != 'INPUT' && $(e.target).attr(type) != 'checkbox')
+					return false;
 
-			var tr = $(e.target).parent().parent();
-			if(e.target.checked)
-				tr.addClass('selected');
-			else
-				tr.removeClass('selected');
-		},
-		rowAllSelected: function(e){
-			if(e.target.tagName != 'INPUT' && $(e.target).attr(type) != 'checkbox')
-				return false;
-
-			var checked = e.target.checked;
-			$.each($('table.table').find('td').children('input[type="checkbox"]'), function(i, cb){
-				cb.checked = checked;	
-
-				var tr = $(cb).parent().parent();
-				if(cb.checked)
+				var tr = $(e.target).parent().parent();
+				if(e.target.checked)
 					tr.addClass('selected');
 				else
 					tr.removeClass('selected');
-			});
-		}
+			},
+			rowAllSelected: function(e){
+				if(e.target.tagName != 'INPUT' && $(e.target).attr(type) != 'checkbox')
+					return false;
+
+				var checked = e.target.checked;
+				$.each($('table.table').find('td').children('input[type="checkbox"]'), function(i, cb){
+					cb.checked = checked;	
+
+					var tr = $(cb).parent().parent();
+					if(cb.checked)
+						tr.addClass('selected');
+					else
+						tr.removeClass('selected');
+				});
+			},
+			clearCheckStatus: function(){
+				$.each($('table').find('input[type="checkbox"]'), function(i, cb){
+					cb.checked = false;
+
+					if($(cb).parent()[0].tagName == 'TR'){
+						var row = $(cb).parent().parent();
+						if(row.hasClass('selected'))
+							row.removeClass('selected');
+					}
+				});
+
+				$('table.table').find('tr.selected').removeClass('selected');
+			}
+
+		};
+		window.areaFix = $(widget);
+		window.areaFix.on('resize', areaFix.resize); 
+		areaFix.init();
 	}
-
-	window.areaFix = areaFix;
-
 	$.fn.disableOnRowSelected = function(){
 		var target = $(this);
 		
@@ -129,7 +129,7 @@
 			target.removeClass('disabled');
 
 		var checked = false;
-		$('table').find('th').children('input[type="checkbox"]').on('click', function(e){
+		window.areaFix.find('th').children('input[type="checkbox"]').on('click', function(e){
 			var checked = e.target.checked;
 			if(checked){
 				if(false == target.hasClass('disabled'))
@@ -140,7 +140,7 @@
 			}
 		});
 
-		$('table.table').find('td').children('input[type="checkbox"]').on('change', function(e){
+		window.areaFix.find('table.table').find('td').children('input[type="checkbox"]').on('change', function(e){
 			if(e.target.checked){
 				if(false == target.hasClass('disabled'))
 					target.addClass('disabled');
@@ -150,10 +150,11 @@
 			}
 		});
 	}
+
 	$(document).ready(function(){
-		areaFix.init();
 		$(window).bind('fixedResize', function(e){
-			window.areaFix.resize();
+			window.areaFix.trigger('resize');
 		});
 	});
+	
 })(jQuery);
