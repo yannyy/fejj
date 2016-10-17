@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table id="pTable">
+		<thead>
+			<tr>
+				<td>name</td>
+				<td>email</td>
+				<td>age</td>
+			</tr>
+		</thead>	
+		<tbody>
+			
+		</tbody>
+	</table>	
+</body>
+<script type="test/javascript">
+	$(function(){
+		$.ajax({
+			url: 'data.php',
+			success: function(result){
+				$.each(result, function(i, u){
+					var tr = $('<tr></tr>');
+
+					var td1 = $('<td></td>')
+					td1.text(u.name);
+					tr.append(td1);
+
+					var td2 = $('<td></td>')
+					td2.text(u.email);
+					tr.append(td2);
+
+					var td3 = $('<td></td>')
+					td3.text(u.age);
+					tr.append(td3);
+
+					$('#pTable').find('tbody').append(tr);
+				})
+			}
+		});
+	});	
+</script>
+</html>
