@@ -7,10 +7,15 @@
 <body>
 	<div>
 		<table id="dataList">
-			<th>
-				<td>name</td>
-				<td>age</td>
-			</th>
+			<thead>
+				<th>
+					<td>name</td>
+					<td>age</td>
+				</th>
+			</thead>
+			<tbody>
+				
+			</tbody>
 		</table>	
 	</div>	
 <script src="../js/jquery-1.9.1.js"></script>
@@ -20,7 +25,17 @@
 			url: 'data.php',
 			success: function(result){
 				$.each(result, function(index, item){
-					console.log();	
+					var tr = $('<tr></tr>')
+
+					var td1 = $('<td></td>')
+					$(td1).text(item.name)
+					tr.append(td1);
+
+					var td2 = $('<td></td>')
+					$(td2).text(item.age)
+					tr.append(td2);
+					
+					$('#dataList').find('tbody').append(tr);
 				});
 			}
 		});	
