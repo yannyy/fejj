@@ -77,7 +77,7 @@
     <div class="contentDiv">
     
     <!--wizard-->
-   	 <div class="popup fade" style="display: ;">
+   	 <div class="popup fade" style="display: block;">
             <div class="popupDiv" style="display:">
                 <div class="popupContent" id="wizard">
                     <div class="contentHeader">
@@ -99,14 +99,61 @@
                             </table>
                         </div>
                         <div class="wizardStep">
-                            <table class="table-input">
-                                <tbody >
+                            <table class="table table-hover" id="tableWithSelectall1">
+                                <thead>
                                     <tr>
-                                        <td><label>容量:</label></td>
+                                        <td><input type="checkbox" name="selectall"></td>
+                                        <td width="15%">名称</td>
+                                        <td width="25%">状态</td>
+                                        <td width="25%">可用容量</td>
+                                        <td width="30%">容量</td>
                                     </tr>
+                                </thead>
+                                <tbody>   
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>Pool 2</td>
+                                        <td>联机</td>
+                                        <td>4.77 TiB</td>
+                                        <td>4.88 TiB</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>Pool 2</td>
+                                        <td>联机</td>
+                                        <td>4.77 TiB</td>
+                                        <td>4.88 TiB</td>
+                                    </tr> 
                                 </tbody>
                             </table>
-                            
+                            <p>另一个table</p>
+                            <table class="table table-hover" id="tableWithSelectall2">
+                                <thead>
+                                    <tr>
+                                        <td><input type="checkbox" name="selectall"></td>
+                                        <td width="15%">名称</td>
+                                        <td width="25%">状态</td>
+                                        <td width="25%">可用容量</td>
+                                        <td width="30%">容量</td>
+                                    </tr>
+                                </thead>
+                                <tbody>   
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>Pool 2</td>
+                                        <td>联机</td>
+                                        <td>4.77 TiB</td>
+                                        <td>4.88 TiB</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>Pool 2</td>
+                                        <td>联机</td>
+                                        <td>4.77 TiB</td>
+                                        <td>4.88 TiB</td>
+                                    </tr> 
+                                </tbody>
+                            </table>
                         </div>
                         <div class="wizardStep">
                             <table class="table-input">
@@ -172,7 +219,7 @@
                             <div class="tabHeader">
                                 <ul>
                                     <li><a href="javascript:;"data-target="#tab1">概述</a></li>
-                                    <li><a href="javascript:;" data-target="#tab2">映射卷</a></li>
+                                    <li><a href="volume.html" data-target="#tab2">映射卷</a></li>
                                     <li><a href="javascript:;" data-target="#tab3">端口自定义</a></li>
                                 </ul>
                             </div>
@@ -243,7 +290,7 @@
         </div>
       	
         <!--特殊input-->
-        <div class="popup fade" style="display: block;">
+        <div class="popup fade" style="display: ;">
             <div class="popupDiv" style="display:" id="createVolumePopup">
                 <div class="popupContent">
                     <div class="contentHeader">
@@ -405,6 +452,7 @@
 <script src="../js/tabinpopup.js"></script>
 <script src="../js/jquery-ui.js"></script>
 <script src="../js/jquery-ui-timepicker-addon.js"></script>
+<script src="../js/tableWithSelectall.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -429,6 +477,9 @@
             timeFormat: 'hh:mm tt',        
             controlType:'select'
         });
+
+        $('#tableWithSelectall1').selectAll(); 
+        $('#tableWithSelectall2').selectAll(); 
     });
 </script>
 </body>
