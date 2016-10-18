@@ -389,6 +389,13 @@ table > tbody > tr > td > .form-control{
 .table-detail td{padding:5px; line-height:20px;}
 .table-detail td{border-bottom:dotted 1px #2b3243;}
 
+tr.tdSon{background:rgba(0,0,0,.06)}
+.tdFather>td i{padding-right:25px; cursor:pointer;opacity:.6;}
+.tdFather>td i:hover{opacity:1;}
+.tdSon>td i{cursor:pointer; opacity:.6;}
+.tdSon>td:first-child{padding-left:90px;}
+.tdFather>td:first-child{padding-left:25px;}
+table>tbody>tr.tdSon >td{ border-bottom-style:dotted;}
 
 
 /**** alert **/

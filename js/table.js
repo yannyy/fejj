@@ -20,6 +20,7 @@
 					areaFix.actionBarTopFixed();
 					areaFix.blockAreaOffset = $(widget).find('div.blockArea').offset();
 					areaFix.initFloatStatus();	
+					$(widget).find('div.replaceArea').css('height', $(widget).find('div.fixedArea').height());
 				}
 			},
 			initFloatStatus: function(){
@@ -39,17 +40,17 @@
 				var scrollTop = $(window).scrollTop();
 
 
-				if((scrollTop) > areaFix.actionBarTop) {
+				if((scrollTop + 23) > areaFix.actionBarTop) {
 				// 固顶 
-				$('div.blockArea').addClass('m-b-fix');
-				if (false == $('div.fixedArea').hasClass('floatArea')) 
-					$('div.fixedArea').addClass('floatArea');
+					$(widget).find('div.replaceArea').show();
+     				if (false == $('div.fixedArea').hasClass('floatArea')) 
+     					$('div.fixedArea').addClass('floatArea');
 
-				if(false == $('div.fixedArea').children('div').hasClass('fixedContent'))
-					$('div.fixedArea').children('div').addClass('fixedContent');
+     				if(false == $('div.fixedArea').children('div').hasClass('fixedContent'))
+     					$('div.fixedArea').children('div').addClass('fixedContent');
 			    } else {
 			    	// 取消固顶 
-			    	$('div.blockArea').removeClass('m-b-fix');
+					$(widget).find('div.replaceArea').hide();
 
 			    	if (true == $('div.fixedArea').hasClass('floatArea'))
 			    		$('div.fixedArea').removeClass('floatArea');
