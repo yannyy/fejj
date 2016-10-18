@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/font-awesome.css">
     <link rel="stylesheet" href="../css/material-design-iconic-font.css">
     <link rel="stylesheet" href="../css/datepicker.css">
+    <link rel="stylesheet" href="../css/jstree.css">
     <!-- ================== END BASE CSS STYLE ================== -->
     <!-- ================== BEGIN BASE JS ================== -->
 
@@ -77,7 +78,7 @@
     <div class="contentDiv">
     
     <!--wizard-->
-   	 <div class="popup fade" style="display: block;">
+   	 <div class="popup fade" style="display: ;">
             <div class="popupDiv" style="display:">
                 <div class="popupContent" id="wizard">
                     <div class="contentHeader">
@@ -215,11 +216,11 @@
                     </div>
                     
                     <div class="contentBody">
-                        <div class="tabdiv" id="tabInPopup">
-                            <div class="tabHeader">
+                        <div class="" id="tabInPopup">
+                            <div class="tabHeader tabdiv">
                                 <ul>
                                     <li><a href="javascript:;"data-target="#tab1">概述</a></li>
-                                    <li><a href="volume.html" data-target="#tab2">映射卷</a></li>
+                                    <li><a href="javascript:;" data-target="#tab2">映射卷</a></li>
                                     <li><a href="javascript:;" data-target="#tab3">端口自定义</a></li>
                                 </ul>
                             </div>
@@ -288,7 +289,68 @@
                 </div>
             </div>
         </div>
-      	
+      	<div class="popup fade" style="display:block ;">
+            <div class="popupDiv" style="display:" id="createVolumePopup">
+                <div class="popupContent">
+                    <div class="contentHeader">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4>添加主机</h4>
+                    </div>
+                    <div class="alertDesc alertDesc-info">
+                    	您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容量。
+                    </div>
+                    <div class="contentBody">
+                    	<table class="table-input">
+                            <tbody >
+                                 <tr>
+                                    <td><label>选择主机:</label></td>
+                                    <td>
+                                   
+                                    </td>                                  
+                                </tr>   
+                                <tr>
+                                    <td colspan="2">目标：</td></tr>                           
+                                <tr>
+                                    <td colspan="2">
+                                    <div id="jstree-ajax" class="jstree jstree-4 jstree-default" role="tree" aria-multiselectable="true" tabindex="0" aria-activedescendant="demo_root_4" aria-busy="false">
+                                    	<ul class="jstree-container-ul jstree-children" role="group">
+                                            <li role="treeitem" aria-selected="false" aria-level="1" aria-labelledby="demo_root_1_anchor" aria-expanded="false" id="demo_root_1" class="jstree-node jstree-closed" aria-busy="false">
+                                                <i class="jstree-icon jstree-ocl" role="presentation"></i>
+                                                <a class="jstree-anchor" href="#" tabindex="-1" id="demo_root_1_anchor"><i class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom" role="presentation"></i>Root #1</a></li>
+                                                <li role="treeitem" aria-selected="false" aria-level="1" aria-labelledby="demo_root_2_anchor" aria-expanded="true" id="demo_root_2" class="jstree-node jstree-open" aria-busy="false">
+                                                    <i class="jstree-icon jstree-ocl" role="presentation"></i>
+                                                    <a class="jstree-anchor" href="#" tabindex="-1" id="demo_root_2_anchor"><i class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom" role="presentation"></i>Root #2</a>
+                                                    <ul role="group" class="jstree-children" style="">
+                                                    <li role="treeitem" aria-selected="false" aria-level="2" aria-labelledby="demo_root_2_child_1_anchor" aria-expanded="true" id="demo_root_2_child_1" class="jstree-node jstree-open">
+                                                            <i class="jstree-icon jstree-ocl" role="presentation"></i>
+                                                            <a class="jstree-anchor jstree-clicked" href="#" tabindex="-1" id="demo_root_2_child_1_anchor"><i class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom" role="presentation"></i>Root #2 Child 1</a>
+                                                            <ul role="group" class="jstree-children" style="">
+                                                                <li role="treeitem" aria-selected="false" aria-level="3" aria-labelledby="demo_root_2_child_2_anchor" aria-disabled="true" id="demo_root_2_child_2" class="jstree-node  jstree-leaf jstree-last">
+                                                                    <i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor  jstree-disabled" href="#" tabindex="-1" id="demo_root_2_child_2_anchor"><i class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom" role="presentation"></i>No Child</a></li></ul>
+                                                    </li>
+                                                    <li role="treeitem" aria-selected="false" aria-level="2" aria-labelledby="demo_root_2_child_3_anchor" aria-expanded="false" id="demo_root_2_child_3" class="jstree-node jstree-closed">
+                                                    <i class="jstree-icon jstree-ocl" role="presentation"></i>
+                                                    <a class="jstree-anchor" href="#" tabindex="-1" id="demo_root_2_child_3_anchor">
+                                                    <i class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom" role="presentation"></i>Root #2 Child 2</a></li>
+                                                    <li role="treeitem" aria-selected="false" aria-level="2" aria-labelledby="demo_root_2_child_6_anchor" aria-expanded="false" id="demo_root_2_child_6" class="jstree-node  jstree-closed jstree-last">
+                                                            <i class="jstree-icon jstree-ocl" role="presentation"></i>
+                                                            <a class="jstree-anchor" href="#" tabindex="-1" id="demo_root_2_child_6_anchor"><i class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom" role="presentation"></i>Root #2 Child 3</a></li></ul></li>
+                                                
+                                              </ul>
+                                         </div>
+                                    </td>                                  
+                                </tr>
+                            </tbody>
+                         </table>
+                    </div>
+                    <div class="contentFooter"> 
+                        <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消</button>
+                        <button class="btn btn-color  m-r-10" type="submit">提交</button>                 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!--特殊input-->
         <div class="popup fade" style="display: ;">
             <div class="popupDiv" style="display:" id="createVolumePopup">
@@ -315,32 +377,7 @@
                                     <td><label></label></td>
                                     <td><select name="select" id=""><option value="1">1</option><option value="2">2</option></select><input type="text" class="form-control"><span class="actionInnerTd"><a><i class="zmdi zmdi-plus-circle"></i></a><a><i class="zmdi zmdi-minus-circle"></i></a></span></td>                                  
                                 </tr>
-                                <!-- tr>
-                                    <td><label>选择主机:</label></td>
-                                    <td>
-                                   
-									    <select class="multiple-select2 form-control" multiple="" tabindex="-1" style="display: none;">
-                                            <optgroup label="Alaskan/Hawaiian Time Zone">
-                                                <option value="AK">Alaska</option>
-                                                <option value="HI">Hawaii</option>
-                                            </optgroup>
-                                            <optgroup label="Pacific Time Zone">
-                                                <option value="CA">California</option>
-                                                <option value="NV">Nevada</option>
-                                                <option value="OR">Oregon</option>
-                                                <option value="WA">Washington</option>
-                                            </optgroup>
-                                        </select>
-                                        <span class="select2 select2-container select2-container--default select2-container--above" dir="ltr" style="width: 294px;">
-                                        	<span class="selection">
-                                        		<span class="select2-selection select2-selection--multiple" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0">
-                                        			<ul class="select2-selection__rendered"><li class="select2-search select2-search--inline">
-                                        				<input class="select2-search__field" type="search" tabindex="-1" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox" placeholder="Select a state" style="width: 292px;"></li></ul></span></span>
-                                       		<span class="dropdown-wrapper" aria-hidden="true"></span>
-                                        </span>
-									
-                                    </td>                                  
-                                </tr-->
+                                
                                 <tr>
                                     <td><label>后台拷贝速率:</label></td>
                                     <td><input type="text" class="form-control" disabled id="speed" name="default_rangeSlider" value="20" style="display: ;"></td>                                  
@@ -348,7 +385,7 @@
                                 <tr>
                                     <td colspan="2">
                                     <div class="m-l-35 m-t-10">
-                                        <input type="text" id="sliderT"></td>
+                                        <input type="text" id="sliderT">
                                     </div>
                                     </td>                                  
                                 </tr>
@@ -358,15 +395,14 @@
                                 </tr>
                                 <tr>
                                     <td><label>CHAP密码:</label></td>
-                                     
-                                      <td><input type="password" class="form-control"></td>
+                                    <td><input type="password" class="form-control"></td>                                  
                                 </tr>
                                 <tr>
                                     <td><label>日期:</label></td>
-                                    <td class="input-groupA">
+                                   <td class="input-groupA">
                                         <input type="text" class="form-control" id="datepicker">  
                                         <a class="btn btn-primary"><i class="fa fa-calendar"></i></a>
-                                     </td>
+                                     </td>                                   
                                 </tr>
                             </tbody>
                          </table>
@@ -446,6 +482,7 @@
 </div>
 <script src="../js/jquery.js"></script>
 <script src="../js/slider.js"></script>
+<script src="../js/table.js"></script>
 <script src="../js/wizard.js"></script>
 <script src="../js/info.js"></script>
 <script src="../js/actioninnertd.js"></script>
