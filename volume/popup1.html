@@ -76,8 +76,61 @@
 <div id="content">  
     <!--右侧内容区-->
     <div class="contentDiv">   
+    
+    	<div class="popup fade" style="display:block ;">
+            <div class="popupDiv" style="display:" id="createVolumePopup">
+                <div class="popupContent">
+                    <div class="contentHeader">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4>添加主机</h4>
+                    </div>
+                    <div class="alertDesc alertDesc-info">
+                    	您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容量。
+                    </div>
+                    <div class="contentBody">
+                        <div id="assignment">
+                            
+                         <div class="ms-container">
+                         	<div class="ms-selectable">
+                                 <label>目标卷</label> 
+                                 <select type="text" class="form-control src">
+                                    <option value="Volume 1">Volume 1</option>
+                                    <option value="Volume 2">Volume 2</option>
+                                    <option value="Volume 3">Volume 3</option>
+                                    <option value="Volume 4">Volume 4</option>
+                                </select>
+                            </div>
+                            <div class="ms-arrow"><i class="fa fa-long-arrow-right"></i></div>    
+                            <div class="ms-selection">
+                            	<label>源卷</label> 
+                                 <select type="text" class="form-control dest">
+                                    <option value="Volume 1">Volume 1</option>
+                                    <option value="Volume 2">Volume 2</option>
+                                    <option value="Volume 3">Volume 3</option>
+                                    <option value="Volume 4">Volume 4</option>
+                                </select>
+                            </div>
+                            <div class="clear"></div>    
+                            <div class="ms-button"><button class="btn btn-color  m-r-10" type="button">添加</button></div>
+                            <div class="ms-list">
+                            	<ul>
+                                	
+                                </ul>
+                            </div>    
+                         </div>
+                        </div> 
+                         
+                    </div>
+                    
+                    <div class="contentFooter"> 
+                        <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消</button>
+                        <button class="btn btn-color  m-r-10" type="submit">提交</button>                 
+                    </div>
+                </div>
+            </div>
+        </div>
      
-      	<div class="popup fade" style="display:block ;">
+      	<!--<div class="popup fade" style="display:block ;">
             <div class="popupDiv" style="display:" id="createVolumePopup">
                 <div class="popupContent">
                     <div class="contentHeader">
@@ -95,7 +148,7 @@
                                     <td><input class="form-control" id="citySel" type="text" readonly value="" style="min-width:200px; position:relative;" onClick="showMenu();" />
                                     <div id="menuContent" class="menuContent" style="display:none; position: absolute;">
                                         <ul id="treeDemo" class="ztree" style="margin-top:0;"></ul>   
-                                        <!--<ul id="treeDemo2" class="ztree"></ul>    -->
+                                      
                                     </div>
 </td>                                  
                                 </tr>   
@@ -115,7 +168,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
   
         
         </div>
@@ -134,9 +187,11 @@
 <script src="../js/tableWithSelectall.js"></script>
 <script src="../js/jquery.ztree.core.js"></script>
 <script src="../js/jquery.ztree.excheck.js"></script>
+<script src="../js/assignment.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
+        var assignment = $('#assignment').assignment();
         var slider = $('#sliderT').ionRangeSlider({
             min:0,
             max:100,
