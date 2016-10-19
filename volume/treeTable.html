@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="../css/component.css">
     <link rel="stylesheet" href="../css/font-awesome.css">
     <link rel="stylesheet" href="../css/material-design-iconic-font.css">
-    <link rel="stylesheet" href="../css/jquery.treetable.css" />
-    <link rel="stylesheet" href="../css/jquery.treetable.theme.default.css" />
     <!-- ================== END BASE CSS STYLE ================== -->
     <!-- ================== BEGIN BASE JS ================== -->
 
@@ -130,24 +128,29 @@
                         <a class="btn btn-primary"><i class="fa fa-search"></i></a>
                     </form>
                   </div>
-            </div>
-            
-            
+            </div>            
         </div>
         </div>
           
-        <div>
-            <div class="tableBody">
-                <table class="table table-hover">
+        <div class="replaceArea"></div> 
+        <div class="blockArea">
+           <div class="tableHeader">
+                <table class="">
                     <thead>
                         <tr>
-                            <th width="20%">Name</th> 
+                            <th width="10%"><input type="checkbox" name="all"></th>
+                            <th width="25%">Name</th> 
                             <th width="15%" class="sorting_asc">#</th>
                             <th width="25%" class="sorting">Username</th>
-                            <th width="40%" class="sorting_desc">Email Address</th>
-                        </tr>
+                            <th width="35%" class="sorting_desc">Email Address</th>
+                        </tr>     
                     </thead>
-                    <tbody >
+                </table>
+            </div>
+           <!-- normal table-->
+            <!--<div class="tableBody">
+                <table class="table table-hover">
+                    <tbody>
                         <tr class="tdFather">
                             <td width="20%"><i class="zmdi zmdi-collection-plus zmdi-hc-fw"></i> GRP-1</td>
                             <td width="15%">1</td>
@@ -186,49 +189,55 @@
                         </tr> 
                     </tbody>
                 </table>
+            </div> --> 
+            
+           <!-- tree table-->  
+            <div class="tableBody">  
                 <table id="example-basic" class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th width="20%">Name</th> 
-                        <th width="15%" class="sorting_asc">#</th>
-                        <th width="25%" class="sorting">Username</th>
-                        <th width="40%" class="sorting_desc">Email Address</th>
+                    <tbody>
+                      <tr data-tt-id="1">
+                      	
+                      	<td width="10%"><input type="checkbox"></td>
+                        <td width="25%"> GRP-1</td>
+                        <td width="15%">1</td>
+                        <td width="25%">Nicky Almera</td>
+                        <td width="35%">nicky@hotmail.com</td>
                     </tr>
-                </thead>
-                <tbody>
-                  <tr data-tt-id="1">
-                    <td></i> GRP-1</td>
-                    <td>1</td>
-                    <td>Nicky Almera</td>
-                    <td>nicky@hotmail.com</td>
-                </tr>
-                <tr data-tt-id="1.1" data-tt-parent-id="1">
-                   <td>GRP-N3N2</td>
-                   <td>2</td>
-                   <td>Edmund Wong</td>
-                   <td>edmund@yahoo.com</td> 
-                </tr>
-                <tr data-tt-id="1.1.1" data-tt-parent-id="1.1">
-                    <td>GRP-N3N3</td>
-                    <td>2</td>
-                    <td>Edmund Wong</td>
-                    <td>edmund@yahoo.com</td>
-                </tr>
-                <tr data-tt-id="2">
-                    <td>Node 1</td>
-                    <td>4</td>
-                    <td>Terry Khoo</td>
-                    <td>terry@gmail.com</td>
-                </tr>
-                <tr data-tt-id="2.1" data-tt-parent-id="2">
-                    <td>Node 2</td>
-                    <td>4</td>
-                    <td>Terry Khoo</td>
-                    <td>terry@gmail.com</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    <tr data-tt-id="1.1" data-tt-parent-id="1">
+                       
+                       <td><input type="checkbox"></td>
+                       <td>GRP-N3N2</td>
+                       <td>2</td>
+                       <td>Edmund Wong</td>
+                       <td>edmund@yahoo.com</td> 
+                    </tr>
+                    <tr data-tt-id="1.1.1" data-tt-parent-id="1.1">
+                        
+                        <td><input type="checkbox"></td>
+                        <td>GRP-N3N3</td>
+                        <td>2</td>
+                        <td>Edmund Wong</td>
+                        <td>edmund@yahoo.com</td>
+                    </tr>
+                    <tr data-tt-id="2">
+                    	
+                        <td><input type="checkbox"></td>
+                        <td>Node 1</td>
+                        <td>4</td>
+                        <td>Terry Khoo</td>
+                        <td>terry@gmail.com</td>
+                    </tr>
+                    <tr data-tt-id="2.1" data-tt-parent-id="2">
+             
+                        <td><input type="checkbox"></td>
+                        <td>Node 2</td>
+                        <td>4</td>
+                        <td>Terry Khoo</td>
+                        <td>terry@gmail.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         </div>
     </div>   
 </div>
