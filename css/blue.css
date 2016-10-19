@@ -353,6 +353,10 @@ button.close {-webkit-appearance: none;padding: 0;cursor: pointer;background: 0 
 .close {float: right;font-size: 21px; font-weight: 700;line-height: 1;color: #fff;text-shadow: 0 1px 0 #000; filter: alpha(opacity=20);opacity: .3;}
 button.close:hover{opacity:1;}
 
+button.delete {-webkit-appearance: none;padding: 0;cursor: pointer;background: 0 0;border: 0;}
+.delete {float: right;font-size: 21px; font-weight: 700;line-height: 1;color: #E75A49;text-shadow: 0 1px 0 #000; filter: alpha(opacity=20);opacity: .6;}
+button.delete:hover{opacity:1;}
+
 .popup{position: fixed;top: 0; right: 0; bottom: 0; left: 0; z-index: 1100; display: none;overflow: hidden; -webkit-overflow-scrolling: touch; outline: 0;}
 .popupDiv{position: relative;width: 620px;margin: 40px auto 20px;}
 .popupContent{ position: relative; border: 1px solid #000; background: rgba(25,39,53,1) ; box-shadow: 0 0 7px rgba(0,0,0,.7);-webkit-box-shadow: 0 0 7px rgba(0,0,0,.7);-moz-box-shadow: 0 0 7px rgba(0,0,0,.7);min-height:200px;}
@@ -405,3 +409,18 @@ ul.pagination {display: inline-block;padding-left: 0;  border-radius: 0px;margin
 .contentBody fieldset{ border:1px solid #374551; margin:0;}
 .contentBody fieldset + fieldset{ margin-top:5px;}
 .contentBody legend{ padding:5px; font-size:14px; background-color:transparent;letter-spacing:2px; color:#8a9396;}
+.ms-container {background: rgba(0,0,0,.05); width: 100%; }
+.ms-arrow{width:20px; float:left; padding-left:15px;padding-top:45px; color:#fff;}
+.ms-arrow i{font-size:20px; color: #3378B1;}
+.ms-container .ms-selectable,.ms-container .ms-selection {  float: left; width: 46%;text-align:center;padding-top:10px;}
+.ms-container .ms-selectable{padding-left:15px;}
+.ms-container .ms-selection {float: right;padding-right:15px;}
+.ms-container .ms-button{width:100%; padding:10px 0;}
+.ms-container .ms-button button{ padding:2px 40px;}
+.ms-container label{width:100%; text-align:center;padding:5px;}
+.ms-container select{width:90%;}
+.ms-container .ms-button button{ float:none;margin: 0 auto; text-align:center;}
+.ms-container .ms-list{background: rgba(0,0,0,.05);padding:10px 20px;}
+.ms-container .ms-list li{border-bottom: 1px dotted #374551; line-height:28px; text-indent:10px;}
+.ms-container .ms-list li button{padding-right:10px; padding-top:4px;}
+.ms-container .ms-list li i{padding:0 10px 0 0; color: #3378B1;}
