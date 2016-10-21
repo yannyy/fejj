@@ -20,9 +20,9 @@
 
 <body>
 <div class="globalBg"></div>
-<div class="rFloatDiv">
-	<a class="collapseBtn" style="display:block;"><i class="zmdi zmdi-format-list-bulleted"></i></a>
-    <a class="collapseBtn" style="display:none;"><i class="zmdi zmdi-close"></i></a>
+<div class="rFloatDiv active">
+	<a class="collapseBtn" style="display:none;"><i class="zmdi zmdi-format-list-bulleted"></i></a>
+    <a class="collapseBtn"><i class="zmdi zmdi-close"></i></a>
 	<div class="nr">
 		<div class="tittle">设备列表<a href="#" class="fr textlink">添加机柜</a></div>
 		<div class="tabDiv bgGradul">
@@ -35,28 +35,57 @@
         		</ul>
         	</div>
         </div>
-        
+        <div class="clear"></div>
         <div class="slimScrollDiv" id="slim1" style="position: relative; overflow: hidden; width: auto; height: 380px;">
         	<div class="mCustomScrollbar" style="overflow: hidden; width: auto; height: 380px;">
               
               <ul class="clusterList">
-				<li class="select"><a>
-					<div class="fl leftPic">
-                    	<span><input type="checkbox"></span>
-						<!--<span class="checkbox"><input type="checkbox"><label></label></span>-->
-						<em>机柜1</em>
+				<li class="">
+                	<div class="fl leftCheck"><input type="checkbox"></div>
+                	<a href="volume/volume.html"><div class="fl leftPic">
+						<em>01</em>
 						<span class="clusterIcon"><i class="fa fa-hdd-o"></i></span>
-					</div>
-					<div class="fl rightInfo">
-						<ul>
-							<li><big class="m-r-5">Cluster-one</big><em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em></li>
-							<li><small>IP Address:</small> 192.168.0.21</li>
-							<li><small>标识:</small> 0000FDFGFGV98RE88</li>
-							<li><div class="jdt"><span style="width:35%;"></span></div><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div></li>
-						</ul>
-					</div></a>
+                        </div>
+                        <div class="fl rightInfo">
+                            <ul>
+                                <li><big class="m-r-5">Cluster-one</big><em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em></li>
+                                <li><small>IP Address:</small> 192.168.0.21</li>
+                                <li><small>标识:</small> 0000FDFGFGV98RE88</li>
+                                <li><div class="jdt"><span style="width:35%;"></span></div><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div></li>
+                            </ul>
+                        </div></a>
 				</li>
-				<li class=""><a>
+				<li class="select">
+                	<div class="fl leftCheck"><input type="checkbox"></div>
+                	<a><div class="fl leftPic">
+						<em>01</em>
+						<span class="clusterIcon"><i class="fa fa-hdd-o"></i></span>
+                        </div>
+                        <div class="fl rightInfo">
+                            <ul>
+                                <li><big class="m-r-5">Cluster-one</big><em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em></li>
+                                <li><small>IP Address:</small> 192.168.0.21</li>
+                                <li><small>标识:</small> 0000FDFGFGV98RE88</li>
+                                <li><div class="jdt"><span style="width:35%;"></span></div><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div></li>
+                            </ul>
+                        </div></a>
+				</li>
+                <li class="">
+                	<div class="fl leftCheck"><input type="checkbox"></div>
+                	<a><div class="fl leftPic">
+						<em>01</em>
+						<span class="clusterIcon"><i class="fa fa-hdd-o"></i></span>
+                        </div>
+                        <div class="fl rightInfo">
+                            <ul>
+                                <li><big class="m-r-5">Cluster-one</big><em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em></li>
+                                <li><small>IP Address:</small> 192.168.0.21</li>
+                                <li><small>标识:</small> 0000FDFGFGV98RE88</li>
+                                <li><div class="jdt"><span style="width:35%;"></span></div><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div></li>
+                            </ul>
+                        </div></a>
+				</li>
+                <!--<li class=""><a>
 					<div class="fl leftPic">
                     	<span><input type="checkbox"></span>
 						<em>02</em>
@@ -70,37 +99,7 @@
 							<li><div class="jdt"><span style="width:35%;"></span></div><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div></li>
 						</ul>
 					</div></a>
-				</li>
-                <li class=""><a>
-					<div class="fl leftPic">
-                    	<span><input type="checkbox"></span>
-						<em>02</em>
-						<span class="clusterIcon"><i class="fa fa-hdd-o"></i></span>
-					</div>
-					<div class="fl rightInfo">
-						<ul>
-							<li><big class="m-r-5">Cluster-one</big><em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em></li>
-							<li><small>IP Address:</small> 192.168.0.21</li>
-							<li><small>标识:</small> 0000FDFGFGV98RE88</li>
-							<li><div class="jdt"><span style="width:35%;"></span></div><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div></li>
-						</ul>
-					</div></a>
-				</li>
-                <li class=""><a>
-					<div class="fl leftPic">
-                    	<span><input type="checkbox"></span>
-						<em>02</em>
-						<span class="clusterIcon"><i class="fa fa-hdd-o"></i></span>
-					</div>
-					<div class="fl rightInfo">
-						<ul>
-							<li><big class="m-r-5">Cluster-one</big><em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em></li>
-							<li><small>IP Address:</small> 192.168.0.21</li>
-							<li><small>标识:</small> 0000FDFGFGV98RE88</li>
-							<li><div class="jdt"><span style="width:35%;"></span></div><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div></li>
-						</ul>
-					</div></a>
-				</li>
+				</li>-->
 			</ul>       
                                 
             </div>
@@ -113,7 +112,6 @@
 				<li class="select"><a>
 					<div class="fl leftPic">
                     	<span><input type="checkbox"></span>
-						<!---<span class="checkbox"><input type="checkbox"><label></label></span>--->
 						<em>01</em>
 						<span class="clusterIcon"><i class="fa fa-hdd-o"></i></span>
 					</div>
