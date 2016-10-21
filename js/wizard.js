@@ -1,11 +1,13 @@
 (function($){
-	$.fn.wizard = function(){
+	$.fn.wizard = function(options){
 		var wizard = this;
 		var steps= $(wizard).find('div.wizardStep');
 		wizard.$steps = steps;	
 		wizard.$current = 0;
 		wizard.$prev = $(wizard).find('button.wizardPrev');
 		wizard.$next = $(wizard).find('button.wizardNext');
+		if(options != null && options.onNext != null)
+			wizard.onNextCallback = options.onNext;
 
 
 		var init = function(){
@@ -44,13 +46,13 @@
 		}
 
 		var onNext = function(e){
+			wizard.onNextCallback();
 			if(wizard.$current < (wizard.$steps.length - 1)){
 				wizard.$current ++;
 				init();
 			}else if(wizard.$current == (wizard.$steps.length - 1)){
 				wizard.finish();
 			}
-
 		}
 
 		wizard.$prev.bind('click', onPrev);
