@@ -88,37 +88,31 @@
                     	您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容量。
                     </div>
                     <div class="contentBody">
-                        <div id="assignment">
-                            
-                         <div class="ms-container">
+                         <div class="ms-container" id="assignment">
                          	<div class="ms-selectable">
-                                 <label>目标卷</label> 
-                                 <select type="text" class="form-control src">
+                            	<label>目标卷</label> 
+                                <select type="text" class="form-control src">
                                     <option value="Volume 1">Volume 1</option>
                                     <option value="Volume 2">Volume 2</option>
-                                    <option value="Volume 3">Volume 3</option>
-                                    <option value="Volume 4">Volume 4</option>
                                 </select>
                             </div>
                             <div class="ms-arrow"><i class="fa fa-long-arrow-right"></i></div>    
                             <div class="ms-selection">
                             	<label>源卷</label> 
-                                 <select type="text" class="form-control dest">
+                                <select type="text" class="form-control dest">
                                     <option value="Volume 1">Volume 1</option>
                                     <option value="Volume 2">Volume 2</option>
-                                    <option value="Volume 3">Volume 3</option>
-                                    <option value="Volume 4">Volume 4</option>
-                                </select>
+                                </select> 
                             </div>
-                            <div class="clear"></div>    
-                            <div class="ms-button"><button class="btn btn-color  m-r-10" type="button">添加</button></div>
+                            <div class="ms-button"><span class="actionInnerTd"><a><i class="zmdi zmdi-plus-circle" ></i></a></span></div>
+                            <div class="clear"></div>  
                             <div class="ms-list">
                             	<ul>
                                 	
                                 </ul>
                             </div>    
                          </div>
-                        </div> 
+                         
                          
                     </div>
                     
@@ -190,8 +184,8 @@
 <script src="../js/assignment.js"></script>
 
 <script type="text/javascript">
+    $('#assignment').assignment();
     $(document).ready(function(){
-        var assignment = $('#assignment').assignment();
         var slider = $('#sliderT').ionRangeSlider({
             min:0,
             max:100,
