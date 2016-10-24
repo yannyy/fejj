@@ -46,7 +46,9 @@
 		}
 
 		var onNext = function(e){
-			wizard.onNextCallback();
+			if(false == wizard.onNextCallback())
+				return false;
+			
 			if(wizard.$current < (wizard.$steps.length - 1)){
 				wizard.$current ++;
 				init();

@@ -523,6 +523,7 @@
         $('#wizard').wizard({
             onNext: function(){
                 console.log("步骤" + this.$current);
+                return false;
             }
         });
         $('#wizard').bind('finish', function(e){
