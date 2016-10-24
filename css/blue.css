@@ -259,9 +259,9 @@ a.collapseBtn i{padding-top:8px;padding-left:11px;}
 .rFloatDiv .tittle{line-height: 36px; padding: 2px 15px 5px 15px; color: #FFFFFF; font-size:16px; opacity:.8;}
 .rFloatDiv .tittle a{}
 .tabDiv{width:100%;height: 35px;border-bottom: 1px solid #293847; border-top:1px solid #0e161e;}
-.tabDiv div{/*border-bottom: 1px solid #0B50A2;*/ margin: 0 15px;}
+.tabDiv div{/*border-bottom: 1px solid #0B50A2;*/ margin: 0 16px;}
 .tabDiv div:after{clear: both;content: "."; display: block;font-size: 1px; height: 0;visibility: hidden; }
-.tabDiv li a{float:left;  display:block; padding:0 10px;line-height: 33px; margin:0 1px 0 0;}
+.tabDiv li a{float:left;  display:block; padding:0 8px;line-height: 33px; margin:0 1px 0 0;}
 .tabDiv li a{font-size:14px; color:#8a9396; border-left:1px solid #0e161e;}
 .tabDiv li a:hover{background:rgba(25,39,53,1.0);}
 .tabDiv li.select a, .tabDiv li a.select{background:rgba(11,80,162,0.85);border-top: 1px solid #0B50A2;color:#fff;line-height: 34px; margin-top:-1px;}
@@ -277,8 +277,15 @@ a.collapseBtn i{padding-top:8px;padding-left:11px;}
 .contentBody .tabDiv li a {margin:0 2px; padding:0px 20px;border:1px solid #0e161e; border-bottom:none;}
 .contentBody .tabDiv li.select a,.contentBody  .tabDiv li a.select{border:none;border-top: 1px solid #0B50A2;margin-top:-1px;}
 
-.rFloatDiv .tabDiv{border-bottom:;}
+.rFloatDiv .tabDiv ul{width:227px; height:36px; display:block;overflow:hidden;position: absolute;top: -1px;}
 .rFloatDiv .actionBar{ margin:20px 10px 10px;height: 38px;}
+.rFloatDiv a.previous,.rFloatDiv a.next{ position:absolute;  height:18px; top:6px; color:#8a9396;font-size:18px; cursor:pointer; opacity:.8;}
+.rFloatDiv a.previous:hover,.rFloatDiv a.next:hover{color:#fff;opacity:1;}
+.rFloatDiv .tabDiv a.previous{left:-10px;}
+.rFloatDiv .tabDiv a.next{right:-10px;}
+.rFloatDiv a.previous.disabled,.rFloatDiv a.next.disabled{opacity:.4;cursor:default}
+.rFloatDiv a.previous.disabled:hover,.rFloatDiv a.next.disabled:hover{color:#8a9396;opacity:.4;}
+
 
 .rFloatDiv .clusterList{ display: block; width:100%;}
 .rFloatDiv .clusterList li.select{ background: rgba(255,255,255,0.05)}
