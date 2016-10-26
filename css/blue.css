@@ -283,7 +283,7 @@ a.collapseBtn i{padding-top:8px;padding-left:11px;}
 .rFloatDiv a.previous:hover,.rFloatDiv a.next:hover{color:#fff;opacity:1;}
 .rFloatDiv .tabDiv a.previous{left:-10px;}
 .rFloatDiv .tabDiv a.next{right:-10px;}
-.rFloatDiv a.previous.disabled,.rFloatDiv a.next.disabled{opacity:.4;cursor:default}
+.rFloatDiv a.previous.disabled,.rFloatDiv a.next.disabled{opacity:.4;}
 .rFloatDiv a.previous.disabled:hover,.rFloatDiv a.next.disabled:hover{color:#8a9396;opacity:.4;}
 
 
@@ -335,10 +335,15 @@ a.collapseBtn i{padding-top:8px;padding-left:11px;}
 ul.dropdown-menu{margin: 2px 0 0;text-align: left; color:#8a9396;font-size: 12px; padding:10px 0;}
 .dropdown-menu li{ white-space: nowrap; word-break: keep-all; text-overflow: ellipsis; }
 .dropdown-menu a{padding: 5px 25px; color:#fff; display:block;}
-.dropdown-menu a:hover{ background: rgba(11,80,162,0.5);}
+.dropdown-menu a:hover,.dropdownSub.open{ background: rgba(11,80,162,0.5);}
 .dropdown-menu .divider { height: 1px; margin: 2px 20px; overflow: hidden; background-color: #374551;}
 .dropdown-menu .disabled a,.dropdown-menu .disabled a:hover{color:#8a9396; background:transparent; opacity:.8;}
 .dropdownTitle {padding: 5px 15px 5px 5px; border-bottom: 1px solid #0B50A2; color: #8a9396; font-size:12px;margin:0 20px 2px;}
+li.dropdownSub{position:relative;}
+.dropdownSub a{position:relative;}
+.dropdownSub i{ position:absolute; right:5px; margin-top:1px;}
+.dropdownSub ul{ position:absolute;z-index: 10;padding:10px 0; border: 1px solid #515D6E; -webkit-background-clip: padding-box;background-clip: padding-box;background:rgba(25,39,53,1);  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175); box-shadow: 0 6px 12px rgba(0,0,0,.175);}
+
 
 .blockArea{padding: 0px 0px 15px; width:100%;float: left;background:rgba(25,39,53,0.4);box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); margin:0 0 10px;}
 .blockArea .slimScrollDiv{position:relative;}
@@ -438,3 +443,4 @@ ul.pagination {display: inline-block;padding-left: 0;  border-radius: 0px;margin
 .ms-container .ms-list li i{padding:0 10px 0 0; }
 .ms-container .ms-list li span{float:right; padding-right:15px;}
 .ms-container .ms-list li a i{color: auto; }
+
