@@ -37,11 +37,11 @@ function hidePopup(target){
 function alertMsg(options={}){
 	var title            = options.title || '警告';
 	var msg              = options.msg || '您的输入不合法';
-	var callbackFn       = options.callbackFn || function(){};
+	var callbackFn       = options.callbackFn; 
 
 	var fade             = $('<div class="popup fade" style="display:block ;">')
 	var popup            = $('<div class="popupDiv">');
-	var content          = $('<div class="popupContent">');	
+	var content          = $('<div class="popupContent" style="width:410">');	
 
 	var contentHeader    = $('<div class="contentHeader">');
 	var dismissBtn       = $(' <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>');
@@ -64,15 +64,18 @@ function alertMsg(options={}){
 
 	var contentFooter    = $('<div class="contentFooter">');
 	var cancelButton     = $('<button class="btn btn-light">取消</button>');
-	var subButton        = $('<button class="btn btn-color  m-r-10">确定</button>');
 	cancelButton.on('click', function(){
 		fade.remove();
 	});
-	subButton.on('click', function(){
-		callbackFn();
-	});
 	contentFooter.append(cancelButton);
-	contentFooter.append(subButton);
+
+	if(callbackFn != null && callbackFn != 'undifined'){
+		var subButton        = $('<button class="btn btn-color  m-r-10">确定</button>');
+		subButton.on('click', function(){
+			callbackFn();
+		});
+		contentFooter.append(subButton);
+	}
 
 	content.append(contentHeader);
 	content.append(alertMiddle);
@@ -81,4 +84,9 @@ function alertMsg(options={}){
 	popup.append(content);
 	fade.append(popup);
 	$('div.contentDiv').append(fade);
+
+	var windowHeight      = $(window).height();
+	var popupHight        = $(popup).height();
+	var offsetHeight = (parseInt((windowHeight - popupHight)/2) -50)+ 'px';
+	$(popup).css('top', offsetHeight);	
 }
