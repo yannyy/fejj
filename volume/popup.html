@@ -77,7 +77,6 @@
 <div id="content">  
     <!--右侧内容区-->
     <div class="contentDiv">
-    
     <!--wizard-->
    	 <div class="popup fade" style="display: ;">
             <div class="popupDiv" style="display:">
@@ -353,7 +352,7 @@
         </div>
         
         <!--特殊input-->
-        <div class="popup fade" style="display: block;">
+        <div class="popup fade" style="display: ;">
             <div class="popupDiv" style="display:" id="createVolumePopup">
                 <div class="popupContent" >
                     <div class="contentHeader">
@@ -569,6 +568,7 @@
 <script src="../js/jquery-ui-timepicker-addon.js"></script>
 <script src="../js/tableWithSelectall.js"></script>
 <script src="../js/scroll.js"></script>
+<script src="../js/common.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -610,6 +610,12 @@
 
         $('#tableWithSelectall1').selectAll(); 
         $('#tableWithSelectall2').selectAll(); 
+    });
+    alertMsg({
+        title:'abc',
+        callbackFn: function(){
+            debugger;
+        }
     });
 </script>
 </body>
