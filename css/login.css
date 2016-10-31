@@ -1,0 +1,15 @@
+.login{margin: 11% auto; width: 400px;position: relative;}
+.loginContent{ border:solid 1px #192735; border-top-color: #0B50A2; background: rgba(25,39,53,.7); box-shadow: 0 0 7px rgba(0,0,0,.7);   -webkit-box-shadow: 0 0 7px rgba(0,0,0,.7); -moz-box-shadow: 0 0 7px rgba(0,0,0,.7);padding: 40px 50px 40px 45px;}
+.login .loginHeader{margin:5px 0 5px 8px;}
+.login .sysName{font-size:28px;  text-align:left; line-height:40px; float:left;}
+.login .logo{ float:right;}
+.login .logo img{margin-bottom: -10px;}
+.login .form-control{height: 40px; padding-left: 50px; background:rgb(0,0,0,.7); border:solid 1px #192735; margin:0; margin-bottom:25px; width:100%; font-size:14px; outline:none;}
+.login .form-group{position:relative;}
+.form-control-icon {position: absolute; top: 0; left: 8px; z-index: 2; display: block; width: 34px; height: 40px; line-height: 40px; text-align: center; pointer-events: none; color:#0B50A2;font-size:18px;}
+
+.login-buttons button{width:100%; font-size:14px; letter-spacing:4px;height: 36px;}
+.login-buttons:after{clear: both;content: "."; display: block;font-size: 1px; height: 0;visibility: hidden;}
+.copyright{color: #8a9396;padding:15px 0 0; text-align:center; margin:5px auto 0; display:block; opacity:.6;}
+
+.textResult{display:none; font-size:12px; position:absolute;bottom: 4px;left: 50px;}
