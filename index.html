@@ -194,9 +194,9 @@
 			<div class="name">
             <em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em>
             <big>Cluster-one</big></div>
-            <span class="globalAction fr"><a href="#"><i class="zmdi zmdi-download"></i></a><a href="#" class="dropdown-toggle"><i class="zmdi zmdi-sun"></i></a></span>
+            <span class="globalAction fr"><a href="#"><i class="zmdi zmdi-download"></i></a><a href="javascript:void(0);" id="systemMenuListBtn" data-target="#systemMenuList" class="dropdown-toggle"><i class="zmdi zmdi-sun"></i></a></span>
             <div class="openRight">                       
-                <ul class="dropdown-menu" style="display:none">
+                <ul class="dropdown-menu" id="systemMenuList" style="display:none">
                     <li class="dropdownTitle">操作</li>
                     <li><a href="#">重名名系统</a></li>
                     <li class="disable"><a href="#">修改系统拓扑</a></li>
@@ -397,6 +397,7 @@
 <script src="js/scroll.js"></script>
 <script src="js/table.js"></script>
 <script src="js/imgscrollview.js"></script>
+<script src="js/buttontoggle.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$('#userBtn').dropdownBtn();
@@ -405,6 +406,7 @@
 		});
 
 		$('#imgscrollview').imgscrollimg();
+        $('#systemMenuListBtn').btnToggle();
 	});
 </script>
 </body>
