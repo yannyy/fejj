@@ -423,7 +423,7 @@ ul.pagination {display: inline-block;padding-left: 0;  border-radius: 0px;margin
 .detailSummary li{ font-size:12px; line-height:18px; padding:3px 0;}
 
 
-.contentBody fieldset{ border:1px solid #374551; margin:0;}
+.contentBody fieldset{ border:1px solid #374551; margin-right:20px;}
 .contentBody fieldset + fieldset{ margin-top:5px;}
 .contentBody legend{ padding:5px; font-size:14px; background-color:transparent;letter-spacing:2px; color:#8a9396;}
 .ms-container {background: rgba(0,0,0,.05); width: 100%; }
