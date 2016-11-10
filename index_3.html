@@ -55,22 +55,29 @@
                         <div class=""> 
 
                             <div class="mainTabDiv"> 
-                                <div class="tabDiv bgGradul" style="position:relative;">
+                                <div class="tabDiv bgGradul" style="position:relative;" id="scrollList">
                                     <label><i class="fa fa-sitemap m-r-5" aria-hidden="true"></i> 机柜管理：</label>
                                     <a class="previous disabled"><i class="fa fa-caret-left"></i></a>
 
                                     <ul class="mainTab">                   
-                                        <li class="select">
+                                        <li class="select" data-anchor="1">
                                             <a href="javascript:;" data-target="#slim1">机柜1</a >
                                             </li>
-                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li>
-                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li>
-                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li>
-                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li> 
-                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li>
-                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li> 
-                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li>
-                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li> 
+                                            <li data-anchor="2"><a href="javascript:;" data-target="#slim2">机柜2</a ></li>
+                                            <li data-anchor="3"><a href="javascript:;" data-target="#slim2">机柜3</a ></li>
+                                            <li data-anchor="4"><a href="javascript:;" data-target="#slim2">机柜4</a ></li>
+                                            <li data-anchor="5"><a href="javascript:;" data-target="#slim2">机柜5</a ></li> 
+                                            <li data-anchor="6"><a href="javascript:;" data-target="#slim2">机柜6</a ></li>
+                                            <li data-anchor="7"><a href="javascript:;" data-target="#slim2">机柜7</a ></li> 
+                                            <li data-anchor="8"><a href="javascript:;" data-target="#slim2">机柜8</a ></li>
+                                            <li data-anchor="9"><a href="javascript:;" data-target="#slim2">机柜9</a ></li> 
+                                            <li data-anchor="10"><a href="javascript:;" data-target="#slim2">机柜10</a ></li> 
+                                            <li data-anchor="11"><a href="javascript:;" data-target="#slim2">机柜11</a ></li> 
+                                            <li data-anchor="12"><a href="javascript:;" data-target="#slim2">机柜12</a ></li> 
+                                            <li data-anchor="13"><a href="javascript:;" data-target="#slim2">机柜13</a ></li> 
+                                            <li data-anchor="14"><a href="javascript:;" data-target="#slim2">机柜14</a ></li> 
+                                            <li data-anchor="15"><a href="javascript:;" data-target="#slim2">机柜15</a ></li> 
+                                            <li data-anchor="16"><a href="javascript:;" data-target="#slim2">机柜16</a ></li> 
                                         </ul>
                                         <a class="next"><i class="fa fa-caret-right"></i></a>
                                         <a href="#" class="textlinkb"><i class="zmdi zmdi-plus"></i><span>添加机柜</span></a>
@@ -251,6 +258,7 @@
 <script src="js/alert.js"></script>
 <script src="js/common.js"></script>
 <script src="js/contentswitch.js"></script>
+<script src="js/scrolllist.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         $('#createVolume').popup();
@@ -258,6 +266,9 @@
         $('#renameVolume').popup();
         $('#closeRenameAction').hidePopup();
         $('#contentSwitch').contentSwitch();
+        $('#scrollList').scrollList({
+            displaySize: 8
+        });
     });
 </script>
 </body>
