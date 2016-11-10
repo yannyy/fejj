@@ -92,7 +92,7 @@ a.textlinkb i, .textlinkb a i{vertical-align: text-bottom; width:14px;}
 /*left---------------------------------------------------*/
 .left_top{ background: rgba(11,80,162,0.8); padding: 10px 2px 8px 10px;  border-bottom:1px solid #000; font-size:12px; }
 .left_top .nameTop{ float:left;padding:4px 0;position:relative;}
-.left_top .name{ float:left; /*font-size:16px;*/ overflow:hidden; width:142px; white-space: nowrap; word-break: keep-all; text-overflow: ellipsis;}
+.left_top .name{ float:left; /*font-size:16px;*/ overflow:hidden; width:166px; white-space: nowrap; word-break: keep-all; text-overflow: ellipsis;}
 .left_top .name em{vertical-align: text-bottom; margin:0 4px;}
 .left_top .ipJdt{ color: #9BA5A7;}
 .left_top .ipJdt p{line-height:20px;}
@@ -290,7 +290,7 @@ a.collapseBtn i{padding-top:8px;padding-left:11px;}
 .rFloatDiv .clusterList{ display: block; width:100%;}
 .rFloatDiv .clusterList li.select{ background: rgba(255,255,255,0.05)}
 .rFloatDiv .clusterList li a{ margin: 0px 0 0 5px; padding-top:15px; padding-bottom:10px; overflow:hidden; display:block; border-bottom: 1px solid #364955;}
-.leftPic{ width: 60px; padding-right: 0px;padding-top: 18px; text-align: center; font-size: 12px; color: #9DA5A8; vertical-align:text-bottom; margin-left:-8px;}
+.leftPic{ width: 60px; padding-right: 0px;/*padding-top: 18px;*remove capacity row*/padding-top: 0px; text-align: center; font-size: 12px; color: #9DA5A8; vertical-align:text-bottom; margin-left:-8px;}
 .leftPic span{ text-align:left; width:100%; display:inline-block;padding-top: 2px}
 .leftPic em{ font-style:normal;width:100%; display:inline-block; line-height:20px; padding-top: 5px;}
 .leftPic span.clusterIcon{text-align: center;}
@@ -300,7 +300,7 @@ a.collapseBtn i{padding-top:8px;padding-left:11px;}
 .rightInfo{ font-size:12px; color: #8a9396;}
 /*.rightInfo i{padding-left:6px;}*/
 .rightInfo ul{ margin: 0; padding: 0;}
-.rightInfo li{line-height: 20px; /*-webkit-transform:scale(0.84);*/ width:165px; overflow:hidden;  white-space: nowrap; word-break: keep-all;text-overflow: ellipsis;}
+.rightInfo li{line-height: 20px; /*-webkit-transform:scale(0.84);*/ width:165px;/*width:180px;*/ overflow:hidden;  white-space: nowrap; word-break: keep-all;text-overflow: ellipsis;}
 .rightInfo li:first-child { color: #FFFFFF;}
 .rightInfo li:first-child i { vertical-align: text-bottom; }
 .rightInfo li em i{padding:0 5px;}
@@ -423,7 +423,7 @@ ul.pagination {display: inline-block;padding-left: 0;  border-radius: 0px;margin
 .detailSummary li{ font-size:12px; line-height:18px; padding:3px 0;}
 
 
-.contentBody fieldset{ border:1px solid #374551; margin-right:20px;}
+.contentBody fieldset{ border:1px solid #374551; margin:0;}
 .contentBody fieldset + fieldset{ margin-top:5px;}
 .contentBody legend{ padding:5px; font-size:14px; background-color:transparent;letter-spacing:2px; color:#8a9396;}
 .ms-container {background: rgba(0,0,0,.05); width: 100%; }
@@ -443,4 +443,6 @@ ul.pagination {display: inline-block;padding-left: 0;  border-radius: 0px;margin
 .ms-container .ms-list li i{padding:0 10px 0 0; }
 .ms-container .ms-list li span{float:right; padding-right:15px;}
 .ms-container .ms-list li a i{color: auto; }
+
+
 

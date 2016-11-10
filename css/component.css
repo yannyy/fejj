@@ -298,10 +298,10 @@ table > tbody > tr > td:first-child,table > thead > tr > th:first-child {
 table > tbody > tr > td:last-child,table > thead > tr > th:last-child {
     padding-right:25px;
 }
-table > tbody > tr > td:first-child >table > tbody > tr > td:first-child,table > thead > tr > th:first-child >table > thead > tr > th:first-child {
+table > tbody > tr > td >table > tbody > tr > td:first-child,table > thead > tr > th >table > thead > tr > th:first-child {
     padding-left:0px;
 }
-table > tbody > tr > td:last-child > table > tbody > tr > td:last-child, table > thead > tr > th:last-child > table > thead > tr > th:last-child  {
+table > tbody > tr > td > table > tbody > tr > td:last-child, table > thead > tr > th > table > thead > tr > th:last-child  {
     padding-right:0px;
 }
 
@@ -388,11 +388,11 @@ table > tbody > tr > td:first-child > label {
 } 
 .contentBody table > tbody > tr.selected{background:rgba(11,80,162,0.5);} 
 
-.contentBody table > tbody > tr > td > table > tbody > tr > td:first-child, .contentBody table > thead > tr > th > table > thead > tr > th:first-child {
-    padding-left: 0;
+.contentBody table > tbody > tr > td:first-child >table > tbody > tr > td:first-child,.contentBody table > thead > tr > th:first-child >table > thead > tr > th:first-child {
+    padding-left:0px;
 }
-.contentBody table > tbody > tr > td > table > tbody > tr > td:last-child, .contentBody table > thead > tr > th > table > thead > tr > th:last-child {
-    padding-right: 0;
+.contentBody table > tbody > tr > td:last-child > table > tbody > tr > td:last-child,.contentBody table > thead > tr > th:last-child > table > thead > tr > th:last-child  {
+    padding-right:0px;
 }
 
 table > tbody > tr > td > .form-control{
