@@ -45,7 +45,11 @@
             }
         }
     	var initContent = function(target){
-            if (scroll.currentStep == 0) {
+            if(scroll.anchorList.length < scroll.displaySize){
+                $(scroll.previous).addClass('disabled');
+                $(scroll.next).addClass('disabled');   
+            }
+            else if (scroll.currentStep == 0) {
                 $(scroll.previous).addClass('disabled');
                 $(scroll.next).removeClass('disabled');   
             }else if(scroll.currentStep == (scroll.anchorList.length - scroll.displaySize)){

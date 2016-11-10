@@ -25,7 +25,12 @@
     		});
 
     		$(switcher).find('div.switchContent').hide();
-    		$(target).css("right","200px").animate({"right":"0px"},500).show();	
+    		if(target == "#userMgmt")
+    			$(target).css("position","absolute").css('left','800').animate({"left":"0px"},1000).show();	
+    		else
+    			$(target).css("position","absolute").css('left','-800').animate({"left":"0px"},1000).show();	
+
+    		$(target).css('position', 'relative');
     	};
 
     	var switchEvent = function(e){
