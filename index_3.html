@@ -1,0 +1,264 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Netstor</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"> 
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link rel="stylesheet" href="css/blue.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/component.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/material-design-iconic-font.css">
+    <!-- ================== END BASE CSS STYLE ================== -->
+    <!-- ================== BEGIN BASE JS ================== -->
+
+    <!-- ================== END BASE JS ================== -->
+</head>
+
+<body id="guideIndex">
+<div class="globalBg"></div>
+
+
+
+
+<!--右侧top-->
+<div id="topDiv">
+    <div class="headerBar">
+        <div class="fr glysetting"><a href="#">Superuser（安全管理员）<span class="caret"></span></a><a href="#"><i class="zmdi zmdi-help-outline"></i></a></div>
+        <div class="sysName">NetStor<span>Control Center</span></div>
+    </div>
+</div>
+<!--右侧-->
+<div id="content"> 
+	 
+    <!--右侧内容区-->
+    <div class="contentDiv">
+        <div id="contentSwitch"> 
+            <div class="swithBtnDiv">
+                
+            <div class="lBtn" >
+                <a href="javascript:void(0);" data-target="#slimMgmt"><i class="fa fa-angle-double-left"></i><span>机柜管理</span></a>
+            </div>
+            <div class="rBtn">
+                <a style="display:none;" href="javascript:void(0);" data-target="#userMgmt"><span>用户管理</span><i class="fa fa-angle-double-right"></i></a>
+            </div>      
+            </div> 
+            <div class="swithContentContainer">
+                <div class="switchContent" id="slimMgmt">
+                    <!--面包屑导航-->
+                    <ol class="breadcrumb">
+                        <li class="active">Home: 机柜管理</li>
+                    </ol>        
+                    <div class="fixedArea" style="">
+                        <div class=""> 
+
+                            <div class="mainTabDiv"> 
+                                <div class="tabDiv bgGradul" style="position:relative;">
+                                    <label><i class="fa fa-sitemap m-r-5" aria-hidden="true"></i> 机柜管理：</label>
+                                    <a class="previous disabled"><i class="fa fa-caret-left"></i></a>
+
+                                    <ul class="mainTab">                   
+                                        <li class="select">
+                                            <a href="javascript:;" data-target="#slim1">机柜1</a >
+                                            </li>
+                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li>
+                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li>
+                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li>
+                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li> 
+                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li>
+                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li> 
+                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li>
+                                            <li><a href="javascript:;" data-target="#slim2">机柜2</a ></li> 
+                                        </ul>
+                                        <a class="next"><i class="fa fa-caret-right"></i></a>
+                                        <a href="#" class="textlinkb"><i class="zmdi zmdi-plus"></i><span>添加机柜</span></a>
+                                    </div>            
+                                </div>
+                                <div class="clear"></div>
+                                <div class="alertDesc alertDesc-info">
+                                    您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容S的容量，该操作会增加卷中的可S的容量，该操作会增加卷中的可量。
+                                </div>  
+                                <div  class="actionTopbar">
+                                    <div class="btn-group-lg">
+                                        <div><a data-target="#createVolumePopup" class="btn btn-primary m-r-10">创建卷</a></div>
+                                        <div><a class="btn btn-default" data-target="#renameVolumePopup">重命名</a></div>
+                                        <div class="dropdown open">
+                                            <a class="btn btn-default">更多操作<span class="caret m-l-5"></span></a>
+                                            <ul class="dropdown-menu" style="display:none">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>    
+                                    <div><form class="filter-group">
+                                        <input type="text" class="form-control" placeholder="过滤...">
+                                        <a class="btn btn-primary"><i class="fa fa-search"></i></a>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="tableHeader">
+                                <table class="">
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox"></th> 
+                                            <th width="5%" class="">序号</th>
+                                            <th width="15%" class="sorting">名称</th>
+                                            <th width="10%" class="sorting">状态</th>
+                                            <th width="10%"class="sorting">设备型号</th>
+                                            <th width="20%" class="sorting">标识</th>
+                                            <th width="30%" class="sorting">容量</th>
+                                            <th width="15%" class="sorting">版本</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="blockArea">
+                        <div class="tableBody">
+                            <table class="table table-hover table-big">
+                                <tbody >
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td width="5%">1</td>
+                                        <td width="15%">Nicky Almera</td>
+                                        <td width="10%" class="statusIcon"><em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em></td>
+                                        <td width="10%">Ncs7500</td>
+                                        <td width="20%">22fgh222ddddddd232sd2</td>
+                                        <td width="30%">
+                                            <div class="jdt"><span style="width:35%;"></span></div>
+                                            <div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div>
+                                        </td>
+                                        <td width="15%"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2</td>
+                                        <td>Nicky Almera</td>
+                                        <td class="statusIcon"><em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em></td>
+                                        <td>Ncs7500</td>
+                                        <td>22fgh222ddddddd232sd2</td>
+                                        <td><div class="jdt"><span style="width:35%;"></span></div>
+                                            <div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div>
+                                        </td>
+                                        <td>2222222</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>  
+                </div>
+                <div class="switchContent" id="userMgmt">
+                    <!--面包屑导航-->
+                    <ol class="breadcrumb">
+                        <li class="active">Home: 用户管理</li>
+                    </ol>        
+                    <div class="fixedArea" style="">
+                        <div class=""> 
+                            <div class="clear"></div>
+                            <div class="alertDesc alertDesc-info">
+                                您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容S的容量，该操作会增加卷中的可S的容量，该操作会增加卷中的可量。
+                            </div>	
+                            <div  class="actionTopbar">
+                                <div class="btn-group-lg">
+                                    <div><a data-target="#createVolumePopup" class="btn btn-primary m-r-10">创建</a></div>
+                                    <div><a class="btn btn-default" data-target="#renameVolumePopup">删除</a></div>
+                                    <div class="dropdown open">
+                                        <a class="btn btn-default">更多操作<span class="caret m-l-5"></span></a>
+                                        <ul class="dropdown-menu" style="display:none">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                        </ul>
+                                    </div>
+                                </div>    
+                                <div><form class="filter-group">
+                                    <input type="text" class="form-control" placeholder="过滤...">
+                                    <a class="btn btn-primary"><i class="fa fa-search"></i></a>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="tableHeader">
+                            <table class="">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox"></th> 
+                                        <th width="5%" class="">序号</th>
+                                        <th width="15%" class="sorting">用户名</th>
+                                        <th width="15%"class="sorting">显示名字</th>
+                                        <th width="20%" class="sorting">类型</th>
+                                        <th width="30%" class="sorting">邮件</th>
+                                        <th width="15%" class="sorting"></th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="blockArea">
+                    <div class="tableBody">
+                        <table class="table table-hover table-big">
+                            <tbody >
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td width="5%">1</td>
+                                    <td width="15%">Nicky Almera</td>
+                                    <td width="15%">Ncs7500</td>
+                                    <td width="20%">22fgh222ddddddd232sd2</td>
+                                    <td width="30%">        	
+                                    </td>
+                                    <td width="15%"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>2</td>
+                                    <td>Nicky Almera</td>
+
+                                    <td>Ncs7500</td>
+                                    <td>22fgh222ddddddd232sd2</td>
+                                    <td>
+                                    </td>
+                                    <td>2222222</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>     
+            
+        </div>
+    </div>
+    </div>   
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/dropdown.js"></script>
+<script src="js/popup.js"></script>
+<script src="js/sidediv.js"></script>
+<script src="js/alert.js"></script>
+<script src="js/common.js"></script>
+<script src="js/contentswitch.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#createVolume').popup();
+        $('#closeAction').hidePopup();
+        $('#renameVolume').popup();
+        $('#closeRenameAction').hidePopup();
+        $('#contentSwitch').contentSwitch();
+    });
+</script>
+</body>
+</html>
