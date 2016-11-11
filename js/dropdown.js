@@ -38,6 +38,12 @@
 				return false;
 
 			var li = $(e.target).parent();
+			var ul = $(li).parent();
+			var liList = $(ul).find('li.dropdownSub').removeClass('open');
+			$.each(liList, function(i, obj){
+				$(obj).removeClass('open');	
+				$(obj).find('ul').hide();
+			});
 			$(li).addClass('open');
 			$(li).find('ul').show();
 		},

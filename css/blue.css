@@ -444,5 +444,7 @@ ul.pagination {display: inline-block;padding-left: 0;  border-radius: 0px;margin
 .ms-container .ms-list li span{float:right; padding-right:15px;}
 .ms-container .ms-list li a i{color: auto; }
 
+.areaBg{background:rgba(25,39,53,0.4);box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);} 
+
 
 
