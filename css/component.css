@@ -402,11 +402,11 @@ table > tbody > tr > td > .form-control{
 .table-detail td{padding:5px; line-height:20px;}
 .table-detail td{border-bottom:dotted 1px #2b3243;}
 
-tr.tdSon{background:rgba(0,0,0,.06)}
+tr.tdSon{background:rgba(0,0,0,0.2)}
 .tdFather>td i{padding-right:25px; cursor:pointer;opacity:.6;}
 .tdFather>td i:hover{opacity:1;}
 .tdSon>td i{cursor:pointer; opacity:.6;}
-.tdSon>td:first-child{padding-left:90px;}
+.tdSon>td:first-child{padding-left:70px;}
 .tdFather>td:first-child{padding-left:25px;}
 table>tbody>tr.tdSon >td{ border-bottom-style:dotted;}
 
@@ -700,7 +700,7 @@ table.treetable tr.expanded span.indenter a {
   background:rgba(0,0,0,.06);
 }*/
 table.treetable tr.branch.collapsed td,table.treetable tr.leaf.collapsed td{
-  background:rgba(0,0,0,.06);
+  /*background:rgba(0,0,0,.06);*/
   /*border-bottom: 1px dotted #374551;*/
 }
 table.treetable tr.selected {

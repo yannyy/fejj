@@ -19,9 +19,9 @@
     		var switchBtnDivs = $(switcher).find('div.swithBtnDiv').find('div.lBtn, div.rBtn');	
     		$.each(switchBtnDivs, function(i, div){
     			if($(div).find('a').attr('data-target') == target)
-    				$(div).find('a').hide();
+    				$(div).addClass('selected');
     			else
-    				$(div).find('a').show();
+    				$(div).removeClass('selected');
     		});
 
     		$(switcher).find('div.switchContent').hide();

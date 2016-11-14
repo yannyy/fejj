@@ -32,6 +32,7 @@ button,select {text-transform: none; }
 .bgOrange{ background: #CC9933;}
 .bgGradul{background:rgba(25,39,53,0.6);background:-moz-linear-gradient(top, #2A343F, #17222D 70%);background: -webkit-gradient(linear, 0 0, 0 70%, from(#2A343F), to(#17222D));}
 
+
 .caret {display: inline-block; width: 0; height: 0;margin-left: 2px;vertical-align: middle; border-top: 4px dashed; border-right: 4px solid transparent; border-left: 4px solid transparent;}
 
 
@@ -444,7 +445,8 @@ ul.pagination {display: inline-block;padding-left: 0;  border-radius: 0px;margin
 .ms-container .ms-list li span{float:right; padding-right:15px;}
 .ms-container .ms-list li a i{color: auto; }
 
-.areaBg{background:rgba(25,39,53,0.4);box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);} 
+
+.areaBg{background:rgba(25,39,53,0.4);box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);}
 
 
 
