@@ -26,10 +26,7 @@
 
     		$(switcher).find('div.switchContent').hide();
     		$('body').css('overflow', 'hidden');	
-    		if(target == "#userMgmt")
-    			$(target).css("position","absolute").css('left','800').animate({"left":"0px"},300).show();	
-    		else
-    			$(target).css("position","absolute").css('left','-800').animate({"left":"0px"},300).show();	
+            $(target).css("position","absolute").css('left','-800').animate({"left":"0px"},300).show();	
 
     		$(target).css('position', 'relative');
     	};
