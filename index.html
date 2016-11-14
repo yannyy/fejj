@@ -24,12 +24,12 @@
 	<div class="nr">
 		<div class="tittle">设备列表<a href="#" class="fr textlink">添加机柜</a></div>
 		<div class="tabDiv bgGradul">
-        	<div style="position:relative">
+        	<div style="position:relative" id="slimList">
                 <div class="nav">
                     <a href="javascript:void(0);" class="previous disabled"><i class="scrollArrowLeft fa fa-caret-left"></i></a >
                     <a href="javascript:void(0);" class="next"><i class="scrollArrowRight fa fa-caret-right"></i></a >
                 </div>
-        		<ul id="slimList">
+        		<ul  class="slimList">
         			<li class="select" data-anchor="1">
         				<a href="javascript:;" data-target="#slim1">机柜1</a >
         			</li>
@@ -398,6 +398,7 @@
 <script src="js/table.js"></script>
 <script src="js/imgscrollview.js"></script>
 <script src="js/buttontoggle.js"></script>
+<script src="js/minscrolllist.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$('#userBtn').dropdownBtn();
@@ -407,6 +408,7 @@
 
 		$('#imgscrollview').imgscrollimg();
         $('#systemMenuListBtn').btnToggle();
+        $('#slimList').minScrollList();
 	});
 </script>
 </body>

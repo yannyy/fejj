@@ -1,10 +1,11 @@
 (function($){
-    $.fn.scrollList = function(options){
+    $.fn.minScrollList = function(options){
     	var widget = this;
         options = options || {};
         var scroll = {
             size: 0,
             currentStep: 0,
+            displaySize: 4,
             displayList: [],
             previous:null,
             next:null,
@@ -12,13 +13,6 @@
         };
 
     	var init = function(){
-            var ul  = $(widget).find('ul.mainTab');
-            var ulWidth = parseInt($(ul).css('width'));
-            var displaySize = parseInt(ulWidth/120);
-            if(displaySize <= 5)
-                displaySize --;
-            scroll.displaySize = displaySize;
-
             var lst = $(widget).find('li'); 
             scroll.size = lst.length;
 

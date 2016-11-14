@@ -26,9 +26,7 @@
 
     		$(switcher).find('div.switchContent').hide();
     		$('body').css('overflow', 'hidden');	
-            $(target).css("position","absolute").css('left','-800').animate({"left":"0px"},300).show();	
-
-    		$(target).css('position', 'relative');
+            $(target).css("position","relative").css('left','-800px').animate({"position":"relative", "left":"0px"},300).show();	
     	};
 
     	var switchEvent = function(e){

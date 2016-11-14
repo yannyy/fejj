@@ -11,6 +11,7 @@
 				else
 					$(li).on('mouseover', dropdown.closeDropdownSub);
 			});
+
 			$('body').on('click', dropdown.collapseDropdown);
 		},
 		toggleDropdown: function(e){
