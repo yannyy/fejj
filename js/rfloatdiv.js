@@ -1,71 +1,69 @@
 (function($){
-	var rFloatDiv = {
-		defaultSlim:'',	
-		maxStepDisplay:4,
-		currentStep:0,
-		displayList: [],
-		init: function(){
-			rFloatDiv.initRFloatDiv();
-			rFloatDiv.initRFloatDivTab();
-		},
-		initRFloatDiv: function(){
-			$('.collapseBtn').on('click', rFloatDiv.toggleCollapseBtn);	
-		},
-		initRFloatDivTab: function(){
-			var tab = $('.rFloatDiv').find('div.tabDiv').children('div');
+	$.fn.rFloat = function(){
+		var widget = this;
+		var rFloatDiv = {
+			defaultSlim:'',	
+			maxStepDisplay:4,
+			currentStep:0
+		};
 
-			$('ul.slimList').find('li').on('click', rFloatDiv.rFloatDivTabSwitch);
-		},
-		rFloatDivTabSwitch: function(ele){
+		var init = function(){
+			initRFloatDiv();
+			initRFloatDivTab();
+		};
+
+		var initRFloatDiv = function(){
+			$(widget).find('.collapseBtn').on('click', toggleCollapseBtn);	
+		};
+
+		var initRFloatDivTab = function(){
+			$(widget).find('ul.slimList').find('li').on('click', rFloatDivTabSwitch);
+		};
+
+		var rFloatDivTabSwitch = function(ele){
 			var link = ele.target;
 
 			var tabId = $(link).attr('data-target');
-			if(tabId == rFloatDiv.defaultSlim)
+			if(tabId === rFloatDiv.defaultSlim){
 				return false; 
+			}
 
-		    var tabs = $('.rFloatDiv').find('div.tabDiv').find('a');
-		    
+            var tabs = $(widget).find('ul.slimList').find('a');
 			$.each(tabs, function(i, item){
-				if($(item).parent().hasClass('select'))
+				if($(item).hasClass('select')){
+					$(item).removeClass('select');
+				}
+				
+				if($(item).parent().hasClass('select')){
 					$(item).parent().removeClass('select');
+				}
 
 				var idTmp = $(item).attr('data-target');
 				$(idTmp).hide();
 			});		
 
-			$(ele.target).parent().addClass('select');
+			$(link).parent().addClass('select');
 
-			$(tabId).css("left","200px").animate({"left":"0px"},500).show();	
+			$(tabId).css('left','200px').animate({'left':'0px'},500).show();	
 
 			rFloatDiv.defaultSlim = tabId;
-		},
-		toggleCollapseBtn: function(){
-			$(this).parent().toggleClass('active');	
-			$btns = $('a.collapseBtn');
-			$.each($btns, function(i, btn){
-				if($(btn).css('display') == 'block')
+		};
+
+		var toggleCollapseBtn = function(){
+			var btnDiv = $(this).parent();
+			var btns = $(widget).find('a.collapseBtn');
+			$.each(btns, function(i, btn){
+				if($(btn).css('display') ==='block'){
 					$(btn).css('display', 'none');
-				else
+					$(btnDiv).removeClass('active');
+				}
+				else{
 					$(btn).css('display', 'block');
+					$(btnDiv).addClass('active');
+				}
 			});
-		},
-		onScrollRight: function(){
-			if(rFloatDiv.currentStep < (rFloatDiv.anchorList.length - rFloatDiv.maxStepDisplay)){
-				rFloatDiv.currentStep ++;
-				rFloatDiv.initStep();
-			}
+		};
 
-		},	
-		onScrollLeft: function(){
-			if(rFloatDiv.currentStep > 0){
-				rFloatDiv.currentStep --;
-				rFloatDiv.initStep();
-			}
-
-		},	
+		init();	
 	};
-
-	$(document).ready(function(){
-		rFloatDiv.init();
-	});
 })(jQuery);

@@ -218,8 +218,9 @@ ul.sidebarNav li.select a:hover{background:transparent;}
 .dDiv li a:hover{font-size: 22px; color: #3897E2;}
 .dDiv .current a{font-size: 18px; color: #3897E2;}
 /*c-center*/
-.picCol{ margin-left: 180px; height: 100%; padding: 10%; text-align: center;}
+.picCol{ margin-left: 180px; height: 100%; /*padding: 10%;*/ text-align: center;}
 .picCol img{ /*height: 100%; width:100%;*/align-items: center;}
+.picCol:after{clear:both; float:none; content:"."; font-size:1px; line-height:1px;}
 
 /*bottom---------------*/
 .bottomRaw{ position: relative; bottom: 0; left:0; height: 220px; width: 100%; padding: 15px 0px 0; /*display:-moz-box; display:-webkit-box; display:box;*/}
@@ -280,10 +281,11 @@ a.collapseBtn i{padding-top:8px;padding-left:11px;}
 
 .rFloatDiv .tabDiv ul{width:227px; height:36px; display:block;overflow:hidden;position: absolute;top: -1px;}
 .rFloatDiv .actionBar{ margin:20px 10px 10px;height: 38px;}
-.rFloatDiv a.previous,.rFloatDiv a.next{ position:absolute;  height:18px; top:6px; color:#8a9396;font-size:18px; cursor:pointer; opacity:.8;}
+.rFloatDiv a.previous,.rFloatDiv a.next{ position:absolute;  height:30px; width: 15px;top:1px; color:#8a9396;font-size:18px; cursor:pointer; opacity:.8;}
 .rFloatDiv a.previous:hover,.rFloatDiv a.next:hover{color:#fff;opacity:1;}
-.rFloatDiv .tabDiv a.previous{left:-10px;}
-.rFloatDiv .tabDiv a.next{right:-10px;}
+.rFloatDiv .tabDiv a.previous{left:-15px;}
+.rFloatDiv .tabDiv a.next{right:-16px;}
+.rFloatDiv .tabDiv a.previous i,.rFloatDiv .tabDiv a.next i{padding-top: 6px;padding-left: 4px;}
 .rFloatDiv a.previous.disabled,.rFloatDiv a.next.disabled{opacity:.4;}
 .rFloatDiv a.previous.disabled:hover,.rFloatDiv a.next.disabled:hover{color:#8a9396;opacity:.4;}
 

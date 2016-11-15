@@ -1,5 +1,5 @@
 (function($){
-	$.fn.imgscrollimg = function(options = {}){
+	$.fn.imgscrollimg = function(options={}){
 		var wizard = this;
 
 		wizard.max     = options.max | 3;
