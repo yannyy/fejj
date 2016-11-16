@@ -69,5 +69,6 @@
 .table-big .jdt{height: 12px; margin: 10px 5px 10px 0; width:100px;}
 .table-big .jdt span{height: 12px; }
 .table-big .jdtText small{font-size:14px;}
-
+.table-big a.textLink{color:#3897E2; font-size:16px; line-height: 30px;}
+.table-big a.textLink:hover{color: #fff;}
 div.swithBtnDiv{position:absolute;left:0;}

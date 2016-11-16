@@ -245,6 +245,7 @@ ul.sidebarNav li.select a:hover{background:transparent;}
 /*float layer---------------------------------------------------------*/
 .rFloatDiv{ z-index: 1090; top: 75px;position: fixed; right: -260px;background: #192735; box-shadow: 0 0 2px rgba(0,0,0,.4);-webkit-box-shadow: 0 0 2px rgba(0,0,0,.4);-moz-box-shadow: 0 0 2px rgba(0,0,0,.4);width: 260px; -webkit-transition: right .2s linear;-moz-transition: right .2s linear;transition: right .2s linear;border-left: 1px solid #515D6E; border-top: 1px solid #515D6E;  border-bottom: 1px solid #515D6E; min-height:300px;}
 .collapseBtn{position: absolute; left: -35px;top: 40px; margin-top: -20px;width: 35px;height: 35px;background:#0C50A3;border-radius: 4px 0 0 4px;box-shadow: -1px 0 3px -1px rgba(0,0,0,.4); -webkit-box-shadow: -1px 0 3px -1px rgba(0,0,0,.4);-moz-box-shadow: -1px 0 3px -1px rgba(0,0,0,.4);border-top: 1px solid #515D6E;  border-left: 1px solid #515D6E;  border-bottom: 1px solid #515D6E; cursor:pointer;}
+.collapseBtn:hover{border-color:#5C7589;}
 a.collapseBtn i{color:#eee; transform:scale(1.5);}
 a.collapseBtn:hover i{color:#fff;}
 a.collapseBtn i{padding-top:8px;padding-left:11px;}
