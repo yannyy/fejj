@@ -1,11 +1,25 @@
 (function($){
-	$.fn.areaFix = function(){
-
+	$.fn.areaFix = function(options){
+		var areaFixParams = {
+			selector: '',
+			disabled: false
+		};
+		options = options || {};
+		areaFixParams.disabled = options.disabled || false;
 		var widget = this;
 		//定义滚动模块
 		var areaFix = {
 			blockAreaOffset: 0,
+			disable: function(){
+                areaFixParams.disabled = true;
+                areaFix.init();
+            },
+			activate: function(){
+                areaFixParams.disabled = false;
+                areaFix.init();
+			},
 			init: function(){
+				areaFixParams.selector = widget.selector;
 				areaFix.fixedInit();
 				areaFix.tableSelectInit();
 				areaFix.clearCheckStatus();
@@ -30,34 +44,36 @@
 				}
 			},
 			actionBarTopFixed: function(){
-				$(window).bind('scroll', areaFix.onWindowScroll);	
+                if(!areaFixParams.disabled) {
+                    $(window).bind('scroll', areaFix.onWindowScroll);
+                }
 			},
 			onWindowScroll: function(){
+				 if(!areaFixParams.disabled){
+                    var theScrollTop = document.documentElement.scrollTop
+                        || window.pageYOffset
+                        || document.body.scrollTop;
+                    var scrollTop = $(window).scrollTop();
 
-				var theScrollTop = document.documentElement.scrollTop 
-			     	|| window.pageYOffset 
-				    || document.body.scrollTop;
-				var scrollTop = $(window).scrollTop();
+                    if ((scrollTop + 23) > areaFix.actionBarTop) {
+                        // 固顶
+                        $(widget).find('div.replaceArea').show();
+                        if (false == $(widget).find('div.fixedArea').hasClass('floatArea'))
+                            $(widget).find('div.fixedArea').addClass('floatArea');
 
+                        if (false == $(widget).find('div.fixedArea').children('div').hasClass('fixedContent'))
+                            $(widget).find('div.fixedArea').children('div').addClass('fixedContent');
+                    } else {
+                        // 取消固顶
+                        $(widget).find('div.replaceArea').hide();
 
-				if((scrollTop + 23) > areaFix.actionBarTop) {
-				// 固顶 
-					$(widget).find('div.replaceArea').show();
-     				if (false == $('div.fixedArea').hasClass('floatArea')) 
-     					$('div.fixedArea').addClass('floatArea');
+                        if (true == $(widget).find('div.fixedArea').hasClass('floatArea'))
+                            $(widget).find('div.fixedArea').removeClass('floatArea');
 
-     				if(false == $('div.fixedArea').children('div').hasClass('fixedContent'))
-     					$('div.fixedArea').children('div').addClass('fixedContent');
-			    } else {
-			    	// 取消固顶 
-					$(widget).find('div.replaceArea').hide();
-
-			    	if (true == $('div.fixedArea').hasClass('floatArea'))
-			    		$('div.fixedArea').removeClass('floatArea');
-
-			    	if (true == $('div.fixedArea').children('div').hasClass('fixedContent'))
-			    		$('div.fixedArea').children('div').removeClass('fixedContent');
-			    }
+                        if (true == $(widget).find('div.fixedArea').children('div').hasClass('fixedContent'))
+                            $(widget).find('div.fixedArea').children('div').removeClass('fixedContent');
+                    }
+                }
 			},
 			tableSelectInit: function(){
 				$(widget).find('table.table').find('td').children('input[type="checkbox"]').on('click', areaFix.rowSelected);
@@ -122,6 +138,12 @@
 		window.areaFix = $(widget);
 		window.areaFix.on('resize', areaFix.resize); 
 		areaFix.init();
+		return {
+			disable: areaFix.disable,
+            activate: areaFix.activate,
+			params: this,
+
+		};
 	}
 	$.fn.disableOnRowSelected = function(){
 		var target = $(this);
