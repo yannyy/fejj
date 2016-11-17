@@ -109,10 +109,10 @@
 			var target = widget.currentTaget;
 			if(widget.device === 'front'){
                 $(target).find('div.backDevice').hide();
-                $(target).find('div.frontDevice').css('left', '500px').animate({'left':'0px'}, 500).show();
+                $(target).find('div.frontDevice').css('top', '-500px').animate({'top':'0px'}, 300).show();
 			}else{
                 $(target).find('div.frontDevice').hide();
-                $(target).find('div.backDevice').css('left', '500px').animate({'left':'0px'}, 500).show();
+                $(target).find('div.backDevice').css('top', '-500px').animate({'top':'0px'}, 300).show();
             }
 
             //frontdevice, backdevice switch event
