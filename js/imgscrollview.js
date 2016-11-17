@@ -105,6 +105,28 @@
             $(widget).find('div.minPic').find('li').find('h5, h2, img').on('click', selectDevice);
 		};
 
+		var initBackDevice = function(){
+			var target     = widget.currentTaget;
+			var backview   = $(target).find('div.backDevice');
+
+            //find tooltip div and hover div
+			var tooltipDiv = $(backview).find('div.coverB').not('.status').filter(':first');
+            var hoverDiv   = $(backview).find('div.coverB').not('.status').filter(':last');
+
+            //init hover events
+            $(hoverDiv).find('li').unbind('mouseover');
+            $(hoverDiv).find('li').unbind('mouseout');
+
+            $(hoverDiv).find('li').on('mouseover', function(e){
+                e.stopPropagation();
+                $(hoverDiv).find('li').removeClass('hoverB');
+            	$(e.target).addClass('hoverB');
+			});
+            $(hoverDiv).find('li').on('mouseout', function(e){
+                $(e.target).removeClass('hoverB');
+            });
+		};
+
 		var initDevice = function(){
 			var target = widget.currentTaget;
 			if(widget.device === 'front'){
@@ -113,6 +135,7 @@
 			}else{
                 $(target).find('div.frontDevice').hide();
                 $(target).find('div.backDevice').css('top', '-500px').animate({'top':'0px'}, 300).show();
+                initBackDevice();
             }
 
             //frontdevice, backdevice switch event
