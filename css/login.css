@@ -53,22 +53,25 @@
     
 #guideIndex .textlinkb{ float:right; padding-right:20px; line-height:28px;}
 
-#guideIndex a.previous,#guideIndex a.next{ position:absolute;  height:35px; width: 30px; top:0px; color:#8a9396;font-size:18px; cursor:pointer; opacity:.8;}
-#guideIndex a.previous:hover,#guideIndex a.next:hover{color:#fff;opacity:1;}
-#guideIndex .tabDiv a.previous{left:0px;/*left:115px;*/}
-#guideIndex .tabDiv a.next{right:120px;}
-#guideIndex .tabDiv a.previous i,#guideIndex .tabDiv a.next i{padding-left:12px; padding-top:8px;}
-#guideIndex a.previous.disabled,#guideIndex a.next.disabled{opacity:.4;}
-#guideIndex a.previous.disabled:hover,#guideIndex a.next.disabled:hover{color:#8a9396;opacity:.4;}
+#guideIndex .mainTabDiv a.previous,#guideIndex .mainTabDiv a.next{ position:absolute;  height:35px; width: 30px; top:0px; color:#8a9396;font-size:18px; cursor:pointer; opacity:.8;}
+#guideIndex .mainTabDiv a.previous:hover,#guideIndex .mainTabDiv a.next:hover{color:#fff;opacity:1;}
+#guideIndex .mainTabDiv .tabDiv a.previous{left:0px;/*left:115px;*/}
+#guideIndex .mainTabDiv .tabDiv a.next{right:120px;}
+#guideIndex .mainTabDiv .tabDiv a.previous i,#guideIndex .mainTabDiv .tabDiv a.next i{padding-left:12px; padding-top:8px;}
+#guideIndex .mainTabDiv a.previous.disabled,#guideIndex .mainTabDiv a.next.disabled{opacity:.4;}
+#guideIndex .mainTabDiv a.previous.disabled:hover,#guideIndex .mainTabDiv a.next.disabled:hover{color:#8a9396;opacity:.4;}
+
 
 .table.table-big >thead>tr>td, .table.table-big >tbody>tr>td, .table.table-big >tfoot>tr>td{line-height:2.5}
 .table-big td >input[type="checkbox"]{margin-top: 10px;}
 
 .table-big .statusIcon i{font-size:18px;margin-top: 5px; margin-left: 5px;}
-
 .table-big .jdt{height: 12px; margin: 10px 5px 10px 0; width:100px;}
 .table-big .jdt span{height: 12px; }
 .table-big .jdtText small{font-size:14px;}
 .table-big a.textLink{color:#3897E2; font-size:16px; line-height: 30px;}
 .table-big a.textLink:hover{color: #fff;}
-div.swithBtnDiv{position:absolute;left:0;}
+div.swithBtnDiv {position: absolute;left: 0;}
+
+
+#guideIndex .fixedContent{margin-left:80px; margin-right:70px;}
