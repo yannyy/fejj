@@ -5,10 +5,13 @@
 		options            = options || {};
 		widget.max         = options.max | 3;
 
-		widget.imgs        = [];
-		widget.imgNums     = 0;
-		widget.current     = 0;
-        widget.displaySize = 3;
+		widget.imgs          = [];
+		widget.imgNums       = 0;
+		widget.current       = 0;
+        widget.currentTaget  = 0;
+        widget.displaySize   = 3;
+        widget.device        = 'front';
+        widget.deviceSwither = null;
 
 	    var initSelectPoints = function(){
 	    	var pointUl = $(widget).find('div.dDiv').find('ul');
@@ -47,21 +50,12 @@
 
 	    var showImg = function(points){
 	    	$.each(widget.imgs, function(index, imgLi){
-	    		//var identifier = $(imgLi).attr('id');
 	    		if($.inArray(index, points) !== -1){
                     $(imgLi).show();
 				}
 	    		else{
                     $(imgLi).hide();
 				}
-
-	    		//if(index == widget.current){
-	    		//	if(!$(imgLi).hasClass('current'))
-	    		//		$(imgLi).addClass('current')
-	    		//}else{
-	    		//	if($(imgLi).hasClass('current'))
-	    		//		$(imgLi).removeClass('current')
-	    		//}
 	    	});
 
 	    };
@@ -87,18 +81,55 @@
         };
 
 		var init = function(){
-			widget.imgs = $(widget).find('div.minPic').find('li');
+			widget.imgs    = $(widget).find('div.minPic').find('li');
 			widget.imgNums = widget.imgs.length;
+            widget.device  = 'front';
 
-			//initSelectPoints();
+            $.each(widget.imgs, function(i, li){
+                if(i === widget.current){
+                    widget.currentTaget = $(li).attr('data-target');
+                }
+            });
+
 			initImg();
             initSelectedDevice();
+            initDevice();
             initDeviceTooltip();
+
+            //devicelist scroll button event
 			$(widget).find('div.jtTop').find('a').on('click', up);
             $(widget).find('div.jtDown').find('a').on('click', down);
+
+            //select device event
             $(widget).find('div.minPic').find('li').on('click', selectDevice);
             $(widget).find('div.minPic').find('li').find('h5, h2, img').on('click', selectDevice);
 		};
+
+		var initDevice = function(){
+			var target = widget.currentTaget;
+			if(widget.device === 'front'){
+                $(target).find('div.backDevice').hide();
+                $(target).find('div.frontDevice').css('left', '500px').animate({'left':'0px'}, 500).show();
+			}else{
+                $(target).find('div.frontDevice').hide();
+                $(target).find('div.backDevice').css('left', '500px').animate({'left':'0px'}, 500).show();
+            }
+
+            //frontdevice, backdevice switch event
+			var switchBtn = $(target).find('div.switchIcon').find('a:first');
+			$(switchBtn).unbind('click');
+            $(switchBtn).on('click', deviceSwitch);
+		};
+
+		var deviceSwitch = function (e) {
+			if(widget.device === 'front'){
+				widget.device = 'back';
+			}else{
+                widget.device = 'front';
+			}
+
+			initDevice();
+        }
 
 		var initDeviceTooltip = function(){
 			$(widget).find('div.device').find('div.cover').find('ul').on('mouseover', function(e){
@@ -134,8 +165,12 @@
 
 		var initSelectedDevice = function(){
             var target = $(widget).find('div.minPic').find('li.current').attr('data-target');
+            widget.currentTaget = target;
             $(widget).find('div.deviceContainer').hide();
             $(target).slideDown();
+
+            widget.device = 'front';
+            initDevice();
 		};
 
         var selectDevice = function(e){
