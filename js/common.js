@@ -90,3 +90,19 @@ function alertMsg(options={}){
 	var offsetHeight = (parseInt((windowHeight - popupHight)/2) -50)+ 'px';
 	$(popup).css('top', offsetHeight);	
 }
+
+function empty(obj){
+	if (obj == null){
+		return true;
+	}
+
+	if(obj == 'undifined'){
+		return true;
+	}
+
+	if(obj == ''){
+		return true;
+	}
+
+	return false;
+}
