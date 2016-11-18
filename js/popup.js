@@ -21,8 +21,13 @@
 			popup.hide($node.attr('data-dismiss'));
 		},
 		onShow: function(e){
-			var $node = $(e.target);
-			popup.show($node.attr('data-target'));
+			var node = null;
+			if(e.target.tagName != 'A'){
+				node = $(e.target).parent();
+			}else{
+                node = $(e.target);
+			}
+			popup.show($(node).attr('data-target'));
 		}
 	}
 	
