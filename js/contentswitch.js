@@ -1,4 +1,23 @@
 (function($){
+    $.fn.contentSelect = function (target) {
+        if(empty(target)){
+            return false;
+        }
+        var switcher = this;
+
+        var switchBtnDivs = $(switcher).find('div.lBtn, div.rBtn').removeClass('selected');
+
+        $(switcher).find('div[data-target="' + target + '"]').addClass('selected');
+
+        $(switcher).find('div.switchContent').hide();
+        $(target).css('position','relative').css('left','-800px').animate({'position':'relative', 'left':'0px'},300).show();
+
+        $(switcher).trigger({
+            type:'contentSwitched',
+            targetData:target
+        });
+    };
+
     $.fn.contentSwitch = function(){
         var switcher = this;
         var init = function(){
@@ -46,5 +65,10 @@
         };
 
         init();
+        return {
+            select:function(){
+                debugger;
+            }
+        }
 };
 })(jQuery);
