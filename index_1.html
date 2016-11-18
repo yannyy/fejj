@@ -306,6 +306,46 @@
         <div class="sysName">NetStor<span>Control Center</span></div>
     </div>
 </div>
+<div class="popup fade" style="display: none;">
+    <div class="popupDiv" style="display:none" id="createVolumePopup">
+        <div class="popupContent">
+            <div class="contentHeader">
+                <button type="button" class="close" data-dismiss="#createVolumePopup" aria-hidden="true">×</button>
+                <h4>扩展卷－DiaNAS</h4>
+            </div>
+            <div class="alertDesc alertDesc-info">
+                您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容量。
+            </div>
+            <div class="contentBody">
+                <fieldset>
+                    <legend>邮件</legend>
+                    <table class="table-input">
+                        <tbody >
+                        <tr>
+                            <td style="width:22%;"><label>当前大小:</label></td>
+                            <td><input type="text" class="form-control" placeholder="100"><em>GiB</em></td>
+                        </tr>
+                        <tr>
+                            <td><label>扩展量:</label></td>
+                            <td><input type="text" class="form-control" placeholder="100"><select class="form-control"><option>GiB</option><option>MiB</option><option>TiB</option></select></td>
+                        </tr>
+                        <tr>
+                            <td><label>最大最终大小:</label></td>
+                            <td>1552.00 GiB</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </div>
+            <div class="contentFooter">
+                <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消</button>
+                <button class="btn btn-color  m-r-10" type="submit">扩展</button>
+                <!--<a href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消</a>
+                <a href="javascript:;" class="btn btn-color disabled  m-r-10">扩展</a>-->
+            </div>
+        </div>
+    </div>
+</div>
 <!--右侧-->
 <div id="content">
 
@@ -364,7 +404,7 @@
                                             </li>
                                         </ul>
                                         <a class="next"><i class="fa fa-caret-right"></i></a>
-                                        <a href="#" class="textlinkb"><i
+                                        <a href="#" class="textlinkb" id="addSlim" data-target="#createVolumePopup"><i
                                                 class="zmdi zmdi-plus"></i><span>添加机柜</span></a>
                                     </div>
                                 </div>
@@ -985,7 +1025,7 @@
         var areaFixUser = $('#userMgmtTable').areaFix({
         });
         $('#rFloatDiv').rFloat();
-        $('#createVolume').popup();
+        $('#addSlim').popup();
         $('#closeAction').hidePopup();
         $('#contentSwitch').contentSwitch();
         $('#renameVolume').popup();
