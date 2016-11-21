@@ -1028,11 +1028,13 @@
         $('#addSlim').popup();
         $('#closeAction').hidePopup();
         $('#contentSwitch').contentSwitch();
+        $('#contentSwitch').contentSelect('#userMgmt');
         $('#renameVolume').popup();
         $('#closeRenameAction').hidePopup();
-        $('#scrollList').scrollList({
+        var scrollList = $('#scrollList').scrollList({
             displaySize: 8
         });
+
         $(window).on('contentSwitched', function(e){
             if(e.targetData === '#userMgmt'){
                 areaFixUser.activate();
@@ -1040,6 +1042,7 @@
             }else{
                 areaFixSlim.activate();
                 areaFixUser.disable();
+                scrollList.resize();
             }
         });
     });

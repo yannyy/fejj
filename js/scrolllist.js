@@ -74,7 +74,7 @@
     	};
 
         var initSteps = function(){
-            var list = $(widget).find('li');   
+            var list = $(widget).find('li');
             $.each(list, function(j, li){
                 var anchor = $(li).attr('data-anchor');
 
@@ -92,5 +92,8 @@
         }
 
     	init();
-    }
+
+        widget.resize = init;
+        return widget;
+    };
 })(jQuery);

@@ -46,6 +46,7 @@
                 }
             });
 
+            var contents = $(switcher).find('div.switchContent');
             $(switcher).find('div.switchContent').hide();
             $(target).css('position','relative').css('left','-800px').animate({'position':'relative', 'left':'0px'},300).show();
         };
@@ -65,10 +66,5 @@
         };
 
         init();
-        return {
-            select:function(){
-                debugger;
-            }
-        }
 };
 })(jQuery);
