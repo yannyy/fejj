@@ -110,20 +110,29 @@
 			var backview   = $(target).find('div.backDevice');
 
             //find tooltip div and hover div
-			var tooltipDiv = $(backview).find('div.coverB').not('.status').filter(':first');
-            var hoverDiv   = $(backview).find('div.coverB').not('.status').filter(':last');
+			var hoverDiv   = $(backview).find('div.coverB').not('.status').filter(':first');
+            var tooltipDiv = $(backview).find('div.coverB').not('.status').filter(':last');
 
-            //init hover events
-            $(hoverDiv).find('li').unbind('mouseover');
-            $(hoverDiv).find('li').unbind('mouseout');
+            //init tooltip events
+            $(tooltipDiv).find('li').unbind('mouseover');
+            $(tooltipDiv).find('li').unbind('mouseout');
 
-            $(hoverDiv).find('li').on('mouseover', function(e){
-                e.stopPropagation();
+            $(tooltipDiv).find('li').on('mouseover', function(e){
                 $(hoverDiv).find('li').removeClass('hoverB');
-            	$(e.target).addClass('hoverB');
-			});
-            $(hoverDiv).find('li').on('mouseout', function(e){
-                $(e.target).removeClass('hoverB');
+
+                var hoverTarget = $(e.target).attr('data-hover');
+                $(hoverTarget).addClass('hoverB');
+
+                var targetDiv = $(e.target).parentsUntil('div.device').filter('div.backDevice');
+                $(targetDiv).find('div.tooltip').css('display', 'none');
+                var tooltipTarget = $(e.target).attr('data-tooltip');
+                $(tooltipTarget).show();
+
+            });
+            $(tooltipDiv).find('li').on('mouseout', function(e){
+                $(hoverDiv).find('li').removeClass('hoverB');
+                var tooltipTarget = $(e.target).attr('data-tooltip');
+                $(tooltipTarget).hide();
             });
 		};
 
