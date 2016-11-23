@@ -94,7 +94,7 @@
 			initImg();
             initSelectedDevice();
             initDevice();
-            initDeviceTooltip();
+            //initDeviceTooltip();
 
             //devicelist scroll button event
 			$(widget).find('div.jtTop').find('a').on('click', up);
@@ -104,6 +104,29 @@
             $(widget).find('div.minPic').find('li').on('click', selectDevice);
             $(widget).find('div.minPic').find('li').find('h5, h2, img').on('click', selectDevice);
 		};
+
+		var initFrontDevice = function(){
+            var target      = widget.currentTaget;
+            var frontview   = $(target).find('div.frontDevice');
+
+            var tooltipDiv  = $(frontview).find('div.cover').not('status');
+            $(tooltipDiv).find('ul').on('mouseover', function(e){
+                $(tooltipDiv).find('li').removeClass('hover');
+                $(tooltipDiv).find('ul').removeClass('hover');
+                $(e.target).addClass('hover');
+			});
+            $(tooltipDiv).find('ul').on('mouseout', function(e){
+				$(e.target).removeClass('hover');
+			});
+
+            $(tooltipDiv).find('li').on('mouseover', function(e){
+            	$(tooltipDiv).find('li').removeClass('hover');
+            	$(e.target).addClass('hover');
+			});
+            $(tooltipDiv).find('li').on('mouseout', function(e){
+                $(tooltipDiv).find('li').removeClass('hover');
+			});
+        };
 
 		var initBackDevice = function(){
 			var target     = widget.currentTaget;
@@ -141,6 +164,7 @@
 			if(widget.device === 'front'){
                 $(target).find('div.backDevice').hide();
                 $(target).find('div.frontDevice').css('top', '-500px').animate({'top':'0px'}, 300).show();
+                initFrontDevice();
 			}else{
                 $(target).find('div.frontDevice').hide();
                 $(target).find('div.backDevice').css('top', '-500px').animate({'top':'0px'}, 300).show();
@@ -164,31 +188,36 @@
         }
 
 		var initDeviceTooltip = function(){
-			$(widget).find('div.device').find('div.cover').find('ul').on('mouseover', function(e){
-                var ul = e.target;
-                var parents = $(ul).parentsUntil('div.picCol');
-                var device = $.grep(parents, function(p, i){
-                    return $(p).hasClass('device');
-                });
-                var siblings = $(device).siblings();
-                var tooltip = $.grep(siblings, function(p, i){
-                    return $(p).hasClass('tooltip');
-                });
-                $(tooltip).show();
+		    var frontDevice = $(widget).find('div.device').find('div.frontDevice').find('div.cover').not('div.status').find('ul');
+		    $.each(frontDevice, function(i, ul){
+				$(ul).tableTooltip({title:'front view 背板'});
             });
+		    $(frontDevice).tableTooltip({title:'front view 背板'});
+			//$(widget).find('div.device').find('div.cover').find('ul').on('mouseover', function(e){
+            //    var ul = e.target;
+            //    var parents = $(ul).parentsUntil('div.picCol');
+            //    var device = $.grep(parents, function(p, i){
+            //        return $(p).hasClass('device');
+            //    });
+            //    var siblings = $(device).siblings();
+            //    var tooltip = $.grep(siblings, function(p, i){
+            //        return $(p).hasClass('tooltip');
+            //    });
+            //    $(tooltip).show();
+            //});
 
-            $(widget).find('div.device').find('div.cover').find('ul').on('mouseout', function(e){
-                var ul = e.target;
-                var parents = $(ul).parentsUntil('div.picCol');
-                var device = $.grep(parents, function(p, i){
-                    return $(p).hasClass('device');
-                });
-                var siblings = $(device).siblings();
-                var tooltip = $.grep(siblings, function(p, i){
-                    return $(p).hasClass('tooltip');
-                });
-                $(tooltip).hide();
-            });
+            //$(widget).find('div.device').find('div.cover').find('ul').on('mouseout', function(e){
+            //    var ul = e.target;
+            //    var parents = $(ul).parentsUntil('div.picCol');
+            //    var device = $.grep(parents, function(p, i){
+            //        return $(p).hasClass('device');
+            //    });
+            //    var siblings = $(device).siblings();
+            //    var tooltip = $.grep(siblings, function(p, i){
+            //        return $(p).hasClass('tooltip');
+            //    });
+            //    $(tooltip).hide();
+            //});
 
             $(widget).find('div.device').find('div.cover').find('li').on('mouseover', function(e){
                 return false;

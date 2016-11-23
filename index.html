@@ -580,10 +580,10 @@
                             </ul>
                         </div>
                         <div style="" class="cover">
-                            <ul>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
+                            <ul id="device1_front_ul" style="z-index: 99" data-tooltip="#device1_front_ul_tooltip">
+                                <li class="" style="z-index: 101" ></li>
+                                <li class="" style="z-index: 101" ></li>
+                                <li class="" style="z-index: 101" ></li>
                                 <li class=""></li>
                                 <li class=""></li>
                                 <li class=""></li>
@@ -840,19 +840,19 @@
                             </ul>
                         </div>
                         <div style="" class="cover">
-                            <ul>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
+                            <ul style="z-index:99">
+                                <li style="z-index:101" class=""></li>
+                                <li style="z-index:101" class=""></li>
+                                <li style="z-index:101" class=""></li>
+                                <li style="z-index:101" class=""></li>
+                                <li style="z-index:101" class=""></li>
+                                <li style="z-index:101" class=""></li>
+                                <li style="z-index:101" class=""></li>
+                                <li style="z-index:101" class=""></li>
 
-                                <li class="spaceLi"></li>
-                                <li class=""></li>
-                                <li class=""></li>
+                                <li style="z-index:101" class="spaceLi"></li>
+                                <li style="z-index:101" class=""></li>
+                                <li style="z-index:101" class=""></li>
                                 <li class=""></li>
                                 <li class=""></li>
                                 <li class=""></li>
@@ -910,6 +910,7 @@
 <script src="js/jquery.js"></script>
 <script src="js/jquery.mousewheel.min.js"></script>
 <script src="js/screen.js"></script>
+<script src="js/common.js"></script>
 <script src="js/rfloatdiv.js"></script>
 <script src="js/sidediv.js"></script>
 <script src="js/dropdown.js"></script>
@@ -918,6 +919,7 @@
 <script src="js/imgscrollview.js"></script>
 <script src="js/buttontoggle.js"></script>
 <script src="js/minscrolllist.js"></script>
+<script src="js/tabletooltip.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$('#userBtn').dropdownBtn();
@@ -929,6 +931,12 @@
         $('#systemMenuListBtn').btnToggle();
         $('#slimList').minScrollList();
         $('#rFloatDiv').rFloat();
+        $('#device1_front_ul').tableTooltip({
+            title:'机箱',
+            data:[
+                {name:'性能', value:'OK'},
+                {name:'参数', value:'xyz'},
+            ]});
 	});
 </script>
 </body>
