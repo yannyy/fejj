@@ -120,13 +120,13 @@
 
 			//机柜hover
 
-			$(frontview).find('div.enclosure').find('div.eHover').on('mouseenter', function(e){
-				$(e.target).addClass('hover');
-			});
+			//$(frontview).find('div.enclosure').find('div.eHover').on('mouseenter', function(e){
+			//	$(e.target).addClass('hover');
+			//});
 
-            $(frontview).find('div.enclosure').find('div.eHover').on('mouseout', function(e){
-                $(e.target).removeClass('hover');
-            });
+            //$(frontview).find('div.enclosure').find('div.eHover').on('mouseout', function(e){
+            //    $(e.target).removeClass('hover');
+            //});
 
             $(frontview).find('div.enclosure').find('div.eDiv').on('mouseenter', function(e){
                 $(e.target).parent().find('div.eHover').addClass('hover');
@@ -138,7 +138,6 @@
 
 
             $(tooltipDiv).find('li').on('mouseover', function(e){
-                debugger;
             	$(tooltipDiv).find('li').removeClass('hover');
             	$(e.target).addClass('hover');
 			});

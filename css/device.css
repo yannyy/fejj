@@ -3,7 +3,7 @@
 .frontDevice{margin-top:140px;}
 .frontDevice:after, .backDevice:after{clear:both; float:none; content:"."; font-size:1px; line-height:1px;}
 .frontDevice .img,.backDevice .img{position:absolute;z-index:1;top: 0px;left:0px;}
-.frontDevice .cover{position:absolute;z-index:10;top: 0px;left:0px;}
+.frontDevice .cover{position:absolute;z-index:32;top: 0px;left:0px;}
 .backDevice{top:-10px; left:15px;}
 
 .frontDevice .cover ul{padding-left:25px;padding-top:66px;width:540px; z-index:10;}

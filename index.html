@@ -610,8 +610,8 @@
                             </ul>
                         </div>
                         <div class="enclosure" id="frontViewDevice">
-                        	<div class="eHover" style="z-index:20"></div>
-                    		<div class="eDiv" style="z-index:101"></div>
+                        	<div class="eHover"></div>
+                    		<div class="eDiv" style="z-index:35"></div>
                         </div>
                         <div class="img"><img src="images/device/front_NCS7500G2.png"></div>
                     </div>
@@ -1040,9 +1040,13 @@
         $('#rFloatDiv').rFloat();
         $('#frontViewDevice').on('mouseenter', function(e){
             var target = null;
-            if($(e.target).hasClass('eHover') || $(e.target).hasClass('eHover')){
+            if($(e.target).hasClass('eDiv')){
                 target = $(e.target).parent().find('div.eHover');
-            }else{
+            }
+            else if($(e.target).hasClass('eHover')){
+                return false;
+            }
+            else{
                 target = $(e.target).find('div.eHover');
             }
             var tooltip = showTooltip(target, "机柜",
@@ -1056,11 +1060,40 @@
                     left:'500'
                 }
             );
-           
+
         });
         $('#frontViewDevice').on('mouseleave', function(e){
             hideTooltip('#frontViewDevice');
         });
+
+        //var pdTips = [
+        //    {
+        //        "name":"pd1",
+        //        "data":
+        //            [
+        //                {"name":"标识", "value":"磁盘1"}
+        //            ]
+        //    },
+        //    {
+        //        "name":"pd2",
+        //        "data":
+        //            [
+        //                {"name":"标识", "value":"磁盘3"}
+        //            ]
+        //    },
+        //    {
+        //        "name":"pd3",
+        //        "data":
+        //            [
+        //                {"name":"标识", "value":"磁盘3"}
+        //            ]
+        //    }
+        //];
+
+        //function initPdTooltips("device1", pdTips){
+        //
+        //}
+
     });
 </script>
 </body>
