@@ -242,7 +242,7 @@ ul.sidebarNav li.select a:hover{background:transparent;}
 .capacityRaw{ padding:; float:left; width:100%; margin:3px 0; vertical-align:baseline;}
 .capacityRaw h5{line-height:47px;float:left;  font-size:13px;  padding-right:8px; font-weight: normal;text-align:right; width:56px;}
 .capacityRaw .fontBlue{font-size:22px;line-height:42px; font-weight:bold;float:left; font-weight: normal; }
-.capacityRaw .capacity{ position:relative; right:0; margin-left:115px;}
+.capacityRaw .capacity{ position:relative; right:0; margin-left:125px;}
 .capacityRaw .capacityDiv{height:38px;width: 100%;}
 .capacityRaw .capacityDiv .jdtText{text-align:right;margin: 4px 0 0;  width:100%; color:#8a9396;float:left;line-height:19px;}
 .capacityRaw .capacityDiv .jdt{height: 5px; margin: 0 0; width: 100%;float:left; background:#8a9396; opacity:.8;}
