@@ -1,14 +1,15 @@
 (function($){
 	$.fn.tableTooltip = function(options) {
         var widget = this;
-
+        debugger;
         options = options || {};
-        var data = options.data || [];
-        var title = options.title || '信息';
+        var data       = options.data || [];
+        var title      = options.title || '信息';
+        var targetNode = options.targetNode || widget;
 
         var init = function(){
-            $(widget).on('mouseover', showTooltip);
-            $(widget).on('mouseout',  hideTooltip);
+            $(widget).on('mouseenter', showTooltip);
+            $(widget).on('mouseleave',  hideTooltip);
 
             //if($(widget).is('ul')){
             //    $(widget).children('li').on('mounseover', hideTooltip);
@@ -56,8 +57,8 @@
             });
             $(widget.wrapper).css('position', 'absolute');
 
-            var top  = $(widget).offset().top;
-            var left = $(widget).offset().left;
+            var top  = $(targetNode).offset().top;
+            var left = $(targetNode).offset().left;
 
             //$(widget.wrapper).css('top',  top + 'px');
             $(widget.wrapper).css('top',  '33px');

@@ -106,3 +106,84 @@ function empty(obj){
 
 	return false;
 }
+
+function showTooltip(target, title, data, dataTarget, position){
+    return buildTooltip(target, title, data, dataTarget, position);
+};
+function hideTooltip(dataTarget){
+	$('div[data-target]').remove();
+}
+var buildTooltip = function(targetNode, title, data, dataTarget, position){
+	position = position || {};
+	var top  = position.top;
+    var left = position.left;
+
+    var targetNode = $(targetNode);
+
+    var wrapper = $('<div class="tooltip" data-target="'+dataTarget+'" style="width:200px;z-index:21"></div>');
+
+    $(wrapper).css('position', 'absolute');
+
+    if(empty(position.top))
+        top  = $(targetNode).offset().top - $(targetNode).outerHeight();
+
+    if(empty(position.left))
+        left = $(targetNode).offset().left;
+
+    console.log('top ' + top);
+    console.log('left ' + left);
+
+    $(wrapper).css('top',  top+ 'px');
+    $(wrapper).css('left', left + 'px');
+
+    initInfo(wrapper, title, data);
+    var arrow = initArrow(wrapper);
+
+
+    resizeArrow(arrow, wrapper);
+    $('body').append(wrapper);
+    return wrapper;
+};
+
+var initInfo = function(wrapper, title, data){
+	var title = title || '信息';
+    var data  = data || [];
+    var table = $('<table class="table-input tooltipTable" cellpadding="0" cellspacing="0" width="100%">');
+
+    //title
+    var headerTr = $('<tr></tr>');
+    var headerTd = $('<td colspan="2" class="title"></td>');
+    $(headerTd).text(title);
+    headerTr.append(headerTd);
+    table.append(headerTr);
+
+    //info
+    $.each(data, function(i, item){
+        var tr  = $('<tr></tr>');
+        var td1 = $('<td width="48%"></td>');
+        var td2 = $('<td></td>');
+
+        $(td1).text(item.name);
+        $(td2).text(item.value);
+
+        tr.append(td1);
+        tr.append(td2);
+
+        table.append(tr);
+    });
+    $(wrapper).append(table);
+};
+
+var initArrow = function(wrapper){
+    var arrowDiv = $('<div style="position:relative" class="gbArrow"></div>');
+    $(arrowDiv).append('<div class="arrowDown"></div>');
+    $(wrapper).append(arrowDiv);
+    arrowDiv = arrowDiv;
+    return arrowDiv;
+};
+
+var resizeArrow = function(arrowDiv, wrapper){
+    $(arrowDiv).css('top', '2px');
+    var left = $(wrapper).outerWidth()/2 - 10;
+    $(arrowDiv).css('left',  left + 'px');
+};

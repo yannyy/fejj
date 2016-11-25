@@ -110,27 +110,35 @@
             var frontview   = $(target).find('div.frontDevice');
 
             var tooltipDiv  = $(frontview).find('div.cover').not('status');
-            //$(tooltipDiv).find('ul').on('mouseover', function(e){
+            //(tooltipDiv).find('ul').on('mouseover', function(e){
             //    $(tooltipDiv).find('li').removeClass('hover');
-            //    $(tooltipDiv).find('ul').removeClass('hover');
-            //    $(e.target).addClass('hover');
+            //    $(frontview).find('div.enclosure').find('div.eHover').addClass('hover');
 			//});
             //$(tooltipDiv).find('ul').on('mouseout', function(e){
-			//	$(e.target).removeClass('hover');
+            //    //$(frontview).find('div.enclosure').find('div.eHover').removeClass('hover');
 			//});
 
 			//机柜hover
-			$(frontview).find('div.enclosure').find('div.eDiv').on('mouseover', function(e){
-				debugger;
-				$(e.target).parent().children('.eHover').addClass('hover');
+
+			$(frontview).find('div.enclosure').find('div.eHover').on('mouseenter', function(e){
+				$(e.target).addClass('hover');
 			});
 
-
-            $(frontview).find('div.enclosure').find('eDiv').on('mouseout', function(e){
-                $(e.target).children('.eHover').addClass('hover');
+            $(frontview).find('div.enclosure').find('div.eHover').on('mouseout', function(e){
+                $(e.target).removeClass('hover');
             });
 
+            $(frontview).find('div.enclosure').find('div.eDiv').on('mouseenter', function(e){
+                $(e.target).parent().find('div.eHover').addClass('hover');
+            });
+
+            $(frontview).find('div.enclosure').find('div.eDiv').on('mouseout', function(e){
+                $(e.target).parent().find('div.eHover').removeClass('hover');
+            });
+
+
             $(tooltipDiv).find('li').on('mouseover', function(e){
+                debugger;
             	$(tooltipDiv).find('li').removeClass('hover');
             	$(e.target).addClass('hover');
 			});
