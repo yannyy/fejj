@@ -110,14 +110,25 @@
             var frontview   = $(target).find('div.frontDevice');
 
             var tooltipDiv  = $(frontview).find('div.cover').not('status');
-            $(tooltipDiv).find('ul').on('mouseover', function(e){
-                $(tooltipDiv).find('li').removeClass('hover');
-                $(tooltipDiv).find('ul').removeClass('hover');
-                $(e.target).addClass('hover');
+            //$(tooltipDiv).find('ul').on('mouseover', function(e){
+            //    $(tooltipDiv).find('li').removeClass('hover');
+            //    $(tooltipDiv).find('ul').removeClass('hover');
+            //    $(e.target).addClass('hover');
+			//});
+            //$(tooltipDiv).find('ul').on('mouseout', function(e){
+			//	$(e.target).removeClass('hover');
+			//});
+
+			//机柜hover
+			$(frontview).find('div.enclosure').find('div.eDiv').on('mouseover', function(e){
+				debugger;
+				$(e.target).parent().children('.eHover').addClass('hover');
 			});
-            $(tooltipDiv).find('ul').on('mouseout', function(e){
-				$(e.target).removeClass('hover');
-			});
+
+
+            $(frontview).find('div.enclosure').find('eDiv').on('mouseout', function(e){
+                $(e.target).children('.eHover').addClass('hover');
+            });
 
             $(tooltipDiv).find('li').on('mouseover', function(e){
             	$(tooltipDiv).find('li').removeClass('hover');

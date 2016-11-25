@@ -1,5 +1,6 @@
 .device{clear:both;position:relative; width:100%; height:100%;}
-.frontDevice,.backDevice{position:relative;  margin:120px auto 10px; text-align:center; width:600px;}
+.frontDevice,.backDevice{position:relative;  margin:120px auto 10px; text-align:center; width:545px;}
+.frontDevice{margin-top:140px;}
 .frontDevice:after, .backDevice:after{clear:both; float:none; content:"."; font-size:1px; line-height:1px;}
 .frontDevice .img,.backDevice .img{position:absolute;z-index:1;top: 0px;left:0px;}
 .frontDevice .cover{position:absolute;z-index:10;top: 0px;left:0px;}
@@ -9,6 +10,9 @@
 .frontDevice .cover li{display:block;float:left;width:19px;height:79px;line-height:24px;margin:0px 1px 0 0 ;position:relative;font-size:10px;}
 .frontDevice .cover.status ul{z-index:8;}
 .frontDevice .cover li.spaceLi{margin-left:6px;}
+
+.enclosure .eHover{position:absolute; left:0px; top: 60px; width: 542px; height: 90px;z-index: 20;}
+.enclosure .eDiv{position:absolute;left: 0; top: 0; width: 542px;height: 60px;z-index: 5;}
 
 .backDevice .coverB {position:absolute;z-index:10;top: 0px;left:0px;}
 .backDevice .coverB ul{padding-left:25px;padding-top:66px;width:540px; z-index:10;}
@@ -21,9 +25,10 @@
 .hover {background: rgba(64,149,232,0.5); border:solid 2px #134ea8;}
 .hoverB {background: rgba(64,149,232,0.5); border:solid 2px #3897E2;}
 .cover .no_pd{background: rgba(0,0,0,0.8);}
-.deviceName{padding:10px; font-size:18px; color:#9BA5A7; margin-left:-50px; margin-top:20px;}
+/*.deviceName{padding:10px; font-size:18px; color:#9BA5A7; margin-left:-50px; margin-top:20px;}*/
+.deviceName {font-size: 18px;color: #9BA5A7; /*margin-left: -120px;*/position: absolute; text-align: center;width: 100%; top: 320px; z-index:1;}
 
-.switchIcon a{position: absolute; right: 30px;top: 190px; width: 50px;height: 50px;background: rgba(25,39,53,0.4); border:solid 1px #5C7589;border-radius: 30px;box-shadow: -1px 0 3px -1px rgba(0,0,0,.4); -webkit-box-shadow: -1px 0 3px -1px rgba(0,0,0,.4);-moz-box-shadow: -1px 0 3px -1px rgba(0,0,0,.4); cursor:pointer; z-index:100;}
+.switchIcon a{position: absolute; right: 60px;top: 220px; width: 50px;height: 50px;background: rgba(25,39,53,0.4); border:solid 1px #5C7589;border-radius: 30px;box-shadow: -1px 0 3px -1px rgba(0,0,0,.4); -webkit-box-shadow: -1px 0 3px -1px rgba(0,0,0,.4);-moz-box-shadow: -1px 0 3px -1px rgba(0,0,0,.4); cursor:pointer; z-index:100;}
 .switchIcon a i{color:#4095e8; transform:scale(1.5); padding-top:10px;padding-left:0px; font-size:18px;}
 .switchIcon a:hover{background:#134ea8; border:solid 1px #374551;}
 .switchIcon a:hover i{color:#fff;}
@@ -35,5 +40,4 @@
 .tooltip .arrowDown{content: "";display: block;height: 0;position: absolute; width: 0; border:10px solid; border-color:#124584 transparent; border-bottom-width:0;}
 /*.tooltip .arrowTopBorder{content: "";display: block;height: 0;position: absolute; width: 0; border:7px solid; border-color:#77aaff transparent  ; border-top-width:0;top:1px; left:-1px;}*/
 .tooltipTable.table-input td{padding: 4px 10px;line-height: 16px;}
-
-.deviceName {font-size: 18px;color: #9BA5A7; margin-left: -120px;position: absolute; text-align: center;width: 100%; top: 320px;}.tooltipTable.table-input td.title{ text-align:center; line-height:20px;background:rgba(255,255,255,0.05); font-size:14px;}
+.tooltipTable.table-input td.title{ text-align:center; line-height:20px;background:rgba(255,255,255,0.05); font-size:14px;}

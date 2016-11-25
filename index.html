@@ -609,6 +609,10 @@
                                 <li class=""></li>
                             </ul>
                         </div>
+                        <div class="enclosure">
+                        	<div class="eHover"></div>
+                    		<div class="eDiv "></div>
+                        </div>
                         <div class="img"><img src="images/device/front_NCS7500G2.png"></div>
                     </div>
                     <div class="clear"></div>
@@ -889,20 +893,124 @@
 					<li>状态：<em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em><span class="fontGreen m-l-5">OK</span></li>
 					<li>标识：0000000CO206327CA</li>
 					<li>IP地址：192.168.0.21</li>
-					<li>控制机柜：1</br><span class="m-l-35">拓展机柜：1</span></li>
+					<li>机柜：控制机柜：1</br><span class="m-l-35">拓展机柜：1</span></li>
 				</ul>               
 			</div>
 		</div>
 		<div class="rlCol">
 			<div class="titleRaw"><h4>容量</h4></div>
-			<div class="capacityChart">
-				<div style="height:120px; width:100%"></div>
-                <!--<span>总容量：123.22 TiB <i class="zmdi zmdi-minus fontMute"></i> 已分配：23.33 TiB</span>-->
+			<div class="capacityChart">			
+                <div class="capacityRaw">
+                	<h5>已分配:</h5>
+                    <span class="fontBlue">100<small>%</small></span>
+                    <div class="capacity">
+                        <div class="capacityDiv"><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div>
+                        <div class="jdt"><span style="width:100%;"></span></div></div>
+                    </div>
+                </div>
+                <div class="capacityRaw">
+                	<h5>虚拟:</h5>
+                    <span class="fontBlue">5<small>%</small></span>
+                    <div class="capacity">
+                        <div class="capacityDiv"><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div>
+                        <div class="jdt"><span style="width:5%;"></span></div></div>
+                    </div>   
+                </div>
+                <div class="capacityRaw">
+                	<h5>压缩:</h5>
+                    <span class="fontBlue">35<small>%</small></span>
+                    <div class="capacity">              
+                        <div class="capacityDiv"><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div>
+                        <div class="jdt"><span style="width:35%;"></span></div></div>
+                    </div>    
+                </div>
+                
 			</div>
-            <div class="storagInfo">池 <big>4</big> <small>个</small> <i class="zmdi zmdi-minus fontMute"></i> 卷 <big>4</big> <small>个</small></div> 
+            <!--
+            <div style="height:120px; width:100%"></div>
+                <span>总容量：123.22 TiB <i class="zmdi zmdi-minus fontMute"></i> 已分配：23.33 TiB</span>
+            <div class="storagInfo">池 <big>4</big> <small>个</small> <i class="zmdi zmdi-minus fontMute"></i> 卷 <big>4</big> <small>个</small></div>--> 
 		</div>
 		<div class="xnCol">
 			<div class="titleRaw"><h4>性能</h4></div>
+            <div class="monitorChart">
+                <div class="monitor">
+                    <div class="dkCol">		
+                        <div class="monitorRaw">                       
+                            <span class="fontBlue">10<em>MBps</em></span>
+                            <div class="monitor">
+                                <div class="monitorDiv">
+                                    <ul class="monitorPic">
+                                     	<li class="m0"></li>
+                                        <li class="m1" style=" display:block;"></li>
+                                        <li class="m2"></li>
+                                        <li class="m3"></li>
+                                        <li class="m4"></li>
+                                        <li class="m5"></li>
+                                        <li class="m6"></li>
+                                        <li class="m7"></li>
+                                        <li class="m8"></li>
+                                        <li class="m9"></li>
+                                        <li class="m10"></li>
+                                    </ul>
+                                  
+                                </div>
+                            </div>
+                             <h5>带宽</h5>
+                        </div>
+                     </div>
+                     
+                     <div class="iopsCol">		
+                        <div class="monitorRaw">                       
+                            <span class="fontBlue">2322<small>万</small><em>MBps</em></span>
+                            <div class="monitor">
+                                <div class="monitorDiv">
+                                    <ul class="monitorPic">
+                                     	<li class="m0"></li>
+                                        <li class="m1"></li>
+                                        <li class="m2"></li>
+                                        <li class="m3"></li>
+                                        <li class="m4"></li>
+                                        <li class="m5"></li>
+                                        <li class="m6"></li>
+                                        <li class="m7"></li>
+                                        <li class="m8"></li>
+                                        <li class="m9"  style=" display:block;"></li>
+                                        <li class="m10"></li>
+                                    </ul>
+                                  
+                                </div>
+                            </div>
+                             <h5>IOPS</h5>
+                        </div>
+                     </div>
+                     
+                     <div class="ddsjCol">		
+                        <div class="monitorRaw">                       
+                            <span class="fontBlue">167<em>ms</em></span>
+                            <div class="monitor">
+                                <div class="monitorDiv">
+                                    <ul class="monitorPic">
+                                     	<li class="m0"></li>
+                                        <li class="m1"></li>
+                                        <li class="m2"></li>
+                                        <li class="m3"></li>
+                                        <li class="m4"></li>
+                                        <li class="m5"></li>
+                                        <li class="m6"></li>
+                                        <li class="m7" style=" display:block;"></li>
+                                        <li class="m8"></li>
+                                        <li class="m9"></li>
+                                        <li class="m10"></li>
+                                    </ul>
+                                  
+                                </div>
+                            </div>
+                             <h5>等待时间</h5>
+                        </div>
+                     </div> 
+                </div>       
+            </div>    
 		</div>
 	</div>
 </div>
@@ -936,8 +1044,9 @@
             data:[
                 {name:'性能', value:'OK'},
                 {name:'参数', value:'xyz'},
-            ]});
-	});
+            ]
+        });
+    });
 </script>
 </body>
 </html>
