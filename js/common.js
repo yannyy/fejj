@@ -150,11 +150,13 @@ var initInfo = function(wrapper, title, data){
     var table = $('<table class="table-input tooltipTable" cellpadding="0" cellspacing="0" width="100%">');
 
     //title
+	var thead = $('<thead></thead>');
     var headerTr = $('<tr></tr>');
     var headerTd = $('<td colspan="2" class="title"></td>');
     $(headerTd).text(title);
     headerTr.append(headerTd);
-    table.append(headerTr);
+    thead.append(headerTr);
+    table.append(thead);
 
     //info
     $.each(data, function(i, item){
