@@ -110,24 +110,8 @@
             var frontview   = $(target).find('div.frontDevice');
 
             var tooltipDiv  = $(frontview).find('div.cover').not('status');
-            //(tooltipDiv).find('ul').on('mouseover', function(e){
-            //    $(tooltipDiv).find('li').removeClass('hover');
-            //    $(frontview).find('div.enclosure').find('div.eHover').addClass('hover');
-			//});
-            //$(tooltipDiv).find('ul').on('mouseout', function(e){
-            //    //$(frontview).find('div.enclosure').find('div.eHover').removeClass('hover');
-			//});
 
-			//机柜hover
-
-			//$(frontview).find('div.enclosure').find('div.eHover').on('mouseenter', function(e){
-			//	$(e.target).addClass('hover');
-			//});
-
-            //$(frontview).find('div.enclosure').find('div.eHover').on('mouseout', function(e){
-            //    $(e.target).removeClass('hover');
-            //});
-
+            //机柜hvoer
             $(frontview).find('div.enclosure').find('div.eDiv').on('mouseenter', function(e){
                 $(e.target).parent().find('div.eHover').addClass('hover');
             });
@@ -137,10 +121,15 @@
             });
 
 
+            //磁盘hover，如果没有磁盘，不加hover
             $(tooltipDiv).find('li').on('mouseover', function(e){
             	$(tooltipDiv).find('li').removeClass('hover');
-            	$(e.target).addClass('hover');
+            	var hover = $(e.target).attr('data-hover');
+            	if(!$(hover).hasClass('no_pd')) {
+                    $(e.target).addClass('hover');
+				}
 			});
+           	//鼠标一走，取消hover
             $(tooltipDiv).find('li').on('mouseout', function(e){
                 $(tooltipDiv).find('li').removeClass('hover');
 			});

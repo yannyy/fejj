@@ -551,62 +551,62 @@
                     <div style="height:150px;" class="frontDevice">
                         <div class="cover status">
                             <ul>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class="statusOrange"></li>
-                                <li class=""></li>
-                                <li class="statusRed"></li>
+                                <li id="device1hover1" class=""></li>
+                                <li id="device1hover2" class=""></li>
+                                <li id="device1hover3" class=""></li>
+                                <li id="device1hover4" class=""></li>
+                                <li id="device1hover5" class=""></li>
+                                <li id="device1hover6" class="statusOrange"></li>
+                                <li id="device1hover7" class=""></li>
+                                <li id="device1hover8" class="statusRed"></li>
 
                                 <li class="spaceLi"></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
+                                <li id="device1hover9" class=""></li>
+                                <li id="device1hover10" class=""></li>
+                                <li id="device1hover11" class=""></li>
+                                <li id="device1hover12" class=""></li>
+                                <li id="device1hover13" class=""></li>
+                                <li id="device1hover14" class=""></li>
+                                <li id="device1hover15" class=""></li>
 
                                 <li class="spaceLi"></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class=""></li>
-                                <li class="no_pd"></li>
-                                <li class="no_pd"></li>
-                                <li class="no_pd"></li>
-                                <li class=""></li>
+                                <li id="device1hover16" class=""></li>
+                                <li id="device1hover17" class=""></li>
+                                <li id="device1hover18" class=""></li>
+                                <li id="device1hover19" class="no_pd"></li>
+                                <li id="device1hover20" class="no_pd"></li>
+                                <li id="device1hover21" class="no_pd"></li>
+                                <li id="device1hover22" class=""></li>
                             </ul>
                         </div>
                         <div style="" class="cover">
-                            <ul id="device1_front_ul" style="z-index: 99" data-tooltip="#device1_front_ul_tooltip">
-                                <li style="z-index:1001" ></li>
-                                <li style="z-index:1001" ></li>
-                                <li style="z-index:1001" ></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                            <ul id="device1_front_ul">
+                                <li data-tooltip="device1tip1" data-hover="#device1hover1"></li>
+                                <li data-tooltip="device1tip2" data-hover="#device1hover2"></li>
+                                <li data-tooltip="device1tip3" data-hover="#device1hover3"></li>
+                                <li data-tooltip="device1tip4" data-hover="#device1hover4"></li>
+                                <li data-tooltip="device1tip5" data-hover="#device1hover5"></li>
+                                <li data-tooltip="device1tip6" data-hover="#device1hover6"></li>
+                                <li data-tooltip="device1tip7" data-hover="#device1hover7"></li>
+                                <li data-tooltip="device1tip8" data-hover="#device1hover8"></li>
 
                                 <li class="spaceLi"></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li class="hover"></li>
+                                <li data-tooltip="device1tip9" data-hover="#device1hover9"></li>
+                                <li data-tooltip="device1tip10" data-hover="#device1hover10"></li>
+                                <li data-tooltip="device1tip11" data-hover="#device1hover11"></li>
+                                <li data-tooltip="device1tip12" data-hover="#device1hover12"></li>
+                                <li data-tooltip="device1tip13" data-hover="#device1hover13"></li>
+                                <li data-tooltip="device1tip14" data-hover="#device1hover14"></li>
+                                <li data-tooltip="device1tip15" data-hover="#device1hover15"></li>
 
                                 <li class="spaceLi"></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li data-tooltip="device1tip16" data-hover="#device1hover16"></li>
+                                <li data-tooltip="device1tip17" data-hover="#device1hover17"></li>
+                                <li data-tooltip="device1tip18" data-hover="#device1hover18"></li>
+                                <li data-tooltip="device1tip19" data-hover="#device1hover19"></li>
+                                <li data-tooltip="device1tip20" data-hover="#device1hover20"></li>
+                                <li data-tooltip="device1tip21" data-hover="#device1hover21"></li>
+                                <li data-tooltip="device1tip22" data-hover="#device1hover22"></li>
                             </ul>
                         </div>
                         <div class="enclosure" id="frontViewDevice">
@@ -1057,7 +1057,7 @@
                 '#frontViewDevice',
                 {
                     top:'185',
-                    left:'500'
+                    left:'780'
                 }
             );
 
@@ -1066,33 +1066,51 @@
             hideTooltip('#frontViewDevice');
         });
 
-        //var pdTips = [
-        //    {
-        //        "name":"pd1",
-        //        "data":
-        //            [
-        //                {"name":"标识", "value":"磁盘1"}
-        //            ]
-        //    },
-        //    {
-        //        "name":"pd2",
-        //        "data":
-        //            [
-        //                {"name":"标识", "value":"磁盘3"}
-        //            ]
-        //    },
-        //    {
-        //        "name":"pd3",
-        //        "data":
-        //            [
-        //                {"name":"标识", "value":"磁盘3"}
-        //            ]
-        //    }
-        //];
+        var pdTips = [
+            {
+                "name":"device1tip1",
+                "data":
+                    [
+                        {"name":"标识", "value":"磁盘1"},
+                        {"name":"状态", "value":"OK"}
+                    ]
+            },
+            {
+                "name":"device1tip2",
+                "data":
+                    [
+                        {"name":"标识", "value":"磁盘3"}
+                    ]
+            },
+            {
+                "name":"device1tip3",
+                "data":
+                    [
+                        {"name":"标识", "value":"磁盘3"}
+                    ]
+            }
+        ];
 
-        //function initPdTooltips("device1", pdTips){
-        //
-        //}
+        function initPdTooltips(idSelector, pdTips){
+            var divCover = $(idSelector).find('.frontDevice').find('.cover').not('.status');
+            $(divCover).find('li').on('mouseover', function(e){
+                var pdHover = $(e.target).attr('data-hover');
+                if($(pdHover).hasClass('no_pd'))
+                    return false;
+                var pdTooltips = $(e.target).attr('data-tooltip');
+                var data = [];
+                $.each(pdTips, function(i, tips) {
+                    if(pdTooltips == tips.name)
+                        data = tips.data;
+                });
+                showTooltip(e.target, '磁盘tooltip', data, pdTooltips);
+            });
+            $(divCover).find('li').on('mouseout', function(e) {
+                var pdTooltips = $(e.target).attr('data-tooltip');
+                hideTooltip(pdTooltips);
+            });
+        }
+        initPdTooltips("#device1", pdTips);
 
     });
 </script>

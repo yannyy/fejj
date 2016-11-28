@@ -124,24 +124,23 @@ var buildTooltip = function(targetNode, title, data, dataTarget, position){
 
     $(wrapper).css('position', 'absolute');
 
-    if(empty(position.top))
-        top  = $(targetNode).offset().top - $(targetNode).outerHeight();
-
-    if(empty(position.left))
-        left = $(targetNode).offset().left;
-
-    console.log('top ' + top);
-    console.log('left ' + left);
-
-    $(wrapper).css('top',  top+ 'px');
-    $(wrapper).css('left', left + 'px');
 
     initInfo(wrapper, title, data);
     var arrow = initArrow(wrapper);
 
 
     resizeArrow(arrow, wrapper);
+
+
     $('body').append(wrapper);
+    if(empty(position.top))
+        top  = $(targetNode).offset().top - $(wrapper).outerHeight() - 10;
+    $(wrapper).css('top',  top+ 'px');
+
+    if(empty(position.left))
+        left = $(targetNode).offset().left - $(wrapper).outerWidth()/2 + 10;
+    $(wrapper).css('left', left + 'px');
+
     return wrapper;
 };
 
