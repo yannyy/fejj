@@ -258,7 +258,7 @@ ul.sidebarNav li.select a:hover{background:transparent;}
 .monitorRaw{}
 .monitorRaw .fontBlue{position:absolute; z-index:50;padding-right: 2px; font-size:22px;line-height:38px; font-weight:bold;font-weight: normal; width:100%;display:block;top: 36px;}
 .monitorRaw .fontBlue em{font-size:11px;color:#8a9396;width:100%;display:block; font-style:normal;}
-.monitorRaw h5{line-height:35px; padding-top:10px; font-size:13px;  font-weight: normal; min-width:90px; overflow:hidden;  white-space: nowrap; word-break: keep-all;}
+.monitorRaw h5{position:absolute; width:100%;line-height:35px; padding-top:90px; font-size:13px;  font-weight: normal; min-width:90px; overflow:hidden;  white-space: nowrap; word-break: keep-all;}
 .monitorRaw .fontBlue small{font-size:12px;}
 .monitorDiv{position:relative; width:90px; height:82px; margin: 0 auto;}
 .monitorDiv .monitorBg{ position:absolute;width:90px; height:82px; background:url(../images/pf_bg.png) no-repeat bottom center; bottom:0; z-index:1;}

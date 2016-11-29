@@ -40,4 +40,4 @@
 .tooltip .arrowDown{content: "";display: block;height: 0;position: absolute; width: 0; border:10px solid; border-color:#124584 transparent; border-bottom-width:0;}
 /*.tooltip .arrowTopBorder{content: "";display: block;height: 0;position: absolute; width: 0; border:7px solid; border-color:#77aaff transparent  ; border-top-width:0;top:1px; left:-1px;}*/
 .tooltipTable.table-input td{padding: 4px 10px;line-height: 16px;}
-.tooltipTable.table-input td.title{ text-align:center; line-height:20px;background:rgba(255,255,255,0.05); font-size:14px;}
+.tooltipTable.table-input td.title{ text-align:center; line-height:20px;background:rgba(255,255,255,0.05); font-size:14px;display: table-cell;margin: 0;}
