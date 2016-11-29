@@ -182,6 +182,11 @@
 			var switchBtn = $(target).find('div.switchIcon').find('a:first');
 			$(switchBtn).unbind('click');
             $(switchBtn).on('click', deviceSwitch);
+
+            $(window).trigger({
+                type:'initDevice',
+                device:widget.device
+            });
 		};
 
 		var deviceSwitch = function (e) {
@@ -192,6 +197,7 @@
 			}
 
 			initDevice();
+
         }
 
 		var initDeviceTooltip = function(){
