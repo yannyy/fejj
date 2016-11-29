@@ -20,22 +20,43 @@ $(function ($) {
         var initBand = function () {
             var bandDiv = $(widget).find('div.dkCol');
             $(bandDiv).find('ul.monitorPic').find('li').css('display', 'none');
-            var className = 'm' + band;
+            var bandPercent = band;
+            while(bandPercent > 10){
+                bandPercent = bandPercent / 10;
+            }
+            bandPercent = Math.floor(bandPercent);
+            var className = 'm' + bandPercent;
+            var unit = 'MBps';
             $(bandDiv).find('ul.monitorPic').find('li.' + className).css('display', 'block');
+            $(bandDiv).find('span.fontBlue').html(band + '<em>' + unit + '</em>');
         };
 
         var initIOPS = function () {
             var iopsDiv = $(widget).find('div.iopsCol');
+            var iopsPercent = parseFloat(iops);
+            while(iopsPercent > 10){
+                iopsPercent = iopsPercent / 10;
+            }
+            iopsPercent = Math.floor(iopsPercent);
+            var className = 'm' + iopsPercent;
+            var unit = "IOPS";
             $(iopsDiv).find('ul.monitorPic').find('li').css('display', 'none');
-            var className = 'm' + iops;
             $(iopsDiv).find('ul.monitorPic').find('li.' + className).css('display', 'block');
+            $(iopsDiv).find('span.fontBlue').html(iops + '<em>' + unit + '</em>');
         };
 
         var initTTW  = function () {
             var ttwDiv = $(widget).find('div.ddsjCol');
             $(ttwDiv).find('ul.monitorPic').find('li').css('display', 'none');
-            var className = 'm' + ttw;
+            var ttwPercent = parseFloat(ttw);
+            while(ttwPercent > 10){
+                ttwPercent = ttwPercent / 10;
+            }
+            ttwPercent = Math.floor(ttwPercent);
+            var unit = "ms";
+            var className = 'm' + ttwPercent;
             $(ttwDiv).find('ul.monitorPic').find('li.' + className).css('display', 'block');
+            $(ttwDiv).find('span.fontBlue').html(ttw + '<em>' + unit + '</em>');
         };
 
         init();
