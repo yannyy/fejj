@@ -24,7 +24,7 @@ $(function ($) {
             while(bandPercent > 10){
                 bandPercent = bandPercent / 10;
             }
-            bandPercent = Math.floor(bandPercent);
+            bandPercent = Math.round(bandPercent);
             var className = 'm' + bandPercent;
             var unit = 'MBps';
             $(bandDiv).find('ul.monitorPic').find('li.' + className).css('display', 'block');
@@ -37,7 +37,7 @@ $(function ($) {
             while(iopsPercent > 10){
                 iopsPercent = iopsPercent / 10;
             }
-            iopsPercent = Math.floor(iopsPercent);
+            iopsPercent = Math.round(iopsPercent);
             var className = 'm' + iopsPercent;
             var unit = "IOPS";
             $(iopsDiv).find('ul.monitorPic').find('li').css('display', 'none');
@@ -52,7 +52,7 @@ $(function ($) {
             while(ttwPercent > 10){
                 ttwPercent = ttwPercent / 10;
             }
-            ttwPercent = Math.floor(ttwPercent);
+            ttwPercent = Math.round(ttwPercent);
             var unit = "ms";
             var className = 'm' + ttwPercent;
             $(ttwDiv).find('ul.monitorPic').find('li.' + className).css('display', 'block');
