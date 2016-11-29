@@ -935,7 +935,7 @@
 		</div>
 		<div class="xnCol">
 			<div class="titleRaw"><h4>性能</h4></div>
-            <div class="monitorChart">
+            <div class="monitorChart" id="monitorChart">
                 <div class="monitor">
                     <div class="dkCol">		
                         <div class="monitorRaw">                       
@@ -1029,6 +1029,7 @@
 <script src="js/imgscrollview.js"></script>
 <script src="js/buttontoggle.js"></script>
 <script src="js/minscrolllist.js"></script>
+<script src="js/pfmonitor.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$('#userBtn').dropdownBtn();
@@ -1161,6 +1162,7 @@
             }
         });
 
+        $('#monitorChart').pfMonitor(1, 5, 6);
     });
 </script>
 </body>
