@@ -344,12 +344,9 @@ table thead .sorting_desc_disabled {
 table thead .sorting:after,
 table thead .sorting_asc:after,
 table thead .sorting_desc:after {
-	position: absolute;
-	top: 8px;
-	right: 8px;
-	display: block;
 	font-family: 'Material-Design-Iconic-Font';
 	opacity: 0.6;
+    padding-left: 5px;
 }
 
 table thead .sorting:after {
