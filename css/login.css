@@ -76,3 +76,12 @@ div.swithBtnDiv {position: absolute;left: 0;}
 
 #guideIndex .fixedContent{margin-left:80px; margin-right:70px;}
 #guideIndex .alertDiv{left:0;}
+
+.aboutUS .sysName{font-size: 30px; padding-top: 25px;}
+.aboutUS .popupDiv{width:430px; margin-top:100px;}
+.aboutUS .popupContent{text-align:center;}
+.aboutUS .contentBody{padding-top:15px;}
+.aboutUS .contentBody table{background:none; }
+.aboutUS .copyright{padding-top:0;padding-bottom:20px;color: ;}
+.aboutUS .bgIcon{position:absolute;   /*top: -42px; */left:0;}
+.aboutUS .bgIcon i{font-size:280%;opacity: .04;color:; margin:0 6px;}
