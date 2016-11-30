@@ -188,3 +188,14 @@ var resizeArrow = function(arrowDiv, wrapper){
     var left = $(wrapper).outerWidth()/2 - 10;
     $(arrowDiv).css('left',  left + 'px');
 };
+
+var about = function () {
+	var about      = $('body').find('div.aboutUS');
+	$(about).show();
+
+	var dismissBtn = $(about).find('button.close');
+	$(dismissBtn).unbind();
+	$(dismissBtn).on('click', function(e) {
+		$(about).hide();
+	});
+}
