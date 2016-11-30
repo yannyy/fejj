@@ -285,20 +285,58 @@
     	<div style="display:none;" class="sidebar" id="sidebarMenu">
             <div class="sidebaTitle">主菜单</div>
             <div class="menu">
-                <ul>        
-                    <li class="expand open" style=""><a href="#"><i class="zmdi zmdi-view-dashboard"><!--fa fa-dashboard--></i><span>监视</span></a>
+                <ul>
+                    <li class="" style=""><a href="#"><i class="fa fa-laptop"></i><span>监视</span></a>
                         <ul class="sidebarNav" style="display:none">
-                            <li class="select"><a href="#"><i class="fa fa-laptop"></i><span>系统</span></a></li>
+                            <li class=""><a href="#"><i class="zmdi zmdi-laptop-chromebook"></i><span>系统</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-toys"></i><!--zmdi zmdi-flash-auto--><span>硬件</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-tv-list"></i><span>任务</span></a></li>
                             <li><a href="volume/event.html"><i class="zmdi zmdi-notifications-none"></i><span>事件</span></a></li>
-                            <li><a href="#"><i class="fa fa-bar-chart"></i><span>性能</span></a></li>
                         </ul>
-                    </li>                
-                    <li><a href="#"><i class="fa fa-cube"><!--zmdi zmdi-storage--></i><span>池</span></a></li>
-                    <li><a href="volume/volume.html"><i class="fa fa-database"></i><span>卷</span></a></li>
-                    <li><a href="#"><i class="fa fa-building-o"></i><span>主机</span></a></li>
-                    <li><a href="#"><i class="zmdi zmdi-copy"></i><span>拷贝</span></a></li>
-                    <li><a href="#"><i class="fa fa fa-key"></i><span>访问</span></a></li>
-                    <li><a href="#"><i class="zmdi zmdi-wrench"></i><span>设置</span></a></li>
+                    </li>
+
+                    <li class="expand open" style=""><a href="#"><i class="fa fa-cube"></i><span>池</span></a></a>
+                        <ul class="sidebarNav" style="display:">
+                            <li class="select"><a href="#"><i class="fa fa-cubes"></i><span>存储池管理</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-gradient"></i><span>内部存储池</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-storage"></i><span>内部RAID管理</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-codepen"></i><span>外部存储池</span></a></li>
+                            <li><a href="＃"><i class="fa fa-tasks"></i><span>外部RAID管理</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="" ><a href="＃"><i class="fa fa-database"></i><span>卷</span></a>
+                        <ul class="sidebarNav" style="display:none">
+                            <li class=""><a href="#"><i class="fa fa-database"></i><span>卷</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#"><i class="fa fa-building-o"></i><span>主机</span></a>
+                        <ul class="sidebarNav" style="display:none">
+                            <li class=""><a href="#"><i class="fa fa-building-o"></i><span>主机</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-city-alt"></i><span>主机映射</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#"><i class="zmdi zmdi-copy"></i><span>拷贝</span></a>
+                        <ul class="sidebarNav" style="display:none">
+                            <li class=""><a href="#"><i class="zmdi zmdi-copy"></i><span>FlashCopy</span></a></li>
+                            <li><a href="#"><i class="fa fa-object-group"></i><span>一致性组</span></a></li>
+                            <li><a href="#"><i class="fa fa-copy"></i><span>FlashCopy映射</span></a></li>
+                            <li><a href="#"><i class="fa fa-clipboard"></i><span>远程拷贝</span></a></li>
+                            <li><a href="#"><i class="fa fa-columns"></i><span>伙伴关系</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#"><i class="zmdi zmdi-wrench"></i><span>设置</span></a>
+                        <ul class="sidebarNav" style="display:none">
+                            <li class=""><a href="#"><i class="fa fa-bullhorn"></i><span>通知</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-globe-alt"></i><span>网络</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-time-restore"></i><span>系统</span></a></li>
+                            <li><a href="#"><i class="fa fa-wrench"></i><span>维护</span></a></li>
+
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -553,7 +591,7 @@
                                 <li id="device1hover22" class=""></li>
                             </ul>
                         </div>
-                        <div style="" class="cover">
+                        <div class="cover" style="z-index:30">
                             <ul id="device1_front_ul">
                                 <li data-tooltip="device1tip1" data-hover="#device1hover1"></li>
                                 <li data-tooltip="device1tip2" data-hover="#device1hover2"></li>
@@ -585,7 +623,7 @@
                         </div>
                         <div class="enclosure" id="frontViewDevice">
                         	<div class="eHover"></div>
-                    		<div class="eDiv" style="z-index:35"></div>
+                    		<div class="eDiv" style="z-index:32"></div>
                         </div>
                         <div class="img"><img src="images/device/front_NCS7500G2.png"></div>
                     </div>
@@ -884,8 +922,8 @@
                         <div class="monitorRaw">                       
                             <span class="fontBlue">10<em>MBps</em></span>
                             <div class="monitor">
-                                <div class="monitorDiv" >
-                                    <ul class="monitorPic"  style="z-index:20">
+                                <div class="monitorDiv" id="band">
+                                    <ul class="monitorPic"  style="z-index:200" >
                                      	<li class="m0" style="z-index:10"></li>
                                         <li class="m1" style="z-index:10;display:block;"></li>
                                         <li class="m2" style="z-index:10"></li>
@@ -901,7 +939,7 @@
                                   
                                 </div>
                             </div>
-                             <h5 id="band" style="z-index:25">带宽</h5>
+                            <h5>带宽</h5>
                         </div>
                      </div>
                      
@@ -909,19 +947,19 @@
                         <div class="monitorRaw">                       
                             <span class="fontBlue">2322<small>万</small><em>IOPS</em></span>
                             <div class="monitor" id="iops">
-                                <div class="monitorDiv">
-                                    <ul class="monitorPic">
-                                     	<li class="m0"></li>
-                                        <li class="m1"></li>
-                                        <li class="m2"></li>
-                                        <li class="m3"></li>
-                                        <li class="m4"></li>
-                                        <li class="m5"></li>
-                                        <li class="m6"></li>
-                                        <li class="m7"></li>
-                                        <li class="m8"></li>
-                                        <li class="m9"  style=" display:block;"></li>
-                                        <li class="m10"></li>
+                                <div class="monitorDiv" id="iops">
+                                    <ul class="monitorPic" style="z-index:200">
+                                     	<li class="m0" style="z-index:10"></li>
+                                        <li class="m1" style="z-index:10"></li>
+                                        <li class="m2" style="z-index:10"></li>
+                                        <li class="m3" style="z-index:10"></li>
+                                        <li class="m4" style="z-index:10"></li>
+                                        <li class="m5" style="z-index:10"></li>
+                                        <li class="m6" style="z-index:10"></li>
+                                        <li class="m7" style="z-index:10"></li>
+                                        <li class="m8" style="z-index:10"></li>
+                                        <li class="m9"  style="z-index:10;display:block;"></li>
+                                        <li class="m10" style="z-index:10"></li>
                                     </ul>
                                   
                                 </div>
@@ -934,19 +972,19 @@
                         <div class="monitorRaw">                       
                             <span class="fontBlue">167<em>ms</em></span>
                             <div class="monitor" id="ddsj">
-                                <div class="monitorDiv">
-                                    <ul class="monitorPic">
-                                     	<li class="m0"></li>
-                                        <li class="m1"></li>
-                                        <li class="m2"></li>
-                                        <li class="m3"></li>
-                                        <li class="m4"></li>
-                                        <li class="m5"></li>
-                                        <li class="m6"></li>
-                                        <li class="m7" style=" display:block;"></li>
-                                        <li class="m8"></li>
-                                        <li class="m9"></li>
-                                        <li class="m10"></li>
+                                <div class="monitorDiv" id="ddsj">
+                                    <ul class="monitorPic" style="z-index:200">
+                                     	<li class="m0" style="z-index:10"></li>
+                                        <li class="m1" style="z-index:10"></li>
+                                        <li class="m2" style="z-index:10"></li>
+                                        <li class="m3" style="z-index:10"></li>
+                                        <li class="m4" style="z-index:10"></li>
+                                        <li class="m5" style="z-index:10"></li>
+                                        <li class="m6" style="z-index:10"></li>
+                                        <li class="m7" style="z-index:10;display:block;"></li>
+                                        <li class="m8" style="z-index:10"></li>
+                                        <li class="m9" style="z-index:10" ></li>
+                                        <li class="m10" style="z-index:10"></li>
                                     </ul>
                                   
                                 </div>
@@ -1067,11 +1105,37 @@
                 {"name":"读", "value":0},
                 {"name":"写", "value":27},
             ];
-            var target = $(e.target).prev().find('ul.monitorPic');
+            var target = $(e.target);
             showTooltip(target, '带宽', data, 'bandTooltips');
         });
 
         $('#band').on('mouseout', function () {
+            hideTooltip('bandTooltips');
+        });
+        $('#iops').on('mouseover', function (e) {
+            var data = [
+                {"name":"当前", "value":27},
+                {"name":"读", "value":0},
+                {"name":"写", "value":27},
+            ];
+            var target = $(e.target);
+            showTooltip(target, 'IOPS', data, 'bandTooltips');
+        });
+
+        $('#iops').on('mouseout', function () {
+            hideTooltip('bandTooltips');
+        });
+        $('#ddsj').on('mouseover', function (e) {
+            var data = [
+                {"name":"当前", "value":27},
+                {"name":"读", "value":0},
+                {"name":"写", "value":27},
+            ];
+            var target = $(e.target);
+            showTooltip(target, '等待时间', data, 'bandTooltips');
+        });
+
+        $('#ddsj').on('mouseout', function () {
             hideTooltip('bandTooltips');
         });
         function initPdTooltips(idSelector, pdTips){

@@ -256,13 +256,13 @@ ul.sidebarNav li.select a:hover{background:transparent;}
 .ddsjCol{ width: 31%; min-width:90px;}
 .monitorRaw{ margin: 12px auto 0; text-align:center; float:none; width:100%;}
 .monitorRaw{}
-.monitorRaw .fontBlue{position:absolute; z-index:50;padding-right: 2px; font-size:22px;line-height:38px; font-weight:bold;font-weight: normal; width:100%;display:block;top: 36px;}
+.monitorRaw .fontBlue{position:absolute; z-index:50;padding-right: 2px; font-size:20px;line-height:38px; font-weight:bold;font-weight: normal; width:100%;display:block;top: 36px;}
 .monitorRaw .fontBlue em{font-size:11px;color:#8a9396;width:100%;display:block; font-style:normal;}
 .monitorRaw h5{position:absolute; width:100%;line-height:35px; padding-top:90px; font-size:13px;  font-weight: normal; min-width:90px; overflow:hidden;  white-space: nowrap; word-break: keep-all;}
 .monitorRaw .fontBlue small{font-size:12px;}
 .monitorDiv{position:relative; width:90px; height:82px; margin: 0 auto;}
 .monitorDiv .monitorBg{ position:absolute;width:90px; height:82px; background:url(../images/pf_bg.png) no-repeat bottom center; bottom:0; z-index:1;}
-.monitorDiv .monitorPic{ position:absolute;width:90px; height:82px;bottom:0; z-index:10; opacity:.8;}
+.monitorDiv .monitorPic{ position:absolute;width:90px; height:82px;bottom:0; z-index:10; opacity:.8; display:block;}
 .monitorDiv .monitorPic li{position: absolute;width:90px; height:82px; bottom:0; display:none;}
 .monitorDiv .monitorPic li.m0{background:url(../images/pf_m0.png) no-repeat bottom center;}
 .monitorDiv .monitorPic li.m1{background:url(../images/pf_m1.png) no-repeat bottom center;}
