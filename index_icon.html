@@ -182,10 +182,12 @@
 <!--右侧-->
 
 <div class="popup fade aboutUS" style="display:block;">
-            <div class="popupDiv" style="">
+            <div class="popupDiv" style="" id="about">
                 <div class="popupContent">
                     <div class="contentHeader">
-                    <div class="sysName">NetStor<span>Control Center</span></div>  </div>                
+                        <button type="button" class="close" data-dismiss="#about" aria-hidden="true">×</button>
+                        <div class="sysName">NetStor<span>Control Center</span></div>
+                    </div>
                     <div class="contentBody">
                     	<table class="table-input">
                             <tbody >
@@ -223,6 +225,7 @@
 <script src="js/buttontoggle.js"></script>
 <script src="js/minscrolllist.js"></script>
 <script src="js/tabletooltip.js"></script>
+<script src="js/about.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$('#userBtn').dropdownBtn();
@@ -234,6 +237,7 @@
         $('#systemMenuListBtn').btnToggle();
         $('#slimList').minScrollList();
         $('#rFloatDiv').rFloat();
+        $('#about').about();
 	});
 </script>
 </body>
