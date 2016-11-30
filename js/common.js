@@ -120,7 +120,7 @@ var buildTooltip = function(targetNode, title, data, dataTarget, position){
 
     var targetNode = $(targetNode);
 
-    var wrapper = $('<div class="tooltip" data-target="'+dataTarget+'" style="width:198px;z-index:21"></div>');
+    var wrapper = $('<div class="tooltip" data-target="'+dataTarget+'" style="width:195px;z-index:21"></div>');
 
     $(wrapper).css('position', 'absolute');
 
