@@ -29,8 +29,69 @@
 					areaFix.actionBarTop = $('div.fixedArea').offset().top;
 				}
 			},
+			initSortable: function(){
+                var headers = $(widget).find('div.fixedArea').find('div.tableHeader').find('th.sortable');
+
+                $(headers).on('click', function(e){
+                    var index = $(e.target).attr('data-sindex');
+
+                  	$(e.target).toggleClass('sorting_desc');
+                    $(e.target).toggleClass('sorting_asc');
+
+                    var asc = false;
+                    if($(e.target).hasClass('sorting_asc'))
+                    	asc = true;
+					areaFix.sortTable(index, asc);
+				});
+			},
+			sortTable: function(index, asc){
+				var rows = $('div.blockArea').find('div.tableBody').find('tr');
+				var data = [];
+				var model = [];
+				var special = null;
+
+				//获取model
+                var frow = $('div.blockArea').find('div.tableBody').find('tr:first');
+                $(frow).find('td').each(function (i, td) {
+					var ntd = $(td).clone();
+					model.push(ntd.html('').get(0));
+				});
+
+				//从每行中取数据
+				$.each(rows, function (i, tr) {
+				    var row = [];
+				    var cells = $(tr).find('td');
+				    $.each(cells, function(j, cell) {
+				    	row.push($(cell).html());
+					});
+				    data.push(row);
+				});
+				data = data.sort(function(row1, row2){
+					if(asc) {
+                        return row1[index] > row2[index] ? 1 : -1;
+					} else {
+                        return row2[index] > row1[index] ? 1 : -1;
+					}
+				});
+
+                $('div.blockArea').find('div.tableBody').find('tr').remove();
+                var tbody = $('div.blockArea').find('div.tableBody').find('tbody');
+
+                $.each(data, function (i, row) {
+                	var tr = $('<tr></tr>');
+                	$.each(row, function(j, cell) {
+                		var td = $(model[j]).clone();
+                		$(td).html(cell);
+
+                		tr.append(td);
+					});
+
+                	$(tbody).append(tr);
+				});
+			},
 			fixedInit: function(){
 				if($(widget).find('div.fixedArea').length != 0){
+					areaFix.initSortable();
 					areaFix.actionBarTopFixed();
 					areaFix.blockAreaOffset = $(widget).find('div.blockArea').offset();
 					areaFix.initFloatStatus();	
