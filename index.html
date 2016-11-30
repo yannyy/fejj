@@ -422,34 +422,6 @@
             <div class="picCol">
                 <div class="switchIcon"><a style=""><i class="zmdi zmdi-rotate-ccw"></i></a> <a style="display:none;"><i
                         class="zmdi zmdi-rotate-cw"></i></a></div>
-                <div style="top: 20px; left:570px; display:none;" class="tooltip">
-                    <!--  tooltip -->
-                    <div style="left:55px;top: 142px;" class="bgArrow">
-                        <div class="arrowDown"></div>
-                    </div>
-                    <table class="table-input tooltipTable" cellpadding="0" cellspacing="0" width="100%" style="">
-                        <tr>
-                            <td colspan="2" class="title">企业级</td>
-                        </tr>
-                        <tr>
-                            <td style="width:48%;">标识：</td>
-                            <td>12</td>
-                        </tr>
-                        <tr>
-                            <td>状态：</td>
-                            <td>联机</td>
-                        </tr>
-                        <tr>
-                            <td>容量：</td>
-                            <td>2.00GB</td>
-                        </tr>
-                        <tr>
-                            <td>使用：</td>
-                            <td>成员</td>
-                        </tr>
-                    </table>
-
-                </div>
                 <div class="deviceName"><span class="statusIcon m-r-10"><em class="fontGreen"><i
                     class="zmdi zmdi-check-circle"></i></em></span> RPDAJ-001
                 </div>
@@ -626,35 +598,6 @@
             <div class="picCol">
                 <div class="switchIcon"><a style=""><i class="zmdi zmdi-rotate-ccw"></i></a> <a style="display:none;"><i
                         class="zmdi zmdi-rotate-cw"></i></a></div>
-                <div style="top: 55px; left:570px; display:none;" class="tooltip">
-                    <!--  tooltip -->
-                    <div style="left:55px;top: 142px;" class="bgArrow">
-                        <div class="arrowDown"></div>
-                    </div>
-                    <table class="table-input tooltipTable" cellpadding="0" cellspacing="0" width="100%"
-                           style="">
-                        <tr>
-                            <td colspan="2" class="title">企业级</td>
-                        </tr>
-                        <tr>
-                            <td style="width:48%;">标识：</td>
-                            <td>12</td>
-                        </tr>
-                        <tr>
-                            <td>状态：</td>
-                            <td>联机</td>
-                        </tr>
-                        <tr>
-                            <td>容量：</td>
-                            <td>2.00GB</td>
-                        </tr>
-                        <tr>
-                            <td>使用：</td>
-                            <td>成员</td>
-                        </tr>
-                    </table>
-
-                </div>
                 <div class="deviceName"><span class="statusIcon m-r-10"><em class="fontGreen"><i
                     class="zmdi zmdi-check-circle"></i></em></span> RPDAJ-002
                 </div>
@@ -936,36 +879,36 @@
 		<div class="xnCol">
 			<div class="titleRaw"><h4>性能</h4></div>
             <div class="monitorChart" id="monitorChart">
-                <div class="monitor">
+                <div class="monitor" >
                     <div class="dkCol">		
                         <div class="monitorRaw">                       
                             <span class="fontBlue">10<em>MBps</em></span>
                             <div class="monitor">
-                                <div class="monitorDiv">
-                                    <ul class="monitorPic">
-                                     	<li class="m0"></li>
-                                        <li class="m1" style=" display:block;"></li>
-                                        <li class="m2"></li>
-                                        <li class="m3"></li>
-                                        <li class="m4"></li>
-                                        <li class="m5"></li>
-                                        <li class="m6"></li>
-                                        <li class="m7"></li>
-                                        <li class="m8"></li>
-                                        <li class="m9"></li>
-                                        <li class="m10"></li>
+                                <div class="monitorDiv" >
+                                    <ul class="monitorPic"  style="z-index:20">
+                                     	<li class="m0" style="z-index:10"></li>
+                                        <li class="m1" style="z-index:10;display:block;"></li>
+                                        <li class="m2" style="z-index:10"></li>
+                                        <li class="m3" style="z-index:10"></li>
+                                        <li class="m4" style="z-index:10"></li>
+                                        <li class="m5" style="z-index:10"></li>
+                                        <li class="m6" style="z-index:10"></li>
+                                        <li class="m7" style="z-index:10"></li>
+                                        <li class="m8" style="z-index:10"></li>
+                                        <li class="m9" style="z-index:10"></li>
+                                        <li class="m10" style="z-index:10"></li>
                                     </ul>
                                   
                                 </div>
                             </div>
-                             <h5>带宽</h5>
+                             <h5 id="band" style="z-index:25">带宽</h5>
                         </div>
                      </div>
                      
                      <div class="iopsCol">		
                         <div class="monitorRaw">                       
                             <span class="fontBlue">2322<small>万</small><em>IOPS</em></span>
-                            <div class="monitor">
+                            <div class="monitor" id="iops">
                                 <div class="monitorDiv">
                                     <ul class="monitorPic">
                                      	<li class="m0"></li>
@@ -990,7 +933,7 @@
                      <div class="ddsjCol">		
                         <div class="monitorRaw">                       
                             <span class="fontBlue">167<em>ms</em></span>
-                            <div class="monitor">
+                            <div class="monitor" id="ddsj">
                                 <div class="monitorDiv">
                                     <ul class="monitorPic">
                                      	<li class="m0"></li>
@@ -1118,6 +1061,19 @@
             }
         ];
 
+        $('#band').on('mouseover', function (e) {
+            var data = [
+                {"name":"当前", "value":27},
+                {"name":"读", "value":0},
+                {"name":"写", "value":27},
+            ];
+            var target = $(e.target).prev().find('ul.monitorPic');
+            showTooltip(target, '带宽', data, 'bandTooltips');
+        });
+
+        $('#band').on('mouseout', function () {
+            hideTooltip('bandTooltips');
+        });
         function initPdTooltips(idSelector, pdTips){
             var divCover = $(idSelector).find('.frontDevice').find('.cover').not('.status');
             $(divCover).find('li').on('mouseover', function(e){
