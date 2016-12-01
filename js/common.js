@@ -198,4 +198,55 @@ var about = function () {
 	$(dismissBtn).on('click', function(e) {
 		$(about).hide();
 	});
+};
+
+/*
+ * data = {
+ *     band:[
+ *          {name:"读", value: 27},
+ *          {name:"写", value: 27},
+ *          {name:"当前", value: 27}
+ *     ],
+ *     iops:[
+ *          {name:"读", value: 27},
+ *          {name:"写", value: 27},
+ *          {name:"当前", value: 27}
+ *     ],
+ *     ddsj:[
+ *          {name:"读", value: 27},
+ *          {name:"写", value: 27},
+ *          {name:"当前", value: 27}
+ *     ]
+ * };
+ *
+ */
+function updateDashboardTips(data) {
+	data     = data || {};
+	var band = data.band || [];
+	var iops = data.iops || [];
+    var ddsj = data.ddsj || [];
+
+    var bandDiv = $('body').find('div.dkCol');
+    var bandTrs = $(bandDiv).find('.tooltip').find('tr');
+    $.each(band, function (i, d) {
+    	var cells = $(bandTrs[i]).find('td');
+    	$(cells.get(0)).text(d.name);
+        $(cells.get(1)).text(d.value);
+	});
+
+    var iopsDiv = $('body').find('div.iopsCol');
+    var iopsTrs = $(iopsDiv).find('.tooltip').find('tr');
+    $.each(iops, function (i, d) {
+        var cells = $(iopsTrs[i]).find('td');
+        $(cells.get(0)).text(d.name);
+        $(cells.get(1)).text(d.value);
+    });
+
+    var ddsjDiv = $('body').find('div.ddsjCol');
+    var ddsjTrs = $(ddsjDiv).find('.tooltip').find('tr');
+    $.each(ddsj, function (i, d) {
+        var cells = $(ddsjTrs[i]).find('td');
+        $(cells.get(0)).text(d.name);
+        $(cells.get(1)).text(d.value);
+    });
 }
