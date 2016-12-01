@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>highchart</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/dark-unica.js"></script>
+</head>
+<body>
+    <div id="container1" style="width:400px;height:400px"></div>
+    <div id="container2" style="width:400px;height:400px"></div>
+    <div id="container3" style="width:400px;height:400px"></div>
+    <div id="container4" style="width:400px;height:400px"></div>
+<script>
+    $(function () {
+        $('#container1').highcharts( {
+            title: {
+                text: 'CPU',
+                x: -20
+            },
+            xAxis:{
+                categories:[1,2,3,4,5,6,7,8,9,10,11,12]
+            },
+            yAxis:{
+                title: {
+                    text:'Temperature'
+                },
+                plotLines:[{
+                    value:0,
+                    width:1,
+                    color:'#808080'
+                }]
+            },
+            tooltip:{
+                headerFormat:'',
+                pointFormat:'<p style="color:{series.color}">\u25CF</p> {series.name}: <b>{point.y}</b><br/>'
+            },
+            series:[
+                {
+                    name:'Tokyo',
+                    data:[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 24.4, 18.9, 13.9, 9.6]
+                },
+                {
+                    name:'Berlin',
+                    data:[-0.2, 0.8, 5.8, 11.3, 12.2, 14.5, 15.2, 23.5, 19.4, 17.9, 11.7, 6.7]
+                },
+                {
+                    name:'New York',
+                    data:[4.0, 3.9, 5.5, 12.7, 19.2, 22.5, 24.2, 25.5, 23.4, 19.6, 11.8, 9.5]
+                },
+                {
+                    name:'London',
+                    data:[-8.0, 6.4, 10.5, 13.5, 15.2, 20.5, 23.2, 18.5, 13.3, 15.9, 10.9, 11.4]
+                }
+            ]
+        });
+        $('#container2').highcharts( {
+            title: {
+                text: '卷',
+                x: -20
+            },
+            xAxis:{
+                categories:[1,2,3,4,5,6,7,8,9,10,11,12]
+            },
+            yAxis:{
+                title: {
+                    text:'Temperature'
+                },
+                plotLines:[{
+                    value:0,
+                    width:1,
+                    color:'#808080'
+                }]
+            },
+            tooltip:{
+                headerFormat:'',
+                pointFormat:'<p style="color:{series.color}">\u25CF</p> {series.name}: <b>{point.y}</b><br/>'
+            },
+            series:[
+                {
+                    name:'读',
+                    data:[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 24.4, 18.9, 13.9, 9.6]
+                },
+                {
+                    name:'写',
+                    data:[-0.2, 0.8, 5.8, 11.3, 12.2, 14.5, 15.2, 23.5, 19.4, 17.9, 11.7, 6.7]
+                },
+                {
+                    name:'读等待时间',
+                    data:[4.0, 3.9, 5.5, 12.7, 19.2, 22.5, 24.2, 25.5, 23.4, 19.6, 11.8, 9.5]
+                },
+                {
+                    name:'写等待时间',
+                    data:[-8.0, 6.4, 10.5, 13.5, 15.2, 20.5, 23.2, 18.5, 13.3, 15.9, 10.9, 11.4]
+                }
+            ]
+        });
+        $('#container3').highcharts( {
+            title: {
+                text: '接口',
+                x: -20
+            },
+            xAxis:{
+                categories:[1,2,3,4,5,6,7,8,9,10,11,12]
+            },
+            yAxis:{
+                title: {
+                    text:'Temperature'
+                },
+                plotLines:[{
+                    value:0,
+                    width:1,
+                    color:'#808080'
+                }]
+            },
+            tooltip:{
+                headerFormat:'',
+                pointFormat:'<p style="color:{series.color}">\u25CF</p> {series.name}: <b>{point.y}</b><br/>'
+            },
+            series:[
+                {
+                    name:'FC',
+                    data:[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 24.4, 18.9, 13.9, 9.6]
+                },
+                {
+                    name:'iSCSI',
+                    data:[-0.2, 0.8, 5.8, 11.3, 12.2, 14.5, 15.2, 23.5, 19.4, 17.9, 11.7, 6.7]
+                },
+                {
+                    name:'SAS',
+                    data:[4.0, 3.9, 5.5, 12.7, 19.2, 22.5, 24.2, 25.5, 23.4, 19.6, 11.8, 9.5]
+                },
+                {
+                    name:'IP 远程拷贝',
+                    data:[-8.0, 6.4, 10.5, 13.5, 15.2, 20.5, 23.2, 18.5, 13.3, 15.9, 10.9, 11.4]
+                }
+            ]
+        });
+        $('#container4').highcharts( {
+            title: {
+                text: 'MDisk',
+                x: -20
+            },
+            xAxis:{
+                categories:[1,2,3,4,5,6,7,8,9,10,11,12]
+            },
+            yAxis:{
+                title: {
+                    text:'Temperature'
+                },
+                plotLines:[{
+                    value:0,
+                    width:1,
+                    color:'#808080'
+                }]
+            },
+            tooltip:{
+                headerFormat:'',
+                pointFormat:'<p style="color:{series.color}">\u25CF</p> {series.name}: <b>{point.y}</b><br/>'
+            },
+            series:[
+                {
+                    name:'读',
+                    data:[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 24.4, 18.9, 13.9, 9.6]
+                },
+                {
+                    name:'写',
+                    data:[-0.2, 0.8, 5.8, 11.3, 12.2, 14.5, 15.2, 23.5, 19.4, 17.9, 11.7, 6.7]
+                },
+                {
+                    name:'读等待时间',
+                    data:[4.0, 3.9, 5.5, 12.7, 19.2, 22.5, 24.2, 25.5, 23.4, 19.6, 11.8, 9.5]
+                },
+                {
+                    name:'写等待时间',
+                    data:[-8.0, 6.4, 10.5, 13.5, 15.2, 20.5, 23.2, 18.5, 13.3, 15.9, 10.9, 11.4]
+                }
+            ]
+        });
+    });
+</script>
+</body>
+</html>
