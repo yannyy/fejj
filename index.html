@@ -918,12 +918,35 @@
 			<div class="titleRaw"><h4>性能</h4></div>
             <div class="monitorChart" id="monitorChart">
                 <div class="monitor" >
-                    <div class="dkCol">		
-                        <div class="monitorRaw">                       
+                    <div class="dkCol">
+                        <div class="tooltipCenter" id="bandTips" style="display: none;">
+                            <div class="tooltip" style="">
+                                <table class="table-input tooltipTable" cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody>
+                                    <tr>
+                                        <td>当前</td>
+                                        <td>667</td>
+                                    </tr>
+                                    <tr>
+                                        <td>读</td>
+                                        <td>667</td>
+                                    </tr>
+                                    <tr>
+                                        <td>写</td>
+                                        <td>0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div style="position:relative" class="gbArrow">
+                                    <div class="arrowDown"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="monitorRaw">
                             <span class="fontBlue">10<em>MBps</em></span>
                             <div class="monitor">
-                                <div class="monitorDiv" id="band">
-                                    <ul class="monitorPic"  style="z-index:200" >
+                                <div class="monitorDiv">
+                                    <ul class="monitorPic"  style="z-index:200;cursor:pointer;" id="band" data-target="#bandTips">
                                      	<li class="m0" style="z-index:10"></li>
                                         <li class="m1" style="z-index:10;display:block;"></li>
                                         <li class="m2" style="z-index:10"></li>
@@ -943,12 +966,35 @@
                         </div>
                      </div>
                      
-                     <div class="iopsCol">		
+                     <div class="iopsCol">
+                         <div class="tooltipCenter" id="iopsTips" style="display: none">
+                             <div class="tooltip" style="">
+                                 <table class="table-input tooltipTable" cellpadding="0" cellspacing="0" width="100%">
+                                     <tbody>
+                                     <tr>
+                                         <td>当前</td>
+                                         <td>667</td>
+                                     </tr>
+                                     <tr>
+                                         <td>读</td>
+                                         <td>667</td>
+                                     </tr>
+                                     <tr>
+                                         <td>写</td>
+                                         <td>0</td>
+                                     </tr>
+                                     </tbody>
+                                 </table>
+                                 <div style="position:relative" class="gbArrow">
+                                     <div class="arrowDown"></div>
+                                 </div>
+                             </div>
+                         </div>
                         <div class="monitorRaw">                       
                             <span class="fontBlue">2322<small>万</small><em>IOPS</em></span>
-                            <div class="monitor" id="iops">
-                                <div class="monitorDiv" id="iops">
-                                    <ul class="monitorPic" style="z-index:200">
+                            <div class="monitor">
+                                <div class="monitorDiv">
+                                    <ul class="monitorPic" style="z-index:200;cursor: pointer" id="iops" data-target="#iopsTips">
                                      	<li class="m0" style="z-index:10"></li>
                                         <li class="m1" style="z-index:10"></li>
                                         <li class="m2" style="z-index:10"></li>
@@ -969,33 +1015,34 @@
                      </div>
                      
                      <div class="ddsjCol" >
-                        <div class="tooltip" style="width: 170px;position:relative;">
-                            <table class="table-input tooltipTable" cellpadding="0" cellspacing="0" width="100%">
-                                <thead>
-                                <tr>
-                                    <th>等待时间</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>读</td>
-                                    <td>667</td>
-                                </tr>
-                                <tr>
-                                    <td>写</td>
-                                    <td>0</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <div style="position:relative" class="gbArrow">
-                                <div class="arrowDown"></div>
-                            </div>
-                        </div>
+                         <div class="tooltipCenter" id="ddsjTips" style="display:none">
+                             <div class="tooltip" style="">
+                                 <table class="table-input tooltipTable" cellpadding="0" cellspacing="0" width="100%">
+                                     <tbody>
+                                     <tr>
+                                         <td>当前</td>
+                                         <td>667</td>
+                                     </tr>
+                                     <tr>
+                                         <td>读</td>
+                                         <td>667</td>
+                                     </tr>
+                                     <tr>
+                                         <td>写</td>
+                                         <td>0</td>
+                                     </tr>
+                                     </tbody>
+                                 </table>
+                                 <div style="position:relative" class="gbArrow">
+                                     <div class="arrowDown"></div>
+                                 </div>
+                             </div>
+                         </div>
                         <div class="monitorRaw">                       
                             <span class="fontBlue">167<em>ms</em></span>
-                            <div class="monitor" id="ddsj">
-                                <div class="monitorDiv" id="ddsj">
-                                    <ul class="monitorPic" style="z-index:200">
+                            <div class="monitor">
+                                <div class="monitorDiv" style="cursor:pointer">
+                                    <ul class="monitorPic" style="z-index:200;cursor:pointer" data-target="#ddsjTips" id="ddsj">
                                      	<li class="m0" style="z-index:10"></li>
                                         <li class="m1" style="z-index:10"></li>
                                         <li class="m2" style="z-index:10"></li>
@@ -1152,45 +1199,6 @@
             }
         ];
 
-        $('#band').on('mouseover', function (e) {
-            var data = [
-                {"name":"当前", "value":27},
-                {"name":"读", "value":0},
-                {"name":"写", "value":27},
-            ];
-            var target = $(e.target);
-            showTooltip(target, '带宽', data, 'bandTooltips');
-        });
-
-        $('#band').on('mouseout', function () {
-            hideTooltip('bandTooltips');
-        });
-        $('#iops').on('mouseover', function (e) {
-            var data = [
-                {"name":"当前", "value":27},
-                {"name":"读", "value":0},
-                {"name":"写", "value":27},
-            ];
-            var target = $(e.target);
-            showTooltip(target, 'IOPS', data, 'bandTooltips');
-        });
-
-        $('#iops').on('mouseout', function () {
-            hideTooltip('bandTooltips');
-        });
-        $('#ddsj').on('mouseover', function (e) {
-            var data = [
-                {"name":"当前", "value":27},
-                {"name":"读", "value":0},
-                {"name":"写", "value":27},
-            ];
-            var target = $(e.target);
-            showTooltip(target, '等待时间', data, 'bandTooltips');
-        });
-
-        $('#ddsj').on('mouseout', function () {
-            hideTooltip('bandTooltips');
-        });
         function initPdTooltips(idSelector, pdTips){
             var divCover = $(idSelector).find('.frontDevice').find('.cover').not('.status');
             $(divCover).find('li').on('mouseover', function(e){
@@ -1236,6 +1244,62 @@
         });
 
         $('#monitorChart').pfMonitor(25, '3430万', 667);
+
+        $('#ddsj').on('mouseover', function (e) {
+            var target = '';
+            if(e.target.tagName == 'UL')
+                target = $(e.target).attr('data-target');
+            else
+                target = $(e.target).parent().attr('data-target');
+
+            $(target).show();
+        });
+        $('#ddsj').on('mouseout', function (e) {
+            var target = '';
+            if(e.target.tagName == 'UL')
+                target = $(e.target).attr('data-target');
+            else
+                target = $(e.target).parent().attr('data-target');
+            $(target).hide();
+
+        });
+
+        $('#iops').on('mouseover', function (e) {
+            var target = '';
+            if(e.target.tagName == 'UL')
+                target = $(e.target).attr('data-target');
+            else
+                target = $(e.target).parent().attr('data-target');
+
+            $(target).show();
+        });
+        $('#iops').on('mouseout', function (e) {
+            var target = '';
+            if(e.target.tagName == 'UL')
+                target = $(e.target).attr('data-target');
+            else
+                target = $(e.target).parent().attr('data-target');
+            $(target).hide();
+
+        });
+        $('#band').on('mouseover', function (e) {
+            var target = '';
+            if(e.target.tagName == 'UL')
+                target = $(e.target).attr('data-target');
+            else
+                target = $(e.target).parent().attr('data-target');
+
+            $(target).show();
+        });
+        $('#band').on('mouseout', function (e) {
+            var target = '';
+            if(e.target.tagName == 'UL')
+                target = $(e.target).attr('data-target');
+            else
+                target = $(e.target).parent().attr('data-target');
+            $(target).hide();
+
+        });
     });
 </script>
 </body>
