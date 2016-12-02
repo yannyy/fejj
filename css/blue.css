@@ -224,7 +224,7 @@ ul.sidebarNav li.select a:hover{background:transparent;}
 
 /*bottom---------------*/
 .bottomRaw{ position: relative; bottom: 0; left:0; height: 220px; width: 100%; padding: 15px 0px 0; /*display:-moz-box; display:-webkit-box; display:box;*/}
-.sxCol,.rlCol,.xnCol{ float: left; border: 1px solid #374551;  background: rgba(25,39,53,0.5); overflow: hidden; height:100%}
+.sxCol,.rlCol,.xnCol{ float: left; border: 1px solid #374551;  background: rgba(25,39,53,0.5); /*overflow: hidden;*/ height:100%}
 
 .sxCol{ width: 21%; margin-right: 0.9%;}
 .rlCol{ width: 37%; margin-right: 0.9%; text-align:center; min-width:373px;}

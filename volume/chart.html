@@ -1,0 +1,318 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Netstor</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"> 
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link rel="stylesheet" href="../css/blue.css">
+    <link rel="stylesheet" href="../css/component.css">
+    <link rel="stylesheet" href="../css/device.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link rel="stylesheet" href="../css/material-design-iconic-font.css">
+    <!-- ================== END BASE CSS STYLE ================== -->
+    <!-- ================== BEGIN BASE JS ================== -->
+	<script src="../js/jquery.js"></script>
+    <script src="../js/highcharts.js"></script>
+    <script src="../js/dark-unica.js"></script>
+    <!-- ================== END BASE JS ================== -->
+</head>
+
+<body>
+<div class="globalBg"></div>
+<div class="rFloatDiv">
+    <a class="collapseBtn" style="display:;"><i class="zmdi zmdi-format-list-bulleted"></i></a>
+</div>
+<!--左侧内容区-->
+<div id="sideDiv">
+    <div class="left_top">
+        <div class="nameTop">
+            <div class="name">
+            <em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em>
+            <big>Cluster-one</big></div>
+            <span class="globalAction fr"><a href="#"><i class="zmdi zmdi-download"></i></a><a href="#"><i class="zmdi zmdi-sun"></i></a></span>
+        </div>
+        <div class="ipJdt">
+            <div class="jdt"><span style="width:35%;"></span></div><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div>
+            <p><small>IP Address:</small> 192.168.0.21</p>
+        </div>
+    </div>
+      <div class="tabRaw">
+    	<a class="current" href="#" data-target="#sidebarMenu"><i class="fa fa-navicon"></i><sup>&nbsp;</sup></a><a href="#" class="bgGradul" data-target="#sidebarTask"><i class="zmdi zmdi-tv-list"></i><sup class="bgGreen"><i>6</i></sup></a><a href="#" class="bgGradul" data-target="#sidebarEvent"><i class="zmdi zmdi-notifications-none"></i><sup class="bgRed"><i>8</i></sup></a>
+    </div>
+    <!--左侧菜单-->
+    <div class="sidebarContainer">
+        <div style="left: 0%; visibility: visible;" class="sidebar">
+            <div class="sidebaTitle">主菜单</div>
+            <div class="menu">
+                <ul>        
+                    <li class="" style=""><a href="#"><i class="zmdi zmdi-view-dashboard"><!--fa fa-dashboard--></i><span>监视</span></a>
+                        <ul class="sidebarNav" style="display:none;">
+                            <li class=""><a href="../index.html"><i class="fa fa-laptop"></i><span>系统</span></a></li>
+                            <li><a href="event.html"><i class="zmdi zmdi-notifications-none"></i><span>事件</span></a></li>
+                            <li><a href="#"><i class="fa fa-bar-chart"></i><span>性能</span></a></li>
+                        </ul>
+                    </li>                
+                    <li><a href="#"><i class="fa fa-cube"></i><span>池</span></a></li>
+                    <li class="open select"><a href="#"><i class="fa fa-database"></i><span>卷</span></a></li>
+                    <li><a href="#"><i class="fa fa-building-o"></i><span>主机</span></a></li>
+                    <li><a href="#"><i class="zmdi zmdi-copy"></i><span>拷贝</span></a></li>
+                    <li><a href="#"><i class="fa fa fa-key"></i><span>访问</span></a></li>
+                    <li><a href="#"><i class="zmdi zmdi-wrench"></i><span>设置</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="left: 100%; visibility: visible;" class="sidebar">
+            <div class="sidebaTitle">正在运行的任务</div>
+            <div class="taskList">
+                <label>2个卷格式，1个阵列初始化</label>
+                <ul>
+                    <li>
+                        <span class="taskName">Volume0</span>
+                        <div class="progress">
+                            <div class="progressBar progressTask progress-animated" style="width: 36%;"><em>36%</em> </div>
+                        </div>
+                        <span class="taskTime"><small>剩余时间：12:27:00</small></span></li>
+                    <li>
+                        <span class="taskName">Volume0</span>
+                        <div class="progress">
+                            <div class="progressBar progressTask progress-animated" style="width: 36%;"><em>36%</em> </div>
+                        </div>
+                        <span class="taskTime"><small>剩余时间：12:27:00</small></span></li>
+                    <li>
+                        <span class="taskName">Volume0</span>
+                        <div class="progress">
+                            <div class="progressBar progressTask progress-animated" style="width: 36%;"><em>36%</em> </div>
+                        </div>
+                        <span class="taskTime"><small>剩余时间：12:27:00</small></span></li>
+                </ul>
+            </div>
+        </div>    
+    </div>    
+</div>
+<!--右侧top-->
+<div id="topDiv">
+    <div class="headerBar">
+        <div class="fr glysetting"><a href="#">Superuser（安全管理员）<span class="caret"></span></a><a href="#"><i class="zmdi zmdi-help-outline"></i></a></div>
+        <div class="sysName">NetStor<span>Control Center</span></div>
+    </div>
+</div>
+<!--右侧-->
+<div id="content"> 
+	 
+    <!--右侧内容区-->
+    <div class="contentDiv">
+        <!--面包屑导航-->
+        <ol class="breadcrumb">
+            <li><a href="javascript:;">Home</a></li>
+            <li><a href="javascript:;">卷</a></li>
+            <li class="active">Tables</li>
+        </ol>        
+        
+        
+        <div id="fixedArea">
+        <div class="fixedArea" style="">
+            <div class="actionTopbar"><select class="m-r-10 form-control"><option>Node 1</option><option>Node 2</option></select>
+            <select class="form-control"><option>Mbps</option><option>Mbps</option></select>
+            </div>
+        </div>
+        </div>    
+        <div class="replaceArea"></div> 
+        <div class="blockArea">
+            <div class="monitorBody">
+                <div class="colTwo">
+                	<div class="coverSpecial">
+                        <span class="pull-left"></span>
+                        <span class="pull-right"></span></div>
+                	<div id="container1" class="pull-left" style=""></div>                   
+                	<div id="container2" class="pull-right" style=""></div>
+                    
+                </div>
+                <div class="colTwo">
+                	<div class="coverSpecial">
+                        <span class="pull-left"></span>
+                        <span class="pull-right"></span></div>
+                	<div id="container3" class="pull-left" style=""></div>
+               		<div id="container4" class="pull-right"  style=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>   
+</div>
+<script>
+    $(function () {
+        $('#container1').highcharts( {
+            chart: {
+                backgroundColor: 'rgba(0,0,0,0)'
+            },
+            title: {
+                text: 'CPU',
+                x: -20
+            },
+            xAxis:{
+                categories:[1,2,3,4,5,6,7,8,9,10,11,12]
+            },
+            yAxis:{
+                title: {
+                    text:'单位：%'
+                },
+                plotLines:[{
+                    value:0,
+                    width:1,
+                    color:'#808080'
+                }]
+            },
+            tooltip:{
+                headerFormat:'',
+                pointFormat:'<p style="color:{series.color}">\u25CF</p> {series.name}: <b>{point.y}</b><br/>'
+            },
+            series:[
+                {
+                    name:'系统百分比',
+                    data:[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 24.4, 18.9, 13.9, 9.6]
+                },
+                {
+                    name:'压缩百分比',
+                    data:[-0.2, 0.8, 5.8, 11.3, 12.2, 14.5, 15.2, 23.5, 19.4, 17.9, 11.7, 6.7]
+                },
+                
+            ]
+        });
+        $('#container2').highcharts( {
+            chart: {
+                backgroundColor: 'rgba(0,0,0,0)'
+            },
+            title: {
+                text: '卷',
+                x: -20
+            },
+            xAxis:{
+                categories:[1,2,3,4,5,6,7,8,9,10,11,12]
+            },
+            yAxis:{
+                title: {
+                    text:'单位：MBps'
+                },
+                plotLines:[{
+                    value:0,
+                    width:1,
+                    color:'#808080'
+                }]
+            },
+            tooltip:{
+                headerFormat:'',
+                pointFormat:'<p style="color:{series.color}">\u25CF</p> {series.name}: <b>{point.y}</b><br/>'
+            },
+            series:[
+                {
+                    name:'读',
+                    data:[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 24.4, 18.9, 13.9, 9.6]
+                },
+                {
+                    name:'写',
+                    data:[-0.2, 0.8, 5.8, 11.3, 12.2, 14.5, 15.2, 23.5, 19.4, 17.9, 11.7, 6.7]
+                },
+                {
+                    name:'读等待时间',
+                    data:[4.0, 3.9, 5.5, 12.7, 19.2, 22.5, 24.2, 25.5, 23.4, 19.6, 11.8, 9.5]
+                },
+                {
+                    name:'写等待时间',
+                    data:[-8.0, 6.4, 10.5, 13.5, 15.2, 20.5, 23.2, 18.5, 13.3, 15.9, 10.9, 11.4]
+                }
+            ]
+        });
+        $('#container3').highcharts( {
+            chart: {
+                backgroundColor: 'rgba(0,0,0,0)'
+            },
+            title: {
+                text: '接口',
+                x: -20
+            },
+            xAxis:{
+                categories:[1,2,3,4,5,6,7,8,9,10,11,12]
+            },
+            yAxis:{
+                title: {
+                    text:'单位：MBps'
+                },
+                plotLines:[{
+                    value:0,
+                    width:1,
+                    color:'#808080'
+                }]
+            },
+            tooltip:{
+                headerFormat:'',
+                pointFormat:'<p style="color:{series.color}">\u25CF</p> {series.name}: <b>{point.y}</b><br/>'
+            },
+            series:[
+                {
+                    name:'FC',
+                    data:[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 24.4, 18.9, 13.9, 9.6]
+                },
+                {
+                    name:'iSCSI',
+                    data:[-0.2, 0.8, 5.8, 11.3, 12.2, 14.5, 15.2, 23.5, 19.4, 17.9, 11.7, 6.7]
+                },
+                {
+                    name:'SAS',
+                    data:[4.0, 3.9, 5.5, 12.7, 19.2, 22.5, 24.2, 25.5, 23.4, 19.6, 11.8, 9.5]
+                },
+                {
+                    name:'IP 远程拷贝',
+                    data:[-8.0, 6.4, 10.5, 13.5, 15.2, 20.5, 23.2, 18.5, 13.3, 15.9, 10.9, 11.4]
+                }
+            ]
+        });
+        $('#container4').highcharts( {
+            chart: {
+                backgroundColor: 'rgba(0,0,0,0)'
+            },
+            title: {
+                text: 'MDisk',
+                x: -20
+            },
+            xAxis:{
+                categories:[1,2,3,4,5,6,7,8,9,10,11,12]
+            },
+            yAxis:{
+                title: {
+                    text:'单位：MBps'
+                },
+                plotLines:[{
+                    value:0,
+                    width:1,
+                    color:'#808080'
+                }]
+            },
+            tooltip:{
+                headerFormat:'',
+                pointFormat:'<p style="color:{series.color}">\u25CF</p> {series.name}: <b>{point.y}</b><br/>'
+            },
+            series:[
+                {
+                    name:'读',
+                    data:[7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 24.4, 18.9, 13.9, 9.6]
+                },
+                {
+                    name:'写',
+                    data:[-0.2, 0.8, 5.8, 11.3, 12.2, 14.5, 15.2, 23.5, 19.4, 17.9, 11.7, 6.7]
+                },
+                {
+                    name:'读等待时间',
+                    data:[4.0, 3.9, 5.5, 12.7, 19.2, 22.5, 24.2, 25.5, 23.4, 19.6, 11.8, 9.5]
+                },
+                {
+                    name:'写等待时间',
+                    data:[-8.0, 6.4, 10.5, 13.5, 15.2, 20.5, 23.2, 18.5, 13.3, 15.9, 10.9, 11.4]
+                }
+            ]
+        });
+    });
+</script>
+</body>
+</html>

@@ -32,8 +32,8 @@
         }, null, document.getElementsByTagName('head')[0]);
 
         Highcharts.theme = {
-            colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
-                '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'
+            colors: ['#2b908f', '#90ee7e', '#DF5353', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
+                '#55BF3B', '#f45b5b', '#7798BF', '#aaeeee'
             ],
             chart: {
                 backgroundColor: {
@@ -55,27 +55,27 @@
             },
             title: {
                 style: {
-                    color: '#E0E0E3',
-                    textTransform: 'uppercase',
-                    fontSize: '20px'
+                    color: '#ffffff',
+                    textTransform: 'none',
+                    fontSize: '18px'
                 }
             },
             subtitle: {
                 style: {
-                    color: '#E0E0E3',
-                    textTransform: 'uppercase'
+                    color: '#8a9396',
+                    textTransform: 'none'
                 }
             },
             xAxis: {
-                gridLineColor: '#707073',
+                gridLineColor: '#374551',
                 labels: {
                     style: {
-                        color: '#E0E0E3'
+                        color: '#9BA5A7'
                     }
                 },
-                lineColor: '#707073',
+                lineColor: '#374551',
                 minorGridLineColor: '#505053',
-                tickColor: '#707073',
+                tickColor: '#374551',
                 title: {
                     style: {
                         color: '#A0A0A3'
@@ -84,15 +84,15 @@
                 }
             },
             yAxis: {
-                gridLineColor: '#707073',
+                gridLineColor: '#374551',
                 labels: {
                     style: {
-                        color: '#E0E0E3'
+                        color: '#9BA5A7'
                     }
                 },
-                lineColor: '#707073',
+                lineColor: '#374551',
                 minorGridLineColor: '#505053',
-                tickColor: '#707073',
+                tickColor: '#374551',
                 tickWidth: 1,
                 title: {
                     style: {
@@ -103,7 +103,7 @@
             tooltip: {
                 backgroundColor: 'rgba(0, 0, 0, 0.85)',
                 style: {
-                    color: '#F0F0F0'
+                    color: '#ffffff'
                 }
             },
             plotOptions: {
@@ -127,7 +127,7 @@
             },
             legend: {
                 itemStyle: {
-                    color: '#E0E0E3'
+                    color: '#9BA5A7'
                 },
                 itemHoverStyle: {
                     color: '#FFF'
@@ -143,7 +143,7 @@
             },
             labels: {
                 style: {
-                    color: '#707073'
+                    color: '#374551'
                 }
             },
 
@@ -175,7 +175,7 @@
                     },
                     states: {
                         hover: {
-                            fill: '#707073',
+                            fill: '#374551',
                             stroke: '#000000',
                             style: {
                                 color: 'white'
