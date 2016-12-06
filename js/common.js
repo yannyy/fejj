@@ -108,6 +108,8 @@ function empty(obj){
 }
 
 function showTooltip(target, title, data, dataTarget, position){
+    if($('div[data-target]').length > 0)
+    	return false;
     return buildTooltip(target, title, data, dataTarget, position);
 };
 function hideTooltip(dataTarget){

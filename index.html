@@ -1203,7 +1203,6 @@
 
         function initPdTooltips(idSelector, pdTips){
             var divCover = $(idSelector).find('.frontDevice').find('.cover').not('.status');
-            $(divCover).find('li').unbind();
             $(divCover).find('li').on('mouseover', function(e){
                 var pdHover = $(e.target).attr('data-hover');
                 if($(pdHover).hasClass('no_pd'))
