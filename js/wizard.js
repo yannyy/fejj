@@ -25,7 +25,7 @@
                     $(step).show();
                 else
                     $(step).hide();
-            })
+            });
 
             if(wizard.$current == 0)
                 wizard.$prev.attr('disabled', true);
