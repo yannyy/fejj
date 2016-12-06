@@ -78,7 +78,7 @@
     <!--右侧内容区-->
     <div class="contentDiv">
     <!--wizard-->
-   	 <div class="popup fade" style="display: ;">
+   	 <div class="popup fade" style="display: block;">
             <div class="popupDiv" style="display:">
                 <div class="popupContent" id="wizard">
                     <div class="contentHeader">
@@ -352,7 +352,7 @@
         </div>
         
         <!--特殊input-->
-        <div class="popup fade" style="display: block;">
+        <div class="popup fade" style="display: ;">
             <div class="popupDiv" style="display:" id="createVolumePopup">
                 <div class="popupContent" >
                     <div class="contentHeader">
@@ -604,8 +604,12 @@
 
         $('#wizard').wizard({
             onNext: function(){
-                console.log("步骤" + this.$current);
-                return false;
+                console.log("next: 步骤" + this.$current);
+                return true;
+            },
+            onPrev: function(){
+                console.log("prev: 步骤" + this.$current);
+                return true;
             }
         });
         $('#wizard').bind('finish', function(e){
