@@ -1148,6 +1148,7 @@
 
         var portTips = [
             {
+                "title":"#device2t1",
                 "name":"#device2t1",
                 "data":
                     [
@@ -1156,6 +1157,7 @@
                     ]
             },
             {
+                "title":"#device2t2",
                 "name":"#device2t2",
                 "data":
                     [
@@ -1163,6 +1165,7 @@
                     ]
             },
             {
+                "title":"#device2t3",
                 "name":"#device2t3",
                 "data":
                     [
@@ -1172,6 +1175,7 @@
         ];
         var pdTips = [
             {
+                "title":"device1tip1",
                 "name":"device1tip1",
                 "data":
                     [
@@ -1180,6 +1184,7 @@
                     ]
             },
             {
+                "title":"device1tip2",
                 "name":"device1tip2",
                 "data":
                     [
@@ -1187,6 +1192,7 @@
                     ]
             },
             {
+                "title":"device1tip3",
                 "name":"device1tip3",
                 "data":
                     [
@@ -1197,17 +1203,21 @@
 
         function initPdTooltips(idSelector, pdTips){
             var divCover = $(idSelector).find('.frontDevice').find('.cover').not('.status');
+            $(divCover).find('li').unbind();
             $(divCover).find('li').on('mouseover', function(e){
                 var pdHover = $(e.target).attr('data-hover');
                 if($(pdHover).hasClass('no_pd'))
                     return false;
                 var pdTooltips = $(e.target).attr('data-tooltip');
-                var data = [];
+                var data  = [];
+                var title = "";
                 $.each(pdTips, function(i, tips) {
-                    if(pdTooltips == tips.name)
-                        data = tips.data;
+                    if(pdTooltips == tips.name){
+                        data  = tips.data;
+                        title = tips.title;
+                    }
                 });
-                showTooltip(e.target, '磁盘tooltip', data, pdTooltips);
+                showTooltip(e.target, title, data, pdTooltips);
             });
             $(divCover).find('li').on('mouseout', function(e) {
                 var pdTooltips = $(e.target).attr('data-tooltip');
@@ -1216,14 +1226,18 @@
         }
         function initPortTooltips(idSelector, portTips){
             var divCover = $(idSelector).find('.backDevice').find('.coverB:last');
+            $(divCover).find('li').unbind();
             $(divCover).find('li').on('mouseover', function(e){
                 var portTooltips = $(e.target).attr('data-tooltip');
-                var data = [];
+                var data  = [];
+                var title = '';
                 $.each(portTips, function(i, tips) {
-                    if(portTooltips == tips.name)
+                    if(portTooltips == tips.name){
                         data = tips.data;
+                        title = tips.title;
+                    }
                 });
-                showTooltip(e.target, '磁盘tooltip', data, portTooltips);
+                showTooltip(e.target, title, data, portTooltips);
             });
             $(divCover).find('li').on('mouseout', function(e) {
                 var pdTooltips = $(e.target).attr('data-tooltip');
