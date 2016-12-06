@@ -197,8 +197,7 @@
 			}
 
 			initDevice();
-
-        }
+        };
 
 		var initDeviceTooltip = function(){
 		    var frontDevice = $(widget).find('div.device').find('div.frontDevice').find('div.cover').not('div.status').find('ul');
@@ -206,31 +205,6 @@
 				$(ul).tableTooltip({title:'front view 背板'});
             });
 		    $(frontDevice).tableTooltip({title:'front view 背板'});
-			//$(widget).find('div.device').find('div.cover').find('ul').on('mouseover', function(e){
-            //    var ul = e.target;
-            //    var parents = $(ul).parentsUntil('div.picCol');
-            //    var device = $.grep(parents, function(p, i){
-            //        return $(p).hasClass('device');
-            //    });
-            //    var siblings = $(device).siblings();
-            //    var tooltip = $.grep(siblings, function(p, i){
-            //        return $(p).hasClass('tooltip');
-            //    });
-            //    $(tooltip).show();
-            //});
-
-            //$(widget).find('div.device').find('div.cover').find('ul').on('mouseout', function(e){
-            //    var ul = e.target;
-            //    var parents = $(ul).parentsUntil('div.picCol');
-            //    var device = $.grep(parents, function(p, i){
-            //        return $(p).hasClass('device');
-            //    });
-            //    var siblings = $(device).siblings();
-            //    var tooltip = $.grep(siblings, function(p, i){
-            //        return $(p).hasClass('tooltip');
-            //    });
-            //    $(tooltip).hide();
-            //});
 
             $(widget).find('div.device').find('div.cover').find('li').on('mouseover', function(e){
                 return false;
@@ -241,7 +215,7 @@
             var target = $(widget).find('div.minPic').find('li.current').attr('data-target');
             widget.currentTaget = target;
             $(widget).find('div.deviceContainer').hide();
-            $(target).slideDown();
+            $(target).show();
 
             widget.device = 'front';
             initDevice();
