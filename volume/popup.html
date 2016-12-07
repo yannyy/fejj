@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <title>Netstor</title>
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"> 
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
     <meta content="" name="description">
     <meta content="" name="author">
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
@@ -29,31 +29,42 @@
     <div class="left_top">
         <div class="nameTop">
             <div class="name">
-            <em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em>
-            <big>Cluster-one</big></div>
-            <span class="globalAction fr"><a href="#"><i class="zmdi zmdi-download"></i></a><a href="#"><i class="zmdi zmdi-sun"></i></a></span>
+                <em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em>
+                <big>Cluster-one</big></div>
+            <span class="globalAction fr"><a href="#"><i class="zmdi zmdi-download"></i></a><a href="#"><i
+                    class="zmdi zmdi-sun"></i></a></span>
         </div>
         <div class="ipJdt">
-            <div class="jdt"><span style="width:35%;"></span></div><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div>
-            <p><small>IP Address:</small> 192.168.0.21</p>
+            <div class="jdt"><span style="width:35%;"></span></div>
+            <div class="jdtText">
+                <small>5.40TiB / 13.08 TiB</small>
+            </div>
+            <p>
+                <small>IP Address:</small>
+                192.168.0.21
+            </p>
         </div>
     </div>
-      <div class="tabRaw">
-    	<a class="current" href="#" data-target="#sidebarMenu"><i class="fa fa-navicon"></i><sup>&nbsp;</sup></a><a href="#" class="bgGradul" data-target="#sidebarTask"><i class="zmdi zmdi-tv-list"></i><sup class="bgGreen"><i>6</i></sup></a><a href="#" class="bgGradul" data-target="#sidebarEvent"><i class="zmdi zmdi-notifications-none"></i><sup class="bgRed"><i>8</i></sup></a>
+    <div class="tabRaw">
+        <a class="current" href="#" data-target="#sidebarMenu"><i class="fa fa-navicon"></i><sup>&nbsp;</sup></a><a
+            href="#" class="bgGradul" data-target="#sidebarTask"><i class="zmdi zmdi-tv-list"></i><sup
+            class="bgGreen"><i>6</i></sup></a><a href="#" class="bgGradul" data-target="#sidebarEvent"><i
+            class="zmdi zmdi-notifications-none"></i><sup class="bgRed"><i>8</i></sup></a>
     </div>
     <!--左侧菜单-->
     <div class="sidebarContainer">
         <div style="left: 0%; visibility: visible;" class="sidebar">
             <div class="sidebaTitle">主菜单</div>
             <div class="menu">
-                <ul>        
-                    <li class="" style=""><a href="#"><i class="zmdi zmdi-view-dashboard"><!--fa fa-dashboard--></i><span>监视</span></a>
+                <ul>
+                    <li class="" style=""><a href="#"><i class="zmdi zmdi-view-dashboard">
+                        <!--fa fa-dashboard--></i><span>监视</span></a>
                         <ul class="sidebarNav" style="display:none;">
                             <li class=""><a href="../index.html"><i class="fa fa-laptop"></i><span>系统</span></a></li>
                             <li><a href="#"><i class="zmdi zmdi-notifications-none"></i><span>事件</span></a></li>
                             <li><a href="#"><i class="fa fa-bar-chart"></i><span>性能</span></a></li>
                         </ul>
-                    </li>                
+                    </li>
                     <li><a href="#"><i class="fa fa-cube"></i><span>池</span></a></li>
                     <li class="open select"><a href="#"><i class="fa fa-database"></i><span>卷</span></a></li>
                     <li><a href="#"><i class="fa fa-building-o"></i><span>主机</span></a></li>
@@ -63,163 +74,36 @@
                 </ul>
             </div>
         </div>
-            
-    </div>    
+
+    </div>
 </div>
 <!--右侧top-->
 <div id="topDiv">
     <div class="headerBar">
-        <div class="fr glysetting"><a href="#">Superuser（安全管理员）<span class="caret"></span></a><a href="#"><i class="zmdi zmdi-help-outline"></i></a></div>
+        <div class="fr glysetting"><a href="#">Superuser（安全管理员）<span class="caret"></span></a><a href="#"><i
+                class="zmdi zmdi-help-outline"></i></a></div>
         <div class="sysName">NetStor<span>Control Center</span></div>
     </div>
 </div>
 <!--右侧-->
-<div id="content">  
+<div id="content">
     <!--右侧内容区-->
     <div class="contentDiv">
-    <!--wizard-->
-   	 <div class="popup fade" style="display: block;">
-            <div class="popupDiv" style="display:">
-                <div class="popupContent" id="wizard">
-                    <div class="contentHeader">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4>配置远程</h4>
-                    </div>
-                   
-                    <div class="alertDesc alertDesc-info">
-                    	您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容量。
-                    </div>
-                    <div class="contentBody">
-                        <div class="wizardStep">
-                            <table class="table-input">
-                                <tbody >
-                                    <tr>
-                                        <td><label>名称:</label></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="wizardStep">
-                            <table class="table table-hover" id="tableWithSelectall1">
-                                <thead>
-                                    <tr>
-                                        <td><input type="checkbox" name="selectall"></td>
-                                        <td width="15%">名称</td>
-                                        <td width="25%">状态</td>
-                                        <td width="25%">可用容量</td>
-                                        <td width="30%">容量</td>
-                                    </tr>
-                                </thead>
-                                <tbody>   
-                                    <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>Pool 2</td>
-                                        <td>联机</td>
-                                        <td>4.77 TiB</td>
-                                        <td>4.88 TiB</td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>Pool 2</td>
-                                        <td>联机</td>
-                                        <td>4.77 TiB</td>
-                                        <td>4.88 TiB</td>
-                                    </tr> 
-                                </tbody>
-                            </table>
-                            <p>另一个table</p>
-                            <table class="table table-hover" id="tableWithSelectall2">
-                                <thead>
-                                    <tr>
-                                        <td><input type="checkbox" name="selectall"></td>
-                                        <td width="15%">名称</td>
-                                        <td width="25%">状态</td>
-                                        <td width="25%">可用容量</td>
-                                        <td width="30%">容量</td>
-                                    </tr>
-                                </thead>
-                                <tbody>   
-                                    <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>Pool 2</td>
-                                        <td>联机</td>
-                                        <td>4.77 TiB</td>
-                                        <td>4.88 TiB</td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>Pool 2</td>
-                                        <td>联机</td>
-                                        <td>4.77 TiB</td>
-                                        <td>4.88 TiB</td>
-                                    </tr> 
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="wizardStep">
-                            <table class="table-input">
-                                <tbody >
-                                    <tr>
-                                        <td><label>扩展:</label></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-                        </div>
-                        <div class="wizardStep">
-                            <table class="table-input">
-                                <tbody >
-                                    <tr>
-                                        <td><label>成功</label></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-                        </div>
-                         
-                    </div>
-                  	<div class="progress-striped stepDiv">
-                        <div class="progress-bar wizardProgress"></div>
-                    </div>
-                    
-                    <div class="contentBody">
-                    	<div class="infoContent" id="infoPane">
-                            <div class="resultDiv fontGreen"><i class="zmdi zmdi-check "></i>任务完成<em>100%</em></div>
-                            <div class="actionBar"><a href="#" class="textlink"><i class="zmdi zmdi-chevron-down m-r-5"></i><i class="zmdi zmdi-chevron-right m-r-5"></i><span>查看更多详细状态</span></a></div>
-                            <div class="detailSummary scrollBar">
-                                <ul>
-                                    <li>您已选择扩展卷－DiaNAS的容量，<em> 下午2：10</em></li>
-                                    <li>该操作会增加卷中的可用容量。<em> 下午2：10</em></li>
-                                    <li class="fontBlue">et of 777 icons in Material Design Iconic Font<em> 下午2：10</em></li>
-                                </ul>
-                            </div>
-                            
-                        </div>    
-                    </div>
-                    
-                    <div class="contentFooter"> 
-                        <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消</button>                     
-                        <button class="btn btn-color  m-r-10 wizardNext" type="button">下一步</button>
-                        <button class="btn btn-color  m-r-10 wizardPrev" type="button">上一步</button> 
-                    </div>
-                </div>
-            </div>   
-       </div> 
-                 
-      <!--详细信息-->
-      <div class="popup fade" style="display: ;">
+
+        <!--详细信息-->
+        <div class="popup fade" style="display: ;">
             <div class="popupDiv" style="display:" id="createVolumePopup">
                 <div class="popupContent">
                     <div class="contentHeader">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h4>主机详细信息</h4>
                     </div>
-                    
+
                     <div class="contentBody">
                         <div class="" id="tabInPopup">
                             <div class="tabHeader tabdiv">
                                 <ul>
-                                    <li><a href="javascript:;"data-target="#tab1">概述</a></li>
+                                    <li><a href="javascript:;" data-target="#tab1">概述</a></li>
                                     <li><a href="javascript:;" data-target="#tab2">映射卷</a></li>
                                     <li><a href="javascript:;" data-target="#tab3">端口自定义</a></li>
                                 </ul>
@@ -227,69 +111,70 @@
                             <div class="tabContent">
                                 <div id="tab1">
                                     <table class="table-detail">
-                                        <tbody >
-                                            <tr>
-                                                <td style="width:22%;"><label>主机名称:</label></td>
-                                                <td>host21</td>                                  
-                                            </tr>
-                                            <tr>
-                                                <td><label>主机表识:</label></td>
-                                                <td>1</td>                                  
-                                            </tr>
-                                            <tr>
-                                                <td><label>状态:</label></td>
-                                                <td>脱机</td>                                  
-                                            </tr>
+                                        <tbody>
+                                        <tr>
+                                            <td style="width:22%;"><label>主机名称:</label></td>
+                                            <td>host21</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>主机表识:</label></td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>状态:</label></td>
+                                            <td>脱机</td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div id="tab2">
                                     <table class="table-detail">
-                                        <tbody >
-                                            <tr>
-                                                <td style="width:22%;"><label>主机名称:</label></td>
-                                                <td>host22</td>                                  
-                                            </tr>
-                                            <tr>
-                                                <td><label>主机表识:</label></td>
-                                                <td>1</td>                                  
-                                            </tr>
-                                            <tr>
-                                                <td><label>状态:</label></td>
-                                                <td>脱机</td>                                  
-                                            </tr>
+                                        <tbody>
+                                        <tr>
+                                            <td style="width:22%;"><label>主机名称:</label></td>
+                                            <td>host22</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>主机表识:</label></td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>状态:</label></td>
+                                            <td>脱机</td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div id="tab3">
                                     <table class="table-detail">
-                                        <tbody >
-                                            <tr>
-                                                <td style="width:22%;"><label>主机名称:</label></td>
-                                                <td>host23</td>                                  
-                                            </tr>
-                                            <tr>
-                                                <td><label>主机表识:</label></td>
-                                                <td>1</td>                                  
-                                            </tr>
-                                            <tr>
-                                                <td><label>状态:</label></td>
-                                                <td>脱机</td>                                  
-                                            </tr>
+                                        <tbody>
+                                        <tr>
+                                            <td style="width:22%;"><label>主机名称:</label></td>
+                                            <td>host23</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>主机表识:</label></td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>状态:</label></td>
+                                            <td>脱机</td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="contentFooter"> 
-                        <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">关闭</button>
-                                       
+                    <div class="contentFooter">
+                        <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">关闭
+                        </button>
+
                     </div>
                 </div>
             </div>
         </div>
-      	<div class="popup fade" style="display: ;">
+        <div class="popup fade" style="display: ;">
             <div class="popupDiv" style="display:" id="createVolumePopup">
                 <div class="popupContent">
                     <div class="contentHeader">
@@ -297,206 +182,257 @@
                         <h4>添加主机</h4>
                     </div>
                     <div class="alertDesc alertDesc-info">
-                    	您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容量。
+                        您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容量。
                     </div>
                     <div class="contentBody">
-                    	<table class="table-input">
-                            <tbody >
-                                 <tr>
-                                    <td><label>选择主机:</label></td>
-                                    <td>
-                                   
-                                    </td>                                  
-                                </tr>   
-                                <tr>
-                                    <td colspan="2">目标：</td></tr>                           
-                                <tr>
-                                    <td colspan="2">
-                                    <div id="jstree-ajax" class="jstree jstree-4 jstree-default" role="tree" aria-multiselectable="true" tabindex="0" aria-activedescendant="demo_root_4" aria-busy="false">
-                                    	<ul class="jstree-container-ul jstree-children" role="group">
-                                            <li role="treeitem" aria-selected="false" aria-level="1" aria-labelledby="demo_root_1_anchor" aria-expanded="false" id="demo_root_1" class="jstree-node jstree-closed" aria-busy="false">
+                        <table class="table-input">
+                            <tbody>
+                            <tr>
+                                <td><label>选择主机:</label></td>
+                                <td>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">目标：</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div id="jstree-ajax" class="jstree jstree-4 jstree-default" role="tree"
+                                         aria-multiselectable="true" tabindex="0" aria-activedescendant="demo_root_4"
+                                         aria-busy="false">
+                                        <ul class="jstree-container-ul jstree-children" role="group">
+                                            <li role="treeitem" aria-selected="false" aria-level="1"
+                                                aria-labelledby="demo_root_1_anchor" aria-expanded="false"
+                                                id="demo_root_1" class="jstree-node jstree-closed" aria-busy="false">
                                                 <i class="jstree-icon jstree-ocl" role="presentation"></i>
-                                                <a class="jstree-anchor" href="#" tabindex="-1" id="demo_root_1_anchor"><i class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom" role="presentation"></i>Root #1</a></li>
-                                                <li role="treeitem" aria-selected="false" aria-level="1" aria-labelledby="demo_root_2_anchor" aria-expanded="true" id="demo_root_2" class="jstree-node jstree-open" aria-busy="false">
-                                                    <i class="jstree-icon jstree-ocl" role="presentation"></i>
-                                                    <a class="jstree-anchor" href="#" tabindex="-1" id="demo_root_2_anchor"><i class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom" role="presentation"></i>Root #2</a>
-                                                    <ul role="group" class="jstree-children" style="">
-                                                    <li role="treeitem" aria-selected="false" aria-level="2" aria-labelledby="demo_root_2_child_1_anchor" aria-expanded="true" id="demo_root_2_child_1" class="jstree-node jstree-open">
-                                                            <i class="jstree-icon jstree-ocl" role="presentation"></i>
-                                                            <a class="jstree-anchor jstree-clicked" href="#" tabindex="-1" id="demo_root_2_child_1_anchor"><i class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom" role="presentation"></i>Root #2 Child 1</a>
-                                                            <ul role="group" class="jstree-children" style="">
-                                                                <li role="treeitem" aria-selected="false" aria-level="3" aria-labelledby="demo_root_2_child_2_anchor" aria-disabled="true" id="demo_root_2_child_2" class="jstree-node  jstree-leaf jstree-last">
-                                                                    <i class="jstree-icon jstree-ocl" role="presentation"></i><a class="jstree-anchor  jstree-disabled" href="#" tabindex="-1" id="demo_root_2_child_2_anchor"><i class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom" role="presentation"></i>No Child</a></li></ul>
+                                                <a class="jstree-anchor" href="#" tabindex="-1" id="demo_root_1_anchor"><i
+                                                        class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom"
+                                                        role="presentation"></i>Root #1</a></li>
+                                            <li role="treeitem" aria-selected="false" aria-level="1"
+                                                aria-labelledby="demo_root_2_anchor" aria-expanded="true"
+                                                id="demo_root_2" class="jstree-node jstree-open" aria-busy="false">
+                                                <i class="jstree-icon jstree-ocl" role="presentation"></i>
+                                                <a class="jstree-anchor" href="#" tabindex="-1" id="demo_root_2_anchor"><i
+                                                        class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom"
+                                                        role="presentation"></i>Root #2</a>
+                                                <ul role="group" class="jstree-children" style="">
+                                                    <li role="treeitem" aria-selected="false" aria-level="2"
+                                                        aria-labelledby="demo_root_2_child_1_anchor"
+                                                        aria-expanded="true" id="demo_root_2_child_1"
+                                                        class="jstree-node jstree-open">
+                                                        <i class="jstree-icon jstree-ocl" role="presentation"></i>
+                                                        <a class="jstree-anchor jstree-clicked" href="#" tabindex="-1"
+                                                           id="demo_root_2_child_1_anchor"><i
+                                                                class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom"
+                                                                role="presentation"></i>Root #2 Child 1</a>
+                                                        <ul role="group" class="jstree-children" style="">
+                                                            <li role="treeitem" aria-selected="false" aria-level="3"
+                                                                aria-labelledby="demo_root_2_child_2_anchor"
+                                                                aria-disabled="true" id="demo_root_2_child_2"
+                                                                class="jstree-node  jstree-leaf jstree-last">
+                                                                <i class="jstree-icon jstree-ocl"
+                                                                   role="presentation"></i><a
+                                                                    class="jstree-anchor  jstree-disabled" href="#"
+                                                                    tabindex="-1" id="demo_root_2_child_2_anchor"><i
+                                                                    class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom"
+                                                                    role="presentation"></i>No Child</a></li>
+                                                        </ul>
                                                     </li>
-                                                    <li role="treeitem" aria-selected="false" aria-level="2" aria-labelledby="demo_root_2_child_3_anchor" aria-expanded="false" id="demo_root_2_child_3" class="jstree-node jstree-closed">
-                                                    <i class="jstree-icon jstree-ocl" role="presentation"></i>
-                                                    <a class="jstree-anchor" href="#" tabindex="-1" id="demo_root_2_child_3_anchor">
-                                                    <i class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom" role="presentation"></i>Root #2 Child 2</a></li>
-                                                    <li role="treeitem" aria-selected="false" aria-level="2" aria-labelledby="demo_root_2_child_6_anchor" aria-expanded="false" id="demo_root_2_child_6" class="jstree-node  jstree-closed jstree-last">
-                                                            <i class="jstree-icon jstree-ocl" role="presentation"></i>
-                                                            <a class="jstree-anchor" href="#" tabindex="-1" id="demo_root_2_child_6_anchor"><i class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom" role="presentation"></i>Root #2 Child 3</a></li></ul></li>
-                                                
-                                              </ul>
-                                         </div>
-                                    </td>                                  
-                                </tr>
+                                                    <li role="treeitem" aria-selected="false" aria-level="2"
+                                                        aria-labelledby="demo_root_2_child_3_anchor"
+                                                        aria-expanded="false" id="demo_root_2_child_3"
+                                                        class="jstree-node jstree-closed">
+                                                        <i class="jstree-icon jstree-ocl" role="presentation"></i>
+                                                        <a class="jstree-anchor" href="#" tabindex="-1"
+                                                           id="demo_root_2_child_3_anchor">
+                                                            <i class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom"
+                                                               role="presentation"></i>Root #2 Child 2</a></li>
+                                                    <li role="treeitem" aria-selected="false" aria-level="2"
+                                                        aria-labelledby="demo_root_2_child_6_anchor"
+                                                        aria-expanded="false" id="demo_root_2_child_6"
+                                                        class="jstree-node  jstree-closed jstree-last">
+                                                        <i class="jstree-icon jstree-ocl" role="presentation"></i>
+                                                        <a class="jstree-anchor" href="#" tabindex="-1"
+                                                           id="demo_root_2_child_6_anchor"><i
+                                                                class="jstree-icon jstree-themeicon fa fa-database fa-lg jstree-themeicon-custom"
+                                                                role="presentation"></i>Root #2 Child 3</a></li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
                             </tbody>
-                         </table>
+                        </table>
                     </div>
-                    <div class="contentFooter"> 
-                        <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消</button>
-                        <button class="btn btn-color  m-r-10" type="submit">提交</button>                 
+                    <div class="contentFooter">
+                        <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消
+                        </button>
+                        <button class="btn btn-color  m-r-10" type="submit">提交</button>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!--特殊input-->
         <div class="popup fade" style="display: ;">
             <div class="popupDiv" style="display:" id="createVolumePopup">
-                <div class="popupContent" >
+                <div class="popupContent">
                     <div class="contentHeader">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h4>添加主机</h4>
                     </div>
                     <div class="alertDesc alertDesc-info">
-                    	您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容量。
+                        您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容量。
                     </div>
                     <div class="contentBody">
-                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 380px;">
-                            
-                        <div class="mCustomScrollbar" style="overflow: hidden; width: auto; height: 380px;">
-                            
-                        <table class="table-input">
-                            <fieldset>
-                                <legend>常规</legend>
+                        <div class="slimScrollDiv"
+                             style="position: relative; overflow: hidden; width: auto; height: 380px;">
 
+                            <div class="mCustomScrollbar" style="overflow: hidden; width: auto; height: 380px;">
+
+                                <table class="table-input">
+                                    <fieldset>
+                                        <legend>常规</legend>
+
+                                        <tr>
+                                            <td style="width:22%;"><label>名称:</label></td>
+                                            <td><input type="text" class="form-control"></td>
+                                        </tr>
+
+                                    </fieldset>
+                                </table>
+                                <table class="table-input">
+                                    <tbody>
                                     <tr>
                                         <td style="width:22%;"><label>名称:</label></td>
-                                        <td><input type="text" class="form-control"></td>                                  
+                                        <td><input type="text" class="form-control"></td>
                                     </tr>
-                                
-                            </fieldset>
-                        </table>
-                    	<table class="table-input">
-                            <tbody >    
-                                <tr>
-                                    <td style="width:22%;"><label>名称:</label></td>
-                                    <td><input type="text" class="form-control"></td>                                  
-                                </tr>
-                                <tr class="actionInnerTr" data-max="6">
-                                    <td><label>iSCSI端口:</label></td>
-                                    <td><input type="text" name="iscsi" class="form-control"><input type="text" class="form-control"><span class="actionInnerTd"><a><i class="zmdi zmdi-plus-circle"></i></a><a><i class="zmdi zmdi-minus-circle"></i></a></span></td>                                  
-                                </tr>
-                                <tr class="actionInnerTr" data-max="6">
-                                    <td><label></label></td>
-                                    <td><select name="select" id=""><option value="1">1</option><option value="2">2</option></select><input type="text" class="form-control"><span class="actionInnerTd"><a><i class="zmdi zmdi-plus-circle"></i></a><a><i class="zmdi zmdi-minus-circle"></i></a></span></td>                                  
-                                </tr>
-                                
-                                <tr>
-                                    <td><label>后台拷贝速率:</label></td>
-                                    <td><input type="text" class="form-control" disabled id="speed" name="default_rangeSlider" value="20" style="display: ;"></td>                                  
-                                    <td>
-                                        <select id="changeSlider" >
-                                           <option value="1">1</option> 
-                                           <option value="2">2</option> 
-                                        </select>
+                                    <tr class="actionInnerTr" data-max="6">
+                                        <td><label>iSCSI端口:</label></td>
+                                        <td><input type="text" name="iscsi" class="form-control"><input type="text"
+                                                                                                        class="form-control"><span
+                                                class="actionInnerTd"><a><i class="zmdi zmdi-plus-circle"></i></a><a><i
+                                                class="zmdi zmdi-minus-circle"></i></a></span></td>
+                                    </tr>
+                                    <tr class="actionInnerTr" data-max="6">
+                                        <td><label></label></td>
+                                        <td><select name="select" id="">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                        </select><input type="text" class="form-control"><span class="actionInnerTd"><a><i
+                                                class="zmdi zmdi-plus-circle"></i></a><a><i
+                                                class="zmdi zmdi-minus-circle"></i></a></span></td>
+                                    </tr>
 
-                                    </td>
+                                    <tr>
+                                        <td><label>后台拷贝速率:</label></td>
+                                        <td><input type="text" class="form-control" disabled id="speed"
+                                                   name="default_rangeSlider" value="20" style="display: ;"></td>
+                                        <td>
+                                            <select id="changeSlider">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
 
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                    <div class="m-l-35 m-t-10">
-                                        <input type="text" id="sliderT">
-                                    </div>
-                                    </td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>CHAP认证:</label></td>
-                                    <td><input type="checkbox" class="form-control"></td>                                  
-                                </tr>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="m-l-35 m-t-10">
+                                                <input type="text" id="sliderT">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CHAP认证:</label></td>
+                                        <td><input type="checkbox" class="form-control"></td>
+                                    </tr>
 
 
-                                <tr>
-                                    <td><label>CHAP密码:</label></td>
-                                    <td><input type="password" class="form-control"></td>                                  
-                                </tr>
-                                <tr>
-                                    <td><label>日期:</label></td>
-                                   <td class="input-groupA">
-                                        <input type="text" class="form-control" id="datepicker">  
-                                        <a class="btn btn-primary"><i class="fa fa-calendar"></i></a>
-                                     </td>                                   
-                                </tr>
-                            </tbody>
-                         </table>
+                                    <tr>
+                                        <td><label>CHAP密码:</label></td>
+                                        <td><input type="password" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>日期:</label></td>
+                                        <td class="input-groupA">
+                                            <input type="text" class="form-control" id="datepicker">
+                                            <a class="btn btn-primary"><i class="fa fa-calendar"></i></a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                        </div> 
                     </div>
-                    <div class="contentFooter"> 
-                        <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消</button>
-                        <button class="btn btn-color  m-r-10" type="submit">提交</button>                 
+                    <div class="contentFooter">
+                        <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消
+                        </button>
+                        <button class="btn btn-color  m-r-10" type="submit">提交</button>
                     </div>
                 </div>
             </div>
@@ -509,63 +445,64 @@
                         <h4>迁移卷拷贝</h4>
                     </div>
                     <div class="alert alert-info">
-                    	您已选择迁移池Pool 2 中的卷DiaNAS。 请选择该卷将迁移到的新池。源池和目标池的扩展数据块大小必需一致。
+                        您已选择迁移池Pool 2 中的卷DiaNAS。 请选择该卷将迁移到的新池。源池和目标池的扩展数据块大小必需一致。
                     </div>
                     <div class="contentBody">
-                    	<table class="table table-hover">
+                        <table class="table table-hover">
                             <thead>
-                                <tr>
-                                    <td></td>
-                                    <td width="15%">名称</td>
-                                    <td width="25%">状态</td>
-                                    <td width="25%">可用容量</td>
-                                    <td width="30%">容量</td>
-                                </tr>
-                             </thead>
-                             <tbody>   
-                                <tr>
-                                    <td><input type="radio"></td>
-                                    <td>Pool 2</td>
-                                    <td>联机</td>
-                                    <td>4.77 TiB</td>
-                                    <td>4.88 TiB</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="radio"></td>
-                                    <td>Pool 2</td>
-                                    <td>联机</td>
-                                    <td>4.77 TiB</td>
-                                    <td>4.88 TiB</td>
-                                </tr>
-                                <tr class="selected">
-                                    <td><input type="radio"></td>
-                                    <td>Pool 2</td>
-                                    <td>联机</td>
-                                    <td>4.77 TiB</td>
-                                    <td>4.88 TiB</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="radio"></td>
-                                    <td>Pool 2</td>
-                                    <td>联机</td>
-                                    <td>4.77 TiB</td>
-                                    <td>4.88 TiB</td>
-                                </tr>
-                             </tbody>   
-                         </table>
+                            <tr>
+                                <td></td>
+                                <td width="15%">名称</td>
+                                <td width="25%">状态</td>
+                                <td width="25%">可用容量</td>
+                                <td width="30%">容量</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input type="radio"></td>
+                                <td>Pool 2</td>
+                                <td>联机</td>
+                                <td>4.77 TiB</td>
+                                <td>4.88 TiB</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio"></td>
+                                <td>Pool 2</td>
+                                <td>联机</td>
+                                <td>4.77 TiB</td>
+                                <td>4.88 TiB</td>
+                            </tr>
+                            <tr class="selected">
+                                <td><input type="radio"></td>
+                                <td>Pool 2</td>
+                                <td>联机</td>
+                                <td>4.77 TiB</td>
+                                <td>4.88 TiB</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio"></td>
+                                <td>Pool 2</td>
+                                <td>联机</td>
+                                <td>4.77 TiB</td>
+                                <td>4.88 TiB</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="contentFooter">
-                        
-                        <a href="javascript:;" id="closeAction" class="btn btn-light  m-r-10" data-dismiss="modal">取消</a>
+
+                        <a href="javascript:;" id="closeAction" class="btn btn-light  m-r-10"
+                           data-dismiss="modal">取消</a>
                         <a href="javascript:;" class="btn btn-color">迁移</a>
                     </div>
                 </div>
             </div>
         </div>
-        
-        
-        </div>
-    </div>   
+
+
+    </div>
+</div>
 </div>
 <script src="../js/jquery.js"></script>
 <script src="../js/jquery.mousewheel.min.js"></script>
@@ -582,49 +519,50 @@
 <script src="../js/common.js"></script>
 
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('#settingContent').mCustomScrollbar();
         window.range = $('#sliderT').ionRangeSlider({
-            min:0,
-            max:100,
-            step:10,
+            min: 0,
+            max: 100,
+            step: 10,
             grid: true
         });
-         
-        $('#sliderT').bind('change', function(e){
-            $('#speed').val(this.value); 
+
+        $('#sliderT').bind('change', function (e) {
+            $('#speed').val(this.value);
         });
-        $('#changeSlider').on('change', function(e){
+        $('#changeSlider').on('change', function (e) {
             var max = parseInt(e.target.value);
-            max = max*100;
-            var slider =  window.range.data("ionRangeSlider");
+            max = max * 100;
+            var slider = window.range.data("ionRangeSlider");
             slider.update({
-                max:max
-            }); });
+                max: max
+            });
+        });
 
         $('#wizard').wizard({
-            onNext: function(){
+            onNext: function () {
                 console.log("next: 步骤" + this.$current);
                 return true;
             },
-            onPrev: function(){
+            onPrev: function () {
                 console.log("prev: 步骤" + this.$current);
                 return true;
             }
         });
-        $('#wizard').bind('finish', function(e){
+        $('#wizard').bind('finish', function (e) {
         });
         $('#infoPane').info();
         $('#tabInPopup').tabInPopup();
         $('#datepicker').datetimepicker({
-            changeMonth: true,        
-            changeYear: true,        
-            timeFormat: 'hh:mm tt',        
-            controlType:'select'
+            changeMonth: true,
+            changeYear: true,
+            timeFormat: 'hh:mm tt',
+            controlType: 'select'
         });
 
-        $('#tableWithSelectall1').selectAll(); 
-        $('#tableWithSelectall2').selectAll(); 
+        $('#tableWithSelectall1').selectAll();
+        $('#tableWithSelectall2').selectAll();
     });
 </script>
 </body>

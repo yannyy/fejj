@@ -3,19 +3,25 @@
 		var wizard = this;
 
 		options = options || {};
+        wizard.$current = options.current || 0;
 
 		wizard.onNextCallback = options.onNext || function(){return true;};
         wizard.onPrevCallback = options.onPrev || function(){return true;};
 
 		var steps= $(wizard).find('div.wizardStep');
 		wizard.$steps = steps;	
-		wizard.$current = 0;
 		wizard.$prev = $(wizard).find('button.wizardPrev');
 		wizard.$next = $(wizard).find('button.wizardNext');
 
 
 		var init = function(){
 			wizard.$current	= 0;
+
+            wizard.$prev.unbind('click');
+            wizard.$next.unbind('click');
+            wizard.$prev.bind('click', onPrev);
+            wizard.$next.bind('click', onNext);
+
 			initWizard();
 		};
 
@@ -69,8 +75,7 @@
 			}
 		};
 
-		wizard.$prev.bind('click', onPrev);
-		wizard.$next.bind('click', onNext);
+
 
 		init();
 	}

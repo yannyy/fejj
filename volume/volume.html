@@ -96,8 +96,139 @@
     </div>
 </div>
 <!--右侧-->
-<div id="content"> 
-	 
+<div id="content">
+    <!--wizard-->
+    <div class="popup fade" style="display: none;" id="wizard">
+        <div class="popupDiv" style="display:">
+            <div class="popupContent" id="wizard">
+                <div class="contentHeader">
+                    <button type="button" class="close" data-dismiss="#wizard" aria-hidden="true">×</button>
+                    <h4>配置远程</h4>
+                </div>
+
+                <div class="alertDesc alertDesc-info">
+                    您已选择扩展卷－DiaNAS的容量，该操作会增加卷中的可用容量。
+                </div>
+                <div class="contentBody">
+                    <div class="wizardStep">
+                        <table class="table-input">
+                            <tbody>
+                            <tr>
+                                <td><label>名称:</label></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="wizardStep">
+                        <table class="table table-hover" id="tableWithSelectall1">
+                            <thead>
+                            <tr>
+                                <td><input type="checkbox" name="selectall"></td>
+                                <td width="15%">名称</td>
+                                <td width="25%">状态</td>
+                                <td width="25%">可用容量</td>
+                                <td width="30%">容量</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Pool 2</td>
+                                <td>联机</td>
+                                <td>4.77 TiB</td>
+                                <td>4.88 TiB</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Pool 2</td>
+                                <td>联机</td>
+                                <td>4.77 TiB</td>
+                                <td>4.88 TiB</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p>另一个table</p>
+                        <table class="table table-hover" id="tableWithSelectall2">
+                            <thead>
+                            <tr>
+                                <td><input type="checkbox" name="selectall"></td>
+                                <td width="15%">名称</td>
+                                <td width="25%">状态</td>
+                                <td width="25%">可用容量</td>
+                                <td width="30%">容量</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Pool 2</td>
+                                <td>联机</td>
+                                <td>4.77 TiB</td>
+                                <td>4.88 TiB</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Pool 2</td>
+                                <td>联机</td>
+                                <td>4.77 TiB</td>
+                                <td>4.88 TiB</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="wizardStep">
+                        <table class="table-input">
+                            <tbody>
+                            <tr>
+                                <td><label>扩展:</label></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="wizardStep">
+                        <table class="table-input">
+                            <tbody>
+                            <tr>
+                                <td><label>成功</label></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+                <div class="progress-striped stepDiv">
+                    <div class="progress-bar wizardProgress"></div>
+                </div>
+
+                <div class="contentBody">
+                    <div class="infoContent" id="infoPane">
+                        <div class="resultDiv fontGreen"><i class="zmdi zmdi-check "></i>任务完成<em>100%</em></div>
+                        <div class="actionBar"><a href="#" class="textlink"><i
+                                class="zmdi zmdi-chevron-down m-r-5"></i><i
+                                class="zmdi zmdi-chevron-right m-r-5"></i><span>查看更多详细状态</span></a></div>
+                        <div class="detailSummary scrollBar">
+                            <ul>
+                                <li>您已选择扩展卷－DiaNAS的容量，<em> 下午2：10</em></li>
+                                <li>该操作会增加卷中的可用容量。<em> 下午2：10</em></li>
+                                <li class="fontBlue">et of 777 icons in Material Design Iconic Font<em> 下午2：10</em>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="contentFooter">
+                    <button href="javascript:;" id="closeAction" class="btn btn-light" data-dismiss="modal">取消
+                    </button>
+                    <button class="btn btn-color  m-r-10 wizardNext" type="button">下一步</button>
+                    <button class="btn btn-color  m-r-10 wizardPrev" type="button">上一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--右侧内容区-->
     <div class="contentDiv">
 
@@ -302,7 +433,7 @@
                 <div class="btn-group-lg">
                     <div><a id="createVolume" data-target="#createVolumePopup" class="btn btn-primary m-r-10">创建卷</a></div>
                     <div><a id="renameVolume" class="btn btn-default" data-target="#renameVolumePopup">重命名</a></div>
-                    <div><a class="btn btn-default">映射到主机</a></div>
+                    <div><a class="btn btn-default" id="mapping" data-target="#wizard">映射到主机</a></div>
                     <div class="dropdown open">
                         <a class="btn btn-default">更多操作<span class="caret m-l-5"></span></a>
                         <ul class="dropdown-menu" style="display:none">
@@ -511,6 +642,7 @@
 <script src="../js/sidediv.js"></script>
 <script src="../js/alert.js"></script>
 <script src="../js/common.js"></script>
+<script src="../js/wizard.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         $('#fixedArea').areaFix();
@@ -519,6 +651,24 @@
         $('#closeAction').hidePopup();
         $('#renameVolume').popup();
         $('#closeRenameAction').hidePopup();
+        $('#mapping').on('click', function (e){
+            var target = $(e.target).attr('data-target');
+            $(target).show();
+            $('#wizard').wizard({
+                onNext: function () {
+                    console.log("next: 步骤" + this.$current);
+                    return true;
+                },
+                onPrev: function () {
+                    console.log("prev: 步骤" + this.$current);
+                    return true;
+                }
+            });
+            $('#wizard').find('button.close').on('click', function(e){
+                var target = $(e.target).attr('data-dismiss');
+                $(target).hide();
+            });
+        });
     });
 </script>
 </body>
