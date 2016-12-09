@@ -102,7 +102,7 @@
 
             //select device event
             $(widget).find('div.minPic').find('li').on('click', selectDevice);
-            $(widget).find('div.minPic').find('li').find('h5, h2, img').on('click', selectDevice);
+            $(widget).find('div.minPic').find('li').find('h5, h2, img, span, em, i').on('click', selectDevice);
 		};
 
 		var initFrontDevice = function(){
@@ -222,17 +222,24 @@
 		};
 
         var selectDevice = function(e){
+        	e.stopPropagation();
             var target = null;
-            if(e.target.tagName === 'H5'
+            if (e.target.tagName === 'H5'
 				|| e.target.tagName === 'H2'
-				|| e.target.tagName === 'IMG'){
+				|| e.target.tagName === 'IMG') {
             	target = $(e.target).parent();
-			}else{
+			} else if(e.target.tagName === 'SPAN'
+				|| e.target.tagName === 'EM'
+				|| e.target.tagName === 'I' ) {
+            	var h5 = $(e.target).parentsUntil('li').filter('h5');
+            	target = $(h5).parent();
+			} else {
             	target = e.target;
 			}
             $(widget).find('div.minPic').find('li').removeClass('current');
             $(target).addClass('current');
             initSelectedDevice();
+
 		};
 
         var up = function(){
