@@ -10,6 +10,7 @@
 		//定义滚动模块
 		var areaFix = {
 			blockAreaOffset: 0,
+            sortData: [],
 			disable: function(){
                 areaFixParams.disabled = true;
                 areaFix.init();
@@ -44,9 +45,18 @@
 					areaFix.sortTable(index, asc);
 				});
 			},
+			pushSortData: function(dataTTId, dataTTPId, row, data){
+				data = data || [];
+                //data.push({dataTTId:dataTTId, dataTTPId:dataTTPId, row:row});
+                $.each(data, function(i, obj){
+                	if (obj.dataTTId == dataTTPId)
+                		areaFix.pushSortData(dataTTId, dataTTPId, row, obj.children);
+				});
+				return data;
+			},
 			sortTable: function(index, asc){
+			    index = parseInt(index);
 				var rows = $('div.blockArea').find('div.tableBody').find('tr');
-				var data = [];
 				var model = [];
 				var special = null;
 
@@ -57,40 +67,117 @@
 					model.push(ntd.html('').get(0));
 				});
 
+                areaFix.sortData = [];
 				//从每行中取数据
 				$.each(rows, function (i, tr) {
-				    var row = [];
-				    var cells = $(tr).find('td');
-				    $.each(cells, function(j, cell) {
-				    	row.push($(cell).html());
-					});
-				    data.push(row);
+					var row = areaFix.fetchRowData(tr);
+					var dataTTId = $(tr).attr('data-tt-id');
+                    var dataTTPId = $(tr).attr('data-tt-parent-id');
+                    if(empty(dataTTPId))
+                        areaFix.sortData.push({dataTTId:dataTTId, dataTTPId:dataTTPId, row:row});
 				});
+				$.each(areaFix.sortData, function (i, obj) {
+				    obj.children = [];
+					var pId = obj.dataTTId;
+					var rows = $('body').find('tr[data-tt-parent-id="'+pId+'"]');
+					$.each(rows, function (j, tr) {
+                        var row = areaFix.fetchRowData(tr);
+                        var dataTTId = $(tr).attr('data-tt-id');
+                        var dataTTPId = $(tr).attr('data-tt-parent-id');
+                        obj.children.push({dataTTId:dataTTId, dataTTPId:dataTTPId, row:row});
+                    });
+                });
+				var data = areaFix.sortData;
 				data = data.sort(function(row1, row2){
 					if(asc) {
-                        return row1[index] > row2[index] ? 1 : -1;
+                        if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index])))
+                            return row1.row[index] > row2.row[index] ? 1 : -1;
+						else
+                            return parseInt(row1.row[index]) - parseInt(row2.row[index]);
 					} else {
-                        return row2[index] > row1[index] ? 1 : -1;
+                        if(parseInt(row1.row[index]) == 'NaN' || parseInt(row2.row[index]) == 'NaN' )
+                            return row2.row[index] > row1.row[index] ? 1 : -1;
+                        else
+                            return parseInt(row2.row[index]) - parseInt(row1.row[index]);
 					}
 				});
+
+				$.each(data, function (i, obj) {
+				    if(!empty(obj.children))
+				    	obj.children = obj.children.sort(function (row1, row2) {
+                            if(asc) {
+                                if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index])))
+                                    return row1.row[index] > row2.row[index] ? 1 : -1;
+                                else
+                                    return parseInt(row1.row[index]) - parseInt(row2.row[index]);
+                            } else {
+                                if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index])))
+                                    return row2.row[index] > row1.row[index] ? 1 : -1;
+                                else
+                                    return parseInt(row2.row[index]) - parseInt(row1.row[index]);
+                            }
+                        });
+                });
 
                 $('div.blockArea').find('div.tableBody').find('tr').remove();
                 var tbody = $('div.blockArea').find('div.tableBody').find('tbody');
 
                 $.each(data, function (i, row) {
-                	var tr = $('<tr></tr>');
-                	$.each(row, function(j, cell) {
-                		var td = $(model[j]).clone();
+                	var tr = $('<tr></tr>').get(0);
+                	if(!empty(row.dataTTId)) {
+                        $(tr).attr('data-tt-id', row.dataTTId);
+					}
+
+                    if(!empty(row.dataTTPId)) {
+                        $(tr).attr('data-tt-parent-id', row.dataTTPId);
+                    }
+
+                	$.each(row.row, function(j, cell) {
+                		var td = $(model[j]).clone().get(0);
                 		$(td).html(cell);
 
                 		tr.append(td);
 					});
+                    $(tbody).append(tr);
+                	$.each(row.children, function (j, subRow) {
+                        var subTr = $('<tr></tr>').get(0);
+                        if(!empty(subRow.dataTTId)) {
+                            $(subTr).attr('data-tt-id', subRow.dataTTId);
+                        }
 
-                	$(tbody).append(tr);
+                        if(!empty(subRow.dataTTPId)) {
+                            $(subTr).attr('data-tt-parent-id', subRow.dataTTPId);
+                        }
+
+                        $.each(subRow.row, function(j, cell) {
+                            var subTd = $(model[j]).clone().get(0);
+                            $(subTd).html(cell);
+
+                            subTr.append(subTd);
+                        });
+                        $(tbody).append(subTr);
+                    });
+
 				});
+                $('body').find('tr').find('span.indenter').remove();
+                areaFix.treeTable = $("#example-basic").treetable("destroy");
+                areaFix.treeTable = $("#example-basic").treetable({ expandable: true }, true);
+			},
+			fetchRowData: function(tr){
+                var dataTTId = $(tr).attr('data-tt-id');
+                var exists = true;
+
+				var row = [];
+                var cells = $(tr).find('td');
+                $.each(cells, function(j, cell) {
+                    row.push($(cell).html());
+                });
+                return row;
 			},
 			fixedInit: function(){
 				if($(widget).find('div.fixedArea').length != 0){
+				    //$(widget).find('div.blockArea').find('table').treetable({ expandable: true });
+                    areaFix.treeTable = $("#example-basic").treetable({ expandable: true });
 					areaFix.initSortable();
 					areaFix.actionBarTopFixed();
 					areaFix.blockAreaOffset = $(widget).find('div.blockArea').offset();

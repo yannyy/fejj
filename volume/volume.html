@@ -509,85 +509,85 @@
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>3</td>
+                            <td>5</td>
                             <td>Harvinder Singh</td>
                             <td>harvinder@gmail.com</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>4</td>
+                            <td>6</td>
                             <td>Terry Khoo</td>
                             <td>terry@gmail.com</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>4</td>
+                            <td>7</td>
                             <td>Terry Khoo</td>
                             <td>terry@gmail.com</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>4</td>
+                            <td>8</td>
                             <td>Terry Khoo</td>
                             <td>terry@gmail.com</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>4</td>
+                            <td>9</td>
                             <td>Terry Khoo</td>
                             <td>terry@gmail.com</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>4</td>
+                            <td>10</td>
                             <td>Terry Khoo</td>
                             <td>terry@gmail.com</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>4</td>
+                            <td>11</td>
                             <td>Terry Khoo</td>
                             <td>terry@gmail.com</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>4</td>
+                            <td>12</td>
                             <td>Terry Khoo</td>
                             <td>terry@gmail.com</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>4</td>
+                            <td>13</td>
                             <td>Terry Khoo</td>
                             <td>terry@gmail.com</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>4</td>
+                            <td>14</td>
                             <td>Terry Khoo</td>
                             <td>terry@gmail.com</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>4</td>
+                            <td>15</td>
                             <td>Terry Khoo</td>
                             <td>terry@gmail.com</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>4</td>
+                            <td>16</td>
                             <td>Terry Khoo</td>
                             <td>terry@gmail.com</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>4</td>
+                            <td>17</td>
                             <td>Terry Khoo</td>
                             <td>terry@gmail.com</td>
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>4</td>
+                            <td>17</td>
                             <td>Terry Khoo</td>
                             <td>terry@gmail.com</td>
                         </tr>
@@ -636,6 +636,7 @@
     </div>   
 </div>
 <script src="../js/jquery.js"></script>
+<script src="../js/jquery.treetable.js"></script>
 <script src="../js/table.js"></script>
 <script src="../js/dropdown.js"></script>
 <script src="../js/popup.js"></script>
@@ -655,6 +656,9 @@
             var target = $(e.target).attr('data-target');
             $(target).show();
             $('#wizard').wizard({
+                init: function(){
+                    debugger;
+                },
                 onNext: function () {
                     console.log("next: 步骤" + this.$current);
                     return true;

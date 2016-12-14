@@ -134,9 +134,9 @@
                             <tr>
                                 <th width="10%"><input type="checkbox" name="all"></th>
                                 <th width="25%">Name</th> 
-                                <th width="15%" class="sorting_asc">#</th>
-                                <th width="25%" class="sorting">Username</th>
-                                <th width="35%" class="sorting_desc">Email Address</th>
+                                <th width="15%" data-sindex="2" class="sorting_asc sortable">#</th>
+                                <th width="25%" class="sorting sortable">Username</th>
+                                <th width="35%" class="sorting_desc sortable">Email Address</th>
                             </tr>     
                         </thead>
                     </table>
@@ -147,52 +147,7 @@
           
         <div class="replaceArea"></div> 
         <div class="blockArea">
-           
-           <!-- normal table-->
-            <!--<div class="tableBody">
-                <table class="table table-hover">
-                    <tbody>
-                        <tr class="tdFather">
-                            <td width="20%"><i class="zmdi zmdi-collection-plus zmdi-hc-fw"></i> GRP-1</td>
-                            <td width="15%">1</td>
-                            <td width="25%">Nicky Almera</td>
-                            <td width="40%">nicky@hotmail.com</td>
-                        </tr>
-                        <tr class="tdFather">
-                            <td><i class="zmdi zmdi-collection-item zmdi-hc-fw"></i> GRP-N3N2</td>
-                            <td>2</td>
-                            <td>Edmund Wong</td>
-                            <td>edmund@yahoo.com</td>
-                        </tr>
-                        <tr class="tdSon selected">
-                            <td>Node 1</td>
-                            <td>3</td>
-                            <td>Harvinder Singh</td>
-                            <td>harvinder@gmail.com</td>
-                        </tr>
-                        <tr class="tdSon" >
-                            <td>Node 1</td>
-                            <td>4</td>
-                            <td>Terry Khoo</td>
-                            <td>terry@gmail.com</td>
-                        </tr>
-                        <tr class="tdSon">
-                            <td>Node 1</td>
-                            <td>4</td>
-                            <td>Terry Khoo</td>
-                            <td>terry@gmail.com</td>
-                        </tr>    
-                        <tr class="tdFather">
-                            <td><i class="zmdi zmdi-collection-plus zmdi-hc-fw"></i> GRP-1</td>
-                            <td>4</td>
-                            <td>Terry Khoo</td>
-                            <td>terry@gmail.com</td>
-                        </tr> 
-                    </tbody>
-                </table>
-            </div> --> 
-            
-           <!-- tree table-->  
+           <!-- tree table-->
             <div class="tableBody">  
                 <table id="example-basic" class="table table-hover">
                     <tbody>
@@ -417,11 +372,12 @@
 <script src="../js/dropdown.js"></script>
 <script src="../js/popup.js"></script>
 <script src="../js/sidediv.js"></script>
+<script src="../js/common.js"></script>
 <script src="../js/treeTable.js"></script>
 <script src="../js/jquery.treetable.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-         $("#example-basic").treetable({ expandable: true });
+         //$("#example-basic").treetable({ expandable: true });
          $("#treefix").areaFix();
     });
 </script>
