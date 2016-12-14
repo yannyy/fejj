@@ -138,7 +138,7 @@
                 		var td = $(model[j]).clone().get(0);
                 		$(td).html(cell);
 
-                		tr.append(td);
+                		$(tr).append(td);
 					});
                     $(tbody).append(tr);
                 	$.each(row.children, function (j, subRow) {
@@ -155,7 +155,7 @@
                             var subTd = $(model[j]).clone().get(0);
                             $(subTd).html(cell);
 
-                            subTr.append(subTd);
+                            $(subTr).append(subTd);
                         });
                         $(tbody).append(subTr);
                     });
