@@ -225,7 +225,15 @@
 <script type="text/javascript">
     $(document).ready(function(){
          //$("#example-basic").treetable({ expandable: true });
-         $("#treefix").areaFix();
+         $("#treefix").areaFix({
+             sortFunc: function(data1, data2, asc, index){
+                 console.log("data1:" + data1);
+                 console.log("data2:" + data2);
+                 console.log("asc:" + asc);
+                 console.log("index:" + index);
+                 return true;
+             }
+         });
     });
 </script>
 </body>

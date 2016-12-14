@@ -60,22 +60,32 @@
 			sortFunc: function(row1, row2){
 			    var asc = areaFix.asc;
                 var index = areaFix.index;
-                if(asc) {
-                    if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index]))){
-                        var data1 = row1.row[index].toUpperCase();
-                        var data2 = row2.row[index].toUpperCase();
-                        return data1 > data2 ? 1 : -1;
-					}
-                    else
-                        return parseInt(row1.row[index]) - parseInt(row2.row[index]);
+
+                var data1 = row1.row[index];
+                var data2 = row2.row[index];
+
+                if (empty(areaFixParams.sortFunc)) {
+                    if (asc) {
+                        if (isNaN(parseInt(data1)) || isNaN(parseInt(data2))) {
+                            var data1 = data1.toUpperCase();
+                            var data2 = data2.toUpperCase();
+
+                            return data1 > data2 ? 1 : -1;
+                        }
+                        else
+                            return parseInt(data1) - parseInt(row2.row[index]);
+                    } else {
+                        if (isNaN(parseInt(data1)) || isNaN(parseInt(data2))) {
+                            var data1 = data1.toUpperCase();
+                            var data2 = data2.toUpperCase();
+
+                            return data2 > data1 ? 1 : -1;
+                        }
+                        else
+                            return parseInt(data1) - parseInt(data2);
+                    }
                 } else {
-                    if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index]))){
-                        var data1 = row1.row[index].toUpperCase();
-                        var data2 = row2.row[index].toUpperCase();
-                        return data2 > data1 ? 1 : -1;
-					}
-                    else
-                        return parseInt(row2.row[index]) - parseInt(row1.row[index]);
+                    return areaFixParams.sortFunc(data1, data2, asc, index);
                 }
 			},
 			sortTable: function(index, asc){
