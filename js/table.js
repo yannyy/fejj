@@ -6,6 +6,7 @@
 		};
 		options = options || {};
 		areaFixParams.disabled = options.disabled || false;
+		areaFixParams.sortFunc = options.sortFunc || null;
 		var widget = this;
 		//定义滚动模块
 		var areaFix = {
@@ -56,8 +57,33 @@
 				});
 				return data;
 			},
+			sortFunc: function(row1, row2){
+			    var asc = areaFix.asc;
+                var index = areaFix.index;
+                if(asc) {
+                    if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index]))){
+                        var data1 = row1.row[index].toUpperCase();
+                        var data2 = row2.row[index].toUpperCase();
+                        return data1 > data2 ? 1 : -1;
+					}
+                    else
+                        return parseInt(row1.row[index]) - parseInt(row2.row[index]);
+                } else {
+                    if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index]))){
+                        var data1 = row1.row[index].toUpperCase();
+                        var data2 = row2.row[index].toUpperCase();
+                        return data2 > data1 ? 1 : -1;
+					}
+                    else
+                        return parseInt(row2.row[index]) - parseInt(row1.row[index]);
+                }
+			},
 			sortTable: function(index, asc){
 			    index = parseInt(index);
+
+			    areaFix.asc   = asc;
+			    areaFix.index = index;
+
 				var rows = $('div.blockArea').find('div.tableBody').find('tr');
 				var model = [];
 				var special = null;
@@ -90,35 +116,37 @@
                     });
                 });
 				var data = areaFix.sortData;
-				data = data.sort(function(row1, row2){
-					if(asc) {
-                        if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index])))
-                            return row1.row[index] > row2.row[index] ? 1 : -1;
-						else
-                            return parseInt(row1.row[index]) - parseInt(row2.row[index]);
-					} else {
-                        if(parseInt(row1.row[index]) == 'NaN' || parseInt(row2.row[index]) == 'NaN' )
-                            return row2.row[index] > row1.row[index] ? 1 : -1;
-                        else
-                            return parseInt(row2.row[index]) - parseInt(row1.row[index]);
-					}
-				});
+				//data = data.sort(function(row1, row2){
+				//	if(asc) {
+                //        if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index])))
+                //            return row1.row[index] > row2.row[index] ? 1 : -1;
+				//		else
+                //            return parseInt(row1.row[index]) - parseInt(row2.row[index]);
+				//	} else {
+                //        if(parseInt(row1.row[index]) == 'NaN' || parseInt(row2.row[index]) == 'NaN' )
+                //            return row2.row[index] > row1.row[index] ? 1 : -1;
+                //        else
+                //            return parseInt(row2.row[index]) - parseInt(row1.row[index]);
+				//	}
+				//});
+                data = data.sort(areaFix.sortFunc);
 
 				$.each(data, function (i, obj) {
 				    if(!empty(obj.children))
-				    	obj.children = obj.children.sort(function (row1, row2) {
-                            if(asc) {
-                                if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index])))
-                                    return row1.row[index] > row2.row[index] ? 1 : -1;
-                                else
-                                    return parseInt(row1.row[index]) - parseInt(row2.row[index]);
-                            } else {
-                                if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index])))
-                                    return row2.row[index] > row1.row[index] ? 1 : -1;
-                                else
-                                    return parseInt(row2.row[index]) - parseInt(row1.row[index]);
-                            }
-                        });
+				    	//obj.children = obj.children.sort(function (row1, row2) {
+                        //    if(asc) {
+                        //        if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index])))
+                        //            return row1.row[index] > row2.row[index] ? 1 : -1;
+                        //        else
+                        //            return parseInt(row1.row[index]) - parseInt(row2.row[index]);
+                        //    } else {
+                        //        if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index])))
+                        //            return row2.row[index] > row1.row[index] ? 1 : -1;
+                        //        else
+                        //            return parseInt(row2.row[index]) - parseInt(row1.row[index]);
+                        //    }
+                        //});
+                        obj.children = obj.children.sort(areaFix.sortFunc);
                 });
 
                 $('div.blockArea').find('div.tableBody').find('tr').remove();
@@ -293,7 +321,8 @@
 			params: this,
 
 		};
-	}
+	};
+
 	$.fn.disableOnRowSelected = function(){
 		var target = $(this);
 		
@@ -321,7 +350,7 @@
 					target.removeClass('disabled');
 			}
 		});
-	}
+	};
 
 	$(document).ready(function(){
 		$(window).bind('fixedResize', function(e){
