@@ -162,8 +162,8 @@
 
 				});
                 $('body').find('tr').find('span.indenter').remove();
-                areaFix.treeTable = $("#example-basic").treetable("destroy");
-                areaFix.treeTable = $("#example-basic").treetable({ expandable: true }, true);
+                $('body').find('div.blockArea').find('div.tableBody').find('table').treetable("destroy");
+                $('body').find('div.blockArea').find('div.tableBody').find('table').treetable({ expandable: true }, true);
 			},
 			fetchRowData: function(tr){
                 var dataTTId = $(tr).attr('data-tt-id');
@@ -178,8 +178,7 @@
 			},
 			fixedInit: function(){
 				if($(widget).find('div.fixedArea').length != 0){
-				    //$(widget).find('div.blockArea').find('table').treetable({ expandable: true });
-                    areaFix.treeTable = $("#example-basic").treetable({ expandable: true });
+                    $('body').find('div.blockArea').find('div.tableBody').find('table').treetable({ expandable: true });
 					areaFix.initSortable();
 					areaFix.actionBarTopFixed();
 					areaFix.blockAreaOffset = $(widget).find('div.blockArea').offset();
