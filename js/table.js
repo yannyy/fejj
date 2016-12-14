@@ -42,7 +42,9 @@
                     var asc = false;
                     if($(e.target).hasClass('sorting_asc'))
                     	asc = true;
-					areaFix.sortTable(index, asc);
+
+                    if(!empty(index))
+                        areaFix.sortTable(index, asc);
 				});
 			},
 			pushSortData: function(dataTTId, dataTTPId, row, data){
