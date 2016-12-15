@@ -22,7 +22,6 @@
 			},
 			init: function(widget){
 				areaFix.widget = widget;
-				areaFixParams.selector = widget.selector;
 				areaFix.fixedInit();
 				areaFix.tableSelectInit();
 				areaFix.clearCheckStatus();
@@ -35,6 +34,7 @@
 			initSortable: function(){
                 var headers = $(widget).find('div.fixedArea').find('div.tableHeader').find('th.sortable');
 
+                $(headers).unbind('click');
                 $(headers).on('click', function(e){
                     var index = $(e.target).attr('data-sindex');
                     if (!$(e.target).hasClass('sorting_desc') && !$(e.target).hasClass('sorting_asc')) {
@@ -52,6 +52,8 @@
                     if($(e.target).hasClass('sorting_asc'))
                     	asc = true;
 
+                    var fixedArea = $(e.target).parentsUntil('div.topFixDiv').filter('.fixedArea');
+                    areaFix.widget = $(fixedArea).parent();
                     if(!empty(index))
                         areaFix.sortTable(index, asc);
 				});
@@ -90,26 +92,36 @@
                 if (empty(areaFixParams.sortFunc)) {
                     if (asc) {
                         if(reg.test(data1) && reg.test(data2)) {
-                            return areaFix.BKMGT2B(str1) - areaFix.BKMGT2B(str2);
+                            return areaFix.BKMGT2B(data1) - areaFix.BKMGT2B(data2);
                         } else if (isNaN(data1) || isNaN(data2)) {
                             var data1 = data1.toUpperCase();
                             var data2 = data2.toUpperCase();
 
-                            return data1 > data2 ? 1 : -1;
+                            if (data1 > data2)
+                                return 1;
+                            else if (data1 < data2)
+                                return -1;
+                            else
+                                return 0;
                         }
                         else
                             return parseInt(data1) - parseInt(row2.row[index]);
                     } else {
                         if(reg.test(data1) && reg.test(data2)) {
-                            return areaFix.BKMGT2B(str1) - areaFix.BKMGT2B(str2);
+                            return areaFix.BKMGT2B(data2) - areaFix.BKMGT2B(data1);
                         } else if (isNaN(data1) || isNaN(data2)) {
                             var data1 = data1.toUpperCase();
                             var data2 = data2.toUpperCase();
 
-                            return data2 > data1 ? 1 : -1;
+                            if (data2 > data1)
+                            	return 1;
+                            else if (data2 < data1)
+                            	return -1;
+                            else
+                            	return 0;
                         }
                         else
-                            return parseInt(data1) - parseInt(data2);
+                            return parseInt(data2) - parseInt(data1);
                     }
                 } else {
                     return areaFixParams.sortFunc(data1, data2, asc, index);
@@ -121,12 +133,12 @@
 			    areaFix.asc   = asc;
 			    areaFix.index = index;
 
-				var rows = $('div.blockArea').find('div.tableBody').find('tr');
+				var rows = $(areaFix.widget).find('div.blockArea').find('div.tableBody').find('tr');
 				var model = [];
 				var special = null;
 
 				//获取model
-                var frow = $('div.blockArea').find('div.tableBody').find('tr:first');
+                var frow = $(areaFix.widget).find('div.blockArea').find('div.tableBody').find('tr:first');
                 $(frow).find('td').each(function (i, td) {
 					var ntd = $(td).clone();
 					model.push(ntd.html('').get(0));
@@ -144,7 +156,7 @@
 				$.each(areaFix.sortData, function (i, obj) {
 				    obj.children = [];
 					var pId = obj.dataTTId;
-					var rows = $('body').find('tr[data-tt-parent-id="'+pId+'"]');
+					var rows = $(areaFix.widget).find('tr[data-tt-parent-id="'+pId+'"]');
 					$.each(rows, function (j, tr) {
                         var row = areaFix.fetchRowData(tr);
                         var dataTTId = $(tr).attr('data-tt-id');
