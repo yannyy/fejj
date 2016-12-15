@@ -133,10 +133,10 @@
                         <thead>
                             <tr>
                                 <th width="10%"><input type="checkbox" name="all"></th>
-                                <th width="25%" data-sindex="1" class="sorting_asc sortable">存储池名称</th>
-                                <th width="15%" data-sindex="2" class="sorting_asc sortable">状态</th>
+                                <th width="25%" data-sindex="1" class="sorting sortable">存储池名称</th>
+                                <th width="15%" data-sindex="2" class="sorting sortable">状态</th>
                                 <th width="25%" data-sindex="3" class="sorting sortable">剩余容量</th>
-                                <th width="35%" data-sindex="4" class="sorting_desc sortable">总容量</th>
+                                <th width="35%" data-sindex="4" class="sorting sortable">总容量</th>
                             </tr>     
                         </thead>
                     </table>
@@ -164,7 +164,7 @@
                         <td width="25%">0.00B</td>
                         <td width="35%">0.00B</td>
                     </tr>
-                    <tr data-tt-id="3">
+                    <!--tr data-tt-id="3">
                         <td width="10%"><input type="checkbox"></td>
                         <td width="25%">Pool0</td>
                         <td width="15%">online</td>
@@ -205,7 +205,7 @@
                         <td width="15%">online</td>
                         <td width="25%">0.00B</td>
                         <td width="35%">0.00B</td>
-                    </tr>
+                    </tr-->
 
                     </tbody>
                 </table>
@@ -225,15 +225,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
          //$("#example-basic").treetable({ expandable: true });
-         $("#treefix").areaFix({
-             sortFunc: function(data1, data2, asc, index){
-                 console.log("data1:" + data1);
-                 console.log("data2:" + data2);
-                 console.log("asc:" + asc);
-                 console.log("index:" + index);
-                 return true;
-             }
-         });
+         $("#treefix").areaFix();
     });
 </script>
 </body>

@@ -37,9 +37,16 @@
 
                 $(headers).on('click', function(e){
                     var index = $(e.target).attr('data-sindex');
-
-                  	$(e.target).toggleClass('sorting_desc');
-                    $(e.target).toggleClass('sorting_asc');
+                    if (!$(e.target).hasClass('sorting_desc') && !$(e.target).hasClass('sorting_asc')) {
+                        $(e.target).addClass('sorting_asc');
+					}
+                    else if ($(e.target).hasClass('sorting_asc')){
+                    	$(e.target).removeClass('sorting_asc');
+                        $(e.target).addClass('sorting_desc');
+					} else if ($(e.target).hasClass('sorting_desc')) {
+                        $(e.target).removeClass('sorting_desc');
+                        $(e.target).addClass('sorting_asc');
+					}
 
                     var asc = false;
                     if($(e.target).hasClass('sorting_asc'))
@@ -146,36 +153,10 @@
                     });
                 });
 				var data = areaFix.sortData;
-				//data = data.sort(function(row1, row2){
-				//	if(asc) {
-                //        if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index])))
-                //            return row1.row[index] > row2.row[index] ? 1 : -1;
-				//		else
-                //            return parseInt(row1.row[index]) - parseInt(row2.row[index]);
-				//	} else {
-                //        if(parseInt(row1.row[index]) == 'NaN' || parseInt(row2.row[index]) == 'NaN' )
-                //            return row2.row[index] > row1.row[index] ? 1 : -1;
-                //        else
-                //            return parseInt(row2.row[index]) - parseInt(row1.row[index]);
-				//	}
-				//});
                 data = data.sort(areaFix.sortFunc);
 
 				$.each(data, function (i, obj) {
 				    if(!empty(obj.children))
-				    	//obj.children = obj.children.sort(function (row1, row2) {
-                        //    if(asc) {
-                        //        if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index])))
-                        //            return row1.row[index] > row2.row[index] ? 1 : -1;
-                        //        else
-                        //            return parseInt(row1.row[index]) - parseInt(row2.row[index]);
-                        //    } else {
-                        //        if(isNaN(parseInt(row1.row[index])) || isNaN(parseInt(row2.row[index])))
-                        //            return row2.row[index] > row1.row[index] ? 1 : -1;
-                        //        else
-                        //            return parseInt(row2.row[index]) - parseInt(row1.row[index]);
-                        //    }
-                        //});
                         obj.children = obj.children.sort(areaFix.sortFunc);
                 });
 
