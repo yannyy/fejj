@@ -20,7 +20,8 @@
                 areaFixParams.disabled = false;
                 areaFix.init();
 			},
-			init: function(){
+			init: function(widget){
+				areaFix.widget = widget;
 				areaFixParams.selector = widget.selector;
 				areaFix.fixedInit();
 				areaFix.tableSelectInit();
@@ -57,16 +58,33 @@
 				});
 				return data;
 			},
-			sortFunc: function(row1, row2){
+            BKMGT2B: function (str){
+                if (str.lastIndexOf("B") == str.length - 1) {
+                    str = str.substring(0,str.length-1);
+                } else if (str.lastIndexOf("K") == str.length - 1) {
+                    str = str.substring(0,str.length-1) * 1024;
+                } else if (str.lastIndexOf("M") == str.length - 1) {
+                    str = str.substring(0,str.length-1) * 1024 * 1024;
+                } else if (str.lastIndexOf("G") == str.length - 1) {
+                    str = str.substring(0,str.length-1) * 1024 * 1024 * 1024;
+                } else if (str.lastIndexOf("T") == str.length - 1) {
+                    str = str.substring(0,str.length-1) * 1024 * 1024 * 1024 * 1024;
+                }
+                return str;
+            },
+            sortFunc: function(row1, row2){
 			    var asc = areaFix.asc;
                 var index = areaFix.index;
+                var reg = /^[0-9.]*[(:?b|B)(:?k|K)(:?m|M)(:?g|G)(:?t|T)]$/;
 
                 var data1 = row1.row[index];
                 var data2 = row2.row[index];
 
                 if (empty(areaFixParams.sortFunc)) {
                     if (asc) {
-                        if (isNaN(parseInt(data1)) || isNaN(parseInt(data2))) {
+                        if(reg.test(data1) && reg.test(data2)) {
+                            return areaFix.BKMGT2B(str1) - areaFix.BKMGT2B(str2);
+                        } else if (isNaN(data1) || isNaN(data2)) {
                             var data1 = data1.toUpperCase();
                             var data2 = data2.toUpperCase();
 
@@ -75,7 +93,9 @@
                         else
                             return parseInt(data1) - parseInt(row2.row[index]);
                     } else {
-                        if (isNaN(parseInt(data1)) || isNaN(parseInt(data2))) {
+                        if(reg.test(data1) && reg.test(data2)) {
+                            return areaFix.BKMGT2B(str1) - areaFix.BKMGT2B(str2);
+                        } else if (isNaN(data1) || isNaN(data2)) {
                             var data1 = data1.toUpperCase();
                             var data2 = data2.toUpperCase();
 
@@ -159,8 +179,8 @@
                         obj.children = obj.children.sort(areaFix.sortFunc);
                 });
 
-                $('div.blockArea').find('div.tableBody').find('tr').remove();
-                var tbody = $('div.blockArea').find('div.tableBody').find('tbody');
+                $(areaFix.widget).find('div.blockArea').find('div.tableBody').find('tr').remove();
+                var tbody = $(areaFix.widget).find('div.blockArea').find('div.tableBody').find('tbody');
 
                 $.each(data, function (i, row) {
                 	var tr = $('<tr></tr>').get(0);
@@ -199,9 +219,9 @@
                     });
 
 				});
-                $('body').find('tr').find('span.indenter').remove();
-                $('body').find('div.blockArea').find('div.tableBody').find('table').treetable("destroy");
-                $('body').find('div.blockArea').find('div.tableBody').find('table').treetable({ expandable: true }, true);
+                $(areaFix.widget).find('div.blockArea').find('div.tableBody').find('tr').find('span.indenter').remove();
+                $(areaFix.widget).find('div.blockArea').find('div.tableBody').find('table').treetable("destroy");
+                $(areaFix.widget).find('div.blockArea').find('div.tableBody').find('table').treetable({ expandable: true }, true);
 			},
 			fetchRowData: function(tr){
                 var dataTTId = $(tr).attr('data-tt-id');
@@ -324,7 +344,7 @@
 		};
 		window.areaFix = $(widget);
 		window.areaFix.on('resize', areaFix.resize); 
-		areaFix.init();
+		areaFix.init(widget);
 		return {
 			disable: areaFix.disable,
             activate: areaFix.activate,
