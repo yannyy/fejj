@@ -69,6 +69,15 @@
             },
             BKMGT2B: function (str) {
                 str = str.toUpperCase();
+                if (str.lastIndexOf("KB") > 0) {
+                    str = str.replace("KB", "K");
+                } else if (str.lastIndexOf("MB") > 0) {
+                    str = str.replace("MB", "M");
+                } else if (str.lastIndexOf("GB") > 0) {
+                    str = str.replace("GB", "G");
+                } else if (str.lastIndexOf("TB") > 0) {
+                    str = str.replace("TB", "T");
+                }
                 if (str.lastIndexOf("B") == str.length - 1) {
                     str = str.substring(0, str.length - 1);
                 } else if (str.lastIndexOf("K") == str.length - 1) {
@@ -85,7 +94,7 @@
             sortFunc: function (row1, row2) {
                 var asc = areaFix.asc;
                 var index = areaFix.index;
-                var reg = /^[0-9.]*[(:?b|B)(:?k|K)(:?m|M)(:?g|G)(:?t|T)]$/;
+                var reg = /^[0-9.]+[BKMGTbkmgt]{1,2}$/;
 
                 var data1 = row1.row[index];
                 var data2 = row2.row[index];
@@ -108,7 +117,7 @@
                                 return 0;
                         }
                     } else {
-                        if (reg.test(data1) && reg.test(data2)) {
+                        if(reg.test(data1.toUpperCase()) && reg.test(data2.toUpperCase())) {
                             return areaFix.BKMGT2B(data2) - areaFix.BKMGT2B(data1);
                         } else if (!isNaN(data1) && !isNaN(data2)) {
                             return data2 - data1;
