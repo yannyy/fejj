@@ -203,7 +203,7 @@
                     });
                     $(tbody).append(tr);
                     $.each(row.children, function (j, subRow) {
-                        var subTr = $('<tr></tr>').get(0);
+                        var subTr = $('<tr class="tdSon"></tr>').get(0);
                         if (!empty(subRow.dataTTId)) {
                             $(subTr).attr('data-tt-id', subRow.dataTTId);
                         }
@@ -225,7 +225,8 @@
                 $(areaFix.widget).find('div.blockArea').find('div.tableBody').find('tr').find('span.indenter').remove();
                 $(areaFix.widget).find('div.blockArea').find('div.tableBody').find('table').treetable("destroy");
                 $(areaFix.widget).find('div.blockArea').find('div.tableBody').find('table').treetable({expandable: true}, true);
-                window.areaFix.trigger("tableSort");
+                //areaFix.widget.trigger("tableSort");
+                $(window).trigger('tableSort', [areaFix.widget]);
             },
             fetchRowData: function (tr) {
                 var dataTTId = $(tr).attr('data-tt-id');
@@ -386,7 +387,7 @@
             });
         }
 
-        $(window.areaFix).on('tableSort', function (e) {
+        $(window).on('tableSort', function (e, widget) {
             initEvent();
         });
         initEvent();

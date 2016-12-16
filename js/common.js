@@ -63,7 +63,7 @@ function alertMsg(options={}){
 	contentBody.append(contentTable);
 
 	var contentFooter    = $('<div class="contentFooter">');
-	var cancelButton     = $('<button class="btn btn-light">取消</button>');
+	var cancelButton     = $('<button class="btn btn-light" type="button" data-dismiss="modal" aria-hidden="true">>取消</button>');
 	cancelButton.on('click', function(){
 		fade.remove();
 	});
