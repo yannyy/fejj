@@ -2,7 +2,7 @@
 .frontDevice,.backDevice{position:relative;  margin:120px auto 10px; text-align:center; width:545px;}
 .frontDevice{margin-top:130px;}
 .frontDevice:after, .backDevice:after{clear:both; float:none; content:"."; font-size:1px; line-height:1px;}
-.frontDevice .img,.backDevice .img{position:absolute;z-index:1;top: 0px;left:0px;}
+.frontDevice .img,.backDevice .img{position:absolute;z-index:1;top: 0px;left:0px; z-index:1;}
 .frontDevice .cover{position:absolute;z-index:10;top: 0px;left:0px;}
 .backDevice{top:-10px; left:15px;}
 
@@ -62,3 +62,6 @@
 .coverSpecial span{left:0; width:49.5%;padding:0;height:18px; background:rgba(25,39,53,1); display:block; }
 
 .monitorBody .colTwo img{width:auto;height:auto;max-width:100%;max-height:100%; margin-bottom:15px;}
+
+
+.img .imgAddtion img{ position:absolute; z-index:2;}

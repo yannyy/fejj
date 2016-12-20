@@ -1,0 +1,950 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<head>
+    <meta charset="utf-8">
+    <title>Netstor</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link rel="stylesheet" href="css/blue.css">
+    <link rel="stylesheet" href="css/component.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/material-design-iconic-font.css">
+<!--    <link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" href="css/scroll.css">
+    <link rel="stylesheet" href="css/device.css">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- ================== END BASE CSS STYLE ================== -->
+</head>
+
+<body>
+<div class="globalBg"></div>
+
+<!--左侧内容区-->
+<div id="sideDiv">
+	<div class="left_top">
+		<div class="nameTop">
+			<div class="name">
+            <em class="fontGreen"><i class="zmdi zmdi-check-circle"></i></em>
+            <big>Cluster-one</big></div>
+            <span class="globalAction fr"><a href="#"><i class="zmdi zmdi-download"></i></a><a href="javascript:void(0);" id="systemMenuListBtn" data-target="#systemMenuList" class="dropdown-toggle"><i class="zmdi zmdi-sun"></i></a></span>
+            <div class="openRight">                       
+                <ul class="dropdown-menu" id="systemMenuList" style="display:none">
+                    <li class="dropdownTitle">操作</li>
+                    <li><a href="#">重名名系统</a></li>
+                    <li class="disable"><a href="#">修改系统拓扑</a></li>
+                    <li><a href="#">关闭标识指示灯</a></li>
+                    <li><a href="#">删除机柜</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">更新</a></li>
+                    <li><a href="#">详细属性</a></li>
+                </ul>
+            </div>
+            		
+		</div>
+		<div class="ipJdt">
+			<div class="jdt"><span style="width:35%;"></span></div><div class="jdtText"><small>5.40TiB / 13.08 TiB</small></div>
+			<p><small>IP Address:</small> 192.168.0.21</p>
+		</div>
+	</div>
+    <div class="tabRaw">
+    	<a class="current" href="#" data-target="#sidebarMenu"><i class="fa fa-navicon"></i><sup>&nbsp;</sup></a><a href="#" class="bgGradul" data-target="#sidebarTask"><i class="zmdi zmdi-tv-list"></i><sup class="bgGreen"><i>6</i></sup></a><a href="#" class="bgGradul" data-target="#sidebarEvent"><i class="zmdi zmdi-notifications-none"></i><sup class="bgRed"><i>8</i></sup></a>
+    </div>
+    <!--左侧菜单-->
+    <div class="sidebarContainer">
+    	<div style="display:none;" class="sidebar" id="sidebarMenu">
+            <div class="sidebaTitle">主菜单</div>
+            <div class="menu">
+                <ul>
+                    <li class="" style=""><a href="#"><i class="fa fa-laptop"></i><span>监视</span></a>
+                        <ul class="sidebarNav" style="display:none">
+                            <li class=""><a href="#"><i class="zmdi zmdi-laptop-chromebook"></i><span>系统</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-toys"></i><!--zmdi zmdi-flash-auto--><span>硬件</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-tv-list"></i><span>任务</span></a></li>
+                            <li><a href="volume/event.html"><i class="zmdi zmdi-notifications-none"></i><span>事件</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="expand open" style=""><a href="#"><i class="fa fa-cube"></i><span>池</span></a></a>
+                        <ul class="sidebarNav" style="display:">
+                            <li class="select"><a href="#"><i class="fa fa-cubes"></i><span>存储池管理</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-gradient"></i><span>内部存储池</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-storage"></i><span>内部RAID管理</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-codepen"></i><span>外部存储池</span></a></li>
+                            <li><a href="＃"><i class="fa fa-tasks"></i><span>外部RAID管理</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="" ><a href="＃"><i class="fa fa-database"></i><span>卷</span></a>
+                        <ul class="sidebarNav" style="display:none">
+                            <li class=""><a href="#"><i class="fa fa-database"></i><span>卷</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#"><i class="fa fa-building-o"></i><span>主机</span></a>
+                        <ul class="sidebarNav" style="display:none">
+                            <li class=""><a href="#"><i class="fa fa-building-o"></i><span>主机</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-city-alt"></i><span>主机映射</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#"><i class="zmdi zmdi-copy"></i><span>拷贝</span></a>
+                        <ul class="sidebarNav" style="display:none">
+                            <li class=""><a href="#"><i class="zmdi zmdi-copy"></i><span>FlashCopy</span></a></li>
+                            <li><a href="#"><i class="fa fa-object-group"></i><span>一致性组</span></a></li>
+                            <li><a href="#"><i class="fa fa-copy"></i><span>FlashCopy映射</span></a></li>
+                            <li><a href="#"><i class="fa fa-clipboard"></i><span>远程拷贝</span></a></li>
+                            <li><a href="#"><i class="fa fa-columns"></i><span>伙伴关系</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#"><i class="zmdi zmdi-wrench"></i><span>设置</span></a>
+                        <ul class="sidebarNav" style="display:none">
+                            <li class=""><a href="#"><i class="fa fa-bullhorn"></i><span>通知</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-globe-alt"></i><span>网络</span></a></li>
+                            <li><a href="#"><i class="zmdi zmdi-time-restore"></i><span>系统</span></a></li>
+                            <li><a href="#"><i class="fa fa-wrench"></i><span>维护</span></a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            
+        
+            
+        
+    </div>    
+</div>
+<!--右侧top-->
+<div id="topDiv">
+    <div class="headerBar">
+        <div class="fr glysetting" id="userBtn"><a href="#" class="dropdown-toggle">Superuser（安全管理员）<span class="caret"></span></a><a href="#"><i class="zmdi zmdi-help-outline"></i></a>
+            <div class="openDown">                       
+                <ul class="dropdown-menu" style="display: none">
+                    <li><a href="#">用户属性</a></li>
+                    <li><a href="#">退出系统</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sysName">NetStor<span>Control Center</span></div>
+    </div>
+</div>
+<!--右侧-->
+<div id="content">	
+<!--右侧内容区-->
+    <div class="contentDiv"> 
+	<!--面包屑导航-->
+    <ol class="breadcrumb">
+        <li><a href="javascript:;">Home</a></li>
+        <li><a href="javascript:;">卷</a></li>
+        <li class="active">Tables</li>
+    </ol>
+	
+	<div class="centerRaw" id="imgscrollview">
+		<div class="leftCol" >
+			<div class="dDiv">
+				<ul>
+				<li data-target="0" class="current"><a href="javascript:;">●</a></li><li data-target="1"><a href="javascript:;">●</a></li><li data-target="2"><a href="javascript:;">●</a></li><li data-target="3"><a href="javascript:;">●</a></li><li data-target="4"><a href="javascript:;">●</a></li></ul>
+			</div>
+			<div class="jtTop"><a href="javascript:void(0);"><i class="fa fa-caret-up"></i></a></div>
+			<div class="minPic">
+				<ul>
+					<li class="borderRGreen current" id="index1" data-target="#device1">
+						<h5>Site1<span><em class="fontGreen"><i class="zmdi zmdi-check"></i></em>联机</span></h5>
+						<h2>NCS7300</h2>
+						<img src="images/device/front_NCS7300G224.png">
+					</li>
+					<li class="borderRGreen" id="index2" data-target="#device2">
+						<h5>Site2<span><em class="fontGreen"><i class="zmdi zmdi-check"></i></em>联机</span></h5>
+						<h2>NCS7000</h2>
+						<img src="images/device/front_NCS7000G212.png">
+					</li>
+					<li class="borderROrange" id="index3" data-target="#device3">
+						<h5>Site3<span><em class="fontGreen"><i class="zmdi zmdi-check"></i></em>联机</span></h5>
+						<h2>NCS7500G2L</h2>
+						<img src="images/device/front_NCS7500G224.png">
+					</li>
+					<li class="borderROrange" id="index4"  data-target="#device4">
+						<h5>Site4<span><em class="fontGreen"><i class="zmdi zmdi-check"></i></em>联机</span></h5>
+						<h2>NCS7700G2</h2>
+						<img src="images/device/front_NCS7000G224.png">
+					</li>
+                    <li class="borderROrange" id="index5"  data-target="#device5">
+						<h5>Site4<span><em class="fontGreen"><i class="zmdi zmdi-check"></i></em>联机</span></h5>
+						<h2>NCS7700G2</h2>
+						<img src="images/device/front_NCS7000G224.png">
+					</li>
+					
+				</ul>
+			</div>
+			<div class="jtDown"><a href="javascript:void(0);"><i class="fa fa-caret-down"></i></a></div>
+		</div>
+        <div class="deviceContainer" style="display:none" id="device1">
+            <div class="picCol">
+                <div class="switchIcon"><a style=""><i class="zmdi zmdi-rotate-ccw"></i></a> <a style="display:none;"><i
+                        class="zmdi zmdi-rotate-cw"></i></a></div>
+                <div class="deviceName"><span class="statusIcon m-r-10"><em class="fontGreen"><i
+                    class="zmdi zmdi-check-circle"></i></em></span> NCS7300
+                </div>
+                <div class="device">
+                    <div style="height: 175px;display:none" class="backDevice">
+
+                        <!-- 状态 -->
+                        <div class="coverB status">
+                            <ul>
+                                
+                                <!-- iscsi端口 -->
+                                <li class="" style="left: 58px; top: 78px; width: 20px; height: 25px;"></li>
+                                <li class="" style="left: 302px; top: 78px; width: 20px; height: 25px;"></li>
+                                <!-- sas端口 -->
+                                <li class="" style="left: 95px; top: 80px; width: 15px; height: 15px;"></li>
+                                <li class="" style="left: 340px; top: 80px; width: 15px; height: 15px;"></li>
+                                
+                                <!-- 光纤通道端口 -->
+                                <!--4ports-->
+                                <li class="" style="left: 160px; top: 86px; width: 17px; height: 18px;"></li>
+                                <li class="" style="left: 177px; top: 86px; width: 17px; height: 18px;"></li>
+                                <li class="" style="left: 195px; top: 86px; width: 17px; height: 18px;"></li>
+                                <li class="" style="left: 212px; top: 86px; width: 17px; height: 18px;"></li>
+                                <li class="" style="left: 405px; top: 86px; width: 17px; height: 18px;"></li>
+                                <li class="" style="left: 422px; top: 86px; width: 17px; height: 18px;"></li>
+                                <li class="" style="left: 440px; top: 86px; width: 17px; height: 18px;"></li>
+                                <li class="" style="left: 457px; top: 86px; width: 17px; height: 18px;"></li>
+                                
+                                <!-- 适配器 -->
+                                <li class="" style="left: 150px; top: 70px; width: 98px; height: 36px;"></li>
+                                
+                            </ul>
+                        </div>
+                        <!-- 显示的边框-->
+                        <div class="coverB">
+                            <ul>
+                                
+                                <!-- iscsi端口 -->
+                                <li  style="left: 58px; top: 78px; width: 25px; height: 20px;z-index:9" id="device18"></li>
+                                <li  style="left: 302px; top: 78px; width: 25px; height: 20px;z-index:9" id="device19"></li>
+                                
+                                <!-- sas端口 -->
+                                <li  style="left: 95px; top: 80px; width: 15px; height: 15px;z-index:9" id="device110"></li>
+                                <li  style="left: 340px; top: 80px; width: 15px; height: 15px;z-index:9" id="device111"></li>
+                                
+                                <!-- 光纤通道端口 -->
+                                <!--4ports--><!--2ports, using the 2nd, 4th, 6th and 8th ports-->
+                                <li  style="left: 160px; top: 86px; width: 17px; height: 18px;z-index:9" id="device112"></li>
+                                <li  style="left: 177px; top: 86px; width: 17px; height: 18px;z-index:9" id="device113"></li>
+                                <li  style="left: 195px; top: 86px; width: 17px; height: 18px;z-index:9" id="device114"></li>
+                                <li  style="left: 212px; top: 86px; width: 17px; height: 18px;z-index:9" id="device115"></li>
+                                <li  style="left: 405px; top: 86px; width: 17px; height: 18px;z-index:9" id="device116"></li>
+                                <li  style="left: 422px; top: 86px; width: 17px; height: 18px;z-index:9" id="device117"></li>
+                                <li  style="left: 440px; top: 86px; width: 17px; height: 18px;z-index:9" id="device118"></li>
+                                <li  style="left: 457px; top: 86px; width: 17px; height: 18px;z-index:9" id="device119"></li>
+                                
+                                <!--4ports-->
+                                <!-- 适配器 -->
+                                <li  style="left: 150px; top: 70px; width: 98px; height: 36px;z-index:9" id="device120"></li>
+                               
+                                
+                            </ul>
+                        </div>
+                        <!-- 鼠标挪上去出tootip的范围， 不要加 hover 等样式 -->
+                        <div class="coverB">
+                            <ul>
+                                
+                                <!-- iscsi端口 -->
+                                <li class="" data-tooltip="#device2t8" data-hover="#device18" style="left: 58px; top: 72px; width: 26px; height: 32px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t9" data-hover="#device19" style="left: 302px; top: 72px; width: 26px; height: 32px;z-index:19"></li>
+                                
+                                <!-- sas端口 -->
+                                <li class="" data-tooltip="#device2t10" data-hover="#device110" style="left: 93px; top: 72px; width: 20px; height: 34px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t11" data-hover="#device111" style="left: 337px; top: 72px; width: 20px; height: 34px;z-index:19"></li>
+                                
+                                <!-- 光纤通道端口 -->
+                                <!--4ports--><!--2ports, using the 2nd, 4th, 6th and 8th ports-->
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 160px; top: 80px; width: 18px; height: 26px;z-index:19"></li>
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 177px; top: 80px; width: 18px; height: 26px;z-index:19"></li>
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 195px; top: 80px; width: 18px; height: 26px;z-index:19"></li>
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 212px; top: 80px; width: 18px; height: 26px;z-index:19"></li>
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 405px; top: 80px; width: 18px; height: 26px;z-index:19"></li>
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 422px; top: 80px; width: 18px; height: 26px;z-index:19"></li>
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 440px; top: 80px; width: 18px; height: 26px;z-index:19"></li>
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 457px; top: 80px; width: 18px; height: 26px;z-index:19"></li>
+ 
+                                <!-- 适配器 -->
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 150px; top: 84px; width: 82px; height: 22px;z-index:11"></li>
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 394px; top: 84px; width: 82px; height: 22px;z-index:11"></li>
+                              
+                            </ul>
+                        </div>
+						
+                        <div class="img">
+                         	<!-- 当有port时候添加上这个div -->
+                        	<div class="imgAddtion"><img  style="left: 152px; top: 85px;" src="images/device/back_port4.png"><img style="left: 397px; top: 85px;" src="images/device/back_port2.png"></div>
+                            <img src="images/device/back_NCS7300G2.png">
+                        </div>
+                    </div>
+                    <div style="height:150px;" class="frontDevice">
+                        <div class="cover status">
+                            <ul>
+                                
+                            </ul>
+                        </div>
+                        <div style="" class="cover">
+                            <ul style="z-index:99">
+                                
+                            </ul>
+                        </div>
+                        <div class="enclosure" id="frontViewDevice">
+                        	<div class="eHover"></div>
+                    		<div class="eDiv" style="z-index:32"></div>
+                        </div>
+                        <div class="img"><img src="images/device/front_NCS7300G224.png"></div>
+                    </div>
+                    <div class="clear"></div>
+
+                </div>
+            </div>
+        </div>
+        
+        
+        
+		<div class="deviceContainer" style="display:none" id="device2">
+            <div class="picCol">
+                <div class="switchIcon"><a style=""><i class="zmdi zmdi-rotate-ccw"></i></a> <a style="display:none;"><i
+                        class="zmdi zmdi-rotate-cw"></i></a></div>
+                <div class="deviceName"><span class="statusIcon m-r-10"><em class="fontGreen"><i
+                    class="zmdi zmdi-check-circle"></i></em></span> NCS7000
+                </div>
+                <div class="device">
+                    <div style="height: 175px;display:none" class="backDevice">
+                        <div class="tooltips">
+                            <div id="device2t1" style="top: -35px; left:190px; display:none;" class="tooltip">
+                                <!--  tooltip -->
+                                <div style="left:55px;top: 142px;" class="bgArrow">
+                                    <div class="arrowDown"></div>
+                                </div>
+                                <table class="table-input tooltipTable" cellpadding="0" cellspacing="0" width="100%"
+                                       style="">
+                                    <tr>
+                                        <td colspan="2" class="title">机柜</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:48%;">标识：</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>状态：</td>
+                                        <td>联机</td>
+                                    </tr>
+                                    <tr>
+                                        <td>容量：</td>
+                                        <td>2.00GB</td>
+                                    </tr>
+                                    <tr>
+                                        <td>使用：</td>
+                                        <td>成员</td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            <div id="device2t1" style="top: -49px; left:70px; display:none;" class="tooltip">
+                                <!--  tooltip -->
+                                <div style="left:55px;top: 142px;" class="bgArrow">
+                                    <div class="arrowDown"></div>
+                                </div>
+                                <table class="table-input tooltipTable" cellpadding="0" cellspacing="0" width="100%"
+                                       style="">
+                                    <tr>
+                                        <td colspan="2" class="title">容器</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:48%;">标识：</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>状态：</td>
+                                        <td>联机</td>
+                                    </tr>
+                                    <tr>
+                                        <td>容量：</td>
+                                        <td>2.00GB</td>
+                                    </tr>
+                                    <tr>
+                                        <td>使用：</td>
+                                        <td>成员</td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                        <!-- 状态 -->
+                        <div class="coverB status">
+                            <ul>
+                                <!-- 端口 -->        
+                                <li class="" style="left:  105px; top: 78px; width: 15px; height: 16px;"></li>
+                                <li class="" style="left:  147px; top: 78px; width: 15px; height: 16px;"></li>
+                                <li class="" style="left:  349px; top: 78px; width: 15px; height: 16px;"></li>
+                                <li class="" style="left:  392px; top: 78px; width: 15px; height: 16px;"></li>
+                                
+                            </ul>
+                        </div>
+                        <!-- 显示的边框-->
+                        <div class="coverB">
+                            <ul>
+                                <!-- 端口 -->
+                                <li  style="left: 105px; top: 78px; width: 15px; height: 16px;z-index:9" ></li>
+                                <li  style="left: 147px; top: 78px; width: 15px; height: 16px;z-index:9" ></li>  
+                             	<li  style="left: 349px; top: 78px; width: 15px; height: 16px;z-index:9" ></li>
+                                <li  style="left: 392px; top: 78px; width: 15px; height: 16px;z-index:9" ></li>
+                            </ul>
+                        </div>
+                        <!-- 鼠标挪上去出tootip的范围， 不要加 hover 等样式 -->
+                        <div class="coverB">
+                            <ul>
+                                <!-- 端口 -->                              
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 104px; top: 74px; width: 17px; height: 30px;z-index:19"></li>
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 146px; top: 74px; width: 17px; height: 30px;z-index:19"></li>
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 348px; top: 74px; width: 17px; height: 30px;z-index:19"></li>
+                                <li class="" data-tooltip="#" data-hover="#" style="left: 391px; top: 74px; width: 17px; height: 30px;z-index:19"></li>
+                            </ul>
+                        </div>
+
+                        <div class="img"><img src="images/device/back_NCS7000G2.png"></div>
+                    </div>
+                    
+                    <div style="height:150px;" class="frontDevice frontSlot12">
+                        <div class="cover status">
+                            <ul>
+                                <li id="device1hover1" class=""></li>
+                                <li id="device1hover2" class=""></li>
+                                <li id="device1hover3" class=""></li>
+                                <li id="device1hover4" class=""></li>
+                                <li id="device1hover5" class=""></li>
+                                <li id="device1hover6" class="statusOrange"></li>
+                                <li id="device1hover7" class=""></li>
+                                <li id="device1hover8" class="statusRed"></li>
+                                <li id="device1hover9" class="spaceLi"></li>
+                                <li id="device1hover10" class=""></li>
+                                <li id="device1hover11" class=""></li>
+                                <li id="device1hover12" class=""></li>
+                            </ul>
+                        </div>
+                        <div class="cover" style="z-index:30">
+                            <ul id="device1_front_ul">
+                                <li data-tooltip="device1tip1" data-hover="#device1hover1"></li>
+                                <li data-tooltip="device1tip2" data-hover="#device1hover2"></li>
+                                <li data-tooltip="device1tip3" data-hover="#device1hover3"></li>
+                                <li data-tooltip="device1tip4" data-hover="#device1hover4"></li>
+                                <li data-tooltip="device1tip5" data-hover="#device1hover5"></li>
+                                <li data-tooltip="device1tip6" data-hover="#device1hover6"></li>
+                                <li data-tooltip="device1tip7" data-hover="#device1hover7"></li>
+                                <li data-tooltip="device1tip8" data-hover="#device1hover8"></li>
+                                <li data-tooltip="device1tip9" data-hover="#device1hover9"></li>
+                                <li data-tooltip="device1tip10" data-hover="#device1hover10"></li>
+                                <li data-tooltip="device1tip11" data-hover="#device1hover11"></li>
+                                <li data-tooltip="device1tip12" data-hover="#device1hover12"></li>                               
+                            </ul>
+                        </div>
+                        <div class="enclosure">
+                        	<div class="eHover"></div>
+                    		<div class="eDiv" style="z-index:32"></div>
+                        </div>
+                        <div class="img"><img src="images/device/front_NCS7000G212.png"></div>
+                    </div>
+                    <div class="clear"></div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="deviceContainer" style="display:none" id="device3">
+            <div class="picCol">
+                <div class="switchIcon"><a style=""><i class="zmdi zmdi-rotate-ccw"></i></a> <a style="display:none;"><i
+                        class="zmdi zmdi-rotate-cw"></i></a></div>
+                <div class="deviceName"><span class="statusIcon m-r-10"><em class="fontGreen"><i
+                    class="zmdi zmdi-check-circle"></i></em></span> NCS7500G2L
+                </div>
+                <div class="device">
+                    <div style="height: 175px;display:none" class="backDevice">
+
+                        <!-- 状态 -->
+                        <div class="coverB status">
+                            <ul>
+                                
+                                <!-- 技术端口 -->
+                                <li class="" style="left: 24px; top: 79px; width: 19px; height: 16px;"></li>
+                                <!-- usb端口 -->
+                                <li class="" style="left: 24px; top: 95px; width: 19px; height: 8px;"></li>
+                                <!-- iscsi端口 -->
+                                <li class="" style="left: 52px; top: 82px; width: 20px; height: 16px;"></li>
+                                <li class="" style="left: 308px; top: 82px; width: 20px; height: 16px;"></li>
+                                
+                                <!-- sas端口 -->
+                                <li class="" style="left: 79px; top: 80px; width: 15px; height: 15px;"></li>
+                                <li class="" style="left: 95px; top: 80px; width: 15px; height: 15px;"></li>
+                                <li class="" style="left: 108px; top: 80px; width: 15px; height: 15px;"></li>
+                                <li class="" style="left: 323px; top: 80px; width: 15px; height: 15px;"></li>
+                                <li class="" style="left: 339px; top: 80px; width: 15px; height: 15px;"></li>
+                                <li class="" style="left: 353px; top: 80px; width: 15px; height: 15px;"></li>
+                               
+                            </ul>
+                        </div>
+                        <!-- 显示的边框-->
+                        <div class="coverB">
+                            <ul>
+                               
+                                <!-- 技术端口 -->
+                                <li  style="left: 24px; top: 79px; width: 19px; height: 16px;z-index:9" id="device16"></li>
+                                <!-- usb端口 -->
+                                <li  style="left: 24px; top: 95px; width: 19px; height: 8px;z-index:9" id="device17"></li>
+                                <!-- iscsi端口 -->
+                                <li  style="left: 52px; top: 82px; width: 20px; height: 16px;z-index:9" id="device18"></li>
+                                <li  style="left: 308px; top: 82px; width: 20px; height: 16px;z-index:9" id="device181"></li>
+                                
+                                <!-- sas端口 -->
+                                <li  style="left: 79px; top: 80px; width: 15px; height: 15px;z-index:9" id="device19"></li>
+                                <li  style="left: 95px; top: 80px; width: 15px; height: 15px;z-index:9" id="device110"></li>
+                                <li  style="left: 108px; top: 80px; width: 15px; height: 15px;z-index:9" id="device111"></li>
+                                <li  style="left: 323px; top: 80px; width: 15px; height: 15px;z-index:9" id="device112"></li>
+                                <li  style="left: 339px; top: 80px; width: 15px; height: 15px;z-index:9" id="device113"></li>
+                                <li  style="left: 353px; top: 80px; width: 15px; height: 15px;z-index:9" id="device114"></li>
+                               
+                            </ul>
+                        </div>
+                        <!-- 鼠标挪上去出tootip的范围， 不要加 hover 等样式 -->
+                        <div class="coverB">
+                            <ul>
+                               
+                                <!-- 技术端口 -->
+                                <li class="" data-tooltip="#device2t6" data-hover="#device16"  style="left: 21px; top: 72px; width: 26px; height: 24px;z-index:19"></li>
+                                <!-- usb端口 -->
+                                <li class="" data-tooltip="#device2t7" data-hover="#device17" style="left: 21px; top: 95px; width: 26px; height: 12px;z-index:19"></li>
+                                <!-- iscsi端口 -->
+                                <li class="" data-tooltip="#device2t8" data-hover="#device18" style="left: 47px; top: 80px; width: 29px; height: 26px;z-index:19"></li>
+                               
+                                <!-- sas端口 -->
+                                <li class="" data-tooltip="#device2t9" data-hover="#device19" style="left: 77px; top: 72px; width: 16px; height: 26px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t10" data-hover="#device110" style="left: 93px; top: 72px; width: 16px; height: 24px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t11" data-hover="#device111" style="left: 108px; top: 72px; width: 16px; height: 24px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t9" data-hover="#device19" style="left: 322px; top: 72px; width: 16px; height: 26px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t10" data-hover="#device110" style="left: 338px; top: 72px; width: 16px; height: 24px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t11" data-hover="#device111" style="left: 351px; top: 72px; width: 16px; height: 24px;z-index:19"></li>
+                                
+
+                            </ul>
+                        </div>
+
+                        <div class="img"><img src="images/device/back_NCS7500G2L.png"></div>
+                    </div>
+                    <div style="height:150px;" class="frontDevice">
+                        <div class="cover status">
+                            <ul>
+                                
+                            </ul>
+                        </div>
+                        <div style="" class="cover">
+                            <ul style="z-index:99">
+                                
+                            </ul>
+                        </div>
+                        <div class="enclosure" id="frontViewDevice">
+                        	<div class="eHover"></div>
+                    		<div class="eDiv" style="z-index:32"></div>
+                        </div>
+                        <div class="img"><img src="images/device/front_NCS7500G224.png"></div>
+                    </div>
+                    <div class="clear"></div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="deviceContainer" style="display:none" id="device4">
+            <div class="picCol">
+                <div class="switchIcon"><a style=""><i class="zmdi zmdi-rotate-ccw"></i></a> <a style="display:none;"><i
+                        class="zmdi zmdi-rotate-cw"></i></a></div>
+                <div class="deviceName"><span class="statusIcon m-r-10"><em class="fontGreen"><i
+                    class="zmdi zmdi-check-circle"></i></em></span> NCS7700G2
+                </div>
+                <div class="device">
+                    <div style="height: 175px; top: 0px; display:none;" class="backDevice">
+
+                        <!-- 状态 -->
+                        <div class="coverB status">
+                            <ul>
+                                <!-- 控制机柜 -->
+                                <li style="left: 0px; top: 60px; width: 512px; height: 105px;"></li>
+                                <!-- 容器 -->
+                                <li style="left: 53px; top: 66px; width: 200px; height: 92px;"></li>
+                                <li style="left: 262px; top: 66px; width: 200px; height: 92px;"></li>
+                                <!-- 电源 -->
+                                <li style="left: 3px; top: 66px; width: 48px; height: 92px"></li>
+                                <li style="left: 463px; top: 66px; width: 48px; height: 92px;"></li>
+                                
+                                <!-- iscsi端口 -->
+                                <li style="left: 61px; top: 73px; width: 20px; height: 16px;"></li>
+                                <li style="left: 83px; top: 73px; width: 20px; height: 16px"></li>
+                                <li style="left: 61px; top: 88px; width: 20px; height: 16px"></li>
+                                <li style="left: 83px; top: 88px; width: 20px; height: 16px"></li>
+                                <li style="left: 268px; top: 73px; width: 20px; height: 16px"></li>
+                                <li style="left: 290px; top: 73px; width: 20px; height: 16px"></li>
+                                <li style="left: 268px; top: 88px; width: 20px; height: 16px"></li>
+                                <li style="left: 290px; top: 88px; width: 20px; height: 16px"></li>
+                                <!-- sas端口 -->
+                                <li style="left: 106px; top: 73px; width: 15px; height: 15px;" ></li>
+                                <li style="left: 120px; top: 73px; width: 15px; height: 15px"></li>
+                                <li style="left: 313px; top: 73px; width: 15px; height: 15px"></li>
+                                <li style="left: 327px; top: 73px; width: 15px; height: 15px"></li>
+                                <!-- usb端口 -->
+                                <li style="left: 136px; top: 73px; width: 19px; height: 8px;"></li>
+                                <li style="left: 136px; top: 82px; width: 19px; height: 8px;"></li>
+                                <li style="left: 342px; top: 73px; width: 19px; height: 8px;"></li>
+                                <li style="left: 342px; top: 82px; width: 19px; height: 8px;"></li>
+                                <!-- 光纤通道端口 --> 
+                                <li style="left: 228px; top: 82px; width: 17px; height: 16px;"></li>
+                                <li style="left: 228px; top: 100px; width: 17px; height: 16px;"></li>
+                                <li style="left: 228px; top: 118px; width: 17px; height: 16px;"></li>
+                                <li style="left: 228px; top: 136px; width: 17px; height: 16px;"></li>
+                                <li style="left: 435px; top: 82px; width: 17px; height: 16px;"></li>
+                                <li style="left: 435px; top: 100px; width: 17px; height: 16px;"></li>
+                                <li style="left: 435px; top: 118px; width: 17px; height: 16px;"></li>
+                                <li style="left: 435px; top: 136px; width: 17px; height: 16px;"></li>
+                                <!-- 适配器 -->
+                                <li style="left: 222px; top: 76px; width: 28px; height: 82px;"></li>
+                                <li style="left: 428px; top: 76px; width: 28px; height: 82px;"></li>
+                                
+                            </ul>
+                        </div>
+                        <!-- 显示的边框-->
+                        <div class="coverB">
+                            <ul>
+                                <!-- 控制机柜 -->
+                                <li style="left: 0px; top: 60px; width: 512px; height: 105px;z-index:9" id="device11"></li>
+                                <!-- 容器 -->
+                                <li style="left: 53px; top: 66px; width: 200px; height: 92px;z-index:9"id="device12"></li>
+                                <li style="left: 262px; top: 66px; width: 200px; height: 92px;z-index:9"id="device12"></li>
+                                <!-- 电源 -->
+                                <li style="left: 3px; top: 66px; width: 48px; height: 92px;z-index:9" id="device14"></li>
+                                <li style="left: 463px; top: 66px; width: 48px; height: 92px;z-index:9"  id="device14"></li>
+                                
+                                <!-- iscsi端口 -->
+                                <li style="left: 61px; top: 73px; width: 20px; height: 16px;z-index:9" id="device18"></li>
+                                <li style="left: 83px; top: 73px; width: 20px; height: 16px;z-index:9" id="device18"></li>
+                                <li style="left: 61px; top: 88px; width: 20px; height: 16px;z-index:9" id="device18"></li>
+                                <li style="left: 83px; top: 88px; width: 20px; height: 16px;z-index:9" id="device18"></li>
+                                <li style="left: 268px; top: 73px; width: 20px; height: 16px;z-index:9" id="device18"></li>
+                                <li style="left: 290px; top: 73px; width: 20px; height: 16px;z-index:9" id="device18"></li>
+                                <li style="left: 268px; top: 88px; width: 20px; height: 16px;z-index:9" id="device18"></li>
+                                <li style="left: 290px; top: 88px; width: 20px; height: 16px;z-index:9" id="device18"></li>
+                                <!-- sas端口 -->
+                                <li style="left: 106px; top: 73px; width: 15px; height: 15px;z-index:19" id="device110" ></li>
+                                <li style="left: 120px; top: 73px; width: 15px; height: 15px;z-index:19" id="device110"></li>
+                                <li style="left: 313px; top: 73px; width: 15px; height: 15px;z-index:19" id="device110"></li>
+                                <li style="left: 327px; top: 73px; width: 15px; height: 15px;z-index:19" id="device110"></li>
+                                <!-- usb端口 -->
+                                <li style="left: 136px; top: 73px; width: 19px; height: 8px;z-index:9"id="device17"></li>
+                                <li style="left: 136px; top: 82px; width: 19px; height: 8px;z-index:9"id="device17"></li>
+                                <li style="left: 342px; top: 73px; width: 19px; height: 8px;z-index:9"id="device17"></li>
+                                <li style="left: 342px; top: 82px; width: 19px; height: 8px;z-index:9"id="device17"></li>
+                                <!-- 光纤通道端口 --> 
+                                <li style="left: 228px; top: 82px; width: 17px; height: 16px;z-index:29" id="device115"></li>
+                                <li style="left: 228px; top: 100px; width: 17px; height: 16px;z-index:29" id="device115"></li>
+                                <li style="left: 228px; top: 118px; width: 17px; height: 16px;z-index:29" id="device115"></li>
+                                <li style="left: 228px; top: 136px; width: 17px; height: 16px;z-index:29" id="device115"></li>
+                                <li style="left: 435px; top: 82px; width: 17px; height: 16px;z-index:29" id="device115"></li>
+                                <li style="left: 435px; top: 100px; width: 17px; height: 16px;z-index:29" id="device115"></li>
+                                <li style="left: 435px; top: 118px; width: 17px; height: 16px;z-index:29" id="device115"></li>
+                                <li style="left: 435px; top: 136px; width: 17px; height: 16px;z-index:29" id="device115"></li>
+                                <!-- 适配器 -->
+                                <li style="left: 222px; top: 76px; width: 28px; height: 82px; z-index:21"id="device116"></li>
+                                <li style="left: 428px; top: 76px; width: 28px; height: 82px; z-index:21"id="device116"></li>
+                            </ul>
+                        </div>
+                        <!-- 鼠标挪上去出tootip的范围， 不要加 hover 等样式 -->
+                        <div class="coverB">
+                            <ul>
+                                <!-- 控制机柜 -->
+                                <li class="" data-tooltip="#device2t1" data-hover="#device11" style="left: 0px; top: 50px; width: 512px; height: 115px;z-index:10"></li>
+                                <!-- 容器 -->
+                                <li class="" data-tooltip="#device2t2" data-hover="#device12" style="left: 53px; top: 66px; width: 200px; height: 92px;z-index:15"></li>
+                                <li class="" data-tooltip="#device2t3" data-hover="#device13" style="left: 262px; top: 66px; width: 200px; height: 92px;z-index:15"></li>
+                                <!-- 电源 -->
+                                <li class="" data-tooltip="#device2t4" data-hover="#device14" style="left: 3px; top: 66px; width: 48px; height: 92px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t5" data-hover="#device15" style="left: 463px; top: 66px; width: 48px; height: 92px;z-index:19"></li>
+                                <!-- iscsi端口 -->
+                                <li class="" data-tooltip="#device2t6" data-hover="#device16" style="left: 60px; top: 68px; width: 23px; height: 20px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t6" data-hover="#device16" style="left: 82px; top: 68px; width: 23px; height: 20px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t6" data-hover="#device16" style="left: 60px; top: 88px; width: 23px; height: 20px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t6" data-hover="#device16" style="left: 82px; top: 88px; width: 23px; height: 20px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t6" data-hover="#device16" style="left: 267px; top: 68px; width: 23px; height: 20px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t6" data-hover="#device16" style="left: 289px; top: 68px; width: 23px; height: 20px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t6" data-hover="#device16" style="left: 267px; top: 88px; width: 23px; height: 20px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t6" data-hover="#device16" style="left: 289px; top: 88px; width: 23px; height: 20px;z-index:19"></li>
+                                <!-- sas端口 -->
+                                <li class="" data-tooltip="#device2t10" data-hover="#device110" style="left: 104px; top: 68px; width: 16px; height: 21px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t11" data-hover="#device111" style="left: 120px; top: 68px; width: 16px; height: 21px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t10" data-hover="#device110" style="left: 311px; top: 68px; width: 16px; height: 21px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t11" data-hover="#device111" style="left: 327px; top: 68px; width: 16px; height: 21px;z-index:19"></li>
+                                <!-- usb端口 -->
+                                <li class="" data-tooltip="#device2t7" data-hover="#device17" style="left: 135px; top: 68px; width: 21px; height: 15px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t7" data-hover="#device17" style="left: 135px; top: 81px; width: 21px; height: 15px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t7" data-hover="#device17" style="left: 342px; top: 68px; width: 21px; height: 15px;z-index:19"></li>
+                                <li class="" data-tooltip="#device2t7" data-hover="#device17" style="left: 342px; top: 81px; width: 21px; height: 15px;z-index:19"></li>
+                                <!-- 光纤通道端口 -->
+                                <li class="" data-tooltip="#device2t12" data-hover="#device112" style="left: 224px; top: 82px; width: 26px; height: 18px;z-index:29"></li>
+                                <li class="" data-tooltip="#device2t13" data-hover="#device113" style="left: 224px; top: 100px; width: 26px; height: 18px;z-index:29"></li>
+                                <li class="" data-tooltip="#device2t14" data-hover="#device114" style="left: 224px; top: 118px; width: 26px; height: 18px;z-index:29"></li>
+                                <li class="" data-tooltip="#device2t15" data-hover="#device115" style="left: 224px; top: 136px; width: 26px; height: 18px;z-index:29"></li>
+                                <li class="" data-tooltip="#device2t12" data-hover="#device112" style="left: 430px; top: 82px; width: 26px; height: 18px;z-index:29"></li>
+                                <li class="" data-tooltip="#device2t13" data-hover="#device113" style="left: 430px; top: 100px; width: 26px; height: 18px;z-index:29"></li>
+                                <li class="" data-tooltip="#device2t14" data-hover="#device114" style="left: 430px; top: 118px; width: 26px; height: 18px;z-index:29"></li>
+                                <li class="" data-tooltip="#device2t15" data-hover="#device115" style="left: 430px; top: 136px; width: 26px; height: 18px;z-index:29"></li>
+                                <!-- 适配器 -->
+                                <li class="" data-tooltip="#device2t16" data-hover="#device116" style="left: 222px; top: 76px; width: 28px; height: 82px; z-index:21"></li>
+                                <li class="" data-tooltip="#device2t16" data-hover="#device116" style="left: 428px; top: 76px; width: 28px; height: 82px; z-index:21"></li>
+
+                            </ul>
+                        </div>
+
+                        <div class="img"><img src="images/device/back_NCS7700G2.png"></div>
+                    </div>
+                    <div style="height:150px;" class="frontDevice">
+                        <div class="cover status">
+                            <ul>
+                                
+                            </ul>
+                        </div>
+                        <div style="" class="cover">
+                            <ul style="z-index:99">
+                                
+                            </ul>
+                        </div>
+                        <div class="enclosure" id="frontViewDevice">
+                        	<div class="eHover"></div>
+                    		<div class="eDiv" style="z-index:32"></div>
+                        </div>
+                        <div class="img"><img src="images/device/front_NCS7700G224.png"></div>
+                    </div>
+                    <div class="clear"></div>
+
+                </div>
+            </div>
+        </div>
+
+	</div>
+    </div>
+	
+	<!--右侧bottom-->
+	
+</div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script src="js/screen.js"></script>
+<!--<script src="js/common.js"></script>-->
+<script src="js/rfloatdiv.js"></script>
+<script src="js/sidediv.js"></script>
+<script src="js/dropdown.js"></script>
+<script src="js/scroll.js"></script>
+<script src="js/table.js"></script>
+<script src="js/imgscrollview.js"></script>
+<script src="js/buttontoggle.js"></script>
+<script src="js/minscrolllist.js"></script>
+<script src="js/pfmonitor.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#userBtn').dropdownBtn();
+		$("#content-1").mCustomScrollbar({
+			theme:"minimal"
+		});
+
+		$('#imgscrollview').imgScroll();
+        $('#systemMenuListBtn').btnToggle();
+        $('#slimList').minScrollList();
+        $('#rFloatDiv').rFloat();
+        $('#frontViewDevice').on('mouseenter', function(e){
+            var target = null;
+            if($(e.target).hasClass('eDiv')){
+                target = $(e.target).parent().find('div.eHover');
+            }
+            else if($(e.target).hasClass('eHover')){
+                return false;
+            }
+            else{
+                target = $(e.target).find('div.eHover');
+            }
+            var tooltip = showTooltip(target, "机柜",
+                [
+                    {name:'性能', value:101 },
+                    {name:'参数', value:'可用'},
+                ],
+                '#frontViewDevice',
+                {
+                    top:'185',
+                    left:'780'
+                }
+            );
+
+        });
+        $('#frontViewDevice').on('mouseleave', function(e){
+            hideTooltip('#frontViewDevice');
+        });
+
+        var portTips = [
+            {
+                "name":"#device2t1",
+                "data":
+                    [
+                        {"name":"标识", "value":"FC"},
+                        {"name":"状态", "value":"OK"}
+                    ]
+            },
+            {
+                "name":"#device2t2",
+                "data":
+                    [
+                        {"name":"标识", "value":"iSCSI"}
+                    ]
+            },
+            {
+                "name":"#device2t3",
+                "data":
+                    [
+                        {"name":"标识", "value":"NET"}
+                    ]
+            }
+        ];
+        var pdTips = [
+            {
+                "name":"device1tip1",
+                "data":
+                    [
+                        {"name":"标识", "value":"磁盘1"},
+                        {"name":"状态", "value":"OK"}
+                    ]
+            },
+            {
+                "name":"device1tip2",
+                "data":
+                    [
+                        {"name":"标识", "value":"磁盘3"}
+                    ]
+            },
+            {
+                "name":"device1tip3",
+                "data":
+                    [
+                        {"name":"标识", "value":"磁盘3"}
+                    ]
+            }
+        ];
+
+        function initPdTooltips(idSelector, pdTips){
+            var divCover = $(idSelector).find('.frontDevice').find('.cover').not('.status');
+            $(divCover).find('li').on('mouseover', function(e){
+                var pdHover = $(e.target).attr('data-hover');
+                if($(pdHover).hasClass('no_pd'))
+                    return false;
+                var pdTooltips = $(e.target).attr('data-tooltip');
+                var data = [];
+                $.each(pdTips, function(i, tips) {
+                    if(pdTooltips == tips.name)
+                        data = tips.data;
+                });
+                showTooltip(e.target, '磁盘tooltip', data, pdTooltips);
+            });
+            $(divCover).find('li').on('mouseout', function(e) {
+                var pdTooltips = $(e.target).attr('data-tooltip');
+                hideTooltip(pdTooltips);
+            });
+        }
+        function initPortTooltips(idSelector, portTips){
+            var divCover = $(idSelector).find('.backDevice').find('.coverB:last');
+            $(divCover).find('li').on('mouseover', function(e){
+                var portTooltips = $(e.target).attr('data-tooltip');
+                var data = [];
+                $.each(portTips, function(i, tips) {
+                    if(portTooltips == tips.name)
+                        data = tips.data;
+                });
+                showTooltip(e.target, '磁盘tooltip', data, portTooltips);
+            });
+            $(divCover).find('li').on('mouseout', function(e) {
+                var pdTooltips = $(e.target).attr('data-tooltip');
+                hideTooltip(pdTooltips);
+            });
+        }
+        initPdTooltips("#device1", pdTips);
+        $(window).on('initDevice', function(e){
+            if(e.device == 'front') {
+                initPdTooltips("#device1", pdTips);
+            } else {
+                initPortTooltips("#device1", portTips);
+            }
+        });
+
+        $('#monitorChart').pfMonitor(95, '3430万', 667);
+
+        $('#ddsj').on('mouseover', function (e) {
+            var target = '';
+            if(e.target.tagName == 'UL')
+                target = $(e.target).attr('data-target');
+            else
+                target = $(e.target).parent().attr('data-target');
+
+            $(target).show();
+        });
+        $('#ddsj').on('mouseout', function (e) {
+            var target = '';
+            if(e.target.tagName == 'UL')
+                target = $(e.target).attr('data-target');
+            else
+                target = $(e.target).parent().attr('data-target');
+            $(target).hide();
+
+        });
+
+        $('#iops').on('mouseover', function (e) {
+            var target = '';
+            if(e.target.tagName == 'UL')
+                target = $(e.target).attr('data-target');
+            else
+                target = $(e.target).parent().attr('data-target');
+
+            $(target).show();
+        });
+        $('#iops').on('mouseout', function (e) {
+            var target = '';
+            if(e.target.tagName == 'UL')
+                target = $(e.target).attr('data-target');
+            else
+                target = $(e.target).parent().attr('data-target');
+            $(target).hide();
+
+        });
+        $('#band').on('mouseover', function (e) {
+            var target = '';
+            if(e.target.tagName == 'UL')
+                target = $(e.target).attr('data-target');
+            else
+                target = $(e.target).parent().attr('data-target');
+
+            $(target).show();
+        });
+        $('#band').on('mouseout', function (e) {
+            var target = '';
+            if(e.target.tagName == 'UL')
+                target = $(e.target).attr('data-target');
+            else
+                target = $(e.target).parent().attr('data-target');
+            $(target).hide();
+
+        });
+    });
+</script>
+</body>
+</html>
