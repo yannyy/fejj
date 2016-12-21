@@ -322,14 +322,17 @@
                     return false;
 
                 var checked = e.target.checked;
-                $.each($('table.table').find('td').children('input[type="checkbox"]'), function (i, cb) {
-                    cb.checked = checked;
-
-                    var tr = $(cb).parent().parent();
-                    if (cb.checked)
-                        tr.addClass('selected');
-                    else
-                        tr.removeClass('selected');
+                var rows = $('table.table').find('tr');
+                $.each(rows, function (i, tr) {
+                    if(empty($(tr).attr('data-tt-parent-id'))) {
+                        $(tr).find('input[type="checkbox"]').each(function (i, cb) {
+                            cb.checked = checked;
+                        });
+                        if (checked)
+                            $(tr).addClass('selected');
+                        else
+                            $(tr).removeClass('selected');
+                    }
                 });
             },
             clearCheckStatus: function () {
