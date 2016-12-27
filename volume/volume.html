@@ -114,12 +114,13 @@
                         <table class="table-input">
                             <tbody>
                             <tr>
-                                <td><label>名称:</label></td>
+                                <td><label>第一步:</label></td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="wizardStep">
+                        第二步
                         <table class="table table-hover" id="tableWithSelectall1">
                             <thead>
                             <tr>
@@ -177,6 +178,7 @@
                         </table>
                     </div>
                     <div class="wizardStep">
+                        第三步
                         <table class="table-input">
                             <tbody>
                             <tr>
@@ -187,6 +189,7 @@
 
                     </div>
                     <div class="wizardStep">
+                        第四步
                         <table class="table-input">
                             <tbody>
                             <tr>
@@ -656,8 +659,8 @@
             var target = $(e.target).attr('data-target');
             $(target).show();
             $('#wizard').wizard({
+                hiddenSteps:[1],
                 init: function(){
-                    debugger;
                 },
                 onNext: function () {
                     console.log("next: 步骤" + this.$current);
