@@ -65,29 +65,23 @@
 		var hasPrev = function(index){
             var exists = false;
             for(var i = 0; i < index; i ++) {
-                if ($.inArray(i, wizard.hiddenSteps) >= 0) {
+                if ($.inArray(i, wizard.hiddenSteps) < 0) {
                     exists = true;
                     break;
                 }
             }
-            if(exists)
-                return exists;
-
-            return index != 0;
+            return exists;
 		};
 
         var hasNext = function(index){
             var exists = false;
             for(var i = index; i < wizard.$steps.length; i ++) {
-                if ($.inArray(i, wizard.hiddenSteps) >= 0) {
+                if ($.inArray(i, wizard.hiddenSteps) < 0) {
                     exists = true;
                     break;
                 }
             }
-            if(exists)
-                return exists;
-
-            return index != wizard.$steps.length - 1;
+            return exists;
         };
 
 		var onPrev = function(e){
