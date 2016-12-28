@@ -92,13 +92,20 @@
             return exists;
         };
 
+        var prev = function(index) {
+            var i = index;
+            for(; i >= 0; i --) {
+                if ($.inArray(i, wizard.hiddenSteps) < 0)
+                   break;
+            }
+
+            return i > 0 ? i - 1: 0;
+        };
 		var onPrev = function(e){
             if(false == wizard.onPrevCallback())
                 return false;
 
-			if(wizard.$current > 0)
-				wizard.$current --;
-
+			wizard.$current = prev(wizard.$current);
 			initWizard();
 		};
 
