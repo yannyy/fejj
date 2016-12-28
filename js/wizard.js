@@ -42,19 +42,27 @@
                     $(step).hide();
             });
 
-            if(!hasPrev(wizard.$current))
+            if(!hasPrev(wizard.$current) || wizard.$current === 0)
                 wizard.$prev.attr('disabled', true);
             else
                 wizard.$prev.attr('disabled', false);
 
-            if(!hasNext(wizard.$current))
+            if(!hasNext(wizard.$current) || wizard.$current === wizard.$steps.length -1) {
+                wizard.$current = wizard.$steps.length -1;
                 wizard.$next.text('完成');
+            }
             else{
                 wizard.$next.text('下一步');
                 wizard.$next.attr('disabled', false);
             }
 
-            var progress = Math.round((wizard.$current + 1)*100/wizard.$steps.length) + '%';
+            var progress;
+            if(!hasNext(wizard.$current) || wizard.$current === wizard.$steps.length -1) {
+                progress = '100%';
+            } else {
+                progress = Math.round((wizard.$current + 1)*100/wizard.$steps.length) + '%';
+
+            }
             $(wizard).find('div.wizardProgress').css('width', progress);
 		};
 
@@ -75,7 +83,7 @@
 
         var hasNext = function(index){
             var exists = false;
-            for(var i = index; i < wizard.$steps.length; i ++) {
+            for(var i = index + 1; i < wizard.$steps.length; i ++) {
                 if ($.inArray(i, wizard.hiddenSteps) < 0) {
                     exists = true;
                     break;
