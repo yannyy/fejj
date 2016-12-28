@@ -227,6 +227,7 @@
                 $(areaFix.widget).find('div.blockArea').find('div.tableBody').find('table').treetable({expandable: true}, true);
                 //areaFix.widget.trigger("tableSort");
                 $(window).trigger('tableSort', [areaFix.widget]);
+                areaFix.init();
             },
             fetchRowData: function (tr) {
                 var dataTTId = $(tr).attr('data-tt-id');
