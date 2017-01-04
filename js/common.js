@@ -140,7 +140,7 @@ var buildTooltip = function(targetNode, title, data, dataTarget, position){
     $(wrapper).css('top',  top+ 'px');
 
     if(empty(position.left))
-        left = $(targetNode).offset().left - $(wrapper).outerWidth()/2 + 10;
+        left = $(targetNode).offset().left - $(wrapper).outerWidth()/2 + $(targetNode).outerWidth()/2;
     $(wrapper).css('left', left + 'px');
 
     return wrapper;
