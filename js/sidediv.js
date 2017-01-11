@@ -121,10 +121,13 @@
 			var target = e.target;
 
 			var li = null;
+			var link = null;
 			if(/i|I/.test(target.tagName) || /span|SPAN/.test(target.tagName)){
+				link = $(target).parent();
 				li = $(target).parent().parent();	
 			}else{
-				li = $(target).parent();	
+                link = $(target);
+				li = $(target).parent();
 			}
 
 			if(sideDiv.hasSecondLevel(li)){
