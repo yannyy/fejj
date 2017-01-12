@@ -126,8 +126,8 @@
 				link = $(target).parent().get(0);
 				li = $(target).parent().parent();
 			}else{
-                link = $(target);
-				li = $(target).parent().get(0);
+                link = $(target).get(0);
+				li = $(target).parent();
 			}
 
 			if(sideDiv.hasSecondLevel(li)){
