@@ -2,9 +2,13 @@
     $.fn.minScrollList = function(options){
     	var widget = this;
         options = options || {};
+
+        var selected = $(widget).find('li.select').get(0);
+        var currentStep = parseInt($(selected).attr('data-anchor'));
+
         var scroll = {
             size: 0,
-            currentStep: 0,
+            currentStep: currentStep - 1,
             displaySize: 4,
             displayList: [],
             previous:null,
