@@ -2,9 +2,13 @@
     $.fn.scrollList = function(options){
     	var widget = this;
         options = options || {};
+
+        var selected = $(widget).find('ul.mainTab').find('li.select').get(0);
+        var currentStep = parseInt($(selected).attr('data-anchor'));
+
         var scroll = {
             size: 0,
-            currentStep: 0,
+            currentStep: currentStep -1,
             displayList: [],
             previous:null,
             next:null,
